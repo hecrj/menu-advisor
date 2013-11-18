@@ -1,0 +1,85 @@
+; Mon Nov 18 17:36:27 CET 2013
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(multislot compuesto_por
+		(type INSTANCE)
+;+		(allowed-classes Ingrediente)
+		(cardinality 1 ?VARIABLE)
+;+		(inverse-slot forma_parte_de)
+		(create-accessor read-write))
+	(multislot forma_parte_de
+		(type INSTANCE)
+;+		(allowed-classes Elaborado)
+;+		(inverse-slot compuesto_por)
+		(create-accessor read-write))
+	(single-slot precio
+		(type FLOAT)
+		(range 0.0 %3FVARIABLE)
+		(default 0.0)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Ingrediente
+	(is-a USER)
+	(role concrete)
+	(multislot forma_parte_de
+		(type INSTANCE)
+;+		(allowed-classes Elaborado)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Elaborado
+	(is-a USER)
+	(role concrete)
+	(multislot compuesto_por
+		(type INSTANCE)
+;+		(allowed-classes Ingrediente)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot precio
+		(type FLOAT)
+		(range 0.0 %3FVARIABLE)
+		(default 0.0)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Plato
+	(is-a Elaborado)
+	(role concrete))
+
+(defclass Principal
+	(is-a Plato)
+	(role concrete))
+
+(defclass Postre
+	(is-a Plato)
+	(role concrete))
+
+(defclass Bebida
+	(is-a Elaborado)
+	(role concrete))
+
+(defclass Alcoholica
+	(is-a Bebida)
+	(role concrete))
+
+(defclass Vino
+	(is-a Alcoholica)
+	(role concrete))

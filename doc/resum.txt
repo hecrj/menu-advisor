@@ -1,0 +1,146 @@
+Sobre aquest resum:
+1- Resum del problema
+2- Detalls de l'entrega
+3- Guió dels passos per fer la pràctica
+4- Rúbrica d'evaluació
+
+
+
+1- Resúmen del problema
+
+Definiciones:
+MENÚ: un primero, un segundo y un postre, más la bebida, que puede ir asociada a cada plato o ser la
+misma para todo el menú.
+El precio de un menú es la suma de los precios de los platos.
+
+El conocimiento consiste en un CONTEXTO, unas RESTRICCIONES, una BASE DE DATOS DE PLATOS
+y unos CONOCIMIENTOS CULINARIOS.
+
+CONTEXTO: lo indica el usuario
+tipo de evento (familiar (bodas, bautizos, comuniones), congreso)
+época del año (caracteriza los ingredientes disponibles)
+número de comensales (si es muy grande, es recomendable platos simples)
+
+RESTRICCIONES: lo indica el usuario
+precio máximo y mínimo
+tipo de comida (e.g. vegetariana) [se deduce de los ingredientes]
+ingredientes prohibidos
+vinos (no quieren/uno/uno por plato)
+estilo de la comida:
+	- clásico (comida tradicional y raciones decentes)
+	- moderno (platos modernos y con raciones minimalistas)
+	- regional (comida típica de algún lugar)
+	- sibarita (platos exclusivos para paladares exigentes)
+plato: tradicional, moderno, exclusivo, (típico)
+
+CONOCIMIENTOS CULINARIOS: inherentes al sistema
+	- compatibilidad entre distintos platos
+	- compatibilidad entre bebidas y platos
+	
+BASE DE DATOS DE PLATOS: inherentes al sistema
+Para cada plato se conoce:
+	- los ingredientes principales
+	- si son primero, segundo, primero y segundo, o postre
+	- si estan disponibles todo el año o una temporada concreta
+	- tipo: carne o pescado, vegetales, sopa, estofado, pasta, ...
+	- frío o caliente
+	- si són típicos de algún lugar
+	- precio de venta
+Para cada bebida se conoce:
+	- precio de venta
+	- tipo: vino, agua, refresco, ...
+
+Objetivo:
+confeccionar 3 menús que satisfagan las restricciones y nuestro conocimiento culinario.
+A poder ser, presentar al usuario una opción cara, otra media y otra barata.
+
+
+
+
+2- Detalls de l'entrega
+Data: 9 diciembre
+
+Què s'ha d'entregar:
+Una documentació. El seu índex sería:
+1. Análisis del problema
+	- Identificació
+	- Conceptualització
+	- Formalització
+	- Implementació
+	- Prova
+Nota: Tened en cuenta que parte del proceso de conceptualización y formalización es la 
+construcción de la ontología, por lo que deberéis explicar con detalle cómo la habéis construido.
+
+2. Documentació de la ontología (es fa en el propi Protègè i es genera automàticament)
+
+3. Juegos de pruebas (no triviales)
+
+A part  de la documentació, s'ha d'entregar:
+1. Código fuente (comentado)
+
+
+
+
+3- Guió dels passos per fer la pràctica
+
+A) Contacte amb les eines i especificació inicial
+
+1. llegir enunciat
+2. fer una especificació inicial
+Nota: el articulo “Ontology Development 101” puede orientaros sobre la metodología a usar.
+3. llegir documentació sobre CLIPS
+4. mirar i executar exemples de CLIPS (pràctiques de quatris anteriors)
+Nota: Tenéis una FAQ en la página web (hecha por alumnos) que os debería
+solucionar la mayor parte de los problemas que tengáis con CLIPS
+
+5. fer una especificació amb els elements principals (no ha de ser definitiva perque hem de fer
+desenvolupament incremental)
+6. aprendre a utilitzar Protégé
+
+B) Prototip inicial
+
+7. Descomposar el sistema en fase per arribar a la solució.
+Idea: llegir context, llegir restriccions, elaborar menús compatibles, escollir els 3 menús més adecuats.
+Nota: deberéis utilizar alguna de las metodologías de resolución de problemas explicadas
+en teoría. Eso quiere decir que la descomposición de problemas deberá
+encajar en esas metodologías, por lo que tenéis en ellas una guía sobre cómo plantear la solución.
+Tened en cuenta que a la hora de escribir la documentación deberéis explicar cómo se descompone
+el problema en subproblemas (conceptualización) y cómo los problemas encajan en las metodologías de
+resolución de problemas (formalización).
+
+8. Prototip inicial: implementar unes poques regles que solucionin una versió simplificada.
+Nota: El objetivo de este prototipo inicial es detectar posibles problemas tanto en la ontología como en el diseño
+lo antes posible.
+
+9. Fer que l'ontología cubreixi els conceptes necessaris per el prototip inicial.
+10. Introduir algunes instàncies a l'ontología.
+Nota: Marcaros como objetivo resolver inicialmente un subconjunto sencillo de pro-
+blemas y decidid con eso qué conceptos de la ontología os serán necesarios y qué instancias. No hace falta
+que incluyáis todas las instancias desde el principio.
+
+C) Extensió del prototip
+to do
+
+D) Jocs de proves i documentació
+to do
+
+
+
+
+4- Rúbrica d'evaluació
+to do
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+Step 1. Determine the domain and scope of the ontology
+
+What is the domain that the ontology will cover?
+Una colecció de plats i les seves característiques.
+Una colecció de begudes i les seves característiques.
+La composició de menús a partir de plats i begudes.
+Les característiques dels menús.
+
+For what we are going to use the ontology?
+Per sugerir menús a clients segons les seves preferències i requisits.
+
+For what types of questions the information in the ontology should provide answers?
+Quins plats compleixen uns requisits?
+Quins menús compleixen uns requisits?
+Quins plats són més recomanables segons unes preferències?
+Quins menús són més recomanables segons unes preferències?
+Quins plats es combinen adecuadament per formar un menú?
+
+Who will use and maintain the ontology?
+Una empresa de catering fictícia.
+
+
+
+Pluja de conceptes:
+diferents tipus de vins
+principals tipus de menjars
+noció de bona/mala combinació entre vi i menjar
+
+
+competency questions:
+Quines característiques d'un plat haig de considerar quan trii un menú?
+...
+
+
+Step 2. Consider reusing existing ontologies
+Nope
+
+
+Step 3. Enumerate important terms in the ontology
+
+Pluja de termes
+ingerible
+comida, bebida
+almuerzo, cena
+plato, menú
+primer plato, segundo plato, postre
+vegetal, animal
+fruta, verdura, legumbre
+carne, pescado, huevo
+caliente, frío
+verano, invierno, primavera, otoño
+boda, bautizo, comunión, congreso
+sabor
+dulce, salado, amargo, ácido
+cantidad de azúcar
+vino blanco, vino negro, vino rosado
+ingrediente
+
+
