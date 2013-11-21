@@ -1,0 +1,11 @@
+El problema es una tarea de análisis, puesto que se trata de interpretar unos datos para obtener respuestas.
+
+Como metodología de resolución usaremos clasificación heurística. Este método es apropiado para tareas de análisis.
+La clasificación heurística consta de 3 fases:
+- Abstracción de datos
+- Asociación heurística
+- Refinamiento
+
+El conjunto de respuestas que puede dar el sistema es muy extenso, porque hay muchas combinaciones de platos distintas.
+El objetivo es determinar dadas las caracteristicas del cliente cuál es el menú más adecuado.
+

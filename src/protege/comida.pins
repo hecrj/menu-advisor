@@ -1,4 +1,313 @@
-; Mon Nov 18 17:36:28 CET 2013
+; Mon Nov 18 18:02:21 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
+
+([comida_Class14] of  Ingrediente
+
+	(forma_parte_de [comida_Class49])
+	(nombre "Pepinillo"))
+
+([comida_Class15] of  Ingrediente
+
+	(nombre "Queso"))
+
+([comida_Class16] of  Ingrediente
+
+	(forma_parte_de [comida_Class37])
+	(nombre "Nuez"))
+
+([comida_Class17] of  Ingrediente
+
+	(forma_parte_de [comida_Class38])
+	(nombre "Leche"))
+
+([comida_Class18] of  Ingrediente
+
+	(nombre "Avena"))
+
+([comida_Class19] of  Ingrediente
+
+	(nombre "Espaguetis"))
+
+([comida_Class20] of  Ingrediente
+
+	(forma_parte_de [comida_Class44])
+	(nombre "Macarrones"))
+
+([comida_Class21] of  Ingrediente
+
+	(forma_parte_de [comida_Class49])
+	(nombre "Sal"))
+
+([comida_Class22] of  Ingrediente
+
+	(nombre "Solomillo"))
+
+([comida_Class23] of  Ingrediente
+
+	(nombre "Mayonesa"))
+
+([comida_Class24] of  Ingrediente
+
+	(nombre "Ketchup"))
+
+([comida_Class25] of  Ingrediente
+
+	(forma_parte_de [comida_Class45])
+	(nombre "Patatas"))
+
+([comida_Class26] of  Ingrediente
+
+	(nombre "Bistec de vacuno"))
+
+([comida_Class27] of  Ingrediente
+
+	(forma_parte_de
+		[comida_Class47]
+		[comida_Class49])
+	(nombre "Atún"))
+
+([comida_Class28] of  Ingrediente
+
+	(forma_parte_de [comida_Class48])
+	(nombre "Bacalao"))
+
+([comida_Class29] of  Ingrediente
+
+	(nombre "Cacao"))
+
+([comida_Class30] of  Ingrediente
+
+	(nombre "Trigo"))
+
+([comida_Class32] of  Ingrediente
+
+	(nombre "Fuet"))
+
+([comida_Class33] of  Ingrediente
+
+	(nombre "Nata"))
+
+([comida_Class34] of  Ingrediente
+
+	(nombre "Huevo"))
+
+([comida_Class35] of  Postre
+
+	(compuesto_por [comida_Class41])
+	(nombre "Helado de chocolate")
+	(precio 3.0))
+
+([comida_Class36] of  Postre
+
+	(compuesto_por [comida_Class42])
+	(nombre "Tajada de Melon")
+	(precio 1.0))
+
+([comida_Class37] of  Postre
+
+	(compuesto_por
+		[comida_Class43]
+		[comida_Class41]
+		[comida_Class16])
+	(nombre "Turrón de chocolate con nueces")
+	(precio 2.0))
+
+([comida_Class38] of  Postre
+
+	(compuesto_por
+		[comida_Class17]
+		[comida_Class43])
+	(nombre "Crema Catalana")
+	(precio 8.0))
+
+([comida_Class39] of  Postre
+
+	(compuesto_por [comida_Class41])
+	(nombre "Chocolate caliente")
+	(precio 2.0))
+
+([comida_Class41] of  Ingrediente
+
+	(forma_parte_de
+		[comida_Class35]
+		[comida_Class39]
+		[comida_Class37])
+	(nombre "Chocolate"))
+
+([comida_Class42] of  Ingrediente
+
+	(forma_parte_de [comida_Class36])
+	(nombre "Melón"))
+
+([comida_Class43] of  Ingrediente
+
+	(forma_parte_de
+		[comida_Class38]
+		[comida_Class37])
+	(nombre "Azúcar"))
+
+([comida_Class44] of  Principal
+
+	(compuesto_por
+		[comida_Class20]
+		[comida_Class51])
+	(nombre "Macarrones a la boloñesa")
+	(precio 4.0))
+
+([comida_Class45] of  Principal
+
+	(compuesto_por
+		[comida_Class25]
+		[comida_Class52])
+	(nombre "Estofado")
+	(precio 3.0))
+
+([comida_Class46] of  Principal
+
+	(compuesto_por
+		[comida_Class53]
+		[comida_Class54])
+	(nombre "Sopa de galets")
+	(precio 2.0))
+
+([comida_Class47] of  Principal
+
+	(compuesto_por [comida_Class27])
+	(nombre "Atún a la plancha")
+	(precio 4.0))
+
+([comida_Class48] of  Principal
+
+	(compuesto_por
+		[comida_Class28]
+		[comida_Class55]
+		[comida_Class56])
+	(nombre "Bacalao al pil-pil")
+	(precio 20.0))
+
+([comida_Class49] of  Principal
+
+	(compuesto_por
+		[comida_Class27]
+		[comida_Class55]
+		[comida_Class14]
+		[comida_Class57]
+		[comida_Class58]
+		[comida_Class21])
+	(nombre "Ensalada verde")
+	(precio 2.0))
+
+([comida_Class50] of  Ingrediente
+
+	(nombre "Carne picada"))
+
+([comida_Class51] of  Ingrediente
+
+	(forma_parte_de [comida_Class44])
+	(nombre "Salsa Boloñesa"))
+
+([comida_Class52] of  Ingrediente
+
+	(forma_parte_de [comida_Class45])
+	(nombre "Costillas de cerdo"))
+
+([comida_Class53] of  Ingrediente
+
+	(forma_parte_de [comida_Class46])
+	(nombre "Galets"))
+
+([comida_Class54] of  Ingrediente
+
+	(forma_parte_de [comida_Class46])
+	(nombre "Caldo de pollo"))
+
+([comida_Class55] of  Ingrediente
+
+	(forma_parte_de
+		[comida_Class48]
+		[comida_Class49])
+	(nombre "Aceite"))
+
+([comida_Class56] of  Ingrediente
+
+	(forma_parte_de [comida_Class48])
+	(nombre "Harina blanca"))
+
+([comida_Class57] of  Ingrediente
+
+	(forma_parte_de [comida_Class49])
+	(nombre "Lechuga"))
+
+([comida_Class58] of  Ingrediente
+
+	(forma_parte_de [comida_Class49])
+	(nombre "Aceituna"))
+
+([comida_Class59] of  Bebida
+
+	(compuesto_por [comida_Class60])
+	(nombre "Agua mineral")
+	(precio 0.5))
+
+([comida_Class60] of  Ingrediente
+
+	(forma_parte_de [comida_Class59])
+	(nombre "Agua"))
+
+([comida_Class61] of  Alcoholica
+
+	(compuesto_por [comida_Class62])
+	(nombre "Vodka")
+	(precio 3.0))
+
+([comida_Class62] of  Ingrediente
+
+	(forma_parte_de [comida_Class61])
+	(nombre "Vodka"))
+
+([comida_Class63] of  Bebida
+
+	(compuesto_por [comida_Class64])
+	(nombre "Leche")
+	(precio 0.2))
+
+([comida_Class64] of  Ingrediente
+
+	(forma_parte_de [comida_Class63])
+	(nombre "Leche de vaca"))
+
+([comida_Class65] of  Bebida
+
+	(compuesto_por [comida_Class66])
+	(nombre "Zumo de naranja")
+	(precio 3.0))
+
+([comida_Class66] of  Ingrediente
+
+	(forma_parte_de [comida_Class65])
+	(nombre "Naranja"))
+
+([comida_Class67] of  Vino
+
+	(compuesto_por [comida_Class68])
+	(nombre "laRioja")
+	(precio 19.0))
+
+([comida_Class68] of  Ingrediente
+
+	(forma_parte_de
+		[comida_Class67]
+		[comida_Class70])
+	(nombre "Uva blanca"))
+
+([comida_Class69] of  Ingrediente
+
+	(nombre "Alcohol etílico"))
+
+([comida_Class70] of  Vino
+
+	(compuesto_por [comida_Class68])
+	(nombre "Abadía San Campio")
+	(precio 11.75))
