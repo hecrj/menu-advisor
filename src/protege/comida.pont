@@ -1,4 +1,4 @@
-; Thu Nov 21 19:57:08 CET 2013
+; Thu Nov 21 20:59:42 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -31,7 +31,7 @@
 		(create-accessor read-write))
 	(single-slot precio
 		(type FLOAT)
-		(range 0.0 %3FVARIABLE)
+		(range 0.0 10000.0)
 		(default 0.0)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
@@ -55,16 +55,16 @@
 (defclass Elaborado
 	(is-a USER)
 	(role abstract)
-	(single-slot precio
-		(type FLOAT)
-		(range 0.0 %3FVARIABLE)
-		(default 0.0)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(multislot compuesto_por
 		(type INSTANCE)
 ;+		(allowed-classes Ingrediente)
 		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot precio
+		(type FLOAT)
+		(range 0.0 10000.0)
+		(default 0.0)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot nombre
 		(type STRING)

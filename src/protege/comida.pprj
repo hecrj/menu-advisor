@@ -1,4 +1,4 @@
-; Thu Nov 21 19:57:08 CET 2013
+; Thu Nov 21 20:59:42 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,13 +20,13 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[comida_ProjectKB_Class10116]
-		[comida_ProjectKB_Class10117]
-		[comida_ProjectKB_Class10118]
-		[comida_ProjectKB_Class10119]
-		[comida_ProjectKB_Class10120]
-		[comida_ProjectKB_Class10121]
-		[comida_ProjectKB_Class10122]))
+		[comida_ProjectKB_Class10104]
+		[comida_ProjectKB_Class10105]
+		[comida_ProjectKB_Class10106]
+		[comida_ProjectKB_Class10107]
+		[comida_ProjectKB_Class10108]
+		[comida_ProjectKB_Class10109]
+		[comida_ProjectKB_Class10110]))
 
 ([CLSES_TAB] of  Widget
 
@@ -45,37 +45,37 @@
 
 	(name "SearchTab_Query"))
 
-([comida_ProjectKB_Class10116] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([comida_ProjectKB_Class10117] of  String
+([comida_ProjectKB_Class10104] of  String
 
 	(name "Principal")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10118] of  String
+([comida_ProjectKB_Class10105] of  String
 
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
 
-([comida_ProjectKB_Class10119] of  String
+([comida_ProjectKB_Class10106] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([comida_ProjectKB_Class10120] of  String
+([comida_ProjectKB_Class10107] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([comida_ProjectKB_Class10108] of  String
 
 	(name "Postre")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10121] of  String
+([comida_ProjectKB_Class10109] of  String
 
 	(name "Bebida")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10122] of  String
+([comida_ProjectKB_Class10110] of  String
 
 	(name "Ingrediente")
 	(string_value "nombre"))
@@ -439,7 +439,7 @@
 
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
-([KB_364998_Class0] of  Map
+([KB_156040_Class0] of  Map
 )
 
 ([KB_577580_Class0] of  String
@@ -625,8 +625,8 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[STANDARD_SLOT_FORM_WIDGET]
 		[STANDARD_FACET_FORM_WIDGET]
+		[STANDARD_SLOT_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
 		[STANDARD_CLASS_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")
