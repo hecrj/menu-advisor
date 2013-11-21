@@ -43,4 +43,5 @@
 
 ; Run and exit, by default
 (run)
+(facts)
 (exit)
