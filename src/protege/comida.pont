@@ -1,4 +1,4 @@
-; Mon Nov 18 18:02:21 CET 2013
+; Thu Nov 21 19:57:08 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -13,10 +13,21 @@
 		(cardinality 1 ?VARIABLE)
 ;+		(inverse-slot forma_parte_de)
 		(create-accessor read-write))
+	(single-slot es_exclusivo
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(multislot forma_parte_de
 		(type INSTANCE)
 ;+		(allowed-classes Elaborado)
 ;+		(inverse-slot compuesto_por)
+		(create-accessor read-write))
+	(single-slot tipo
+		(type SYMBOL)
+		(allowed-values TRADICIONAL MODERNA)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot precio
 		(type FLOAT)
@@ -43,17 +54,17 @@
 
 (defclass Elaborado
 	(is-a USER)
-	(role concrete)
-	(multislot compuesto_por
-		(type INSTANCE)
-;+		(allowed-classes Ingrediente)
-		(cardinality 1 ?VARIABLE)
-		(create-accessor read-write))
+	(role abstract)
 	(single-slot precio
 		(type FLOAT)
 		(range 0.0 %3FVARIABLE)
 		(default 0.0)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot compuesto_por
+		(type INSTANCE)
+;+		(allowed-classes Ingrediente)
+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot nombre
 		(type STRING)
@@ -62,7 +73,18 @@
 
 (defclass Plato
 	(is-a Elaborado)
-	(role concrete))
+	(role abstract)
+	(single-slot tipo
+		(type SYMBOL)
+		(allowed-values TRADICIONAL MODERNA)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot es_exclusivo
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
 
 (defclass Principal
 	(is-a Plato)

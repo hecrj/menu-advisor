@@ -1,4 +1,4 @@
-; Mon Nov 18 18:02:21 CET 2013
+; Thu Nov 21 19:57:08 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -96,12 +96,14 @@
 ([comida_Class35] of  Postre
 
 	(compuesto_por [comida_Class41])
+	(es_exclusivo FALSE)
 	(nombre "Helado de chocolate")
 	(precio 3.0))
 
 ([comida_Class36] of  Postre
 
 	(compuesto_por [comida_Class42])
+	(es_exclusivo FALSE)
 	(nombre "Tajada de Melon")
 	(precio 1.0))
 
@@ -111,6 +113,7 @@
 		[comida_Class43]
 		[comida_Class41]
 		[comida_Class16])
+	(es_exclusivo FALSE)
 	(nombre "Turrón de chocolate con nueces")
 	(precio 2.0))
 
@@ -119,12 +122,15 @@
 	(compuesto_por
 		[comida_Class17]
 		[comida_Class43])
+	(es_exclusivo FALSE)
 	(nombre "Crema Catalana")
-	(precio 8.0))
+	(precio 8.0)
+	(tipo TRADICIONAL))
 
 ([comida_Class39] of  Postre
 
 	(compuesto_por [comida_Class41])
+	(es_exclusivo FALSE)
 	(nombre "Chocolate caliente")
 	(precio 2.0))
 
@@ -153,28 +159,35 @@
 	(compuesto_por
 		[comida_Class20]
 		[comida_Class51])
+	(es_exclusivo FALSE)
 	(nombre "Macarrones a la boloñesa")
-	(precio 4.0))
+	(precio 4.0)
+	(tipo TRADICIONAL))
 
 ([comida_Class45] of  Principal
 
 	(compuesto_por
 		[comida_Class25]
 		[comida_Class52])
+	(es_exclusivo FALSE)
 	(nombre "Estofado")
-	(precio 3.0))
+	(precio 3.0)
+	(tipo TRADICIONAL))
 
 ([comida_Class46] of  Principal
 
 	(compuesto_por
 		[comida_Class53]
 		[comida_Class54])
+	(es_exclusivo FALSE)
 	(nombre "Sopa de galets")
-	(precio 2.0))
+	(precio 2.0)
+	(tipo TRADICIONAL))
 
 ([comida_Class47] of  Principal
 
 	(compuesto_por [comida_Class27])
+	(es_exclusivo FALSE)
 	(nombre "Atún a la plancha")
 	(precio 4.0))
 
@@ -184,6 +197,7 @@
 		[comida_Class28]
 		[comida_Class55]
 		[comida_Class56])
+	(es_exclusivo TRUE)
 	(nombre "Bacalao al pil-pil")
 	(precio 20.0))
 
@@ -196,6 +210,7 @@
 		[comida_Class57]
 		[comida_Class58]
 		[comida_Class21])
+	(es_exclusivo FALSE)
 	(nombre "Ensalada verde")
 	(precio 2.0))
 
