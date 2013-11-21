@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+(cd src && clips -f comida.clp)
