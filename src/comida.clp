@@ -8,40 +8,26 @@
 ; Cargar instancias
 (load-instances "protege/comida.pins")
 
-; Exportación del MAIN
-(defmodule MAIN (export ?ALL))
+; Clases
+(load "clases.clp")
 
 ; Templates
-(deftemplate Preferencias
-	(slot tipo (type SYMBOL) (default ninguno))
-)
+(load templates.clp)
 
-(deftemplate Cliente
-	(slot nombre (type STRING))
-)
+; Modulo principal
+(defmodule MAIN (export ?ALL))
 
-; Reglas
-(defrule test "Regla de prueba"
-	(not (Cliente))
-	=>
-	(assert (Cliente (nombre "Bob")))
-	(assert (Preferencias (tipo moderna)))
-)
+; Modulo de obtencion de los datos del usuario
+(load "modulos/datos-usuario.clp")
 
-(defrule test_pref "Test preferencias"
-	(Preferencias (tipo ?t))
-	=>
-	(printout t "Tipo de cocina preferida: " ?t crlf)
-)
+; Modulo de clasificación heurística
+(load "modulos/clasificacion.clp")
 
-(defrule list_ingredients "Listar ingredientes"
-	(Cliente)
-	(object (is-a Ingrediente) (nombre ?n))
-	=>
-	(printout t ?n crlf)
-)
+;;; Modulo de generacion de soluciones
+(load "modulos/generacion.clp")
 
-; Run and exit, by default
+;;; Modulo de presentacion de resultados
+(load "modulos/presentacion.clp")
+
+; Run
 (run)
-(facts)
-(exit)
