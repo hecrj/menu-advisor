@@ -1,5 +1,5 @@
 (deftemplate Preferencias
-	(slot tipo (type SYMBOL) (default ninguno))
+	(multislot tipos (type SYMBOL) (default desconocido))
 )
 
 (deftemplate Cliente

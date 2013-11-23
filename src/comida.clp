@@ -8,17 +8,20 @@
 ; Cargar instancias
 (load-instances "protege/comida.pins")
 
+; Modulo principal
+(defmodule MAIN (export ?ALL))
+
 ; Clases
 (load "clases.clp")
 
 ; Templates
-(load templates.clp)
+(load "templates.clp")
 
-; Modulo principal
-(defmodule MAIN (export ?ALL))
+; Funciones
+(load "funciones.clp")
 
-; Modulo de obtencion de los datos del usuario
-(load "modulos/datos-usuario.clp")
+; Modulo de obtencion de los datos del cliente
+(load "modulos/datos-cliente.clp")
 
 ; Modulo de clasificación heurística
 (load "modulos/clasificacion.clp")
@@ -28,6 +31,7 @@
 
 ; Modulo de presentacion de resultados
 (load "modulos/presentacion.clp")
+
 
 ; Regla principal
 (defrule MAIN::initialRule "Regla principial"
@@ -40,7 +44,7 @@
 	(printout t "¿Quiere un menú de ensueño?" crlf)
 	(printout t "¡Responda las siguientes preguntas y HIN FOOD le recomendará el mejor menú!" crlf)
 	(printout t crlf)
-	(focus datos-usuario)
+	(focus datos-cliente)
 )
 
 ; Ejecutar
