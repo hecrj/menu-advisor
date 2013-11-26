@@ -14,6 +14,7 @@
 )
 
 ; Menu representa la solucion final al problema
+; Menu es una clase, porque el problema requiere generar tres menús
 (defclass Menu
 	(is-a USER)
 	(role concrete)

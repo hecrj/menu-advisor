@@ -20,31 +20,32 @@
 ; Funciones
 (load "funciones.clp")
 
-; Modulo de obtencion de los datos del cliente
-(load "modulos/datos-cliente.clp")
+; Módulo de abstracción de datos
+(load "modulos/abstraccion.clp")
 
-; Modulo de clasificación heurística
-(load "modulos/clasificacion.clp")
+; Módulo de filtración
+(load "modulos/refinamiento/filtracion.clp")
 
-; Modulo de generacion de soluciones
-(load "modulos/generacion.clp")
+; Modulo de puntuación
+(load "modulos/refinamiento/puntuacion.clp")
+
+; Módulo de selección
+(load "modulos/refinamiento/seleccion.clp")
 
 ; Modulo de presentacion de resultados
 (load "modulos/presentacion.clp")
 
-
 ; Regla principal
 (defrule MAIN::initialRule "Regla principial"
-	(declare (salience 10))
 	=>
 	(printout t "====================================================================" crlf)
-  	(printout t "=            Sistema de recomendacion de menús HIN FOOD            =" crlf)
+  	(printout t "=            Sistema de recomendacion de menús Rico Rico           =" crlf)
 	(printout t "====================================================================" crlf)
   	(printout t crlf)  	
 	(printout t "¿Quiere un menú de ensueño?" crlf)
-	(printout t "¡Responda las siguientes preguntas y HIN FOOD le recomendará el mejor menú!" crlf)
+	(printout t "¡Responda las siguientes preguntas y Rico Rico le recomendará el mejor menú!" crlf)
 	(printout t crlf)
-	(focus datos-cliente)
+	(focus abstraccion) ; Empezar abstrayendo datos
 )
 
 ; Ejecutar

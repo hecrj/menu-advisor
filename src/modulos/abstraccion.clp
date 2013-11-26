@@ -1,4 +1,4 @@
-(defmodule datos-cliente
+(defmodule abstraccion
 	(import MAIN ?ALL)
 	(export ?ALL)
 )
