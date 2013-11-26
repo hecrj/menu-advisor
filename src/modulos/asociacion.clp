@@ -10,8 +10,9 @@
 )
 
 (defrule abstraer-tipo "Abstrae el tipo de menú"
-	?menu <- (MenuAbstracto (tipo desconocido))
-	(Preferencias (tipo ?tipo))
+	?menu <- (MenuAbstracto (tipos desconocido))
+	(Preferencias (tipos $?tipos))
 	=>
-	(modify ?menu (tipo ?tipo))
+	(modify ?menu (tipos $?tipos))
+	(focus filtracion)
 )

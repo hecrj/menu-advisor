@@ -98,7 +98,8 @@
 	(compuesto_por [comida_Class41])
 	(es_exclusivo FALSE)
 	(nombre "Helado de chocolate")
-	(precio 3.0))
+	(precio 3.0)
+	(tipo MODERNO))
 
 ([comida_Class36] of  Postre
 

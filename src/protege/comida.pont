@@ -76,8 +76,9 @@
 	(role abstract)
 	(single-slot tipo
 		(type SYMBOL)
-		(allowed-values TRADICIONAL MODERNA)
-;+		(cardinality 0 1)
+		(allowed-values INDEFINIDO TRADICIONAL MODERNA)
+		(default INDEFINIDO)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot es_exclusivo
 		(type SYMBOL)

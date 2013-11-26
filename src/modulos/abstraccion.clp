@@ -13,8 +13,8 @@
 (defrule pregunta-tipo "Preguntar el tipo de comida preferida"
 	?prefs <- (Preferencias (tipos desconocido))
 	=>
-	(bind ?tipos (create$ "Tradicional" "Moderno"))
+	(bind ?tipos (create$ Tradicional Moderno))
 	(bind ?respuesta (pregunta-multi "¿Qué tipo(s) de menú prefiere?" ?tipos))
 	(modify ?prefs (tipos ?respuesta))
-	(focus presentacion)
+	(focus asociacion)
 )

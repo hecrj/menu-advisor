@@ -93,7 +93,7 @@
         (if (and (integerp ?var) (and (>= ?var 1) (<= ?var (length$ ?valores-posibles))))
             then 
                 (if (not (member$ ?var ?lista))
-                    then (bind ?lista (insert$ ?lista (+ (length$ ?lista) 1) (nth ?var $?valores-posibles)))
+                    then (bind ?lista (insert$ ?lista (+ (length$ ?lista) 1) (upcase (nth ?var $?valores-posibles))))
                 )
         ) 
     )
