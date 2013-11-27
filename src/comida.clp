@@ -23,9 +23,6 @@
 ; Módulo de abstracción de datos
 (load "modulos/abstraccion.clp")
 
-; Módulo de asociación
-(load "modulos/asociacion.clp")
-
 ; Módulo de filtración
 (load "modulos/refinamiento/filtracion.clp")
 

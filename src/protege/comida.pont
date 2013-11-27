@@ -1,7 +1,7 @@
-; Thu Nov 21 20:59:42 CET 2013
+; Wed Nov 27 11:13:45 CET 2013
 ; 
-;+ (version "3.5")
-;+ (build "Build 663")
+;+ (version "3.4.8")
+;+ (build "Build 629")
 
 
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
@@ -26,7 +26,8 @@
 		(create-accessor read-write))
 	(single-slot tipo
 		(type SYMBOL)
-		(allowed-values TRADICIONAL MODERNA)
+		(allowed-values TRADICIONAL MODERNO INDEFINIDO)
+		(default INDEFINIDO)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot precio
@@ -55,16 +56,16 @@
 (defclass Elaborado
 	(is-a USER)
 	(role abstract)
-	(multislot compuesto_por
-		(type INSTANCE)
-;+		(allowed-classes Ingrediente)
-		(cardinality 1 ?VARIABLE)
-		(create-accessor read-write))
 	(single-slot precio
 		(type FLOAT)
 		(range 0.0 10000.0)
 		(default 0.0)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot compuesto_por
+		(type INSTANCE)
+;+		(allowed-classes Ingrediente)
+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot nombre
 		(type STRING)
@@ -76,7 +77,7 @@
 	(role abstract)
 	(single-slot tipo
 		(type SYMBOL)
-		(allowed-values INDEFINIDO TRADICIONAL MODERNA)
+		(allowed-values INDEFINIDO TRADICIONAL MODERNO)
 		(default INDEFINIDO)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))

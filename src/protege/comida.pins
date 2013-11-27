@@ -1,7 +1,23 @@
-; Thu Nov 21 20:59:42 CET 2013
+; Wed Nov 27 11:13:45 CET 2013
 ; 
-;+ (version "3.5")
-;+ (build "Build 663")
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+([comida_Class0] of  Principal
+
+	(compuesto_por [comida_Class60])
+	(es_exclusivo FALSE)
+	(nombre "Ejemplo plato indefinido")
+	(precio 4.0)
+	(tipo INDEFINIDO))
+
+([comida_Class1] of  Postre
+
+	(compuesto_por [comida_Class42])
+	(es_exclusivo FALSE)
+	(nombre "Ejemplo postre indefinido")
+	(precio 0.0)
+	(tipo INDEFINIDO))
 
 ([comida_Class14] of  Ingrediente
 
@@ -29,6 +45,14 @@
 ([comida_Class19] of  Ingrediente
 
 	(nombre "Espaguetis"))
+
+([comida_Class2] of  Principal
+
+	(compuesto_por [comida_Class54])
+	(es_exclusivo FALSE)
+	(nombre "Ejemplo plato moderno")
+	(precio 200.0)
+	(tipo MODERNO))
 
 ([comida_Class20] of  Ingrediente
 
@@ -75,7 +99,18 @@
 
 ([comida_Class29] of  Ingrediente
 
+	(forma_parte_de [comida_Class3])
 	(nombre "Cacao"))
+
+([comida_Class3] of  Principal
+
+	(compuesto_por
+		[comida_Class58]
+		[comida_Class29])
+	(es_exclusivo FALSE)
+	(nombre "Ejemplo plato tradicional")
+	(precio 2.0)
+	(tipo TRADICIONAL))
 
 ([comida_Class30] of  Ingrediente
 
@@ -99,14 +134,15 @@
 	(es_exclusivo FALSE)
 	(nombre "Helado de chocolate")
 	(precio 3.0)
-	(tipo MODERNO))
+	(tipo INDEFINIDO))
 
 ([comida_Class36] of  Postre
 
 	(compuesto_por [comida_Class42])
 	(es_exclusivo FALSE)
 	(nombre "Tajada de Melon")
-	(precio 1.0))
+	(precio 1.0)
+	(tipo INDEFINIDO))
 
 ([comida_Class37] of  Postre
 
@@ -116,7 +152,8 @@
 		[comida_Class16])
 	(es_exclusivo FALSE)
 	(nombre "Turrón de chocolate con nueces")
-	(precio 2.0))
+	(precio 2.0)
+	(tipo TRADICIONAL))
 
 ([comida_Class38] of  Postre
 
@@ -133,7 +170,8 @@
 	(compuesto_por [comida_Class41])
 	(es_exclusivo FALSE)
 	(nombre "Chocolate caliente")
-	(precio 2.0))
+	(precio 2.0)
+	(tipo INDEFINIDO))
 
 ([comida_Class41] of  Ingrediente
 
@@ -145,7 +183,9 @@
 
 ([comida_Class42] of  Ingrediente
 
-	(forma_parte_de [comida_Class36])
+	(forma_parte_de
+		[comida_Class36]
+		[comida_Class1])
 	(nombre "Melón"))
 
 ([comida_Class43] of  Ingrediente
@@ -190,7 +230,8 @@
 	(compuesto_por [comida_Class27])
 	(es_exclusivo FALSE)
 	(nombre "Atún a la plancha")
-	(precio 4.0))
+	(precio 4.0)
+	(tipo INDEFINIDO))
 
 ([comida_Class48] of  Principal
 
@@ -200,7 +241,8 @@
 		[comida_Class56])
 	(es_exclusivo TRUE)
 	(nombre "Bacalao al pil-pil")
-	(precio 20.0))
+	(precio 20.0)
+	(tipo INDEFINIDO))
 
 ([comida_Class49] of  Principal
 
@@ -213,7 +255,8 @@
 		[comida_Class21])
 	(es_exclusivo FALSE)
 	(nombre "Ensalada verde")
-	(precio 2.0))
+	(precio 2.0)
+	(tipo INDEFINIDO))
 
 ([comida_Class50] of  Ingrediente
 
@@ -236,7 +279,9 @@
 
 ([comida_Class54] of  Ingrediente
 
-	(forma_parte_de [comida_Class46])
+	(forma_parte_de
+		[comida_Class46]
+		[comida_Class2])
 	(nombre "Caldo de pollo"))
 
 ([comida_Class55] of  Ingrediente
@@ -258,7 +303,9 @@
 
 ([comida_Class58] of  Ingrediente
 
-	(forma_parte_de [comida_Class49])
+	(forma_parte_de
+		[comida_Class49]
+		[comida_Class3])
 	(nombre "Aceituna"))
 
 ([comida_Class59] of  Bebida
@@ -269,7 +316,9 @@
 
 ([comida_Class60] of  Ingrediente
 
-	(forma_parte_de [comida_Class59])
+	(forma_parte_de
+		[comida_Class59]
+		[comida_Class0])
 	(nombre "Agua"))
 
 ([comida_Class61] of  Alcoholica
