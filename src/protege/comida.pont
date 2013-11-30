@@ -1,4 +1,4 @@
-; Sat Nov 30 20:02:47 CET 2013
+; Sat Nov 30 21:03:36 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -24,11 +24,10 @@
 ;+		(allowed-classes Elaborado)
 ;+		(inverse-slot compuesto_por)
 		(create-accessor read-write))
-	(single-slot tipo
+	(multislot tipo
 		(type SYMBOL)
-		(allowed-values TRADICIONAL MODERNO INDEFINIDO)
-		(default INDEFINIDO)
-;+		(cardinality 0 1)
+		(allowed-values PRIMERO SEGUNDO POSTRE)
+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot precio
 		(type FLOAT)
@@ -105,16 +104,16 @@
 (defclass Elaborado
 	(is-a USER)
 	(role abstract)
+	(multislot compuesto_por
+		(type INSTANCE)
+;+		(allowed-classes Ingrediente)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
 	(single-slot precio
 		(type FLOAT)
 		(range 0.0 10000.0)
 		(default 0.0)
 ;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(multislot compuesto_por
-		(type INSTANCE)
-;+		(allowed-classes Ingrediente)
-		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot nombre
 		(type STRING)
@@ -124,11 +123,10 @@
 (defclass Plato
 	(is-a Elaborado)
 	(role abstract)
-	(single-slot tipo
+	(multislot tipo
 		(type SYMBOL)
-		(allowed-values INDEFINIDO TRADICIONAL MODERNO)
-		(default INDEFINIDO)
-;+		(cardinality 1 1)
+		(allowed-values PRIMERO SEGUNDO POSTRE)
+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot es_exclusivo
 		(type SYMBOL)
@@ -142,11 +140,15 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Principal
+(defclass Moderno
 	(is-a Plato)
 	(role concrete))
 
-(defclass Postre
+(defclass Tradicional
+	(is-a Plato)
+	(role concrete))
+
+(defclass Generico
 	(is-a Plato)
 	(role concrete))
 
