@@ -65,6 +65,16 @@
 	?respuesta
 )
 
+(deffunction MAIN::pregunta-numerica-positiva (?pregunta)
+  (format t "%s " ?pregunta)
+  (bind ?respuesta (read))
+  (while (< ?respuesta 0) do
+         (format t "%s " ?pregunta)
+         (bind ?respuesta (read))
+  )
+  ?respuesta
+)
+
 ;;; Funcion para hacer pregunta con indice de respuestas posibles
 (deffunction MAIN::pregunta-indice (?pregunta $?valores-posibles)
     (bind ?linea (format nil "%s" ?pregunta))
