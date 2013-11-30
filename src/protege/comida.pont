@@ -1,4 +1,4 @@
-; Sat Nov 30 15:46:14 CET 2013
+; Sat Nov 30 20:02:47 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -42,6 +42,11 @@
 		(create-accessor read-write))
 	(single-slot nombre
 		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot temperatura
+		(type SYMBOL)
+		(allowed-values CALIENTE FRIO)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
@@ -100,16 +105,16 @@
 (defclass Elaborado
 	(is-a USER)
 	(role abstract)
-	(multislot compuesto_por
-		(type INSTANCE)
-;+		(allowed-classes Ingrediente)
-		(cardinality 1 ?VARIABLE)
-		(create-accessor read-write))
 	(single-slot precio
 		(type FLOAT)
 		(range 0.0 10000.0)
 		(default 0.0)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot compuesto_por
+		(type INSTANCE)
+;+		(allowed-classes Ingrediente)
+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot nombre
 		(type STRING)
@@ -129,6 +134,11 @@
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 		(default FALSE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot temperatura
+		(type SYMBOL)
+		(allowed-values CALIENTE FRIO)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 

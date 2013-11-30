@@ -1,4 +1,4 @@
-; Sat Nov 30 15:46:14 CET 2013
+; Sat Nov 30 20:02:47 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -9,6 +9,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo plato indefinido")
 	(precio 4.0)
+	(temperatura CALIENTE)
 	(tipo INDEFINIDO))
 
 ([comida_Class1] of  Postre
@@ -17,6 +18,25 @@
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo postre indefinido")
 	(precio 0.0)
+	(temperatura CALIENTE)
+	(tipo INDEFINIDO))
+
+([comida_Class10001] of  Principal
+
+	(compuesto_por [comida_Class55])
+	(es_exclusivo FALSE)
+	(nombre "Ejemplo Plato Caliente")
+	(precio 10.0)
+	(temperatura CALIENTE)
+	(tipo INDEFINIDO))
+
+([comida_Class10002] of  Principal
+
+	(compuesto_por [comida_Class55])
+	(es_exclusivo FALSE)
+	(nombre "Ejemplo Plato Frio")
+	(precio 10.0)
+	(temperatura FRIO)
 	(tipo INDEFINIDO))
 
 ([comida_Class14] of  Ingrediente
@@ -55,6 +75,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo plato moderno")
 	(precio 200.0)
+	(temperatura CALIENTE)
 	(tipo MODERNO))
 
 ([comida_Class20] of  Ingrediente
@@ -117,6 +138,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo plato tradicional")
 	(precio 2.0)
+	(temperatura FRIO)
 	(tipo TRADICIONAL))
 
 ([comida_Class30] of  Ingrediente
@@ -144,6 +166,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Helado de chocolate")
 	(precio 3.0)
+	(temperatura FRIO)
 	(tipo INDEFINIDO))
 
 ([comida_Class36] of  Postre
@@ -152,6 +175,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Tajada de Melon")
 	(precio 1.0)
+	(temperatura FRIO)
 	(tipo INDEFINIDO))
 
 ([comida_Class37] of  Postre
@@ -163,6 +187,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Turrón de chocolate con nueces")
 	(precio 2.0)
+	(temperatura FRIO)
 	(tipo TRADICIONAL))
 
 ([comida_Class38] of  Postre
@@ -173,6 +198,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Crema Catalana")
 	(precio 8.0)
+	(temperatura CALIENTE)
 	(tipo TRADICIONAL))
 
 ([comida_Class39] of  Postre
@@ -181,6 +207,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Chocolate caliente")
 	(precio 2.0)
+	(temperatura CALIENTE)
 	(tipo INDEFINIDO))
 
 ([comida_Class41] of  Ingrediente
@@ -214,6 +241,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Macarrones a la boloñesa")
 	(precio 4.0)
+	(temperatura CALIENTE)
 	(tipo TRADICIONAL))
 
 ([comida_Class45] of  Principal
@@ -224,6 +252,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Estofado")
 	(precio 3.0)
+	(temperatura CALIENTE)
 	(tipo TRADICIONAL))
 
 ([comida_Class46] of  Principal
@@ -234,6 +263,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Sopa de galets")
 	(precio 2.0)
+	(temperatura CALIENTE)
 	(tipo TRADICIONAL))
 
 ([comida_Class47] of  Principal
@@ -242,6 +272,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Atún a la plancha")
 	(precio 4.0)
+	(temperatura CALIENTE)
 	(tipo INDEFINIDO))
 
 ([comida_Class48] of  Principal
@@ -253,6 +284,7 @@
 	(es_exclusivo TRUE)
 	(nombre "Bacalao al pil-pil")
 	(precio 20.0)
+	(temperatura CALIENTE)
 	(tipo INDEFINIDO))
 
 ([comida_Class49] of  Principal
@@ -267,6 +299,7 @@
 	(es_exclusivo FALSE)
 	(nombre "Ensalada verde")
 	(precio 2.0)
+	(temperatura FRIO)
 	(tipo INDEFINIDO))
 
 ([comida_Class50] of  Ingrediente
@@ -302,7 +335,9 @@
 
 	(forma_parte_de
 		[comida_Class48]
-		[comida_Class49])
+		[comida_Class49]
+		[comida_Class10001]
+		[comida_Class10002])
 	(grupo-u-origen VEGETALES)
 	(nombre "Aceite"))
 
