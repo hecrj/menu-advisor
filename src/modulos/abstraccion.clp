@@ -36,6 +36,13 @@
   (modify ?prefs (alcohol (pregunta-si-no "¿Bebe alcohol?")))
 )
 
+(defrule pregunta-temperatura "Preguntar la temperatura de comida preferida"
+  ?prefs <- (Preferencias (temperatura desconocido))
+  =>
+  (bind ?tipos (create$ Caliente Frio))
+  (bind ?respuesta (pregunta-indice "¿Prefiere comida caliente of fria?" ?tipos))
+  (modify ?prefs (temperatura ?respuesta))
+)
 
 
 (defrule ir-a-filtrar "Empieza a filtrar resultados"
