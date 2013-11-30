@@ -109,3 +109,8 @@
     )
     ?lista
 )
+
+(deffunction add$ (?element $?list)
+  (bind $?list (insert$ $?list (+ (length$ $?list) 1) ?element))
+  ?list
+)
