@@ -1,43 +1,43 @@
-; Sat Nov 30 20:02:47 CET 2013
+; Sat Nov 30 21:03:36 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
-([comida_Class0] of  Principal
+([comida_Class0] of  Generico
 
 	(compuesto_por [comida_Class60])
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo plato indefinido")
 	(precio 4.0)
 	(temperatura CALIENTE)
-	(tipo INDEFINIDO))
+	(tipo SEGUNDO))
 
-([comida_Class1] of  Postre
+([comida_Class1] of  Generico
 
 	(compuesto_por [comida_Class42])
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo postre indefinido")
 	(precio 0.0)
-	(temperatura CALIENTE)
-	(tipo INDEFINIDO))
+	(temperatura FRIO)
+	(tipo POSTRE))
 
-([comida_Class10001] of  Principal
+([comida_Class10001] of  Generico
 
 	(compuesto_por [comida_Class55])
 	(es_exclusivo FALSE)
-	(nombre "Ejemplo Plato Caliente")
+	(nombre "Ejemplo plato caliente")
 	(precio 10.0)
 	(temperatura CALIENTE)
-	(tipo INDEFINIDO))
+	(tipo PRIMERO))
 
-([comida_Class10002] of  Principal
+([comida_Class10002] of  Generico
 
 	(compuesto_por [comida_Class55])
 	(es_exclusivo FALSE)
-	(nombre "Ejemplo Plato Frio")
+	(nombre "Ejemplo plato frio")
 	(precio 10.0)
 	(temperatura FRIO)
-	(tipo INDEFINIDO))
+	(tipo PRIMERO))
 
 ([comida_Class14] of  Ingrediente
 
@@ -69,14 +69,14 @@
 	(grupo-u-origen CEREALES)
 	(nombre "Espaguetis"))
 
-([comida_Class2] of  Principal
+([comida_Class2] of  Moderno
 
 	(compuesto_por [comida_Class54])
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo plato moderno")
 	(precio 200.0)
 	(temperatura CALIENTE)
-	(tipo MODERNO))
+	(tipo PRIMERO SEGUNDO))
 
 ([comida_Class20] of  Ingrediente
 
@@ -130,7 +130,7 @@
 	(grupo-u-origen CACAO)
 	(nombre "Cacao"))
 
-([comida_Class3] of  Principal
+([comida_Class3] of  Tradicional
 
 	(compuesto_por
 		[comida_Class58]
@@ -139,7 +139,7 @@
 	(nombre "Ejemplo plato tradicional")
 	(precio 2.0)
 	(temperatura FRIO)
-	(tipo TRADICIONAL))
+	(tipo PRIMERO))
 
 ([comida_Class30] of  Ingrediente
 
@@ -160,25 +160,25 @@
 	(grupo-u-origen ANIMAL HUEVO)
 	(nombre "Huevo"))
 
-([comida_Class35] of  Postre
+([comida_Class35] of  Generico
 
 	(compuesto_por [comida_Class41])
 	(es_exclusivo FALSE)
 	(nombre "Helado de chocolate")
 	(precio 3.0)
 	(temperatura FRIO)
-	(tipo INDEFINIDO))
+	(tipo POSTRE))
 
-([comida_Class36] of  Postre
+([comida_Class36] of  Generico
 
 	(compuesto_por [comida_Class42])
 	(es_exclusivo FALSE)
-	(nombre "Tajada de Melon")
+	(nombre "Tajada de melon")
 	(precio 1.0)
 	(temperatura FRIO)
-	(tipo INDEFINIDO))
+	(tipo POSTRE))
 
-([comida_Class37] of  Postre
+([comida_Class37] of  Generico
 
 	(compuesto_por
 		[comida_Class43]
@@ -188,9 +188,9 @@
 	(nombre "Turrón de chocolate con nueces")
 	(precio 2.0)
 	(temperatura FRIO)
-	(tipo TRADICIONAL))
+	(tipo POSTRE))
 
-([comida_Class38] of  Postre
+([comida_Class38] of  Tradicional
 
 	(compuesto_por
 		[comida_Class17]
@@ -199,16 +199,16 @@
 	(nombre "Crema Catalana")
 	(precio 8.0)
 	(temperatura CALIENTE)
-	(tipo TRADICIONAL))
+	(tipo POSTRE))
 
-([comida_Class39] of  Postre
+([comida_Class39] of  Tradicional
 
 	(compuesto_por [comida_Class41])
 	(es_exclusivo FALSE)
 	(nombre "Chocolate caliente")
 	(precio 2.0)
 	(temperatura CALIENTE)
-	(tipo INDEFINIDO))
+	(tipo POSTRE))
 
 ([comida_Class41] of  Ingrediente
 
@@ -233,7 +233,7 @@
 		[comida_Class37])
 	(nombre "Azúcar"))
 
-([comida_Class44] of  Principal
+([comida_Class44] of  Tradicional
 
 	(compuesto_por
 		[comida_Class20]
@@ -242,9 +242,9 @@
 	(nombre "Macarrones a la boloñesa")
 	(precio 4.0)
 	(temperatura CALIENTE)
-	(tipo TRADICIONAL))
+	(tipo PRIMERO))
 
-([comida_Class45] of  Principal
+([comida_Class45] of  Tradicional
 
 	(compuesto_por
 		[comida_Class25]
@@ -253,9 +253,9 @@
 	(nombre "Estofado")
 	(precio 3.0)
 	(temperatura CALIENTE)
-	(tipo TRADICIONAL))
+	(tipo SEGUNDO))
 
-([comida_Class46] of  Principal
+([comida_Class46] of  Tradicional
 
 	(compuesto_por
 		[comida_Class53]
@@ -264,18 +264,18 @@
 	(nombre "Sopa de galets")
 	(precio 2.0)
 	(temperatura CALIENTE)
-	(tipo TRADICIONAL))
+	(tipo PRIMERO))
 
-([comida_Class47] of  Principal
+([comida_Class47] of  Generico
 
 	(compuesto_por [comida_Class27])
 	(es_exclusivo FALSE)
 	(nombre "Atún a la plancha")
 	(precio 4.0)
 	(temperatura CALIENTE)
-	(tipo INDEFINIDO))
+	(tipo SEGUNDO))
 
-([comida_Class48] of  Principal
+([comida_Class48] of  Generico
 
 	(compuesto_por
 		[comida_Class28]
@@ -285,9 +285,9 @@
 	(nombre "Bacalao al pil-pil")
 	(precio 20.0)
 	(temperatura CALIENTE)
-	(tipo INDEFINIDO))
+	(tipo SEGUNDO))
 
-([comida_Class49] of  Principal
+([comida_Class49] of  Generico
 
 	(compuesto_por
 		[comida_Class27]
@@ -300,7 +300,7 @@
 	(nombre "Ensalada verde")
 	(precio 2.0)
 	(temperatura FRIO)
-	(tipo INDEFINIDO))
+	(tipo PRIMERO))
 
 ([comida_Class50] of  Ingrediente
 

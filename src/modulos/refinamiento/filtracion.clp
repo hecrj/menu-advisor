@@ -8,10 +8,7 @@
 	=>
 	(bind $?platos (find-all-instances ((?inst Plato)) TRUE))
 	(progn$ (?plato $?platos)
-		(bind ?tipo_plato (send ?plato get-tipo))
-		(if (or (eq (length ?tipos) 0) (or (member$ ?tipo_plato ?tipos) (eq ?tipo_plato INDEFINIDO))) then
-			(make-instance (gensym) of Recomendacion (plato ?plato))
-		)
+		(make-instance (gensym) of Recomendacion (plato ?plato))
 	)
 )
 
