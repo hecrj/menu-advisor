@@ -1,7 +1,7 @@
-; Wed Nov 27 11:13:45 CET 2013
+; Sat Nov 30 15:46:14 CET 2013
 ; 
-;+ (version "3.4.8")
-;+ (build "Build 629")
+;+ (version "3.5")
+;+ (build "Build 663")
 
 
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
@@ -36,6 +36,10 @@
 		(default 0.0)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
+	(multislot grupo-u-origen
+		(type SYMBOL)
+		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
+		(create-accessor read-write))
 	(single-slot nombre
 		(type STRING)
 ;+		(cardinality 1 1)
@@ -48,24 +52,64 @@
 		(type INSTANCE)
 ;+		(allowed-classes Elaborado)
 		(create-accessor read-write))
+	(multislot grupo-u-origen
+		(type SYMBOL)
+		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
+		(create-accessor read-write))
 	(single-slot nombre
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
+(defclass OrigenAnimal
+	(is-a Ingrediente)
+	(role concrete)
+	(multislot grupo-u-origen
+		(type SYMBOL)
+		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
+		(default ANIMAL)
+		(create-accessor read-write)))
+
+(defclass Mamifero
+	(is-a OrigenAnimal)
+	(role concrete)
+	(multislot grupo-u-origen
+		(type SYMBOL)
+		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
+		(default ANIMAL CARNE)
+		(create-accessor read-write)))
+
+(defclass Pescado
+	(is-a OrigenAnimal)
+	(role concrete)
+	(multislot grupo-u-origen
+		(type SYMBOL)
+		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
+		(default ANIMAL PESCADO)
+		(create-accessor read-write)))
+
+(defclass Ave
+	(is-a OrigenAnimal)
+	(role concrete)
+	(multislot grupo-u-origen
+		(type SYMBOL)
+		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
+		(default ANIMAL CARNE)
+		(create-accessor read-write)))
+
 (defclass Elaborado
 	(is-a USER)
 	(role abstract)
+	(multislot compuesto_por
+		(type INSTANCE)
+;+		(allowed-classes Ingrediente)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
 	(single-slot precio
 		(type FLOAT)
 		(range 0.0 10000.0)
 		(default 0.0)
 ;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(multislot compuesto_por
-		(type INSTANCE)
-;+		(allowed-classes Ingrediente)
-		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot nombre
 		(type STRING)

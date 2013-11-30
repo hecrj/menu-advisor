@@ -1,7 +1,7 @@
-; Wed Nov 27 11:13:45 CET 2013
+; Sat Nov 30 15:46:14 CET 2013
 ; 
-;+ (version "3.4.8")
-;+ (build "Build 629")
+;+ (version "3.5")
+;+ (build "Build 663")
 
 ([comida_Class0] of  Principal
 
@@ -26,6 +26,7 @@
 
 ([comida_Class15] of  Ingrediente
 
+	(grupo-u-origen LACTEOS ANIMAL)
 	(nombre "Queso"))
 
 ([comida_Class16] of  Ingrediente
@@ -40,10 +41,12 @@
 
 ([comida_Class18] of  Ingrediente
 
+	(grupo-u-origen CEREALES)
 	(nombre "Avena"))
 
 ([comida_Class19] of  Ingrediente
 
+	(grupo-u-origen CEREALES)
 	(nombre "Espaguetis"))
 
 ([comida_Class2] of  Principal
@@ -81,25 +84,29 @@
 	(forma_parte_de [comida_Class45])
 	(nombre "Patatas"))
 
-([comida_Class26] of  Ingrediente
+([comida_Class26] of  Mamifero
 
+	(grupo-u-origen CARNE ANIMAL)
 	(nombre "Bistec de vacuno"))
 
-([comida_Class27] of  Ingrediente
+([comida_Class27] of  Pescado
 
 	(forma_parte_de
 		[comida_Class47]
 		[comida_Class49])
+	(grupo-u-origen PESCADO ANIMAL)
 	(nombre "Atún"))
 
 ([comida_Class28] of  Ingrediente
 
 	(forma_parte_de [comida_Class48])
+	(grupo-u-origen PESCADO ANIMAL)
 	(nombre "Bacalao"))
 
 ([comida_Class29] of  Ingrediente
 
 	(forma_parte_de [comida_Class3])
+	(grupo-u-origen CACAO)
 	(nombre "Cacao"))
 
 ([comida_Class3] of  Principal
@@ -114,10 +121,12 @@
 
 ([comida_Class30] of  Ingrediente
 
+	(grupo-u-origen CEREALES)
 	(nombre "Trigo"))
 
-([comida_Class32] of  Ingrediente
+([comida_Class32] of  Mamifero
 
+	(grupo-u-origen CARNE ANIMAL)
 	(nombre "Fuet"))
 
 ([comida_Class33] of  Ingrediente
@@ -126,6 +135,7 @@
 
 ([comida_Class34] of  Ingrediente
 
+	(grupo-u-origen ANIMAL HUEVO)
 	(nombre "Huevo"))
 
 ([comida_Class35] of  Postre
@@ -179,6 +189,7 @@
 		[comida_Class35]
 		[comida_Class39]
 		[comida_Class37])
+	(grupo-u-origen CACAO)
 	(nombre "Chocolate"))
 
 ([comida_Class42] of  Ingrediente
@@ -260,6 +271,7 @@
 
 ([comida_Class50] of  Ingrediente
 
+	(grupo-u-origen CARNE ANIMAL)
 	(nombre "Carne picada"))
 
 ([comida_Class51] of  Ingrediente
@@ -275,6 +287,7 @@
 ([comida_Class53] of  Ingrediente
 
 	(forma_parte_de [comida_Class46])
+	(grupo-u-origen CEREALES)
 	(nombre "Galets"))
 
 ([comida_Class54] of  Ingrediente
@@ -282,6 +295,7 @@
 	(forma_parte_de
 		[comida_Class46]
 		[comida_Class2])
+	(grupo-u-origen CARNE)
 	(nombre "Caldo de pollo"))
 
 ([comida_Class55] of  Ingrediente
@@ -289,11 +303,13 @@
 	(forma_parte_de
 		[comida_Class48]
 		[comida_Class49])
+	(grupo-u-origen VEGETALES)
 	(nombre "Aceite"))
 
 ([comida_Class56] of  Ingrediente
 
 	(forma_parte_de [comida_Class48])
+	(grupo-u-origen CEREALES)
 	(nombre "Harina blanca"))
 
 ([comida_Class57] of  Ingrediente
@@ -306,6 +322,7 @@
 	(forma_parte_de
 		[comida_Class49]
 		[comida_Class3])
+	(grupo-u-origen VEGETALES)
 	(nombre "Aceituna"))
 
 ([comida_Class59] of  Bebida

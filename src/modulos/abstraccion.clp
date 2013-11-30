@@ -30,11 +30,13 @@
   (modify ?prefs (tipos ?respuesta))
 )
 
-(defrule pregunta-alcohol "Preguntar si el usuario bebe alcohol"
+(defrule pregunta-alcohol "Preguntar si el cliente bebe alcohol"
   ?prefs <- (Preferencias (alcohol desconocido))
   =>
   (modify ?prefs (alcohol (pregunta-si-no "¿Bebe alcohol?")))
 )
+
+
 
 (defrule ir-a-filtrar "Empieza a filtrar resultados"
   (declare (salience -10000))
