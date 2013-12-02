@@ -26,7 +26,6 @@
 
 (defrule ir-a-seleccionar "Empieza a seleccionar resultados"
   (declare (salience -10000))
-  (Cliente)
   (Preferencias)
   =>
   (focus seleccion)

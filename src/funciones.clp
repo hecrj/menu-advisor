@@ -84,7 +84,7 @@
             (printout t ?linea crlf)
     )
     (bind ?respuesta (pregunta-numerica "Escoge una opción:" 1 (length$ ?valores-posibles)))
-	?respuesta
+    (nth ?respuesta $?valores-posibles)
 )
 
 ;;; Funcion para hacer una pregunta multi-respuesta con indices

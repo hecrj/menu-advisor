@@ -37,7 +37,6 @@
 
 (defrule ir-a-puntuar "Empieza a puntuar resultados"
   (declare (salience -10000))
-  (Cliente)
   (Preferencias)
   =>
   (focus puntuacion)
