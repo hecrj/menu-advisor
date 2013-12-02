@@ -22,11 +22,18 @@
   (assert (Preferencias (alcohol ?alcohol)))
 )
 
-(defrule pregunta-tipo "Preguntar el tipo de comida preferida"
-  ?prefs <- (Preferencias (tipos desconocido))
+(defrule pregunta-tipos-menu "Preguntar los tipos de cocina preferidas para el menú"
+  ?prefs <- (Preferencias (tipos-menu desconocido))
   =>
-  (bind ?respuesta (pregunta-multi "¿Qué tipo(s) de menú prefiere?" (class-subclasses Plato)))
-  (modify ?prefs (tipos ?respuesta))
+  (bind $?respuesta (pregunta-multi "¿Qué tipo(s) de menú prefiere?" (class-subclasses Plato)))
+  (modify ?prefs (tipos-menu $?respuesta))
+)
+
+(defrule pregunta-tipos-comensal "Preguntar los tipos de cliente del menú"
+  ?prefs <- (Preferencias (tipos-comensal desconocido))
+  =>
+  (bind $?respuesta (seleccionar-instancias TipoComensal nombre "¿Qué tipo(s) de comensales tendrá el menú?"))
+  (modify ?prefs (tipos-comensal $?respuesta))
 )
 
 (defrule pregunta-alcohol "Preguntar si el cliente bebe alcohol"

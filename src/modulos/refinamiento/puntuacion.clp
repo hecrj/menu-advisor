@@ -4,7 +4,7 @@
 )
 
 (defrule puntuar-tipos "Puntúa una recomendación en función del tipo de plato"
-	(Preferencias (tipos $?tipos_menu))
+	(Preferencias (tipos-menu $?tipos_menu))
 	?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $?just))
 	(not (tipo-puntuado ?rec))
 	=>

@@ -1,4 +1,4 @@
-; Sat Nov 30 21:03:36 CET 2013
+; Mon Dec 02 11:50:12 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -9,9 +9,14 @@
 	(role abstract)
 	(multislot compuesto_por
 		(type INSTANCE)
-;+		(allowed-classes Ingrediente)
+;+		(allowed-classes)
 		(cardinality 1 ?VARIABLE)
 ;+		(inverse-slot forma_parte_de)
+		(create-accessor read-write))
+	(multislot platos
+		(type INSTANCE)
+;+		(allowed-classes Plato)
+;+		(inverse-slot problemas)
 		(create-accessor read-write))
 	(single-slot es_exclusivo
 		(type SYMBOL)
@@ -24,6 +29,12 @@
 ;+		(allowed-classes Elaborado)
 ;+		(inverse-slot compuesto_por)
 		(create-accessor read-write))
+	(multislot problemas
+		(type INSTANCE)
+;+		(allowed-classes IngredienteProblematico)
+		(cardinality 1 ?VARIABLE)
+;+		(inverse-slot platos)
+		(create-accessor read-write))
 	(multislot tipo
 		(type SYMBOL)
 		(allowed-values PRIMERO SEGUNDO POSTRE)
@@ -34,6 +45,11 @@
 		(range 0.0 10000.0)
 		(default 0.0)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot conflictos
+		(type INSTANCE)
+;+		(allowed-classes IngredienteProblematico)
+		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(multislot grupo-u-origen
 		(type SYMBOL)
@@ -49,66 +65,9 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Ingrediente
-	(is-a USER)
-	(role concrete)
-	(multislot forma_parte_de
-		(type INSTANCE)
-;+		(allowed-classes Elaborado)
-		(create-accessor read-write))
-	(multislot grupo-u-origen
-		(type SYMBOL)
-		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
-		(create-accessor read-write))
-	(single-slot nombre
-		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write)))
-
-(defclass OrigenAnimal
-	(is-a Ingrediente)
-	(role concrete)
-	(multislot grupo-u-origen
-		(type SYMBOL)
-		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
-		(default ANIMAL)
-		(create-accessor read-write)))
-
-(defclass Mamifero
-	(is-a OrigenAnimal)
-	(role concrete)
-	(multislot grupo-u-origen
-		(type SYMBOL)
-		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
-		(default ANIMAL CARNE)
-		(create-accessor read-write)))
-
-(defclass Pescado
-	(is-a OrigenAnimal)
-	(role concrete)
-	(multislot grupo-u-origen
-		(type SYMBOL)
-		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
-		(default ANIMAL PESCADO)
-		(create-accessor read-write)))
-
-(defclass Ave
-	(is-a OrigenAnimal)
-	(role concrete)
-	(multislot grupo-u-origen
-		(type SYMBOL)
-		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
-		(default ANIMAL CARNE)
-		(create-accessor read-write)))
-
 (defclass Elaborado
 	(is-a USER)
 	(role abstract)
-	(multislot compuesto_por
-		(type INSTANCE)
-;+		(allowed-classes Ingrediente)
-		(cardinality 1 ?VARIABLE)
-		(create-accessor read-write))
 	(single-slot precio
 		(type FLOAT)
 		(range 0.0 10000.0)
@@ -123,6 +82,11 @@
 (defclass Plato
 	(is-a Elaborado)
 	(role abstract)
+	(multislot problemas
+		(type INSTANCE)
+;+		(allowed-classes IngredienteProblematico)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
 	(multislot tipo
 		(type SYMBOL)
 		(allowed-values PRIMERO SEGUNDO POSTRE)
@@ -163,3 +127,28 @@
 (defclass Vino
 	(is-a Alcoholica)
 	(role concrete))
+
+(defclass TipoComensal
+	(is-a USER)
+	(role concrete)
+	(multislot conflictos
+		(type INSTANCE)
+;+		(allowed-classes IngredienteProblematico)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass IngredienteProblematico
+	(is-a USER)
+	(role concrete)
+	(multislot platos
+		(type INSTANCE)
+;+		(allowed-classes Plato)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))

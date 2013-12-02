@@ -1,4 +1,4 @@
-; Sat Nov 30 21:03:36 CET 2013
+; Mon Dec 02 11:50:12 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,14 +20,15 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[comida_ProjectKB_Class20126]
-		[comida_ProjectKB_Class20127]
-		[comida_ProjectKB_Class20128]
-		[comida_ProjectKB_Class20129]
-		[comida_ProjectKB_Class20130]
-		[comida_ProjectKB_Class20131]
-		[comida_ProjectKB_Class20132]
-		[comida_ProjectKB_Class20133]))
+		[comida_ProjectKB_Class10289]
+		[comida_ProjectKB_Class10290]
+		[comida_ProjectKB_Class10291]
+		[comida_ProjectKB_Class10292]
+		[comida_ProjectKB_Class10293]
+		[comida_ProjectKB_Class10294]
+		[comida_ProjectKB_Class10295]
+		[comida_ProjectKB_Class10296]
+		[comida_ProjectKB_Class10297]))
 
 ([CLSES_TAB] of  Widget
 
@@ -42,9 +43,327 @@
 ([comida_ProjectKB_Class10] of  Property_List
 )
 
+([comida_ProjectKB_Class100] of  Property_List
+)
+
 ([comida_ProjectKB_Class101] of  String
 
 	(name "SearchTab_Query"))
+
+([comida_ProjectKB_Class10101] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "nombre")
+	(property_list [comida_ProjectKB_Class10102])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([comida_ProjectKB_Class10102] of  Property_List
+)
+
+([comida_ProjectKB_Class10103] of  Widget
+
+	(is_hidden FALSE)
+	(name "Mamifero")
+	(property_list [comida_ProjectKB_Class10104])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([comida_ProjectKB_Class10104] of  Property_List
+
+	(properties
+		[comida_ProjectKB_Class10105]
+		[comida_ProjectKB_Class10106]
+		[comida_ProjectKB_Class10110]
+		[comida_ProjectKB_Class10112]))
+
+([comida_ProjectKB_Class10105] of  Property_List
+
+	(name "layout properties"))
+
+([comida_ProjectKB_Class10106] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "forma_parte_de")
+	(property_list [comida_ProjectKB_Class10107])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([comida_ProjectKB_Class10107] of  Property_List
+
+	(properties
+		[comida_ProjectKB_Class10108]
+		[comida_ProjectKB_Class10109]))
+
+([comida_ProjectKB_Class10108] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([comida_ProjectKB_Class10109] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([comida_ProjectKB_Class10110] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "grupo-u-origen")
+	(property_list [comida_ProjectKB_Class10111])
+	(widget_class_name "edu.stanford.smi.protege.widget.SymbolListWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([comida_ProjectKB_Class10111] of  Property_List
+)
+
+([comida_ProjectKB_Class10112] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "nombre")
+	(property_list [comida_ProjectKB_Class10113])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([comida_ProjectKB_Class10113] of  Property_List
+)
+
+([comida_ProjectKB_Class10114] of  Widget
+
+	(is_hidden FALSE)
+	(name "Pescado")
+	(property_list [comida_ProjectKB_Class10115])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([comida_ProjectKB_Class10115] of  Property_List
+
+	(properties
+		[comida_ProjectKB_Class10116]
+		[comida_ProjectKB_Class10117]
+		[comida_ProjectKB_Class10121]
+		[comida_ProjectKB_Class10123]))
+
+([comida_ProjectKB_Class10116] of  Property_List
+
+	(name "layout properties"))
+
+([comida_ProjectKB_Class10117] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "forma_parte_de")
+	(property_list [comida_ProjectKB_Class10118])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([comida_ProjectKB_Class10118] of  Property_List
+
+	(properties
+		[comida_ProjectKB_Class10119]
+		[comida_ProjectKB_Class10120]))
+
+([comida_ProjectKB_Class10119] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([comida_ProjectKB_Class10120] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([comida_ProjectKB_Class10121] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "grupo-u-origen")
+	(property_list [comida_ProjectKB_Class10122])
+	(widget_class_name "edu.stanford.smi.protege.widget.SymbolListWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([comida_ProjectKB_Class10122] of  Property_List
+)
+
+([comida_ProjectKB_Class10123] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "nombre")
+	(property_list [comida_ProjectKB_Class10124])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([comida_ProjectKB_Class10124] of  Property_List
+)
+
+([comida_ProjectKB_Class10139] of  Widget
+
+	(height 300)
+	(is_hidden FALSE)
+	(name "problemas")
+	(property_list [comida_ProjectKB_Class10140])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([comida_ProjectKB_Class10140] of  Property_List
+
+	(properties
+		[comida_ProjectKB_Class10141]
+		[comida_ProjectKB_Class10142]))
+
+([comida_ProjectKB_Class10141] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([comida_ProjectKB_Class10142] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([comida_ProjectKB_Class10156] of  Widget
+
+	(height 300)
+	(is_hidden FALSE)
+	(name "problemas")
+	(property_list [comida_ProjectKB_Class10157])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([comida_ProjectKB_Class10157] of  Property_List
+
+	(properties
+		[comida_ProjectKB_Class10158]
+		[comida_ProjectKB_Class10159]))
+
+([comida_ProjectKB_Class10158] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([comida_ProjectKB_Class10159] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([comida_ProjectKB_Class10182] of  Widget
+
+	(height 300)
+	(is_hidden FALSE)
+	(name "problemas")
+	(property_list [comida_ProjectKB_Class10183])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([comida_ProjectKB_Class10183] of  Property_List
+
+	(properties
+		[comida_ProjectKB_Class10184]
+		[comida_ProjectKB_Class10185]))
+
+([comida_ProjectKB_Class10184] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([comida_ProjectKB_Class10185] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([comida_ProjectKB_Class10208] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "problemas")
+	(property_list [comida_ProjectKB_Class10209])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 120))
+
+([comida_ProjectKB_Class10209] of  Property_List
+
+	(properties
+		[comida_ProjectKB_Class10210]
+		[comida_ProjectKB_Class10211]))
+
+([comida_ProjectKB_Class10210] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([comida_ProjectKB_Class10211] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([comida_ProjectKB_Class10289] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([comida_ProjectKB_Class10290] of  String
+
+	(name "Tradicional")
+	(string_value "nombre"))
+
+([comida_ProjectKB_Class10291] of  String
+
+	(name "IngredienteProblematico")
+	(string_value "nombre"))
+
+([comida_ProjectKB_Class10292] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([comida_ProjectKB_Class10293] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([comida_ProjectKB_Class10294] of  String
+
+	(name "Generico")
+	(string_value "nombre"))
+
+([comida_ProjectKB_Class10295] of  String
+
+	(name "Bebida")
+	(string_value "nombre"))
+
+([comida_ProjectKB_Class10296] of  String
+
+	(name "TipoComensal")
+	(string_value "nombre"))
+
+([comida_ProjectKB_Class10297] of  String
+
+	(name "Moderno")
+	(string_value "nombre"))
 
 ([comida_ProjectKB_Class11] of  Widget
 
@@ -59,7 +378,7 @@
 
 	(is_hidden TRUE)
 	(property_list [comida_ProjectKB_Class14])
-	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
+	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
 
 ([comida_ProjectKB_Class14] of  Property_List
 )
@@ -68,7 +387,7 @@
 
 	(is_hidden TRUE)
 	(property_list [comida_ProjectKB_Class16])
-	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
+	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
 
 ([comida_ProjectKB_Class16] of  Property_List
 )
@@ -77,7 +396,7 @@
 
 	(is_hidden TRUE)
 	(property_list [comida_ProjectKB_Class18])
-	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
 
 ([comida_ProjectKB_Class18] of  Property_List
 )
@@ -86,53 +405,13 @@
 
 	(is_hidden TRUE)
 	(property_list [comida_ProjectKB_Class20])
-	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
 
 ([comida_ProjectKB_Class2] of  Property_List
 )
 
 ([comida_ProjectKB_Class20] of  Property_List
 )
-
-([comida_ProjectKB_Class20126] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([comida_ProjectKB_Class20127] of  String
-
-	(name "Tradicional")
-	(string_value "nombre"))
-
-([comida_ProjectKB_Class20128] of  String
-
-	(name "Generico")
-	(string_value "nombre"))
-
-([comida_ProjectKB_Class20129] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([comida_ProjectKB_Class20130] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([comida_ProjectKB_Class20131] of  String
-
-	(name "Bebida")
-	(string_value "nombre"))
-
-([comida_ProjectKB_Class20132] of  String
-
-	(name "Ingrediente")
-	(string_value "nombre"))
-
-([comida_ProjectKB_Class20133] of  String
-
-	(name "Moderno")
-	(string_value "nombre"))
 
 ([comida_ProjectKB_Class21] of  Widget
 
@@ -165,7 +444,7 @@
 
 	(is_hidden TRUE)
 	(property_list [comida_ProjectKB_Class28])
-	(widget_class_name "edu.stanford.smi.protege.query.LuceneQueryPlugin"))
+	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
 
 ([comida_ProjectKB_Class28] of  Property_List
 )
@@ -174,7 +453,7 @@
 
 	(is_hidden TRUE)
 	(property_list [comida_ProjectKB_Class30])
-	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
+	(widget_class_name "edu.stanford.smi.protege.query.LuceneQueryPlugin"))
 
 ([comida_ProjectKB_Class3] of  Widget
 
@@ -404,11 +683,123 @@
 ([comida_ProjectKB_Class8] of  Property_List
 )
 
+([comida_ProjectKB_Class80] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "problemas")
+	(property_list [comida_ProjectKB_Class81])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([comida_ProjectKB_Class81] of  Property_List
+)
+
+([comida_ProjectKB_Class82] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "problemas")
+	(property_list [comida_ProjectKB_Class83])
+	(widget_class_name "edu.stanford.smi.protege.widget.IntegerFieldWidget")
+	(width 100)
+	(x 0)
+	(y 60))
+
+([comida_ProjectKB_Class83] of  Property_List
+)
+
+([comida_ProjectKB_Class84] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "problemas")
+	(property_list [comida_ProjectKB_Class85])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([comida_ProjectKB_Class85] of  Property_List
+
+	(properties
+		[comida_ProjectKB_Class86]
+		[comida_ProjectKB_Class87]))
+
+([comida_ProjectKB_Class86] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([comida_ProjectKB_Class87] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
 ([comida_ProjectKB_Class9] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [comida_ProjectKB_Class10])
 	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
+
+([comida_ProjectKB_Class92] of  Widget
+
+	(is_hidden FALSE)
+	(name "Ingrediente")
+	(property_list [comida_ProjectKB_Class93])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([comida_ProjectKB_Class93] of  Property_List
+
+	(properties
+		[comida_ProjectKB_Class94]
+		[comida_ProjectKB_Class95]
+		[comida_ProjectKB_Class99]
+		[comida_ProjectKB_Class10101]))
+
+([comida_ProjectKB_Class94] of  Property_List
+
+	(name "layout properties"))
+
+([comida_ProjectKB_Class95] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "forma_parte_de")
+	(property_list [comida_ProjectKB_Class96])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([comida_ProjectKB_Class96] of  Property_List
+
+	(properties
+		[comida_ProjectKB_Class97]
+		[comida_ProjectKB_Class98]))
+
+([comida_ProjectKB_Class97] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([comida_ProjectKB_Class98] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([comida_ProjectKB_Class99] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "grupo-u-origen")
+	(property_list [comida_ProjectKB_Class100])
+	(widget_class_name "edu.stanford.smi.protege.widget.SymbolListWidget")
+	(width 200)
+	(x 0)
+	(y 60))
 
 ([CREATION_TIMESTAMP_WIDGET] of  Widget
 
@@ -444,9 +835,6 @@
 ([INSTANCES_TAB] of  Widget
 
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
-
-([KB_507285_Class0] of  Map
-)
 
 ([KB_577580_Class0] of  String
 
@@ -548,6 +936,9 @@
 	(name "classes_file_name")
 	(string_value "comida.pont"))
 
+([KB_609987_Class0] of  Map
+)
+
 ([LAYOUT_PROPERTIES] of  Property_List
 
 	(name "layout properties")
@@ -631,8 +1022,8 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[STANDARD_FACET_FORM_WIDGET]
 		[STANDARD_SLOT_FORM_WIDGET]
+		[STANDARD_FACET_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
 		[STANDARD_CLASS_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")

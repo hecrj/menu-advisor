@@ -107,10 +107,33 @@
                 )
         ) 
     )
-    ?lista
+    $?lista
 )
 
 (deffunction add$ (?element $?list)
   (bind $?list (insert$ $?list (+ (length$ $?list) 1) ?element))
   ?list
+)
+
+(deffunction find-attr (?attr $?instances)
+  (bind $?list (create$))
+  (bind ?getter (sym-cat get- ?attr))
+  (progn$ (?instance $?instances)
+    (bind $?list (add$ (send ?instance ?getter) $?list))
+  )
+
+  $?list
+)
+
+(deffunction seleccionar-instancias (?class ?attr ?msg)
+  (bind $?instances (find-all-instances ((?inst ?class)) TRUE))
+  (bind $?respuestas (pregunta-multi ?msg (find-attr ?attr $?instances)))
+  (bind $?lista (create$))
+  (bind ?getter (sym-cat get- ?attr))
+  (progn$ (?instance $?instances)
+    (if (member$ (send ?instance ?getter) $?respuestas) then
+      (bind $?lista (add$ (instance-address * ?instance) $?lista))
+    )
+  )
+  $?lista
 )
