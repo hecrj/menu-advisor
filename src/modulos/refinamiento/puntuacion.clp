@@ -8,6 +8,7 @@
     (slot temperatura-preferida (type INTEGER) (default 75))
     (slot caliente-en-verano (type INTEGER) (default -25))
     (slot caliente-en-invierno (type INTEGER) (default 40))
+    (slot region-preferida (type INTEGER) (default 50))
 )
 
 (defrule inicializa-Pesos "Define la ponderación de factores"
@@ -83,6 +84,22 @@
 	(send ?rec put-justificaciones
 		(add$ (str-cat "Los platos calientes suelen apetecer en invierno -> +" ?peso) $?just))
 	(assert (caliente-puntuado ?rec))
+)
+
+(defrule puntuar-regiones "Puntúa los platos de las regiones escogidas"
+  (Preferencias (regiones $?regiones))
+  (Pesos (region-preferida ?peso))
+  ?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $?just))
+  (not (regiones-puntuadas ?rec))
+  =>
+  (bind $?regiones-plato (send ?plato get-tipico_de))
+  (progn$ (?region $?regiones-plato)
+          (bind ?nombre-region (send (instance-address * ?region) get-nombre))
+          (if (member$ ?nombre-region $?regiones)
+              then (send ?rec put-puntuacion (+ ?punt ?peso))
+                   (send ?rec put-justificaciones
+                         (add$ (str-cat "El plato es de " ?nombre-region ", preferido por el cliente -> +" ?peso) $?just))))
+  (assert (regiones-puntuadas ?rec))
 )
 
 (defrule ir-a-seleccionar "Empieza a seleccionar resultados"

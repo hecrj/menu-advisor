@@ -34,15 +34,13 @@
 
 (defrule pregunta-regional "Preguntar si el cliente prefiere platos regionales"
   (declare (salience 9850))
-  (not (regional))
+  ?prefs <- (Preferencias (regiones "desconocido"))
   =>
-  (bind ?respuesta (pregunta-si-no "¿Prefiere comida de alguna zona geográfica concreta?"))
-  (assert (regional ?respuesta))
+  (if (not (pregunta-si-no "¿Prefiere comida de alguna zona geográfica concreta?")) then (modify ?prefs (regiones)))
 )
 
 (defrule pregunta-regiones "Preguntar las regiones preferidas"
-  (declare (salience 10000))
-  (regional TRUE)
+  (declare (salience 9849))
   ?prefs <- (Preferencias (regiones "desconocido"))
   =>
   (bind $?respuesta (seleccionar-instancias Region nombre "¿De qué zonas geográficas prefiere que sea la comida?"))
