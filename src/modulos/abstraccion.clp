@@ -16,12 +16,40 @@
   (assert (Preferencias (evento ?evento)))
 )
 
+(defrule pregunta-num-comensales "Preguntar el número de comensales al cliente"
+  (declare (salience 9950))
+  ?prefs <- (Preferencias (comensales 0))
+  =>
+  (bind ?comensales (pregunta-numerica-positiva "¿Cuántos comensales van a ser?"))
+  (modify ?prefs (comensales ?comensales))
+)
+
 (defrule pregunta-tipos-menu "Preguntar los tipos de cocina preferidas para el menú"
   (declare (salience 9900))
   ?prefs <- (Preferencias (tipos-menu desconocido))
   =>
   (bind $?respuesta (pregunta-multi "¿Qué tipo(s) de menú prefiere?" (class-subclasses Plato)))
   (modify ?prefs (tipos-menu $?respuesta))
+)
+
+(defrule pregunta-regional "Preguntar si el cliente prefiere platos regionales"
+  (declare (salience 9850))
+  (not (regional))
+  =>
+  (bind ?respuesta (pregunta-si-no "¿Prefiere comida de alguna zona geográfica concreta?"))
+  (assert (regional ?respuesta))
+)
+
+(defrule pregunta-regiones "Preguntar las regiones preferidas"
+  (declare (salience 10000))
+  (regional TRUE)
+  ?prefs <- (Preferencias (regiones "desconocido"))
+  =>
+  (bind $?respuesta (seleccionar-instancias Region nombre "¿De qué zonas geográficas prefiere que sea la comida?"))
+  (bind $?regiones (create$))
+  (progn$ (?region $?respuesta)
+          (bind $?regiones (add$ (send ?region get-nombre) $?regiones)))
+  (modify ?prefs (regiones $?regiones))
 )
 
 (defrule pregunta-tipos-comensal "Preguntar los tipos de cliente del menú"

@@ -1,4 +1,4 @@
-; Tue Dec 03 09:46:04 CET 2013
+; Tue Dec 03 17:37:13 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -7,6 +7,38 @@
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
+	(multislot platos
+		(type INSTANCE)
+;+		(allowed-classes Plato)
+;+		(inverse-slot ingredientes)
+		(create-accessor read-write))
+	(multislot platos_tipicos
+		(type INSTANCE)
+;+		(allowed-classes Plato)
+;+		(inverse-slot tipico_de)
+		(create-accessor read-write))
+	(single-slot es_exclusivo
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot tipo
+		(type SYMBOL)
+		(allowed-values PRIMERO SEGUNDO POSTRE)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(multislot tipico_de
+		(type INSTANCE)
+;+		(allowed-classes Region)
+;+		(inverse-slot platos_tipicos)
+		(create-accessor read-write))
+	(single-slot precio
+		(type FLOAT)
+		(range 0.0 10000.0)
+		(default 0.0)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(multislot compuesto_por
 		(type INSTANCE)
 ;+		(allowed-classes)
@@ -19,17 +51,6 @@
 		(cardinality 1 ?VARIABLE)
 ;+		(inverse-slot platos)
 		(create-accessor read-write))
-	(multislot platos
-		(type INSTANCE)
-;+		(allowed-classes Plato)
-;+		(inverse-slot ingredientes)
-		(create-accessor read-write))
-	(single-slot es_exclusivo
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-		(default FALSE)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(multislot forma_parte_de
 		(type INSTANCE)
 ;+		(allowed-classes Elaborado)
@@ -40,16 +61,9 @@
 ;+		(allowed-classes Epoca)
 ;+		(inverse-slot dispone-de)
 		(create-accessor read-write))
-	(multislot tipo
-		(type SYMBOL)
-		(allowed-values PRIMERO SEGUNDO POSTRE)
-		(cardinality 1 ?VARIABLE)
-		(create-accessor read-write))
-	(single-slot precio
-		(type FLOAT)
-		(range 0.0 10000.0)
-		(default 0.0)
-;+		(cardinality 1 1)
+	(single-slot comida_Class40004
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot conflictos
 		(type INSTANCE)
@@ -107,6 +121,10 @@
 		(allowed-values FALSE TRUE)
 		(default FALSE)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot tipico_de
+		(type INSTANCE)
+;+		(allowed-classes Region)
 		(create-accessor read-write))
 	(single-slot temperatura
 		(type SYMBOL)
@@ -177,4 +195,16 @@
 	(multislot dispone-de
 		(type INSTANCE)
 ;+		(allowed-classes Ingrediente)
+		(create-accessor read-write)))
+
+(defclass Region
+	(is-a USER)
+	(role concrete)
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot platos_tipicos
+		(type INSTANCE)
+;+		(allowed-classes Plato)
 		(create-accessor read-write)))

@@ -11,9 +11,10 @@
         (allowed-strings "Boda"
                          "Comunión"
                          "Comida de empresa"
-                         "Comida familiar"
-        )
-  )
+                         "Comida familiar"))
+  (multislot regiones
+             (type STRING)
+             (default "desconocido"))
   (slot comensales
     (type INTEGER)
     (range 0 ?VARIABLE))

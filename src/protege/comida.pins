@@ -1,4 +1,4 @@
-; Tue Dec 03 09:46:04 CET 2013
+; Tue Dec 03 17:37:13 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -62,7 +62,8 @@
 	(nombre "Carne")
 	(platos
 		[comida_Class45]
-		[comida_Class44]))
+		[comida_Class44]
+		[comida_Class40013]))
 
 ([comida_Class20008] of  Ingrediente
 
@@ -216,6 +217,52 @@
 	(precio 2.0)
 	(temperatura CALIENTE)
 	(tipo POSTRE))
+
+([comida_Class40005] of  Region
+
+	(nombre "China"))
+
+([comida_Class40006] of  Region
+
+	(nombre "Japón"))
+
+([comida_Class40007] of  Region
+
+	(nombre "Galicia"))
+
+([comida_Class40008] of  Region
+
+	(nombre "Valencia")
+	(platos_tipicos [comida_Class40013]))
+
+([comida_Class40009] of  Ingrediente
+
+	(nombre "Marisco")
+	(platos [comida_Class40010]))
+
+([comida_Class40010] of  Generico
+
+	(es_exclusivo FALSE)
+	(ingredientes [comida_Class40009])
+	(nombre "Paella")
+	(precio 0.0)
+	(temperatura CALIENTE)
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class40011] of  TipoComensal
+
+	(conflictos [comida_Class40009])
+	(nombre "Alérgico al marisco"))
+
+([comida_Class40013] of  Generico
+
+	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20007])
+	(nombre "Paella valenciana")
+	(precio 0.0)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class40008])
+	(tipo PRIMERO SEGUNDO))
 
 ([comida_Class44] of  Tradicional
 

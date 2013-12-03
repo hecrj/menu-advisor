@@ -1,4 +1,4 @@
-; Tue Dec 03 09:46:04 CET 2013
+; Tue Dec 03 17:37:13 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,16 +20,17 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[comida_ProjectKB_Class10128]
-		[comida_ProjectKB_Class10129]
-		[comida_ProjectKB_Class10130]
-		[comida_ProjectKB_Class10131]
-		[comida_ProjectKB_Class10132]
-		[comida_ProjectKB_Class10133]
-		[comida_ProjectKB_Class10134]
-		[comida_ProjectKB_Class10135]
-		[comida_ProjectKB_Class10136]
-		[comida_ProjectKB_Class10137]))
+		[comida_ProjectKB_Class10183]
+		[comida_ProjectKB_Class10184]
+		[comida_ProjectKB_Class10185]
+		[comida_ProjectKB_Class10186]
+		[comida_ProjectKB_Class10187]
+		[comida_ProjectKB_Class10188]
+		[comida_ProjectKB_Class10189]
+		[comida_ProjectKB_Class10190]
+		[comida_ProjectKB_Class10191]
+		[comida_ProjectKB_Class10192]
+		[comida_ProjectKB_Class10193]))
 
 ([CLSES_TAB] of  Widget
 
@@ -48,54 +49,59 @@
 
 	(name "SearchTab_Query"))
 
-([comida_ProjectKB_Class10128] of  String
+([comida_ProjectKB_Class10183] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([comida_ProjectKB_Class10129] of  String
+([comida_ProjectKB_Class10184] of  String
 
 	(name "Tradicional")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10130] of  String
+([comida_ProjectKB_Class10185] of  String
 
 	(name "Epoca")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10131] of  String
-
-	(name "Generico")
-	(string_value "nombre"))
-
-([comida_ProjectKB_Class10132] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([comida_ProjectKB_Class10133] of  String
+([comida_ProjectKB_Class10186] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([comida_ProjectKB_Class10134] of  String
+([comida_ProjectKB_Class10187] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([comida_ProjectKB_Class10188] of  String
+
+	(name "Generico")
+	(string_value "nombre"))
+
+([comida_ProjectKB_Class10189] of  String
+
+	(name "Region")
+	(string_value "nombre"))
+
+([comida_ProjectKB_Class10190] of  String
 
 	(name "Bebida")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10135] of  String
+([comida_ProjectKB_Class10191] of  String
 
 	(name "Ingrediente")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10136] of  String
-
-	(name "Moderno")
-	(string_value "nombre"))
-
-([comida_ProjectKB_Class10137] of  String
+([comida_ProjectKB_Class10192] of  String
 
 	(name "TipoComensal")
+	(string_value "nombre"))
+
+([comida_ProjectKB_Class10193] of  String
+
+	(name "Moderno")
 	(string_value "nombre"))
 
 ([comida_ProjectKB_Class11] of  Widget
@@ -416,6 +422,47 @@
 ([comida_ProjectKB_Class8] of  Property_List
 )
 
+([comida_ProjectKB_Class82] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "comida_Class40004")
+	(property_list [comida_ProjectKB_Class83])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 120))
+
+([comida_ProjectKB_Class83] of  Property_List
+)
+
+([comida_ProjectKB_Class84] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "tipico_de")
+	(property_list [comida_ProjectKB_Class85])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 120))
+
+([comida_ProjectKB_Class85] of  Property_List
+
+	(properties
+		[comida_ProjectKB_Class86]
+		[comida_ProjectKB_Class87]))
+
+([comida_ProjectKB_Class86] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([comida_ProjectKB_Class87] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
 ([comida_ProjectKB_Class9] of  Widget
 
 	(is_hidden TRUE)
@@ -557,7 +604,7 @@
 	(name "classes_file_name")
 	(string_value "comida.pont"))
 
-([KB_598801_Class0] of  Map
+([KB_842885_Class0] of  Map
 )
 
 ([LAYOUT_PROPERTIES] of  Property_List
@@ -643,8 +690,8 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[STANDARD_FACET_FORM_WIDGET]
 		[STANDARD_SLOT_FORM_WIDGET]
+		[STANDARD_FACET_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
 		[STANDARD_CLASS_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")
