@@ -137,3 +137,14 @@
   )
   $?lista
 )
+
+(deffunction seleccionar-instancia (?class ?attr ?msg)
+  (bind $?instances (find-all-instances ((?inst ?class)) TRUE))
+  (bind ?respuesta (pregunta-indice ?msg (find-attr ?attr $?instances)))
+  (bind ?getter (sym-cat get- ?attr))
+  (progn$ (?instance $?instances)
+    (if (eq (send ?instance ?getter) ?respuesta) then
+      (return (instance-address * ?instance))
+    )
+  )
+)

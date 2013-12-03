@@ -1,4 +1,4 @@
-; Tue Dec 03 09:34:47 CET 2013
+; Tue Dec 03 09:46:04 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -146,6 +146,22 @@
 	(precio 2.0)
 	(temperatura FRIO)
 	(tipo PRIMERO))
+
+([comida_Class30002] of  Epoca
+
+	(nombre "Verano"))
+
+([comida_Class30003] of  Epoca
+
+	(nombre "Primavera"))
+
+([comida_Class30004] of  Epoca
+
+	(nombre "Invierno"))
+
+([comida_Class30005] of  Epoca
+
+	(nombre "Otoño"))
 
 ([comida_Class35] of  Generico
 

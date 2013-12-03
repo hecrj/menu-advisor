@@ -50,10 +50,26 @@
 
 (defrule pregunta-estacion "Preguntar la estacion del año"
   (declare (salience 9600))
+  (not (estacion preguntada))
+  ?prefs <- (Preferencias (ingredientes-prohibidos $?prohibidos))
   =>
-  (bind ?est (pregunta-indice "¿Cuál es la estación del año actual?" (deftemplate-slot-allowed-values MAIN::Contexto estacion)))
+  (bind ?est (seleccionar-instancia Epoca nombre "¿En qué época desea consumir el menú?"))
   ; TODO Añadir ingredientes prohibidos!
-  (assert (Contexto (estacion ?est)))
+  (bind $?disponibles (send ?est get-dispone-de))
+  (bind $?epocas (find-all-instances ((?inst Epoca)) TRUE))
+  (progn$ (?epoca $?epocas)
+    (if (neq ?epoca ?est) then
+      (bind $?dispone (send ?epoca get-dispone-de))
+      (progn$ (?ingrediente $?dispone)
+        (if (not (member$ ?ingrediente $?disponibles)) then
+          (bind $?prohibidos (add$ (send (instance-address * ?ingrediente) get-nombre) $?prohibidos))
+        )
+      )
+    )
+  )
+  (assert (Contexto (estacion (send ?est get-nombre))))
+  (modify ?prefs (ingredientes-prohibidos $?prohibidos))
+  (assert (estacion preguntada))
 )
 
 (defrule ir-a-filtrar "Empieza a filtrar resultados"

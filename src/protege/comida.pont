@@ -1,4 +1,4 @@
-; Tue Dec 03 09:34:47 CET 2013
+; Tue Dec 03 09:46:04 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -35,6 +35,11 @@
 ;+		(allowed-classes Elaborado)
 ;+		(inverse-slot compuesto_por)
 		(create-accessor read-write))
+	(multislot solo-disponible-en
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+;+		(inverse-slot dispone-de)
+		(create-accessor read-write))
 	(multislot tipo
 		(type SYMBOL)
 		(allowed-values PRIMERO SEGUNDO POSTRE)
@@ -63,6 +68,11 @@
 		(type SYMBOL)
 		(allowed-values CALIENTE FRIO)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot dispone-de
+		(type INSTANCE)
+;+		(allowed-classes Ingrediente)
+;+		(inverse-slot solo-disponible-en)
 		(create-accessor read-write)))
 
 (defclass Elaborado
@@ -151,4 +161,20 @@
 	(single-slot nombre
 		(type STRING)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot solo-disponible-en
+		(type INSTANCE)
+;+		(allowed-classes Epoca)
+		(create-accessor read-write)))
+
+(defclass Epoca
+	(is-a USER)
+	(role concrete)
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot dispone-de
+		(type INSTANCE)
+;+		(allowed-classes Ingrediente)
 		(create-accessor read-write)))
