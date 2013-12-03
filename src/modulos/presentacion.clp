@@ -25,5 +25,6 @@
 	(progn$ (?j $?just)
 		(printout t "        " ?j crlf)
 	)
+	(printout t crlf)
 	(assert (rec-impresa ?rec))
 )
