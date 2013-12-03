@@ -1,10 +1,25 @@
 (deftemplate Preferencias
-  (multislot tipos (type SYMBOL) (default desconocido))
-  (slot alcohol (type SYMBOL) (default desconocido))
+  (multislot tipos-menu (type SYMBOL) (default desconocido))
+  (multislot tipos-comensal (type SYMBOL) (default desconocido))
   (slot temperatura (type SYMBOL) (default desconocido))
+  (slot evento
+        (type STRING)
+        (allowed-strings "Boda"
+                         "Comunión"
+                         "Comida de empresa"
+                         "Comida familiar"
+        )
+  )
+  (slot comensales (type INTEGER) (range 0 ?VARIABLE))
 )
 
-(deftemplate Cliente
-  (slot nombre (type STRING))
-  (slot edad (type INTEGER) (default -1))
+(deftemplate Contexto
+  (slot estacion
+        (type STRING)
+        (allowed-strings "Primavera"
+                         "Verano"
+                         "Otoño"
+                         "Invierno"
+        )
+  )
 )

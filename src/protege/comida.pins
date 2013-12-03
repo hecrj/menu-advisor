@@ -1,430 +1,288 @@
-; Sat Nov 30 21:03:36 CET 2013
+; Mon Dec 02 11:50:12 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
 ([comida_Class0] of  Generico
 
-	(compuesto_por [comida_Class60])
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo plato indefinido")
 	(precio 4.0)
+	(problemas [comida_Class20008])
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
 
 ([comida_Class1] of  Generico
 
-	(compuesto_por [comida_Class42])
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo postre indefinido")
 	(precio 0.0)
+	(problemas [comida_Class20008])
 	(temperatura FRIO)
 	(tipo POSTRE))
 
 ([comida_Class10001] of  Generico
 
-	(compuesto_por [comida_Class55])
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo plato caliente")
 	(precio 10.0)
+	(problemas [comida_Class20008])
 	(temperatura CALIENTE)
 	(tipo PRIMERO))
 
 ([comida_Class10002] of  Generico
 
-	(compuesto_por [comida_Class55])
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo plato frio")
 	(precio 10.0)
+	(problemas [comida_Class20008])
 	(temperatura FRIO)
 	(tipo PRIMERO))
-
-([comida_Class14] of  Ingrediente
-
-	(forma_parte_de [comida_Class49])
-	(nombre "Pepinillo"))
-
-([comida_Class15] of  Ingrediente
-
-	(grupo-u-origen LACTEOS ANIMAL)
-	(nombre "Queso"))
-
-([comida_Class16] of  Ingrediente
-
-	(forma_parte_de [comida_Class37])
-	(nombre "Nuez"))
-
-([comida_Class17] of  Ingrediente
-
-	(forma_parte_de [comida_Class38])
-	(nombre "Leche"))
-
-([comida_Class18] of  Ingrediente
-
-	(grupo-u-origen CEREALES)
-	(nombre "Avena"))
-
-([comida_Class19] of  Ingrediente
-
-	(grupo-u-origen CEREALES)
-	(nombre "Espaguetis"))
 
 ([comida_Class2] of  Moderno
 
-	(compuesto_por [comida_Class54])
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo plato moderno")
 	(precio 200.0)
+	(problemas [comida_Class20008])
 	(temperatura CALIENTE)
 	(tipo PRIMERO SEGUNDO))
 
-([comida_Class20] of  Ingrediente
+([comida_Class20001] of  TipoComensal
 
-	(forma_parte_de [comida_Class44])
-	(nombre "Macarrones"))
+	(conflictos
+		[comida_Class20007]
+		[comida_Class20011]
+		[comida_Class20018]
+		[comida_Class20019])
+	(nombre "Vegetariano"))
 
-([comida_Class21] of  Ingrediente
+([comida_Class20007] of  IngredienteProblematico
 
-	(forma_parte_de [comida_Class49])
-	(nombre "Sal"))
+	(nombre "Carne")
+	(platos
+		[comida_Class45]
+		[comida_Class44]))
 
-([comida_Class22] of  Ingrediente
+([comida_Class20008] of  IngredienteProblematico
 
-	(nombre "Solomillo"))
+	(nombre "Ninguno")
+	(platos
+		[comida_Class10001]
+		[comida_Class10002]
+		[comida_Class0]
+		[comida_Class1]
+		[comida_Class2]
+		[comida_Class3]
+		[comida_Class49]
+		[comida_Class36]))
 
-([comida_Class23] of  Ingrediente
+([comida_Class20009] of  IngredienteProblematico
 
-	(nombre "Mayonesa"))
+	(nombre "Azúcar")
+	(platos
+		[comida_Class35]
+		[comida_Class37]
+		[comida_Class39]
+		[comida_Class38]))
 
-([comida_Class24] of  Ingrediente
+([comida_Class20010] of  TipoComensal
 
-	(nombre "Ketchup"))
+	(conflictos [comida_Class20009])
+	(nombre "Diabético"))
 
-([comida_Class25] of  Ingrediente
+([comida_Class20011] of  IngredienteProblematico
 
-	(forma_parte_de [comida_Class45])
-	(nombre "Patatas"))
-
-([comida_Class26] of  Mamifero
-
-	(grupo-u-origen CARNE ANIMAL)
-	(nombre "Bistec de vacuno"))
-
-([comida_Class27] of  Pescado
-
-	(forma_parte_de
+	(nombre "Pescado")
+	(platos
 		[comida_Class47]
-		[comida_Class49])
-	(grupo-u-origen PESCADO ANIMAL)
-	(nombre "Atún"))
+		[comida_Class48]))
 
-([comida_Class28] of  Ingrediente
+([comida_Class20012] of  IngredienteProblematico
 
-	(forma_parte_de [comida_Class48])
-	(grupo-u-origen PESCADO ANIMAL)
-	(nombre "Bacalao"))
+	(nombre "Nueces")
+	(platos [comida_Class37]))
 
-([comida_Class29] of  Ingrediente
+([comida_Class20013] of  IngredienteProblematico
 
-	(forma_parte_de [comida_Class3])
-	(grupo-u-origen CACAO)
-	(nombre "Cacao"))
+	(nombre "Cereal")
+	(platos
+		[comida_Class46]
+		[comida_Class44]))
+
+([comida_Class20014] of  TipoComensal
+
+	(conflictos [comida_Class20013])
+	(nombre "Celíaco"))
+
+([comida_Class20018] of  IngredienteProblematico
+
+	(nombre "Lácteo")
+	(platos
+		[comida_Class35]
+		[comida_Class37]
+		[comida_Class38]
+		[comida_Class39]))
+
+([comida_Class20019] of  IngredienteProblematico
+
+	(nombre "Huevo")
+	(platos [comida_Class20020]))
+
+([comida_Class20020] of  Tradicional
+
+	(es_exclusivo FALSE)
+	(nombre "Tortilla francesa")
+	(precio 3.0)
+	(problemas [comida_Class20019])
+	(temperatura CALIENTE)
+	(tipo SEGUNDO))
 
 ([comida_Class3] of  Tradicional
 
-	(compuesto_por
-		[comida_Class58]
-		[comida_Class29])
 	(es_exclusivo FALSE)
 	(nombre "Ejemplo plato tradicional")
 	(precio 2.0)
+	(problemas [comida_Class20008])
 	(temperatura FRIO)
 	(tipo PRIMERO))
 
-([comida_Class30] of  Ingrediente
-
-	(grupo-u-origen CEREALES)
-	(nombre "Trigo"))
-
-([comida_Class32] of  Mamifero
-
-	(grupo-u-origen CARNE ANIMAL)
-	(nombre "Fuet"))
-
-([comida_Class33] of  Ingrediente
-
-	(nombre "Nata"))
-
-([comida_Class34] of  Ingrediente
-
-	(grupo-u-origen ANIMAL HUEVO)
-	(nombre "Huevo"))
-
 ([comida_Class35] of  Generico
 
-	(compuesto_por [comida_Class41])
 	(es_exclusivo FALSE)
 	(nombre "Helado de chocolate")
 	(precio 3.0)
+	(problemas
+		[comida_Class20009]
+		[comida_Class20018])
 	(temperatura FRIO)
 	(tipo POSTRE))
 
 ([comida_Class36] of  Generico
 
-	(compuesto_por [comida_Class42])
 	(es_exclusivo FALSE)
 	(nombre "Tajada de melon")
 	(precio 1.0)
+	(problemas [comida_Class20008])
 	(temperatura FRIO)
 	(tipo POSTRE))
 
 ([comida_Class37] of  Generico
 
-	(compuesto_por
-		[comida_Class43]
-		[comida_Class41]
-		[comida_Class16])
 	(es_exclusivo FALSE)
 	(nombre "Turrón de chocolate con nueces")
 	(precio 2.0)
+	(problemas
+		[comida_Class20009]
+		[comida_Class20012]
+		[comida_Class20018])
 	(temperatura FRIO)
 	(tipo POSTRE))
 
 ([comida_Class38] of  Tradicional
 
-	(compuesto_por
-		[comida_Class17]
-		[comida_Class43])
 	(es_exclusivo FALSE)
 	(nombre "Crema Catalana")
 	(precio 8.0)
+	(problemas
+		[comida_Class20009]
+		[comida_Class20018])
 	(temperatura CALIENTE)
 	(tipo POSTRE))
 
 ([comida_Class39] of  Tradicional
 
-	(compuesto_por [comida_Class41])
 	(es_exclusivo FALSE)
 	(nombre "Chocolate caliente")
 	(precio 2.0)
+	(problemas
+		[comida_Class20009]
+		[comida_Class20018])
 	(temperatura CALIENTE)
 	(tipo POSTRE))
 
-([comida_Class41] of  Ingrediente
-
-	(forma_parte_de
-		[comida_Class35]
-		[comida_Class39]
-		[comida_Class37])
-	(grupo-u-origen CACAO)
-	(nombre "Chocolate"))
-
-([comida_Class42] of  Ingrediente
-
-	(forma_parte_de
-		[comida_Class36]
-		[comida_Class1])
-	(nombre "Melón"))
-
-([comida_Class43] of  Ingrediente
-
-	(forma_parte_de
-		[comida_Class38]
-		[comida_Class37])
-	(nombre "Azúcar"))
-
 ([comida_Class44] of  Tradicional
 
-	(compuesto_por
-		[comida_Class20]
-		[comida_Class51])
 	(es_exclusivo FALSE)
 	(nombre "Macarrones a la boloñesa")
 	(precio 4.0)
+	(problemas
+		[comida_Class20007]
+		[comida_Class20013])
 	(temperatura CALIENTE)
 	(tipo PRIMERO))
 
 ([comida_Class45] of  Tradicional
 
-	(compuesto_por
-		[comida_Class25]
-		[comida_Class52])
 	(es_exclusivo FALSE)
 	(nombre "Estofado")
 	(precio 3.0)
+	(problemas [comida_Class20007])
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
 
 ([comida_Class46] of  Tradicional
 
-	(compuesto_por
-		[comida_Class53]
-		[comida_Class54])
 	(es_exclusivo FALSE)
 	(nombre "Sopa de galets")
 	(precio 2.0)
+	(problemas [comida_Class20013])
 	(temperatura CALIENTE)
 	(tipo PRIMERO))
 
 ([comida_Class47] of  Generico
 
-	(compuesto_por [comida_Class27])
 	(es_exclusivo FALSE)
 	(nombre "Atún a la plancha")
 	(precio 4.0)
+	(problemas [comida_Class20011])
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
 
 ([comida_Class48] of  Generico
 
-	(compuesto_por
-		[comida_Class28]
-		[comida_Class55]
-		[comida_Class56])
 	(es_exclusivo TRUE)
 	(nombre "Bacalao al pil-pil")
 	(precio 20.0)
+	(problemas [comida_Class20011])
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
 
 ([comida_Class49] of  Generico
 
-	(compuesto_por
-		[comida_Class27]
-		[comida_Class55]
-		[comida_Class14]
-		[comida_Class57]
-		[comida_Class58]
-		[comida_Class21])
 	(es_exclusivo FALSE)
 	(nombre "Ensalada verde")
 	(precio 2.0)
+	(problemas [comida_Class20008])
 	(temperatura FRIO)
 	(tipo PRIMERO))
 
-([comida_Class50] of  Ingrediente
-
-	(grupo-u-origen CARNE ANIMAL)
-	(nombre "Carne picada"))
-
-([comida_Class51] of  Ingrediente
-
-	(forma_parte_de [comida_Class44])
-	(nombre "Salsa Boloñesa"))
-
-([comida_Class52] of  Ingrediente
-
-	(forma_parte_de [comida_Class45])
-	(nombre "Costillas de cerdo"))
-
-([comida_Class53] of  Ingrediente
-
-	(forma_parte_de [comida_Class46])
-	(grupo-u-origen CEREALES)
-	(nombre "Galets"))
-
-([comida_Class54] of  Ingrediente
-
-	(forma_parte_de
-		[comida_Class46]
-		[comida_Class2])
-	(grupo-u-origen CARNE)
-	(nombre "Caldo de pollo"))
-
-([comida_Class55] of  Ingrediente
-
-	(forma_parte_de
-		[comida_Class48]
-		[comida_Class49]
-		[comida_Class10001]
-		[comida_Class10002])
-	(grupo-u-origen VEGETALES)
-	(nombre "Aceite"))
-
-([comida_Class56] of  Ingrediente
-
-	(forma_parte_de [comida_Class48])
-	(grupo-u-origen CEREALES)
-	(nombre "Harina blanca"))
-
-([comida_Class57] of  Ingrediente
-
-	(forma_parte_de [comida_Class49])
-	(nombre "Lechuga"))
-
-([comida_Class58] of  Ingrediente
-
-	(forma_parte_de
-		[comida_Class49]
-		[comida_Class3])
-	(grupo-u-origen VEGETALES)
-	(nombre "Aceituna"))
-
 ([comida_Class59] of  Bebida
 
-	(compuesto_por [comida_Class60])
 	(nombre "Agua mineral")
 	(precio 0.5))
 
-([comida_Class60] of  Ingrediente
-
-	(forma_parte_de
-		[comida_Class59]
-		[comida_Class0])
-	(nombre "Agua"))
-
 ([comida_Class61] of  Alcoholica
 
-	(compuesto_por [comida_Class62])
 	(nombre "Vodka")
 	(precio 3.0))
 
-([comida_Class62] of  Ingrediente
-
-	(forma_parte_de [comida_Class61])
-	(nombre "Vodka"))
-
 ([comida_Class63] of  Bebida
 
-	(compuesto_por [comida_Class64])
 	(nombre "Leche")
 	(precio 0.2))
 
-([comida_Class64] of  Ingrediente
-
-	(forma_parte_de [comida_Class63])
-	(nombre "Leche de vaca"))
-
 ([comida_Class65] of  Bebida
 
-	(compuesto_por [comida_Class66])
 	(nombre "Zumo de naranja")
 	(precio 3.0))
 
-([comida_Class66] of  Ingrediente
-
-	(forma_parte_de [comida_Class65])
-	(nombre "Naranja"))
-
 ([comida_Class67] of  Vino
 
-	(compuesto_por [comida_Class68])
 	(nombre "laRioja")
 	(precio 19.0))
 
-([comida_Class68] of  Ingrediente
-
-	(forma_parte_de
-		[comida_Class67]
-		[comida_Class70])
-	(nombre "Uva blanca"))
-
-([comida_Class69] of  Ingrediente
-
-	(nombre "Alcohol etílico"))
-
 ([comida_Class70] of  Vino
 
-	(compuesto_por [comida_Class68])
 	(nombre "Abadía San Campio")
 	(precio 11.75))

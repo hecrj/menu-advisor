@@ -4,10 +4,8 @@
 )
 
 (defrule summary "Imprime un pequeño resumen"
-	(Cliente (nombre ?nombre))
-	(Preferencias (tipos $?tipos))
+	(Preferencias (tipos-menu $?tipos))
 	=>
-	(printout t "Nombre del cliente: " ?nombre crlf)
 	(printout t "Tipos escogidos:" crlf)
 	(progn$ (?tipo $?tipos)
 		(printout t "    " ?tipo crlf)
