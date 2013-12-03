@@ -36,12 +36,11 @@
   (declare (salience 9700))
   ?prefs <- (Preferencias (temperatura desconocido))
   =>
-  (bind ?tipos (create$ CALIENTE FRIO))
-  (bind ?respuesta (pregunta-indice "¿Prefiere comida caliente of fria?" ?tipos))
+  (bind ?respuesta (pregunta-indice "¿Prefiere comida caliente o fría?" (slot-allowed-values MAIN::Plato temperatura)))
   (modify ?prefs (temperatura ?respuesta))
 )
 
-(defrule pregunta-estacion "Preguntar la estacion del ano"
+(defrule pregunta-estacion "Preguntar la estacion del año"
   (declare (salience 9600))
   =>
   (bind ?est (pregunta-indice "¿Cuál es la estación del año actual?" (deftemplate-slot-allowed-values MAIN::Contexto estacion)))
