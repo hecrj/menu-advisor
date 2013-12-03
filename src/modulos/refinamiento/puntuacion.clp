@@ -13,12 +13,12 @@
 		(send ?rec put-puntuacion
 			(+ ?punt 100))
 		(send ?rec put-justificaciones
-			(add$ (str-cat "El plato es de tipo " ?tipo_plato ", preferido por el cliente -> +100") $?just))
+			(add$ (str-cat "El plato es de tipo " (lowcase ?tipo_plato) ", preferido por el cliente -> +100") $?just))
 	else (if (neq ?tipo_plato Generico) then
 		(send ?rec put-puntuacion
 			(- ?punt 100))
 		(send ?rec put-justificaciones
-			(add$ (str-cat "El plato no es de un tipo genérico/preferido por el cliente: " ?tipo_plato " -> -100") $?just))
+			(add$ (str-cat "El plato no es de un tipo genérico/preferido por el cliente: " (lowcase ?tipo_plato) " -> -100") $?just))
 		)
 	)
 	(assert (tipo-puntuado ?rec))
@@ -34,12 +34,12 @@
 		(send ?rec put-puntuacion
 			(+ ?punt 75))
 		(send ?rec put-justificaciones
-			(add$ (str-cat "El plato se sirve " (lowcase (str-cat ?temperatura_plato)) ", preferido por el cliente -> +75") $?just))
+			(add$ (str-cat "El plato se sirve " (lowcase ?temperatura_plato) ", preferido por el cliente -> +75") $?just))
 	else 
 		(send ?rec put-puntuacion
 			(- ?punt 75))
 		(send ?rec put-justificaciones
-			(add$ (str-cat "El plato se sirve " (lowcase (str-cat ?temperatura_plato)) ", no preferido por el cliente -> -75") $?just))
+			(add$ (str-cat "El plato se sirve " (lowcase ?temperatura_plato) ", no preferido por el cliente -> -75") $?just))
 		
 	)
 	(assert (temperatura-puntuada ?rec))
