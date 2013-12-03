@@ -1,4 +1,4 @@
-; Mon Dec 02 11:50:12 CET 2013
+; Tue Dec 03 09:34:47 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -6,45 +6,45 @@
 ([comida_Class0] of  Generico
 
 	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo plato indefinido")
 	(precio 4.0)
-	(problemas [comida_Class20008])
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
 
 ([comida_Class1] of  Generico
 
 	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo postre indefinido")
 	(precio 0.0)
-	(problemas [comida_Class20008])
 	(temperatura FRIO)
 	(tipo POSTRE))
 
 ([comida_Class10001] of  Generico
 
 	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo plato caliente")
 	(precio 10.0)
-	(problemas [comida_Class20008])
 	(temperatura CALIENTE)
 	(tipo PRIMERO))
 
 ([comida_Class10002] of  Generico
 
 	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo plato frio")
 	(precio 10.0)
-	(problemas [comida_Class20008])
 	(temperatura FRIO)
 	(tipo PRIMERO))
 
 ([comida_Class2] of  Moderno
 
 	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo plato moderno")
 	(precio 200.0)
-	(problemas [comida_Class20008])
 	(temperatura CALIENTE)
 	(tipo PRIMERO SEGUNDO))
 
@@ -57,14 +57,14 @@
 		[comida_Class20019])
 	(nombre "Vegetariano"))
 
-([comida_Class20007] of  IngredienteProblematico
+([comida_Class20007] of  Ingrediente
 
 	(nombre "Carne")
 	(platos
 		[comida_Class45]
 		[comida_Class44]))
 
-([comida_Class20008] of  IngredienteProblematico
+([comida_Class20008] of  Ingrediente
 
 	(nombre "Ninguno")
 	(platos
@@ -77,7 +77,7 @@
 		[comida_Class49]
 		[comida_Class36]))
 
-([comida_Class20009] of  IngredienteProblematico
+([comida_Class20009] of  Ingrediente
 
 	(nombre "Azúcar")
 	(platos
@@ -91,19 +91,19 @@
 	(conflictos [comida_Class20009])
 	(nombre "Diabético"))
 
-([comida_Class20011] of  IngredienteProblematico
+([comida_Class20011] of  Ingrediente
 
 	(nombre "Pescado")
 	(platos
 		[comida_Class47]
 		[comida_Class48]))
 
-([comida_Class20012] of  IngredienteProblematico
+([comida_Class20012] of  Ingrediente
 
 	(nombre "Nueces")
 	(platos [comida_Class37]))
 
-([comida_Class20013] of  IngredienteProblematico
+([comida_Class20013] of  Ingrediente
 
 	(nombre "Cereal")
 	(platos
@@ -115,7 +115,7 @@
 	(conflictos [comida_Class20013])
 	(nombre "Celíaco"))
 
-([comida_Class20018] of  IngredienteProblematico
+([comida_Class20018] of  Ingrediente
 
 	(nombre "Lácteo")
 	(platos
@@ -124,7 +124,7 @@
 		[comida_Class38]
 		[comida_Class39]))
 
-([comida_Class20019] of  IngredienteProblematico
+([comida_Class20019] of  Ingrediente
 
 	(nombre "Huevo")
 	(platos [comida_Class20020]))
@@ -132,128 +132,128 @@
 ([comida_Class20020] of  Tradicional
 
 	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20019])
 	(nombre "Tortilla francesa")
 	(precio 3.0)
-	(problemas [comida_Class20019])
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
 
 ([comida_Class3] of  Tradicional
 
 	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo plato tradicional")
 	(precio 2.0)
-	(problemas [comida_Class20008])
 	(temperatura FRIO)
 	(tipo PRIMERO))
 
 ([comida_Class35] of  Generico
 
 	(es_exclusivo FALSE)
-	(nombre "Helado de chocolate")
-	(precio 3.0)
-	(problemas
+	(ingredientes
 		[comida_Class20009]
 		[comida_Class20018])
+	(nombre "Helado de chocolate")
+	(precio 3.0)
 	(temperatura FRIO)
 	(tipo POSTRE))
 
 ([comida_Class36] of  Generico
 
 	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20008])
 	(nombre "Tajada de melon")
 	(precio 1.0)
-	(problemas [comida_Class20008])
 	(temperatura FRIO)
 	(tipo POSTRE))
 
 ([comida_Class37] of  Generico
 
 	(es_exclusivo FALSE)
-	(nombre "Turrón de chocolate con nueces")
-	(precio 2.0)
-	(problemas
+	(ingredientes
 		[comida_Class20009]
 		[comida_Class20012]
 		[comida_Class20018])
+	(nombre "Turrón de chocolate con nueces")
+	(precio 2.0)
 	(temperatura FRIO)
 	(tipo POSTRE))
 
 ([comida_Class38] of  Tradicional
 
 	(es_exclusivo FALSE)
-	(nombre "Crema Catalana")
-	(precio 8.0)
-	(problemas
+	(ingredientes
 		[comida_Class20009]
 		[comida_Class20018])
+	(nombre "Crema Catalana")
+	(precio 8.0)
 	(temperatura CALIENTE)
 	(tipo POSTRE))
 
 ([comida_Class39] of  Tradicional
 
 	(es_exclusivo FALSE)
-	(nombre "Chocolate caliente")
-	(precio 2.0)
-	(problemas
+	(ingredientes
 		[comida_Class20009]
 		[comida_Class20018])
+	(nombre "Chocolate caliente")
+	(precio 2.0)
 	(temperatura CALIENTE)
 	(tipo POSTRE))
 
 ([comida_Class44] of  Tradicional
 
 	(es_exclusivo FALSE)
-	(nombre "Macarrones a la boloñesa")
-	(precio 4.0)
-	(problemas
+	(ingredientes
 		[comida_Class20007]
 		[comida_Class20013])
+	(nombre "Macarrones a la boloñesa")
+	(precio 4.0)
 	(temperatura CALIENTE)
 	(tipo PRIMERO))
 
 ([comida_Class45] of  Tradicional
 
 	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20007])
 	(nombre "Estofado")
 	(precio 3.0)
-	(problemas [comida_Class20007])
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
 
 ([comida_Class46] of  Tradicional
 
 	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20013])
 	(nombre "Sopa de galets")
 	(precio 2.0)
-	(problemas [comida_Class20013])
 	(temperatura CALIENTE)
 	(tipo PRIMERO))
 
 ([comida_Class47] of  Generico
 
 	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20011])
 	(nombre "Atún a la plancha")
 	(precio 4.0)
-	(problemas [comida_Class20011])
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
 
 ([comida_Class48] of  Generico
 
 	(es_exclusivo TRUE)
+	(ingredientes [comida_Class20011])
 	(nombre "Bacalao al pil-pil")
 	(precio 20.0)
-	(problemas [comida_Class20011])
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
 
 ([comida_Class49] of  Generico
 
 	(es_exclusivo FALSE)
+	(ingredientes [comida_Class20008])
 	(nombre "Ensalada verde")
 	(precio 2.0)
-	(problemas [comida_Class20008])
 	(temperatura FRIO)
 	(tipo PRIMERO))
 

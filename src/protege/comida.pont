@@ -1,4 +1,4 @@
-; Mon Dec 02 11:50:12 CET 2013
+; Tue Dec 03 09:34:47 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -13,10 +13,16 @@
 		(cardinality 1 ?VARIABLE)
 ;+		(inverse-slot forma_parte_de)
 		(create-accessor read-write))
+	(multislot ingredientes
+		(type INSTANCE)
+;+		(allowed-classes Ingrediente)
+		(cardinality 1 ?VARIABLE)
+;+		(inverse-slot platos)
+		(create-accessor read-write))
 	(multislot platos
 		(type INSTANCE)
 ;+		(allowed-classes Plato)
-;+		(inverse-slot problemas)
+;+		(inverse-slot ingredientes)
 		(create-accessor read-write))
 	(single-slot es_exclusivo
 		(type SYMBOL)
@@ -28,12 +34,6 @@
 		(type INSTANCE)
 ;+		(allowed-classes Elaborado)
 ;+		(inverse-slot compuesto_por)
-		(create-accessor read-write))
-	(multislot problemas
-		(type INSTANCE)
-;+		(allowed-classes IngredienteProblematico)
-		(cardinality 1 ?VARIABLE)
-;+		(inverse-slot platos)
 		(create-accessor read-write))
 	(multislot tipo
 		(type SYMBOL)
@@ -48,7 +48,7 @@
 		(create-accessor read-write))
 	(multislot conflictos
 		(type INSTANCE)
-;+		(allowed-classes IngredienteProblematico)
+;+		(allowed-classes Ingrediente)
 		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(multislot grupo-u-origen
@@ -82,9 +82,9 @@
 (defclass Plato
 	(is-a Elaborado)
 	(role abstract)
-	(multislot problemas
+	(multislot ingredientes
 		(type INSTANCE)
-;+		(allowed-classes IngredienteProblematico)
+;+		(allowed-classes Ingrediente)
 		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(multislot tipo
@@ -133,7 +133,7 @@
 	(role concrete)
 	(multislot conflictos
 		(type INSTANCE)
-;+		(allowed-classes IngredienteProblematico)
+;+		(allowed-classes Ingrediente)
 		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
 	(single-slot nombre
@@ -141,7 +141,7 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass IngredienteProblematico
+(defclass Ingrediente
 	(is-a USER)
 	(role concrete)
 	(multislot platos

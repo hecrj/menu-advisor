@@ -26,10 +26,18 @@
 
 (defrule pregunta-tipos-comensal "Preguntar los tipos de cliente del menú"
   (declare (salience 9800))
-  ?prefs <- (Preferencias (tipos-comensal desconocido))
+  ?prefs <- (Preferencias (ingredientes-prohibidos "desconocido"))
   =>
   (bind $?respuesta (seleccionar-instancias TipoComensal nombre "¿Qué tipo(s) de comensales tendrá el menú?"))
-  (modify ?prefs (tipos-comensal $?respuesta))
+  
+  (bind $?ingredientes-prohibidos (create$))
+  (progn$ (?tipo $?respuesta)
+    (bind $?conflictos (send ?tipo get-conflictos))
+    (progn$ (?conflicto $?conflictos)
+      (bind $?ingredientes-prohibidos (add$ (send (instance-address * ?conflicto) get-nombre) $?ingredientes-prohibidos))
+    )
+  )
+  (modify ?prefs (ingredientes-prohibidos $?ingredientes-prohibidos))
 )
 
 (defrule pregunta-temperatura "Preguntar la temperatura de comida preferida"
@@ -44,6 +52,7 @@
   (declare (salience 9600))
   =>
   (bind ?est (pregunta-indice "¿Cuál es la estación del año actual?" (deftemplate-slot-allowed-values MAIN::Contexto estacion)))
+  ; TODO Añadir ingredientes prohibidos!
   (assert (Contexto (estacion ?est)))
 )
 

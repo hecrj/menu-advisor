@@ -3,34 +3,25 @@
 	(export ?ALL)
 )
 
-(defrule crear-recomendaciones-iniciales "Crea las recomendaciones iniciales en función de los tipos de comensal"
-	(Preferencias (tipos-comensal $?tipos))
+(defrule crear-recomendaciones-iniciales "Crea las recomendaciones iniciales"
+	(declare (salience 10000))
 	=>
-	(bind $?total-problemas (find-all-instances ((?inst IngredienteProblematico)) TRUE))
-	(bind $?problemas (create$))
-	(progn$ (?tipo $?tipos)
-		(bind $?problemas-tipo (send ?tipo get-conflictos))
-		(progn$ (?problema $?problemas-tipo)
-			(if (not (member$ ?problema $?problemas)) then
-				(bind $?problemas (add$ (send (instance-address * ?problema) get-nombre) $?problemas))
-			)
-		)
+	(bind $?platos (find-all-instances ((?inst Plato)) TRUE))
+	(progn$ (?plato $?platos)
+		(make-instance (gensym) of Recomendacion (plato ?plato))
 	)
-	(progn$ (?problema $?total-problemas)
-		(if (not (member$ (send ?problema get-nombre) $?problemas)) then
-			(bind $?platos (send ?problema get-platos))
-			(progn$ (?plato $?platos)
-				(bind ?conflicto_indirecto FALSE)
-				(bind ?problemas-plato (send (instance-address * ?plato) get-problemas))
-				(progn$ (?problema-plato ?problemas-plato)
-					(if (member$ (send (instance-address * ?problema-plato) get-nombre) $?problemas) then
-						(bind ?conflicto_indirecto TRUE)
-					)
-				)
-				(if (eq ?conflicto_indirecto FALSE) then
-					(make-instance (gensym) of Recomendacion (plato (instance-address * ?plato)))
-				)
-			)
+)
+
+(defrule ingredientes-prohibidos "Elimina las recomendaciones de platos con ingredientes prohibidos"
+	(declare (salience 9900))
+	(Preferencias (ingredientes-prohibidos $?prohibidos))
+	?rec <- (object (is-a Recomendacion) (plato ?plato))
+	=>
+	(bind $?ingredientes (send ?plato get-ingredientes))
+	(progn$ (?ingrediente $?ingredientes)
+		(if (member$ (send (instance-address * ?ingrediente) get-nombre) $?prohibidos) then
+			(send ?rec delete)
+			(break)
 		)
 	)
 )
