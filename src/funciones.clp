@@ -56,7 +56,7 @@
 
 ;;; Funcion para hacer una pregunta con respuesta numerica unica
 (deffunction MAIN::pregunta-numerica (?pregunta ?rangini ?rangfi)
-	(format t "%s [%d, %d] " ?pregunta ?rangini ?rangfi)
+	(format t "%s [%d, %d]: " ?pregunta ?rangini ?rangfi)
 	(bind ?respuesta (read))
 	(while (not(and(>= ?respuesta ?rangini)(<= ?respuesta ?rangfi))) do
 		(format t "%s [%d, %d] " ?pregunta ?rangini ?rangfi)
@@ -83,7 +83,7 @@
             (bind ?linea (format nil "  %d. %s" ?var-index ?var))
             (printout t ?linea crlf)
     )
-    (bind ?respuesta (pregunta-numerica "Escoge una opción:" 1 (length$ ?valores-posibles)))
+    (bind ?respuesta (pregunta-numerica "Escoja una opción" 1 (length$ ?valores-posibles)))
     (nth ?respuesta $?valores-posibles)
 )
 
