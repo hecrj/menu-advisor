@@ -27,12 +27,12 @@
 		(send ?rec put-puntuacion
 			(+ ?punt ?peso))
 		(send ?rec put-justificaciones
-			(add$ (str-cat "El plato es de tipo " ?tipo_plato ", preferido por el cliente -> +" ?peso) $?just))
+			(add$ (str-cat "El plato es de tipo " (lowcase ?tipo_plato) ", preferido por el cliente -> +" ?peso) $?just))
 	else (if (neq ?tipo_plato Generico) then
 		(send ?rec put-puntuacion
 			(- ?punt ?peso))
 		(send ?rec put-justificaciones
-			(add$ (str-cat "El plato no es de un tipo genérico/preferido por el cliente: " ?tipo_plato " -> -" ?peso) $?just))
+			(add$ (str-cat "El plato no es de un tipo genérico/preferido por el cliente: " (lowcase ?tipo_plato) " -> -" ?peso) $?just))
 		)
 	)
 	(assert (tipo-puntuado ?rec))
@@ -49,13 +49,12 @@
 		(send ?rec put-puntuacion
 			(+ ?punt ?peso))
 		(send ?rec put-justificaciones
-			(add$ (str-cat "El plato se sirve " (lowcase (str-cat ?temperatura_plato)) ", preferido por el cliente -> +" ?peso) $?just))
+			(add$ (str-cat "El plato se sirve " (lowcase ?temperatura_plato) ", preferido por el cliente -> +" ?peso) $?just))
 	else 
 		(send ?rec put-puntuacion
 			(- ?punt ?peso))
 		(send ?rec put-justificaciones
-			(add$ (str-cat "El plato se sirve " (lowcase (str-cat ?temperatura_plato)) ", no preferido por el cliente -> -" ?peso) $?just))
-		
+			(add$ (str-cat "El plato se sirve " (lowcase ?temperatura_plato) ", no preferido por el cliente -> -" ?peso) $?just))
 	)
 	(assert (temperatura-puntuada ?rec))
 )
@@ -67,9 +66,9 @@
 	(test (eq (send ?plato get-temperatura) CALIENTE))
 	(not (caliente-puntuado ?rec))
 	=>
-	(send ?rec put-puntuacion (- ?punt ?peso))
+	(send ?rec put-puntuacion (+ ?punt ?peso))
 	(send ?rec put-justificaciones
-		(add$ (str-cat "Los platos calientes no suelen apetecer en verano -> -" ?peso) $?just))
+		(add$ (str-cat "Los platos calientes no suelen apetecer en verano -> " ?peso) $?just))
 	(assert (caliente-puntuado ?rec))
 )
 
