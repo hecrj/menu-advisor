@@ -8,10 +8,7 @@
     (default desconocido))
   (slot evento
         (type STRING)
-        (allowed-strings "Boda"
-                         "Comunión"
-                         "Comida de empresa"
-                         "Comida familiar"))
+        (default ""))
   (multislot regiones
              (type STRING)
              (default "desconocido"))

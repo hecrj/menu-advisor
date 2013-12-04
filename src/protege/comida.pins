@@ -1,4 +1,4 @@
-; Wed Dec 04 18:45:58 CET 2013
+; Wed Dec 04 20:31:30 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -85,7 +85,8 @@
 		[comida_Class35]
 		[comida_Class37]
 		[comida_Class39]
-		[comida_Class38]))
+		[comida_Class38]
+		[comida_Class30001]))
 
 ([comida_Class20010] of  TipoComensal
 
@@ -123,12 +124,15 @@
 		[comida_Class35]
 		[comida_Class37]
 		[comida_Class38]
-		[comida_Class39]))
+		[comida_Class39]
+		[comida_Class30001]))
 
 ([comida_Class20019] of  Ingrediente
 
 	(nombre "Huevo")
-	(platos [comida_Class20020]))
+	(platos
+		[comida_Class20020]
+		[comida_Class30001]))
 
 ([comida_Class20020] of  Tradicional
 
@@ -147,6 +151,19 @@
 	(precio 2.0)
 	(temperatura FRIO)
 	(tipo PRIMERO))
+
+([comida_Class30001] of  Generico
+
+	(es_exclusivo FALSE)
+	(eventos [comida_Class40002])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class20019])
+	(nombre "Pastel de boda clásico")
+	(precio 0.0)
+	(temperatura FRIO)
+	(tipo POSTRE))
 
 ([comida_Class30002] of  Epoca
 
@@ -220,7 +237,8 @@
 
 ([comida_Class40002] of  Evento
 
-	(nombre "Boda"))
+	(nombre "Boda")
+	(platos_evento [comida_Class30001]))
 
 ([comida_Class40003] of  Evento
 
