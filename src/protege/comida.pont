@@ -1,4 +1,4 @@
-; Tue Dec 03 17:37:13 CET 2013
+; Wed Dec 04 18:45:58 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -12,16 +12,21 @@
 ;+		(allowed-classes Plato)
 ;+		(inverse-slot ingredientes)
 		(create-accessor read-write))
-	(multislot platos_tipicos
+	(multislot platos_evento
 		(type INSTANCE)
 ;+		(allowed-classes Plato)
-;+		(inverse-slot tipico_de)
+;+		(inverse-slot eventos)
 		(create-accessor read-write))
 	(single-slot es_exclusivo
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 		(default FALSE)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot platos_tipicos
+		(type INSTANCE)
+;+		(allowed-classes Plato)
+;+		(inverse-slot tipico_de)
 		(create-accessor read-write))
 	(multislot tipo
 		(type SYMBOL)
@@ -61,10 +66,6 @@
 ;+		(allowed-classes Epoca)
 ;+		(inverse-slot dispone-de)
 		(create-accessor read-write))
-	(single-slot comida_Class40004
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(multislot conflictos
 		(type INSTANCE)
 ;+		(allowed-classes Ingrediente)
@@ -73,6 +74,12 @@
 	(multislot grupo-u-origen
 		(type SYMBOL)
 		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
+		(create-accessor read-write))
+	(single-slot eventos
+		(type INSTANCE)
+;+		(allowed-classes Evento)
+;+		(cardinality 0 1)
+;+		(inverse-slot platos_evento)
 		(create-accessor read-write))
 	(single-slot nombre
 		(type STRING)
@@ -111,6 +118,11 @@
 ;+		(allowed-classes Ingrediente)
 		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
+	(single-slot eventos
+		(type INSTANCE)
+;+		(allowed-classes Evento)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(multislot tipo
 		(type SYMBOL)
 		(allowed-values PRIMERO SEGUNDO POSTRE)
@@ -122,14 +134,14 @@
 		(default FALSE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(multislot tipico_de
-		(type INSTANCE)
-;+		(allowed-classes Region)
-		(create-accessor read-write))
 	(single-slot temperatura
 		(type SYMBOL)
 		(allowed-values CALIENTE FRIO)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot tipico_de
+		(type INSTANCE)
+;+		(allowed-classes Region)
 		(create-accessor read-write)))
 
 (defclass Moderno
@@ -205,6 +217,18 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(multislot platos_tipicos
+		(type INSTANCE)
+;+		(allowed-classes Plato)
+		(create-accessor read-write)))
+
+(defclass Evento
+	(is-a USER)
+	(role concrete)
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot platos_evento
 		(type INSTANCE)
 ;+		(allowed-classes Plato)
 		(create-accessor read-write)))

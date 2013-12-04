@@ -1,4 +1,4 @@
-; Tue Dec 03 17:37:13 CET 2013
+; Wed Dec 04 18:45:58 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -218,6 +218,18 @@
 	(temperatura CALIENTE)
 	(tipo POSTRE))
 
+([comida_Class40002] of  Evento
+
+	(nombre "Boda"))
+
+([comida_Class40003] of  Evento
+
+	(nombre "Comunión"))
+
+([comida_Class40004] of  Evento
+
+	(nombre "Comida familiar"))
+
 ([comida_Class40005] of  Region
 
 	(nombre "China"))
@@ -319,6 +331,10 @@
 	(precio 2.0)
 	(temperatura FRIO)
 	(tipo PRIMERO))
+
+([comida_Class50005] of  Evento
+
+	(nombre "Comida de empresa"))
 
 ([comida_Class59] of  Bebida
 
