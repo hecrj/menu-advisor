@@ -26,7 +26,6 @@
 	)
 )
 
-<<<<<<< HEAD:src/modulos/refinamiento/filtracion.clp
 (defrule platos-demasiado-caros "Elimina las recomendaciones de platos que exceden el precio"
 	(declare (salience 9800))
 	(Preferencias (precio-maximo ?max))
@@ -43,10 +42,7 @@
 	(send ?rec delete)
 )
 
-(defrule ir-a-puntuar "Empieza a puntuar resultados"
-=======
 (defrule ir-a-puntuar "Empieza a puntuar platos"
->>>>>>> e5f559951ae737f53ea2ce4a92f632e599a0ebaa:src/modulos/refinamiento/platos/filtracion.clp
   (declare (salience -10000))
   =>
   (focus platos-puntuacion)
