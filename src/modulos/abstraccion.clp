@@ -98,9 +98,9 @@
   (assert (estacion preguntada))
 )
 
-(defrule ir-a-filtrar "Empieza a filtrar resultados"
+(defrule ir-a-filtrar "Empieza a filtrar platos"
   (declare (salience -10000))
   (Preferencias)
   =>
-  (focus filtracion)
+  (focus platos-filtracion)
 )

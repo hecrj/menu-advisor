@@ -1,4 +1,4 @@
-(defmodule seleccion
+(defmodule platos-seleccion
 	(import MAIN ?ALL)
 	(export ?ALL)
 )
@@ -25,9 +25,8 @@
     (assert (Recomendaciones (primeros $?primeros) (segundos $?segundos) (postres $?postres)))
 )
 
-(defrule ir-a-presentar "Empieza a presentar resultados"
+(defrule ir-a-filtrar-menus "Empezar a filtrar posibles menus"
   (declare (salience -10000))
-  (Preferencias)
   =>
-  (focus presentacion)
+  (focus menus-filtracion)
 )

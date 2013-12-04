@@ -23,14 +23,23 @@
 ; Módulo de abstracción de datos
 (load "modulos/abstraccion.clp")
 
-; Módulo de filtración
-(load "modulos/refinamiento/filtracion.clp")
+; Módulo de filtración de platos
+(load "modulos/refinamiento/platos/filtracion.clp")
 
-; Modulo de puntuación
-(load "modulos/refinamiento/puntuacion.clp")
+; Modulo de puntuación de platos
+(load "modulos/refinamiento/platos/puntuacion.clp")
 
-; Módulo de selección
-(load "modulos/refinamiento/seleccion.clp")
+; Módulo de selección de platos
+(load "modulos/refinamiento/platos/seleccion.clp")
+
+; Módulo de filtración de menús
+(load "modulos/refinamiento/menus/filtracion.clp")
+
+; Modulo de puntuación de menús
+(load "modulos/refinamiento/menus/puntuacion.clp")
+
+; Módulo de selección de menús
+(load "modulos/refinamiento/menus/seleccion.clp")
 
 ; Modulo de presentacion de resultados
 (load "modulos/presentacion.clp")

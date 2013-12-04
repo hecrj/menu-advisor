@@ -1,4 +1,4 @@
-(defmodule filtracion
+(defmodule platos-filtracion
 	(import MAIN ?ALL)
 	(export ?ALL)
 )
@@ -26,9 +26,8 @@
 	)
 )
 
-(defrule ir-a-puntuar "Empieza a puntuar resultados"
+(defrule ir-a-puntuar "Empieza a puntuar platos"
   (declare (salience -10000))
-  (Preferencias)
   =>
-  (focus puntuacion)
+  (focus platos-puntuacion)
 )
