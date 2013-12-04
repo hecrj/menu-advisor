@@ -102,6 +102,21 @@
   (assert (regiones-puntuadas ?rec))
 )
 
+(defrule puntuar-eventos "Mejora la puntuación los platos propios del evento"
+  (Preferencias (evento ?evento))
+  ?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $?just))
+  ?ev <- (object (is-a Evento) (nombre ?evento) (importancia_platos ?importancia))
+  (not (evento-puntuado ?rec))
+  =>
+  (bind $?eventos-plato (send ?plato get-eventos))
+  (progn$ (?evento-plato $?eventos-plato)
+          (if (eq (send (instance-address * ?evento-plato) get-nombre) ?evento)
+              then (send ?rec put-puntuacion (+ ?punt ?importancia))
+                   (send ?rec put-justificaciones
+                         (add$ (str-cat "El plato es adecuado para el evento " ?evento "-> +" ?importancia) $?just))))
+  (assert (evento-puntuado ?rec))
+)
+
 (defrule ir-a-seleccionar "Empieza a seleccionar platos"
   (declare (salience -10000))
   (Preferencias)
