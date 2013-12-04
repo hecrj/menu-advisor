@@ -134,15 +134,18 @@
 
 (defclass Moderno
 	(is-a Plato)
-	(role concrete))
+	(role concrete)
+	(pattern-match reactive))
 
 (defclass Tradicional
 	(is-a Plato)
-	(role concrete))
+	(role concrete)
+	(pattern-match reactive))
 
 (defclass Generico
 	(is-a Plato)
-	(role concrete))
+	(role concrete)
+	(pattern-match reactive))
 
 (defclass Bebida
 	(is-a Elaborado)

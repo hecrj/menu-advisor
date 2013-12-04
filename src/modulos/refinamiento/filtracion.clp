@@ -26,6 +26,22 @@
 	)
 )
 
+(defrule platos-demasiado-caros "Elimina las recomendaciones de platos que exceden el precio"
+	(declare (salience 9800))
+	(Preferencias (precio-maximo ?max))
+	(test (> ?max -1))
+	?rec <- (object (is-a Recomendacion) (plato ?plato)
+	
+	;la linia siguiente da error: No objects of existing classes can satisfy test restriction in object pattern.
+	;(test (< (send ?plato get-precio) ?max))
+
+	;metodo 2: tampoco funciona
+	(object (name ?plato) (precio ?p)) ;peta aqui,pero es identico al ultimo ejemplo del apartado 3.5.5 de la FAQ (??)
+	(test (> (float ?p) ?max))
+	=>
+	(send ?rec delete)
+)
+
 (defrule ir-a-puntuar "Empieza a puntuar resultados"
   (declare (salience -10000))
   (Preferencias)

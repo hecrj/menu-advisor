@@ -1,6 +1,7 @@
 ; Recomendacion representa una recomendacion de un plato para el menu
 (defclass Recomendacion 
 	(is-a USER)
+	(pattern-match reactive)
 	(role concrete)
 	(slot plato
 		(type INSTANCE)
