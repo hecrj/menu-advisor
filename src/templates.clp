@@ -17,7 +17,10 @@
              (default "desconocido"))
   (slot comensales
     (type INTEGER)
-    (range 0 ?VARIABLE))
+    (range 0 ?VARIABLE)
+  )
+  (slot precio-maximo (type INTEGER) (default -1)) ; no se si los INTEGER pueden ser 'nil'
+  (slot precio-minimo (type INTEGER) (default -1))
 )
 
 (deftemplate Contexto

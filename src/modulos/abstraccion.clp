@@ -98,6 +98,36 @@
   (assert (estacion preguntada))
 )
 
+(defrule pregunta-precio "Preguntar si el cliente tiene preferencias de precio"
+  (declare (salience 9500))
+  (not (precio preguntado))
+  =>
+  (assert (precio preguntado))
+  (if (pregunta-si-no "¿Quiere indicar limitaciones de precio?") then (assert (pedir precio)))
+)
+
+(defrule pregunta-precio-maximo "Preguntar el precio máximo"
+  (declare (salience 9400))
+  (pedir precio)
+  (not (precio maximo pedido))
+  ?prefs <- (Preferencias (precio-maximo -1))
+  =>
+  (bind ?precio-max (pregunta-numerica-positiva "¿Cuál es el precio máximo?"))
+  (modify ?prefs (precio-maximo ?precio-max))
+  (assert (precio maximo pedido))
+)
+
+(defrule pregunta-precio-minimo "Preguntar el precio mínimo"
+  (declare (salience 9300))
+  (pedir precio)
+  (not (precio minimo pedido))
+  ?prefs <- (Preferencias (precio-minimo -1))
+  =>
+  (bind ?precio-min (pregunta-numerica-positiva "¿Cuál es el precio mínimo?"))
+  (modify ?prefs (precio-minimo ?precio-min))
+  (assert (precio minimo pedido))
+)
+
 (defrule ir-a-filtrar "Empieza a filtrar resultados"
   (declare (salience -10000))
   (Preferencias)
