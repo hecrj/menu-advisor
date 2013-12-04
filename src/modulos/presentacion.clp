@@ -11,20 +11,26 @@
 		(printout t "    " ?tipo crlf)
 	)
 	(printout t "Recomendaciones candidatas" crlf)
-	(assert (imprimir-recomendaciones))
+	(assert (presentar-recomendaciones))
 )
 
 (defrule imprimir-recomendaciones "Imprime la lista completa de recomendaciones candidatas"
-	(imprimir-recomendaciones)
-	?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $?just))
-	(not (rec-impresa ?rec))
+	?presenta <- (presentar-recomendaciones)
+	(Recomendaciones (primeros $?primeros) (segundos $?segundos) (postres $?postres))
 	=>
-	(printout t "Plato: " (send ?plato get-nombre) crlf)
-	(printout t "   Puntuación: " ?punt crlf)
-	(printout t "   Justificaciones:" crlf)
-	(progn$ (?j $?just)
-		(printout t "        " ?j crlf)
-	)
-	(printout t crlf)
-	(assert (rec-impresa ?rec))
+	(printout t "Platos ordenados por puntuación:" crlf)
+
+	(printout t "Primeros:" crlf)
+	(imprimir-recomendaciones $?primeros)
+	(printout t "------------------------------" crlf)
+
+	(printout t "Segundos:" crlf)
+	(imprimir-recomendaciones $?segundos)
+	(printout t "------------------------------" crlf)
+
+	(printout t "Postres:" crlf)
+	(imprimir-recomendaciones $?postres)
+	(printout t "------------------------------" crlf)
+	
+	(retract ?presenta)
 )

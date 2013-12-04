@@ -30,3 +30,15 @@
     )
   )
 )
+
+(deftemplate Recomendaciones
+  (multislot primeros
+    (type INSTANCE)
+    (allowed-classes Recomendacion))
+  (multislot segundos
+    (type INSTANCE)
+    (allowed-classes Recomendacion))
+  (multislot postres
+    (type INSTANCE)
+    (allowed-classes Recomendacion))
+)
