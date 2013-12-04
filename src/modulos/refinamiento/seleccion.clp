@@ -12,7 +12,6 @@
     (bind $?postres (create$))
     (while (> (length $?recs) 0)
         (bind ?max-rec (mejor-recomendacion $?recs))
-        (printout t (length $?recs) crlf)
         (bind ?plato (send ?max-rec get-plato))
         (bind $?tipos (send ?plato get-tipo))
         (if (member$ PRIMERO $?tipos)

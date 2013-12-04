@@ -3,7 +3,6 @@
 	(bind ?elemento nil)
 	(progn$ (?curr-rec $?lista)
 		(bind ?curr-punt (send ?curr-rec get-puntuacion))
-    (printout t ?curr-punt crlf)
 		(if (or (eq ?maximo nil) (> ?curr-punt ?maximo))
 			then 
 			(bind ?maximo ?curr-punt)
