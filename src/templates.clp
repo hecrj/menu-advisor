@@ -8,10 +8,7 @@
     (default desconocido))
   (slot evento
         (type STRING)
-        (allowed-strings "Boda"
-                         "Comunión"
-                         "Comida de empresa"
-                         "Comida familiar"))
+        (default ""))
   (multislot regiones
              (type STRING)
              (default "desconocido"))
@@ -32,4 +29,16 @@
                      "Invierno"
     )
   )
+)
+
+(deftemplate Recomendaciones
+  (multislot primeros
+    (type INSTANCE)
+    (allowed-classes Recomendacion))
+  (multislot segundos
+    (type INSTANCE)
+    (allowed-classes Recomendacion))
+  (multislot postres
+    (type INSTANCE)
+    (allowed-classes Recomendacion))
 )

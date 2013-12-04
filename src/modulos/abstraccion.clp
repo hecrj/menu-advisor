@@ -12,7 +12,8 @@
 (defrule pregunta-evento "Preguntar el tipo de evento al cliente"
   (declare (salience 10000))
   =>
-  (bind ?evento (pregunta-indice "¿Qué tipo de evento va a realizar?" (deftemplate-slot-allowed-values MAIN::Preferencias evento)))
+  (bind ?evento-inst (seleccionar-instancia Evento nombre "¿Qué tipo de evento va a realizar?"))
+  (bind ?evento (send ?evento-inst get-nombre))
   (assert (Preferencias (evento ?evento)))
 )
 
@@ -128,9 +129,9 @@
   (assert (precio minimo pedido))
 )
 
-(defrule ir-a-filtrar "Empieza a filtrar resultados"
+(defrule ir-a-filtrar "Empieza a filtrar platos"
   (declare (salience -10000))
   (Preferencias)
   =>
-  (focus filtracion)
+  (focus platos-filtracion)
 )

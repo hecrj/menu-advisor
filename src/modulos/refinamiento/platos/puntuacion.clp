@@ -1,4 +1,4 @@
-(defmodule puntuacion
+(defmodule platos-puntuacion
 	(import MAIN ?ALL)
 	(export ?ALL)
 )
@@ -102,9 +102,9 @@
   (assert (regiones-puntuadas ?rec))
 )
 
-(defrule ir-a-seleccionar "Empieza a seleccionar resultados"
+(defrule ir-a-seleccionar "Empieza a seleccionar platos"
   (declare (salience -10000))
   (Preferencias)
   =>
-  (focus seleccion)
+  (focus platos-seleccion)
 )
