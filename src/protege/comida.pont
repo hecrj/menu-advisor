@@ -1,4 +1,4 @@
-; Wed Dec 04 20:31:30 CET 2013
+; Thu Dec 05 21:59:24 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -26,6 +26,12 @@
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 		(default FALSE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot pesadez
+		(type SYMBOL)
+		(allowed-values LIGERO PESADO)
+		(default LIGERO)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(multislot tipo
@@ -122,6 +128,12 @@
 (defclass Plato
 	(is-a Elaborado)
 	(role abstract)
+	(single-slot pesadez
+		(type SYMBOL)
+		(allowed-values LIGERO PESADO)
+		(default LIGERO)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(multislot ingredientes
 		(type INSTANCE)
 ;+		(allowed-classes Ingrediente)
@@ -159,18 +171,15 @@
 
 (defclass Moderno
 	(is-a Plato)
-	(role concrete)
-	(pattern-match reactive))
+	(role concrete))
 
 (defclass Tradicional
 	(is-a Plato)
-	(role concrete)
-	(pattern-match reactive))
+	(role concrete))
 
 (defclass Generico
 	(is-a Plato)
-	(role concrete)
-	(pattern-match reactive))
+	(role concrete))
 
 (defclass Bebida
 	(is-a Elaborado)
