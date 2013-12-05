@@ -30,14 +30,8 @@
 	(declare (salience 9800))
 	(Preferencias (precio-maximo ?max))
 	(test (> ?max -1))
-	?rec <- (object (is-a Recomendacion) (plato ?plato)
-	
-	;la linia siguiente da error: No objects of existing classes can satisfy test restriction in object pattern.
-	;(test (< (send ?plato get-precio) ?max))
-
-	;metodo 2: tampoco funciona
-	(object (name ?plato) (precio ?p)) ;peta aqui,pero es identico al ultimo ejemplo del apartado 3.5.5 de la FAQ (??)
-	(test (> (float ?p) ?max))
+	?rec <- (object (is-a Recomendacion) (plato ?plato))
+	(test (> (send ?plato get-precio) ?max))
 	=>
 	(send ?rec delete)
 )
