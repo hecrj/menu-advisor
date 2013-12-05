@@ -113,8 +113,22 @@
           (if (eq (send (instance-address * ?evento-plato) get-nombre) ?evento)
               then (send ?rec put-puntuacion (+ ?punt ?importancia))
                    (send ?rec put-justificaciones
-                         (add$ (str-cat "El plato es adecuado para el evento " ?evento "-> +" ?importancia) $?just))))
+                         (add$ (str-cat "El plato es adecuado para el evento " ?evento " -> +" ?importancia) $?just))))
   (assert (evento-puntuado ?rec))
+)
+
+(defrule puntuar-dificultad "Reduce la puntuación de los platos demasiado complejos"
+  (Preferencias (dificultad ?dificultad) (comensales ?comensales))
+  ?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $?just))
+  (not (dificultad-puntuada ?rec))
+  =>
+  (bind ?dif (- (send ?plato get-dificultad) ?dificultad))
+  (if (> ?dif 0)
+      then (send ?rec put-puntuacion (- ?punt ?dif))
+           (send ?rec put-justificaciones
+                 (add$ (str-cat "El plato supera en " ?dif " la dificultad máxima de "
+                                ?dificultad " para un evento de " ?comensales " comensales -> -" ?dif))))
+  (assert (dificultad-puntuada ?rec))
 )
 
 (defrule ir-a-seleccionar "Empieza a seleccionar platos"

@@ -1,10 +1,11 @@
-; Thu Dec 05 21:59:24 CET 2013
+; Thu Dec 05 23:39:41 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
 ([comida_Class0] of  Generico
 
+	(dificultad 15)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo plato indefinido")
@@ -15,6 +16,7 @@
 
 ([comida_Class1] of  Generico
 
+	(dificultad 2)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo postre indefinido")
@@ -25,6 +27,7 @@
 
 ([comida_Class10001] of  Generico
 
+	(dificultad 10)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo plato caliente")
@@ -35,6 +38,7 @@
 
 ([comida_Class10002] of  Generico
 
+	(dificultad 15)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo plato frio")
@@ -45,6 +49,7 @@
 
 ([comida_Class2] of  Moderno
 
+	(dificultad 30)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo plato moderno")
@@ -141,6 +146,7 @@
 
 ([comida_Class20020] of  Tradicional
 
+	(dificultad 10)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20019])
 	(nombre "Tortilla francesa")
@@ -151,6 +157,7 @@
 
 ([comida_Class3] of  Tradicional
 
+	(dificultad 40)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo plato tradicional")
@@ -161,6 +168,7 @@
 
 ([comida_Class30001] of  Generico
 
+	(dificultad 70)
 	(es_exclusivo FALSE)
 	(eventos [comida_Class40002])
 	(ingredientes
@@ -191,6 +199,7 @@
 
 ([comida_Class35] of  Generico
 
+	(dificultad 1)
 	(es_exclusivo FALSE)
 	(ingredientes
 		[comida_Class20009]
@@ -203,6 +212,7 @@
 
 ([comida_Class36] of  Generico
 
+	(dificultad 1)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20008])
 	(nombre "Tajada de melon")
@@ -213,19 +223,21 @@
 
 ([comida_Class37] of  Generico
 
+	(dificultad 2)
 	(es_exclusivo FALSE)
 	(ingredientes
 		[comida_Class20009]
 		[comida_Class20012]
 		[comida_Class20018])
 	(nombre "Turrón de chocolate con nueces")
-	(pesadez LIGERO)
+	(pesadez PESADO)
 	(precio 2.0)
 	(temperatura FRIO)
 	(tipo POSTRE))
 
 ([comida_Class38] of  Tradicional
 
+	(dificultad 7)
 	(es_exclusivo FALSE)
 	(ingredientes
 		[comida_Class20009]
@@ -238,6 +250,7 @@
 
 ([comida_Class39] of  Tradicional
 
+	(dificultad 5)
 	(es_exclusivo FALSE)
 	(ingredientes
 		[comida_Class20009]
@@ -285,6 +298,7 @@
 
 ([comida_Class40010] of  Generico
 
+	(dificultad 60)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class40009])
 	(nombre "Paella")
@@ -300,6 +314,7 @@
 
 ([comida_Class40013] of  Generico
 
+	(dificultad 60)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20007])
 	(nombre "Paella valenciana")
@@ -311,6 +326,7 @@
 
 ([comida_Class44] of  Tradicional
 
+	(dificultad 50)
 	(es_exclusivo FALSE)
 	(ingredientes
 		[comida_Class20007]
@@ -323,6 +339,7 @@
 
 ([comida_Class45] of  Tradicional
 
+	(dificultad 60)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20007])
 	(nombre "Estofado")
@@ -333,6 +350,7 @@
 
 ([comida_Class46] of  Tradicional
 
+	(dificultad 40)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20013])
 	(nombre "Sopa de galets")
@@ -343,6 +361,7 @@
 
 ([comida_Class47] of  Generico
 
+	(dificultad 40)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20011])
 	(nombre "Atún a la plancha")
@@ -353,6 +372,7 @@
 
 ([comida_Class48] of  Generico
 
+	(dificultad 70)
 	(es_exclusivo TRUE)
 	(ingredientes [comida_Class20011])
 	(nombre "Bacalao al pil-pil")
@@ -363,6 +383,7 @@
 
 ([comida_Class49] of  Generico
 
+	(dificultad 5)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class20008])
 	(nombre "Ensalada verde")
