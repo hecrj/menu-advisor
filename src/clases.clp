@@ -33,4 +33,7 @@
 		(type INTEGER)
 		(default 0)
 		(create-accessor read-write))
+	(multislot justificaciones
+		(type STRING)
+		(create-accessor read-write))
 )
