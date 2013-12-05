@@ -22,7 +22,7 @@
   ?prefs <- (Preferencias (comensales 0))
   =>
   (bind ?comensales (pregunta-numerica-positiva "¿Cuántos comensales van a ser?"))
-  (modify ?prefs (comensales ?comensales))Preferencias
+  (modify ?prefs (comensales ?comensales) (dificultad (max 0 (- 100 ?comensales))))
 )
 
 (defrule pregunta-tipos-menu "Preguntar los tipos de cocina preferidas para el menú"
