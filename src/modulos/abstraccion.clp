@@ -22,7 +22,7 @@
   ?prefs <- (Preferencias (comensales 0))
   =>
   (bind ?comensales (pregunta-numerica-positiva "¿Cuántos comensales van a ser?"))
-  (modify ?prefs (comensales ?comensales))
+  (modify ?prefs (comensales ?comensales))Preferencias
 )
 
 (defrule pregunta-tipos-menu "Preguntar los tipos de cocina preferidas para el menú"
@@ -129,6 +129,37 @@
   (assert (precio minimo pedido))
 )
 
+(defrule preferencia-bebida "Preguntar que prefiere para la bebida"
+  (declare (salience 9200))
+  (not (bebida preguntado))
+  ?prefs <- (Preferencias (vino -1))
+  =>
+  (bind ?opciones (create$ "Vino (sólo uno)" "Vino (uno distinto para cada plato)" "Otra cosa"))
+  (bind ?respuesta (pregunta-indice "¿Qué prefiere para la bebida?" ?opciones))
+  (if (eq ?respuesta "Vino (sólo uno)") then
+    (modify ?prefs (vino 1))
+    (assert (preguntar vino))
+  )
+  (if (eq ?respuesta "Vino (uno distinto para cada plato)") then 
+    (modify ?prefs (vino 2))
+    (assert (preguntar vino))
+  )
+  (if (eq ?respuesta "Otra cosa") then (modify ?prefs (vino 0)))
+  (assert (bebida preguntado))
+)
+
+(defrule preferencia-vino "Preguntar que prefiere para la bebida"
+  (declare (salience 9100))
+  (preguntar vino)
+  (not (vino preguntado))
+  ?prefs <- (Preferencias (tipo-vino "Sin preferencia"))
+  =>
+  (bind ?respuesta (pregunta-indice "¿Qué prefiere para la bebida?" (deftemplate-slot-allowed-values MAIN::Preferencias tipo-vino)))
+  (modify ?prefs (tipo-vino ?respuesta))
+  (assert (vino preguntado))
+)
+
+ 
 (defrule ir-a-filtrar "Empieza a filtrar platos"
   (declare (salience -10000))
   (Preferencias)
