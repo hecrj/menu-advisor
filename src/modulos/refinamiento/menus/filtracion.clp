@@ -22,7 +22,7 @@
                             )
                         )
                         (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
-                            (postre ?postre) (puntuacion ?precio))
+                            (postre ?postre) (precio ?precio))
                     )
                 )
             )

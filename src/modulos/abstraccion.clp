@@ -74,14 +74,13 @@
   (bind ?respuesta (pregunta-indice "¿Prefiere comida caliente o fría?" (slot-allowed-values MAIN::Plato temperatura)))
   (modify ?prefs (temperatura ?respuesta))
 )
-puedo puedo 
+
 (defrule pregunta-estacion "Preguntar la estacion del año"
   (declare (salience 9600))
   (not (estacion preguntada))
   ?prefs <- (Preferencias (ingredientes-prohibidos $?prohibidos))
   =>
   (bind ?est (seleccionar-instancia Epoca nombre "¿En qué época desea consumir el menú?"))
-  ; TODO Añadir ingredientes prohibidos!
   (bind $?disponibles (send ?est get-dispone-de))
   (bind $?epocas (find-all-instances ((?inst Epoca)) TRUE))
   (progn$ (?epoca $?epocas)
