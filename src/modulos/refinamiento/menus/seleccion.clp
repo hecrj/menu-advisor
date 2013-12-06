@@ -60,7 +60,6 @@
     ?menu <- (object (is-a Menu) (puntuacion ?puntuacion) (precio ?precio))
     (not (menu-seleccionado ?menu))
     =>
-    (printout t ?menu crlf)
     (bind $?ml (create$ ?menu))
     (if (and (>= ?precio ?min) (<= ?precio ?bar))
         then (if (= 0 (length $?b))
