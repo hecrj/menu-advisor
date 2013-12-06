@@ -37,9 +37,6 @@
         (type FLOAT)
         (default 0.0)
         (create-accessor read-write))
-    (multislot justificaciones
-        (type STRING)
-        (create-accessor read-write))
     (slot franja
         (type STRING)
         (allowed-strings "Barato"
@@ -47,4 +44,10 @@
                      "Caro"
         )
     )
+    (multislot vinos
+        (type INSTANCE)
+        (allowed-classes Vino))
+    (multislot justificaciones
+        (type STRING)
+        (create-accessor read-write))
 )
