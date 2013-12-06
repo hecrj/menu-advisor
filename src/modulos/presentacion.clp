@@ -33,4 +33,22 @@
     (printout t "------------------------------" crlf)
     
     (retract ?presenta)
+    (assert (presentar-menus))
+)
+
+(defrule imprimir-menus "Imprime los menús"
+    ?imprimir <- (presentar-menus)
+    (SeleccionMenus (barato ?barato) (medio ?medio) (caro ?caro))
+    =>
+    (printout t "------------------------------" crlf)
+    (printout t "Primera propuesta:" crlf)
+    (imprimir-menu ?caro)
+    (printout t "------------------------------" crlf)
+    (printout t "Segunda propuesta:" crlf)
+    (imprimir-menu ?medio)
+    (printout t "------------------------------" crlf)
+    (printout t "Tercera propuesta:" crlf)
+    (imprimir-menu ?barato)
+
+    (retract ?imprimir)
 )

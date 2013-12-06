@@ -164,6 +164,17 @@
   )
 )
 
+(deffunction imprimir-menu (?menu)
+  (bind ?primero (send ?menu get-primero))
+  (bind ?segundo (send ?menu get-segundo))
+  (bind ?postre (send ?menu get-postre))
+  
+  (printout t "Primer plato:  " (send ?primero get-nombre) crlf)
+  (printout t "Segundo plato: " (send ?segundo get-nombre) crlf)
+  (printout t "Postre:        " (send ?postre get-nombre) crlf)
+  (printout t "       precio: " (send ?menu get-precio) crlf)
+)
+
 (deffunction plato (?rec)
   (send ?rec get-plato)
 )

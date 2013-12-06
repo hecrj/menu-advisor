@@ -1,4 +1,4 @@
-; Thu Dec 05 23:39:41 CET 2013
+; Fri Dec 06 00:18:55 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -24,6 +24,12 @@
 	(precio 0.0)
 	(temperatura FRIO)
 	(tipo POSTRE))
+
+([comida_Class10000] of  Ingrediente
+
+	(nombre "Melón")
+	(platos [comida_Class36])
+	(solo-disponible-en [comida_Class30002]))
 
 ([comida_Class10001] of  Generico
 
@@ -85,8 +91,7 @@
 		[comida_Class1]
 		[comida_Class2]
 		[comida_Class3]
-		[comida_Class49]
-		[comida_Class36]))
+		[comida_Class49]))
 
 ([comida_Class20009] of  Ingrediente
 
@@ -183,6 +188,7 @@
 
 ([comida_Class30002] of  Epoca
 
+	(dispone-de [comida_Class10000])
 	(nombre "Verano"))
 
 ([comida_Class30003] of  Epoca
@@ -214,7 +220,7 @@
 
 	(dificultad 1)
 	(es_exclusivo FALSE)
-	(ingredientes [comida_Class20008])
+	(ingredientes [comida_Class10000])
 	(nombre "Tajada de melon")
 	(pesadez LIGERO)
 	(precio 1.0)
