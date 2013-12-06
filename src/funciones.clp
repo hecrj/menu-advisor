@@ -158,8 +158,8 @@
     (bind $?just (send ?rec get-justificaciones))
 
     (printout t "    " (send ?plato get-nombre) crlf)
+    (printout t "      Precio: " (send ?plato get-precio) "€" crlf)
     (printout t "      Puntuación: " ?punt crlf)
-    (printout t "      Precio: " (send ?plato get-precio) crlf)
     (printout t "      Justificaciones:" crlf)
     (progn$ (?j $?just)
         (printout t "        " ?j crlf)

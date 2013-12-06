@@ -17,8 +17,11 @@
         )
     )
     (send ?menu put-puntuacion (+ ?punt ?menu-punt))
+    (if (< ?menu-punt 0)
+        then (bind ?signo "-")
+        else (bind ?signo "+"))
     (send ?menu put-justificaciones
-        (add$ (str-cat "Ĺos platos del menú suman una puntuación total -> " ?menu-punt) $?just))
+        (add$ (str-cat "Ĺos platos del menú suman una puntuación total -> " ?signo ?menu-punt) $?just))
     (assert (platos-puntuados ?menu))
 )
 
