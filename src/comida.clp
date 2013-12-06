@@ -58,4 +58,5 @@
 )
 
 ; Ejecutar
+(seed (integer (time)))
 (run)

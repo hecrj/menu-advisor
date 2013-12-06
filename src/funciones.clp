@@ -219,3 +219,8 @@
             )
         else (printout t "No disponible, lo sentimos." crlf))
 )
+
+(deffunction seleccionar-uno ($?lista)
+    (bind ?res (+ 1 (mod (random) (length $?lista))))
+    (nth ?res $?lista)
+)
