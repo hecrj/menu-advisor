@@ -71,8 +71,12 @@
   (declare (salience 9700))
   ?prefs <- (Preferencias (temperatura desconocido))
   =>
-  (bind ?respuesta (pregunta-indice "¿Prefiere comida caliente o fría?" (slot-allowed-values MAIN::Plato temperatura)))
-  (modify ?prefs (temperatura ?respuesta))
+  (if (not (pregunta-si-no "¿Tiene alguna preferencia para la temperatura de la comida?"))
+    then (modify ?prefs (temperatura sin-preferencia))
+    else
+      (bind ?respuesta (pregunta-indice "¿Prefiere comida caliente o fría?" (slot-allowed-values MAIN::Plato temperatura)))
+      (modify ?prefs (temperatura ?respuesta))
+  )
 )
 
 (defrule pregunta-estacion "Preguntar la estacion del año"

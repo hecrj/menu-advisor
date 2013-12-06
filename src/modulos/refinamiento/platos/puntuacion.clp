@@ -42,6 +42,7 @@
 
 (defrule puntuar-temperatura "Puntúa los platos en función de la temperatura preferida"
     (Preferencias (temperatura ?temperatura_preferida))
+    (test (neq ?temperatura_preferida sin-preferencia))
     (Pesos (temperatura-preferida ?peso))
     ?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $?just))
     (not (temperatura-puntuada ?rec))
