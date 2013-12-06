@@ -12,6 +12,7 @@
     )
     (printout t "Recomendaciones candidatas" crlf)
     (assert (presentar-recomendaciones))
+    (assert (presentar-menus))
 )
 
 (defrule imprimir-recomendaciones "Imprime la lista completa de recomendaciones candidatas"
@@ -20,23 +21,23 @@
     =>
     (printout t "Platos ordenados por puntuación:" crlf)
 
+    (printout t "------------------------------" crlf)
     (printout t "Primeros:" crlf)
     (imprimir-recomendaciones $?primeros)
+    
     (printout t "------------------------------" crlf)
-
     (printout t "Segundos:" crlf)
     (imprimir-recomendaciones $?segundos)
+    
     (printout t "------------------------------" crlf)
-
     (printout t "Postres:" crlf)
     (imprimir-recomendaciones $?postres)
-    (printout t "------------------------------" crlf)
     
     (retract ?presenta)
-    (assert (presentar-menus))
 )
 
 (defrule imprimir-menus "Imprime los menús"
+    (declare (salience -10000))
     ?imprimir <- (presentar-menus)
     (SeleccionMenus (barato $?barato) (medio $?medio) (caro $?caro))
     =>
@@ -57,6 +58,8 @@
     (if (neq 0 (length $?barato))
         then (imprimir-menu (nth 1 $?barato))
         else (printout t "No disponible, lo sentimos" crlf))
+
+    (printout t "------------------------------" crlf)
 
     (retract ?imprimir)
 )
