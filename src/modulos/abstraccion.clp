@@ -163,10 +163,11 @@
     ?prefs <- (Preferencias)
     =>
     (bind $?colores (find-all-instances ((?inst ColorVino)) TRUE))
-    (bind $?respuesta (pregunta-multi "¿Qué tipo de vino prefiere?" (find-attr nombre $?colores)))
+    (bind $?nombres-colores (find-attr nombre $?colores))
+    (bind $?respuesta (pregunta-multi "¿Qué tipo de vino prefiere?" $?nombres-colores))
     (if (> 0 (length $?respuesta))
         then (modify ?prefs (colores-vino $?respuesta))
-        else (modify ?prefs (colores-vino (find-attr nombre $?colores))))
+        else (modify ?prefs (colores-vino $?nombres-colores)))
     (assert (vino preguntado))
 )
  
