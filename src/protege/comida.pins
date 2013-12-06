@@ -1,4 +1,4 @@
-; Fri Dec 06 20:22:19 CET 2013
+; Fri Dec 06 20:24:37 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -430,11 +430,6 @@
 	(importancia_platos 25)
 	(nombre "Comida de empresa"))
 
-([comida_Class59] of  Bebida
-
-	(nombre "Agua mineral")
-	(precio 0.5))
-
 ([comida_Class60005] of  Ingrediente
 
 	(nombre "Sal")
@@ -635,21 +630,6 @@
 
 	(nombre "Guindillas")
 	(platos [comida_Class48]))
-
-([comida_Class61] of  Alcoholica
-
-	(nombre "Vodka")
-	(precio 3.0))
-
-([comida_Class63] of  Bebida
-
-	(nombre "Leche")
-	(precio 0.2))
-
-([comida_Class65] of  Bebida
-
-	(nombre "Zumo de naranja")
-	(precio 3.0))
 
 ([comida_Class67] of  Vino
 

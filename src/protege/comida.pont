@@ -1,4 +1,4 @@
-; Fri Dec 06 20:22:19 CET 2013
+; Fri Dec 06 20:24:37 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -218,14 +218,6 @@
 
 (defclass Generico
 	(is-a Plato)
-	(role concrete))
-
-(defclass Bebida
-	(is-a Elaborado)
-	(role concrete))
-
-(defclass Alcoholica
-	(is-a Bebida)
 	(role concrete))
 
 (defclass Vino
