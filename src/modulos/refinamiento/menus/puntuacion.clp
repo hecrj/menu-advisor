@@ -17,6 +17,8 @@
         )
     )
     (send ?menu put-puntuacion (+ ?punt ?menu-punt))
+    (send ?menu put-justificaciones
+        (add$ (str-cat "Ĺos platos del menú suman una puntuación total -> " ?menu-punt) $?just))
     (assert (platos-puntuados ?menu))
 )
 
@@ -28,7 +30,7 @@
     =>
     (send ?menu put-puntuacion (- ?punt 50))
     (send ?menu put-justificaciones
-    (add$ (str-cat "El primero y el segudo son platos pesados, los comensales lo pueden encontrar excesivo -> -50") $?just))
+        (add$ (str-cat "El primero y el segundo son platos pesados, los comensales lo pueden encontrar excesivo -> -50") $?just))
     (assert (pesadez-puntuada ?menu))
 )
 
@@ -40,7 +42,7 @@
     =>
     (send ?menu put-puntuacion (- ?punt 50))
     (send ?menu put-justificaciones
-    (add$ (str-cat "El primero y el segudo son platos ligeros, los comensales pueden no saciarse -> -50") $?just))
+        (add$ (str-cat "El primero y el segundo son platos ligeros, los comensales pueden no saciarse -> -50") $?just))
     (assert (ligereza-puntuada ?menu))
 )
 
