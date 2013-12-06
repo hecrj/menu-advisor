@@ -33,6 +33,14 @@
     (modify ?prefs (tipos-menu $?respuesta))
 )
 
+(defrule pregunta-sibarita "Pregunta al cliente si es un sibarita"
+    (declare (salience 9875))
+    ?prefs <- (Preferencias (exclusivo desconocido))
+    =>
+    (bind ?respuesta (pregunta-si-no "¿Quiere que intentemos proponerle platos exclusivos para los paladares más exigentes?"))
+    (modify ?prefs (exclusivo ?respuesta))
+)
+
 (defrule pregunta-regional "Preguntar si el cliente prefiere platos regionales"
     (declare (salience 9850))
     ?prefs <- (Preferencias (regiones "desconocido"))

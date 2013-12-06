@@ -36,6 +36,14 @@
     (send ?rec delete)
 )
 
+(defrule platos-sibaritas "Elimina las recomendaciones de platos exclusivos si no se quieren"
+    (Preferencias (exclusivo FALSE))
+    ?rec <- (object (is-a Recomendacion) (plato ?plato))
+    (test (send ?plato get-es_exclusivo))
+    =>
+    (send ?rec delete)
+)
+
 (defrule ir-a-puntuar "Empieza a puntuar platos"
   (declare (salience -10000))
   =>

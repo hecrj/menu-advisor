@@ -9,6 +9,7 @@
     (slot caliente-en-verano (type INTEGER) (default -25))
     (slot caliente-en-invierno (type INTEGER) (default 40))
     (slot region-preferida (type INTEGER) (default 50))
+    (slot plato-exclusivo (type INTEGER) (default 60))
 )
 
 (defrule inicializa-Pesos "Define la ponderación de factores"
@@ -112,10 +113,10 @@
     =>
     (bind $?eventos-plato (send ?plato get-eventos))
     (progn$ (?evento-plato $?eventos-plato)
-            (if (eq (send (instance-address * ?evento-plato) get-nombre) ?evento)
-                then (send ?rec put-puntuacion (+ ?punt ?importancia))
-                     (send ?rec put-justificaciones
-                           (add$ (str-cat "El plato es adecuado para el evento " ?evento " -> +" ?importancia) $?just))))
+        (if (eq (send (instance-address * ?evento-plato) get-nombre) ?evento)
+            then (send ?rec put-puntuacion (+ ?punt ?importancia))
+            (send ?rec put-justificaciones
+                (add$ (str-cat "El plato es adecuado para el evento " ?evento " -> +" ?importancia) $?just))))
     (assert (evento-puntuado ?rec))
 )
 
@@ -128,9 +129,22 @@
     (if (> ?dif 0)
         then (send ?rec put-puntuacion (- ?punt ?dif))
              (send ?rec put-justificaciones
-                   (add$ (str-cat "El plato supera en " ?dif " la dificultad máxima de "
-                                  ?dificultad " para un evento de " ?comensales " comensales -> -" ?dif) $?just)))
+                 (add$ (str-cat "El plato supera en " ?dif " la dificultad máxima de "
+                           ?dificultad " para un evento de " ?comensales " comensales -> -" ?dif) $?just)))
     (assert (dificultad-puntuada ?rec))
+)
+
+(defrule puntuar-sibarita "Cuando el cliente es sibarita y el plato es exclusivo, se sube la puntuación"
+    ?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $just))
+    (Pesos (plato-exclusivo ?peso))
+    (test (send ?plato get-es_exclusivo))
+    (not (exclusividad-puntuada ?rec))
+    =>
+    (send ?rec put-puntuacion (+ ?punt ?peso))
+    (send ?rec put-justificaciones
+        (add$ (str-cat "El plato es exclusivo, preferido por los clientes más sibaritas -> +" ?peso) $?just))
+        
+    (assert (exclusividad-puntuada ?rec))
 )
 
 (defrule ir-a-seleccionar "Empieza a seleccionar platos"

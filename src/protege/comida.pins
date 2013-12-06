@@ -1,7 +1,15 @@
-; Fri Dec 06 16:41:04 CET 2013
+; Fri Dec 06 18:59:21 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
+
+([comida_Class0] of  Ingrediente
+
+	(nombre "Pasta de trigo")
+	(platos
+		[comida_Class60023]
+		[comida_Class44])
+	(problematico_para [comida_Class20014]))
 
 ([comida_Class10000] of  Ingrediente
 
@@ -107,7 +115,8 @@
 
 	(conflictos
 		[comida_Class20013]
-		[comida_Class60008])
+		[comida_Class60008]
+		[comida_Class0])
 	(nombre "Celíaco"))
 
 ([comida_Class20018] of  Ingrediente
@@ -330,7 +339,8 @@
 	(es_exclusivo FALSE)
 	(ingredientes
 		[comida_Class20007]
-		[comida_Class20013])
+		[comida_Class20013]
+		[comida_Class0])
 	(nombre "Macarrones a la boloñesa")
 	(pesadez PESADO)
 	(precio 4.0)
@@ -568,7 +578,8 @@
 		[comida_Class60028]
 		[comida_Class20018]
 		[comida_Class60005]
-		[comida_Class60030])
+		[comida_Class60030]
+		[comida_Class0])
 	(nombre "Tagliatelle al pesto")
 	(pesadez PESADO)
 	(precio 8.0)
