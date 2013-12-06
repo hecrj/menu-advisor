@@ -163,3 +163,7 @@
     (printout t crlf)
   )
 )
+
+(deffunction plato (?rec)
+  (send ?rec get-plato)
+)
