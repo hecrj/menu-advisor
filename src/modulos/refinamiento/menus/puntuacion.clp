@@ -3,11 +3,28 @@
     (export ?ALL)
 )
 
+(defrule puntuar-menu-platos "Puntúa un menú en función de la puntuación de sus platos"
+    ?menu <- (object (is-a Menu) (primero ?prim) (segundo ?seg) (postre ?pos) (puntuacion ?punt) (justificaciones $?just))
+    (not (platos-puntuados ?menu))
+    =>
+    (bind ?menu-punt
+        (+
+            (+
+                (send ?prim get-puntuacion)
+                (send ?seg get-puntuacion)
+            )
+            (send ?pos get-puntuacion)
+        )
+    )
+    (send ?menu put-puntuacion (+ ?punt ?menu-punt))
+    (assert (platos-puntuados ?menu))
+)
+
 (defrule puntuar-pesadez "Puntúa un menú demasiado pesado negativamente"
-	?menu <- (object (is-a Menu) (primero ?prim) (segundo ?seg) (postre $?pos) (puntuacion ?punt) (justificaciones $?just))
+	?menu <- (object (is-a Menu) (primero ?prim) (segundo ?seg) (puntuacion ?punt) (justificaciones $?just))
 	(not (pesadez-puntuada ?menu))
-	(test (eq (send ?prim get-pesadez) PESADO))
-	(test (eq (send ?seg get-pesadez) PESADO))
+    (test (eq (send (plato ?prim) get-pesadez) PESADO))
+    (test (eq (send (plato ?seg) get-pesadez) PESADO))
 	=>
 	(send ?menu put-puntuacion (- ?punt 50))
 	(send ?menu put-justificaciones
@@ -16,10 +33,10 @@
 )
 
 (defrule puntuar-ligereza "Puntúa un menú demasiado ligero negativamente"
-	?menu <- (object (is-a Menu) (primero ?prim) (segundo ?seg) (postre $?pos) (puntuacion ?punt) (justificaciones $?just))
+	?menu <- (object (is-a Menu) (primero ?prim) (segundo ?seg) (puntuacion ?punt) (justificaciones $?just))
 	(not (ligereza-puntuada ?menu))
-	(test (eq (send ?prim get-pesadez) LIGERO))
-	(test (eq (send ?seg get-pesadez) LIGERO))
+	(test (eq (send (plato ?prim) get-pesadez) LIGERO))
+	(test (eq (send (plato ?seg) get-pesadez) LIGERO))
 	=>
 	(send ?menu put-puntuacion (- ?punt 50))
 	(send ?menu put-justificaciones

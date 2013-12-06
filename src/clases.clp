@@ -33,6 +33,10 @@
 		(type INTEGER)
 		(default 0)
 		(create-accessor read-write))
+	(slot precio
+		(type FLOAT)
+		(default 0.0)
+		(create-accessor read-write))
 	(multislot justificaciones
 		(type STRING)
 		(create-accessor read-write))
