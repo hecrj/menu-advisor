@@ -25,15 +25,15 @@
 
 ;;; Funcion para hacer una pregunta general con una serie de respuestas admitidas
 (deffunction MAIN::pregunta-opciones (?question $?allowed-values)
-   (format t "%s "?question)
-   (progn$ (?curr-value $?allowed-values)
+    (format t "%s "?question)
+    (progn$ (?curr-value $?allowed-values)
         (format t "[%s]" ?curr-value)
     )
-   (printout t ": ")
-   (bind ?answer (read))
-   (if (lexemep ?answer) 
+    (printout t ": ")
+    (bind ?answer (read))
+    (if (lexemep ?answer) 
        then (bind ?answer (lowcase ?answer)))
-   (while (not (member ?answer ?allowed-values)) do
+    (while (not (member ?answer ?allowed-values)) do
       (format t "%s "?question)
       (progn$ (?curr-value $?allowed-values)
         (format t "[%s]" ?curr-value)
@@ -42,13 +42,13 @@
       (bind ?answer (read))
       (if (lexemep ?answer) 
           then (bind ?answer (lowcase ?answer))))
-   ?answer
+    ?answer
 )
    
 ;;; Funcion para hacer una pregunta de tipo si/no
 (deffunction MAIN::pregunta-si-no (?question)
-   (bind ?response (pregunta-opciones ?question si no))
-   (if (or (eq ?response si) (eq ?response s))
+    (bind ?response (pregunta-opciones ?question si no))
+    (if (or (eq ?response si) (eq ?response s))
        then TRUE 
        else FALSE)
 )
@@ -65,13 +65,13 @@
 )
 
 (deffunction MAIN::pregunta-numerica-positiva (?pregunta)
-  (format t "%s " ?pregunta)
-  (bind ?respuesta (read))
-  (while (< ?respuesta 1) do
-         (format t "%s " ?pregunta)
-         (bind ?respuesta (read))
-  )
-  ?respuesta
+    (format t "%s " ?pregunta)
+    (bind ?respuesta (read))
+    (while (< ?respuesta 1) do
+        (format t "%s " ?pregunta)
+        (bind ?respuesta (read))
+    )
+    ?respuesta
 )
 
 ;;; Funcion para hacer pregunta con indice de respuestas posibles
@@ -110,42 +110,42 @@
 )
 
 (deffunction add$ (?element $?list)
-  (bind $?list (insert$ $?list (+ (length$ $?list) 1) ?element))
-  ?list
+    (bind $?list (insert$ $?list (+ (length$ $?list) 1) ?element))
+    ?list
 )
 
 (deffunction find-attr (?attr $?instances)
-  (bind $?list (create$))
-  (bind ?getter (sym-cat get- ?attr))
-  (progn$ (?instance $?instances)
-    (bind $?list (add$ (send ?instance ?getter) $?list))
-  )
+    (bind $?list (create$))
+    (bind ?getter (sym-cat get- ?attr))
+    (progn$ (?instance $?instances)
+        (bind $?list (add$ (send ?instance ?getter) $?list))
+    )
 
-  $?list
+    $?list
 )
 
 (deffunction seleccionar-instancias (?class ?attr ?msg)
-  (bind $?instances (find-all-instances ((?inst ?class)) TRUE))
-  (bind $?respuestas (pregunta-multi ?msg (find-attr ?attr $?instances)))
-  (bind $?lista (create$))
-  (bind ?getter (sym-cat get- ?attr))
-  (progn$ (?instance $?instances)
-    (if (member$ (send ?instance ?getter) $?respuestas) then
-      (bind $?lista (add$ (instance-address * ?instance) $?lista))
+    (bind $?instances (find-all-instances ((?inst ?class)) TRUE))
+    (bind $?respuestas (pregunta-multi ?msg (find-attr ?attr $?instances)))
+    (bind $?lista (create$))
+    (bind ?getter (sym-cat get- ?attr))
+    (progn$ (?instance $?instances)
+        (if (member$ (send ?instance ?getter) $?respuestas) then
+            (bind $?lista (add$ (instance-address * ?instance) $?lista))
+        )
     )
-  )
-  $?lista
+    $?lista
 )
 
 (deffunction seleccionar-instancia (?class ?attr ?msg)
-  (bind $?instances (find-all-instances ((?inst ?class)) TRUE))
-  (bind ?respuesta (pregunta-indice ?msg (find-attr ?attr $?instances)))
-  (bind ?getter (sym-cat get- ?attr))
-  (progn$ (?instance $?instances)
-    (if (eq (send ?instance ?getter) ?respuesta) then
-      (return (instance-address * ?instance))
+    (bind $?instances (find-all-instances ((?inst ?class)) TRUE))
+    (bind ?respuesta (pregunta-indice ?msg (find-attr ?attr $?instances)))
+    (bind ?getter (sym-cat get- ?attr))
+    (progn$ (?instance $?instances)
+        (if (eq (send ?instance ?getter) ?respuesta) then
+            (return (instance-address * ?instance))
+        )
     )
-  )
 )
 
 (deffunction plato (?rec)
@@ -153,27 +153,29 @@
 )
 
 (deffunction imprimir-recomendaciones ($?recs)
-  (progn$ (?rec $?recs)
-    (bind $?just (send ?rec get-justificaciones))
+    (progn$ (?rec $?recs)
+        (bind ?punt (send ?rec get-puntuacion))
+        (bind ?plato (plato ?rec))
+        (bind $?just (send ?rec get-justificaciones))
 
-    (printout t (send (plato ?rec) get-nombre) crlf)
-    (printout t "   Puntuación: " (send ?rec get-puntuacion) crlf)
-    (printout t "   Precio: " (send (plato ?rec) get-precio) crlf)
-    (printout t "   Justificaciones:" crlf)
-    (progn$ (?j $?just)
-      (printout t "        " ?j crlf)
+        (printout t (send ?plato get-nombre) crlf)
+        (printout t "   Puntuación: " ?punt crlf)
+        (printout t "   Precio: " (send ?plato get-precio))
+        (printout t "   Justificaciones:" crlf)
+        (progn$ (?j $?just)
+            (printout t "        " ?j crlf)
+        )
+        (printout t crlf)
     )
-    (printout t crlf)
-  )
 )
 
 (deffunction imprimir-menu (?menu)
-  (bind ?primero (send ?menu get-primero))
-  (bind ?segundo (send ?menu get-segundo))
-  (bind ?postre (send ?menu get-postre))
-  
-  (printout t "Primer plato:  " (send ?primero get-nombre) crlf)
-  (printout t "Segundo plato: " (send ?segundo get-nombre) crlf)
-  (printout t "Postre:        " (send ?postre get-nombre) crlf)
-  (printout t "       precio: " (send ?menu get-precio) crlf)
+    (bind ?primero (plato (send ?menu get-primero)))
+    (bind ?segundo (plato (send ?menu get-segundo)))
+    (bind ?postre (plato (send ?menu get-postre)))
+    
+    (printout t "Primer plato:  " (send ?primero get-nombre) crlf)
+    (printout t "Segundo plato: " (send ?segundo get-nombre) crlf)
+    (printout t "Postre:        " (send ?postre get-nombre) crlf)
+    (printout t "       precio: " (send ?menu get-precio) crlf)
 )
