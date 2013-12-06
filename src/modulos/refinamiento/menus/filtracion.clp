@@ -15,7 +15,9 @@
 (defrule generar-menus "Genera todos los menús posibles en función de las recomendaciones disponibles"
     (declare (salience 10000))
     (Recomendaciones (primeros $?primeros) (segundos $?segundos) (postres $?postres))
+    (Preferencias (vino ?cantidad-vino))
     =>
+    (bind $?todos-vinos (find-all-instances ((?inst Vino)) TRUE))
     (progn$ (?primero $?primeros)
         (progn$ (?segundo $?segundos)
             (if (neq ?primero ?segundo) then
@@ -30,8 +32,22 @@
                                 (send (plato ?postre) get-precio)
                             )
                         )
-                        (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
-                            (postre ?postre) (precio ?precio))
+                        
+                        (switch ?cantidad-vino
+                            (case 0 then
+                                (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
+                                    (postre ?postre) (precio ?precio) (vinos (create$))))
+                            (case 1 then
+                                (progn$ (?vino $?todos-vinos)
+                                    (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
+                                        (postre ?postre) (precio ?precio) (vinos (create$ ?vino)))))
+                            (case 2 then
+                                (progn$ (?vino1 $?todos-vinos)
+                                    (progn$ (?vino2 $?todos-vinos)
+                                        (if (neq ?vino1 ?vino2) then
+                                            (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
+                                                (postre ?postre) (precio ?precio) (vinos (create$ ?vino1 ?vino2)))))))
+                        )
                     )
                 )
             )
