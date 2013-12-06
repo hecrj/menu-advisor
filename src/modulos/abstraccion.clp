@@ -164,7 +164,9 @@
     =>
     (bind $?colores (find-all-instances ((?inst ColorVino)) TRUE))
     (bind $?respuesta (pregunta-multi "¿Qué tipo de vino prefiere?" (find-attr nombre $?colores)))
-    (modify ?prefs (colores-vino $?respuesta))
+    (if (> 0 (length $?respuesta))
+        then (modify ?prefs (colores-vino $?respuesta))
+        else (modify ?prefs (colores-vino (find-attr nombre $?colores))))
     (assert (vino preguntado))
 )
  
