@@ -1,4 +1,4 @@
-; Fri Dec 06 16:01:04 CET 2013
+; Fri Dec 06 16:23:26 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -311,7 +311,7 @@
 
 ([comida_Class40002] of  Evento
 
-	(importancia_platos 100)
+	(importancia_platos 500)
 	(nombre "Boda")
 	(platos_evento [comida_Class30001]))
 

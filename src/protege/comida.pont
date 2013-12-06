@@ -1,4 +1,4 @@
-; Fri Dec 06 16:01:04 CET 2013
+; Fri Dec 06 16:23:26 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -79,7 +79,7 @@
 		(create-accessor read-write))
 	(single-slot importancia_platos
 		(type INTEGER)
-		(range 0 100)
+		(range 0 %3FVARIABLE)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot conflictos
@@ -269,6 +269,6 @@
 		(create-accessor read-write))
 	(single-slot importancia_platos
 		(type INTEGER)
-		(range 0 100)
+		(range 0 %3FVARIABLE)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
