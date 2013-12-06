@@ -50,7 +50,6 @@
 (defrule inicializar-seleccion-menus
     (declare (salience 1000))
     =>
-    (printout t "Menús inicializados" crlf)
     (assert (SeleccionMenus))
 )
 
