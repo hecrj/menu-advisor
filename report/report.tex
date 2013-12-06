@@ -1,0 +1,52 @@
+% !TEX program = lualatex
+% !TEX encoding = UTF-8 Unicode
+% 
+\newcommand{\titol}{Sistemas basados en el conocimiento}
+\newcommand{\materia}{Inteligencia artificial}
+\newcommand{\idioma}{english,spanish}
+\newcommand{\pdfauthors}{Nil Mamano Grande, Héctor Ramón Jiménez, Isaac Sánchez Barrera}
+%\newcommand{\autors}[1]{\begin{tabular}{#1} Nil Mamano Grande \\ Héctor Ramón Jiménez \\ Isaac Sánchez Barrera\end{tabular}}
+\newcommand{\autors}[1]{\begin{tabular}{#1} Mamano -- Ramón -- Sánchez\end{tabular}}
+\newcommand{\data}{\today}
+\include{header}
+\setstretch{1.0}
+\DefineBibliographyStrings{spanish}{%
+  references = {Referencias},
+}
+
+\title{\materia\\
+\Large{\titol}}
+\subtitle{Facultat d'Informàtica de Barcelona\\ % Pongo la I mayúscula porque la FIB lo hace
+Universitat Politècnica de Catalunya}
+\author{
+  Nil Mamano Grande \\
+  Héctor Ramón Jiménez \\
+  Isaac Sánchez Barrera}
+\date{
+  \today \\
+  cuatrimestre de otoño \\
+  curso 2013--2014}
+
+\everymath{\displaystyle}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\bigO}[1]{\ensuremath{\operatorname{O}\left(#1\right)}}% big-O notation/symbol
+\newcommand{\bigOmega}[1]{\ensuremath{\operatorname{\Omega}\left(#1\right)}}% big-O notation/symbol
+\newcommand{\bigTheta}[1]{\ensuremath{\operatorname{\Theta}\left(#1\right)}}% big-O notation/symbol
+
+\bibliography{references}
+\begin{document}
+
+\maketitle
+\tableofcontents
+\listoftables
+\listoffigures
+\vfill
+\cleardoublepage
+
+\part{Presentación y análisis del problema}
+\input{sections/introduccion}
+\part{Implementación del sistema experto}
+\end{document}

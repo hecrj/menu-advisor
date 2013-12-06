@@ -1,4 +1,4 @@
-; Fri Dec 06 20:26:36 CET 2013
+; Fri Dec 06 20:44:33 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -21,6 +21,7 @@
 
 	(dificultad 30)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70014])
 	(ingredientes [comida_Class20008])
 	(nombre "Ejemplo plato moderno")
 	(pesadez PESADO)
@@ -32,6 +33,7 @@
 
 	(dificultad 15)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70013])
 	(ingredientes
 		[comida_Class20019]
 		[comida_Class50003]
@@ -150,6 +152,7 @@
 
 	(dificultad 10)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70017])
 	(ingredientes [comida_Class20019])
 	(nombre "Tortilla francesa")
 	(pesadez LIGERO)
@@ -162,6 +165,7 @@
 	(dificultad 80)
 	(es_exclusivo FALSE)
 	(eventos [comida_Class40002])
+	(genero [comida_Class70012])
 	(ingredientes
 		[comida_Class20009]
 		[comida_Class20018]
@@ -194,6 +198,7 @@
 
 	(dificultad 1)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
 	(ingredientes
 		[comida_Class20009]
 		[comida_Class20018])
@@ -207,6 +212,7 @@
 
 	(dificultad 1)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
 	(ingredientes [comida_Class10000])
 	(nombre "Tajada de melon")
 	(pesadez LIGERO)
@@ -218,6 +224,7 @@
 
 	(dificultad 2)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
 	(ingredientes
 		[comida_Class20009]
 		[comida_Class20012]
@@ -232,6 +239,7 @@
 
 	(dificultad 7)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
 	(ingredientes
 		[comida_Class20009]
 		[comida_Class20018])
@@ -245,6 +253,7 @@
 
 	(dificultad 5)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
 	(ingredientes
 		[comida_Class20009]
 		[comida_Class20018])
@@ -307,6 +316,7 @@
 
 	(dificultad 60)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70008])
 	(ingredientes [comida_Class40009])
 	(nombre "Paella de marisco")
 	(pesadez PESADO)
@@ -325,6 +335,7 @@
 
 	(dificultad 60)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70014])
 	(ingredientes [comida_Class20007])
 	(nombre "Paella valenciana")
 	(pesadez PESADO)
@@ -337,6 +348,7 @@
 
 	(dificultad 20)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
 	(ingredientes
 		[comida_Class20007]
 		[comida_Class20013]
@@ -351,6 +363,7 @@
 
 	(dificultad 60)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70007])
 	(ingredientes [comida_Class20007])
 	(nombre "Estofado")
 	(pesadez PESADO)
@@ -363,6 +376,7 @@
 	(dificultad 10)
 	(es_exclusivo FALSE)
 	(eventos [comida_Class40004])
+	(genero [comida_Class70006])
 	(ingredientes [comida_Class20013])
 	(nombre "Sopa de galets")
 	(pesadez PESADO)
@@ -375,6 +389,7 @@
 
 	(dificultad 40)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70009])
 	(ingredientes [comida_Class20011])
 	(nombre "Atún a la plancha")
 	(pesadez LIGERO)
@@ -386,6 +401,7 @@
 
 	(dificultad 70)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70009])
 	(ingredientes
 		[comida_Class20011]
 		[comida_Class60022]
@@ -402,12 +418,21 @@
 
 	(dificultad 5)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70013])
 	(ingredientes [comida_Class20008])
 	(nombre "Ensalada verde")
 	(pesadez LIGERO)
 	(precio 2.0)
 	(temperatura FRIO)
 	(tipo PRIMERO))
+
+([comida_Class50001] of  ColorVino
+
+	(es_predilecto_de
+		[comida_Class70016]
+		[comida_Class70006]
+		[comida_Class70007])
+	(nombre "Tinto"))
 
 ([comida_Class50002] of  Ingrediente
 
@@ -429,6 +454,18 @@
 
 	(importancia_platos 25)
 	(nombre "Comida de empresa"))
+
+([comida_Class60002] of  ColorVino
+
+	(es_predilecto_de
+		[comida_Class70015]
+		[comida_Class70011]
+		[comida_Class70018])
+	(nombre "Rosado"))
+
+([comida_Class60003] of  ColorVino
+
+	(nombre "Negro"))
 
 ([comida_Class60005] of  Ingrediente
 
@@ -466,6 +503,7 @@
 
 	(dificultad 27)
 	(es_exclusivo TRUE)
+	(genero [comida_Class70011])
 	(ingredientes
 		[comida_Class60011]
 		[comida_Class20019]
@@ -503,6 +541,7 @@
 
 	(dificultad 18)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
 	(ingredientes
 		[comida_Class40009]
 		[comida_Class60017]
@@ -537,6 +576,7 @@
 
 	(dificultad 20)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70009])
 	(ingredientes
 		[comida_Class20011]
 		[comida_Class60022])
@@ -566,6 +606,7 @@
 
 	(dificultad 30)
 	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
 	(ingredientes
 		[comida_Class60024]
 		[comida_Class60025]
@@ -633,10 +674,91 @@
 
 ([comida_Class67] of  Vino
 
+	(color [comida_Class50001])
 	(nombre "laRioja")
 	(precio 19.0))
 
 ([comida_Class70] of  Vino
 
+	(color [comida_Class60002])
 	(nombre "Abadía San Campio")
 	(precio 11.75))
+
+([comida_Class70004] of  ColorVino
+
+	(es_predilecto_de
+		[comida_Class70008]
+		[comida_Class70009]
+		[comida_Class70013]
+		[comida_Class70005]
+		[comida_Class70014]
+		[comida_Class70012])
+	(nombre "Blanco"))
+
+([comida_Class70005] of  GeneroPlato
+
+	(nombre "Pasta")
+	(predilecto [comida_Class70004]))
+
+([comida_Class70006] of  GeneroPlato
+
+	(nombre "Sopa")
+	(predilecto [comida_Class50001]))
+
+([comida_Class70007] of  GeneroPlato
+
+	(nombre "Carnes")
+	(predilecto [comida_Class50001]))
+
+([comida_Class70008] of  GeneroPlato
+
+	(nombre "Marisco")
+	(predilecto [comida_Class70004]))
+
+([comida_Class70009] of  GeneroPlato
+
+	(nombre "Pescado")
+	(predilecto [comida_Class70004]))
+
+([comida_Class70010] of  GeneroPlato
+
+	(nombre "Otros"))
+
+([comida_Class70011] of  GeneroPlato
+
+	(nombre "Quesos")
+	(predilecto [comida_Class60002]))
+
+([comida_Class70012] of  GeneroPlato
+
+	(nombre "Postre")
+	(predilecto [comida_Class70004]))
+
+([comida_Class70013] of  GeneroPlato
+
+	(nombre "Verduras")
+	(predilecto [comida_Class70004]))
+
+([comida_Class70014] of  GeneroPlato
+
+	(nombre "Arroz")
+	(predilecto [comida_Class70004]))
+
+([comida_Class70015] of  GeneroPlato
+
+	(nombre "Embutidos")
+	(predilecto [comida_Class60002]))
+
+([comida_Class70016] of  GeneroPlato
+
+	(nombre "Legumbres")
+	(predilecto [comida_Class50001]))
+
+([comida_Class70017] of  GeneroPlato
+
+	(nombre "Huevos"))
+
+([comida_Class70018] of  GeneroPlato
+
+	(nombre "Aperitivo")
+	(predilecto [comida_Class60002]))
