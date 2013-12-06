@@ -74,7 +74,7 @@
   (bind ?respuesta (pregunta-indice "¿Prefiere comida caliente o fría?" (slot-allowed-values MAIN::Plato temperatura)))
   (modify ?prefs (temperatura ?respuesta))
 )
-
+puedo puedo 
 (defrule pregunta-estacion "Preguntar la estacion del año"
   (declare (salience 9600))
   (not (estacion preguntada))
