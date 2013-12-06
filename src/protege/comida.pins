@@ -1,57 +1,13 @@
-; Fri Dec 06 16:01:04 CET 2013
+; Fri Dec 06 16:41:04 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
-
-([comida_Class0] of  Generico
-
-	(dificultad 15)
-	(es_exclusivo FALSE)
-	(ingredientes [comida_Class20008])
-	(nombre "Ejemplo plato indefinido")
-	(pesadez LIGERO)
-	(precio 4.0)
-	(temperatura CALIENTE)
-	(tipo SEGUNDO))
-
-([comida_Class1] of  Generico
-
-	(dificultad 2)
-	(es_exclusivo FALSE)
-	(ingredientes [comida_Class20008])
-	(nombre "Ejemplo postre indefinido")
-	(pesadez LIGERO)
-	(precio 0.0)
-	(temperatura FRIO)
-	(tipo POSTRE))
 
 ([comida_Class10000] of  Ingrediente
 
 	(nombre "Melón")
 	(platos [comida_Class36])
 	(solo-disponible-en [comida_Class30002]))
-
-([comida_Class10001] of  Generico
-
-	(dificultad 10)
-	(es_exclusivo FALSE)
-	(ingredientes [comida_Class20008])
-	(nombre "Ejemplo plato caliente")
-	(pesadez LIGERO)
-	(precio 10.0)
-	(temperatura CALIENTE)
-	(tipo PRIMERO))
-
-([comida_Class10002] of  Generico
-
-	(dificultad 15)
-	(es_exclusivo FALSE)
-	(ingredientes [comida_Class20008])
-	(nombre "Ejemplo plato frio")
-	(pesadez PESADO)
-	(precio 10.0)
-	(temperatura FRIO)
-	(tipo PRIMERO))
 
 ([comida_Class2] of  Moderno
 
@@ -106,12 +62,7 @@
 
 	(nombre "Ninguno")
 	(platos
-		[comida_Class10001]
-		[comida_Class10002]
-		[comida_Class0]
-		[comida_Class1]
 		[comida_Class2]
-		[comida_Class3]
 		[comida_Class49]))
 
 ([comida_Class20009] of  Ingrediente
@@ -135,8 +86,8 @@
 	(nombre "Pescado")
 	(platos
 		[comida_Class47]
-		[comida_Class48]
-		[comida_Class60020])
+		[comida_Class60020]
+		[comida_Class48])
 	(problematico_para [comida_Class20001]))
 
 ([comida_Class20012] of  Ingrediente
@@ -196,17 +147,6 @@
 	(precio 3.0)
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
-
-([comida_Class3] of  Tradicional
-
-	(dificultad 40)
-	(es_exclusivo FALSE)
-	(ingredientes [comida_Class20008])
-	(nombre "Ejemplo plato tradicional")
-	(pesadez PESADO)
-	(precio 2.0)
-	(temperatura FRIO)
-	(tipo PRIMERO))
 
 ([comida_Class30001] of  Generico
 
@@ -311,7 +251,7 @@
 
 ([comida_Class40002] of  Evento
 
-	(importancia_platos 100)
+	(importancia_platos 500)
 	(nombre "Boda")
 	(platos_evento [comida_Class30001]))
 
@@ -359,9 +299,9 @@
 	(dificultad 60)
 	(es_exclusivo FALSE)
 	(ingredientes [comida_Class40009])
-	(nombre "Paella")
+	(nombre "Paella de marisco")
 	(pesadez PESADO)
-	(precio 0.0)
+	(precio 5.0)
 	(temperatura CALIENTE)
 	(tipo PRIMERO SEGUNDO))
 
@@ -379,7 +319,7 @@
 	(ingredientes [comida_Class20007])
 	(nombre "Paella valenciana")
 	(pesadez PESADO)
-	(precio 0.0)
+	(precio 5.0)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class40008])
 	(tipo PRIMERO SEGUNDO))
@@ -435,14 +375,17 @@
 ([comida_Class48] of  Generico
 
 	(dificultad 70)
-	(es_exclusivo TRUE)
+	(es_exclusivo FALSE)
 	(ingredientes
 		[comida_Class20011]
-		[comida_Class60022])
+		[comida_Class60022]
+		[comida_Class60031]
+		[comida_Class60032])
 	(nombre "Bacalao al pil-pil")
 	(pesadez LIGERO)
 	(precio 15.0)
 	(temperatura CALIENTE)
+	(tipico_de [comida_Class60021])
 	(tipo SEGUNDO))
 
 ([comida_Class49] of  Generico
@@ -602,7 +545,9 @@
 ([comida_Class60021] of  Region
 
 	(nombre "Euskadi")
-	(platos_tipicos [comida_Class60020]))
+	(platos_tipicos
+		[comida_Class60020]
+		[comida_Class48]))
 
 ([comida_Class60022] of  Ingrediente
 
@@ -669,6 +614,16 @@
 
 	(nombre "Ajo")
 	(platos [comida_Class60023]))
+
+([comida_Class60031] of  Ingrediente
+
+	(nombre "Aceite de oliva")
+	(platos [comida_Class48]))
+
+([comida_Class60032] of  Ingrediente
+
+	(nombre "Guindillas")
+	(platos [comida_Class48]))
 
 ([comida_Class61] of  Alcoholica
 
