@@ -129,7 +129,7 @@
         then (send ?rec put-puntuacion (- ?punt ?dif))
              (send ?rec put-justificaciones
                    (add$ (str-cat "El plato supera en " ?dif " la dificultad máxima de "
-                                  ?dificultad " para un evento de " ?comensales " comensales -> -" ?dif))))
+                                  ?dificultad " para un evento de " ?comensales " comensales -> -" ?dif) $?just)))
     (assert (dificultad-puntuada ?rec))
 )
 
