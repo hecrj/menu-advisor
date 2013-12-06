@@ -33,6 +33,13 @@
   ) 
 )
 
+(deftemplate FranjasPrecio
+  (slot minimo (type FLOAT) (default 0))
+  (slot barato (type FLOAT) (default 15))
+  (slot medio (type FLOAT) (default 30))
+  (slot caro (type FLOAT) (default 45))
+)
+
 (deftemplate Contexto
   (slot estacion
     (type STRING)

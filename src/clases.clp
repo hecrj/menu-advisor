@@ -40,4 +40,11 @@
     (multislot justificaciones
         (type STRING)
         (create-accessor read-write))
+    (slot franja
+        (type STRING)
+        (allowed-strings "Barato"
+                     "Medio"
+                     "Caro"
+        )
+    )
 )
