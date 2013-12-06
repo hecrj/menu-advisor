@@ -1,4 +1,4 @@
-; Fri Dec 06 00:18:55 CET 2013
+; Fri Dec 06 16:01:04 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -64,14 +64,34 @@
 	(temperatura CALIENTE)
 	(tipo PRIMERO SEGUNDO))
 
+([comida_Class20000] of  Moderno
+
+	(dificultad 15)
+	(es_exclusivo FALSE)
+	(ingredientes
+		[comida_Class20019]
+		[comida_Class50003]
+		[comida_Class50002]
+		[comida_Class60008])
+	(nombre "Verduras a la japonesa")
+	(pesadez LIGERO)
+	(precio 6.0)
+	(temperatura FRIO)
+	(tipico_de [comida_Class40006])
+	(tipo PRIMERO))
+
 ([comida_Class20001] of  TipoComensal
 
 	(conflictos
 		[comida_Class20007]
 		[comida_Class20011]
 		[comida_Class20018]
-		[comida_Class20019])
-	(nombre "Vegetariano"))
+		[comida_Class20019]
+		[comida_Class40009]
+		[comida_Class60017]
+		[comida_Class60022]
+		[comida_Class60028])
+	(nombre "Vegetariano (vegano)"))
 
 ([comida_Class20007] of  Ingrediente
 
@@ -79,7 +99,8 @@
 	(platos
 		[comida_Class45]
 		[comida_Class44]
-		[comida_Class40013]))
+		[comida_Class40013])
+	(problematico_para [comida_Class20001]))
 
 ([comida_Class20008] of  Ingrediente
 
@@ -101,7 +122,8 @@
 		[comida_Class37]
 		[comida_Class39]
 		[comida_Class38]
-		[comida_Class30001]))
+		[comida_Class30001])
+	(problematico_para [comida_Class20010]))
 
 ([comida_Class20010] of  TipoComensal
 
@@ -113,7 +135,9 @@
 	(nombre "Pescado")
 	(platos
 		[comida_Class47]
-		[comida_Class48]))
+		[comida_Class48]
+		[comida_Class60020])
+	(problematico_para [comida_Class20001]))
 
 ([comida_Class20012] of  Ingrediente
 
@@ -122,14 +146,17 @@
 
 ([comida_Class20013] of  Ingrediente
 
-	(nombre "Cereal")
+	(nombre "Trigo")
 	(platos
 		[comida_Class46]
-		[comida_Class44]))
+		[comida_Class44])
+	(problematico_para [comida_Class20014]))
 
 ([comida_Class20014] of  TipoComensal
 
-	(conflictos [comida_Class20013])
+	(conflictos
+		[comida_Class20013]
+		[comida_Class60008])
 	(nombre "Celíaco"))
 
 ([comida_Class20018] of  Ingrediente
@@ -140,14 +167,24 @@
 		[comida_Class37]
 		[comida_Class38]
 		[comida_Class39]
-		[comida_Class30001]))
+		[comida_Class30001]
+		[comida_Class60010]
+		[comida_Class60023])
+	(problematico_para
+		[comida_Class60007]
+		[comida_Class20001]))
 
 ([comida_Class20019] of  Ingrediente
 
 	(nombre "Huevo")
 	(platos
 		[comida_Class20020]
-		[comida_Class30001]))
+		[comida_Class30001]
+		[comida_Class20000]
+		[comida_Class60010])
+	(problematico_para
+		[comida_Class60006]
+		[comida_Class20001]))
 
 ([comida_Class20020] of  Tradicional
 
@@ -173,7 +210,7 @@
 
 ([comida_Class30001] of  Generico
 
-	(dificultad 70)
+	(dificultad 80)
 	(es_exclusivo FALSE)
 	(eventos [comida_Class40002])
 	(ingredientes
@@ -182,7 +219,7 @@
 		[comida_Class20019])
 	(nombre "Pastel de boda clásico")
 	(pesadez PESADO)
-	(precio 0.0)
+	(precio 3.0)
 	(temperatura FRIO)
 	(tipo POSTRE))
 
@@ -197,6 +234,7 @@
 
 ([comida_Class30004] of  Epoca
 
+	(dispone-de [comida_Class50003])
 	(nombre "Invierno"))
 
 ([comida_Class30005] of  Epoca
@@ -248,9 +286,9 @@
 	(ingredientes
 		[comida_Class20009]
 		[comida_Class20018])
-	(nombre "Crema Catalana")
+	(nombre "Crema catalana")
 	(pesadez LIGERO)
-	(precio 8.0)
+	(precio 2.5)
 	(temperatura CALIENTE)
 	(tipo POSTRE))
 
@@ -267,18 +305,26 @@
 	(temperatura CALIENTE)
 	(tipo POSTRE))
 
+([comida_Class40001] of  Ingrediente
+
+	(nombre "Calabacín"))
+
 ([comida_Class40002] of  Evento
 
+	(importancia_platos 100)
 	(nombre "Boda")
 	(platos_evento [comida_Class30001]))
 
 ([comida_Class40003] of  Evento
 
+	(importancia_platos 50)
 	(nombre "Comunión"))
 
 ([comida_Class40004] of  Evento
 
-	(nombre "Comida familiar"))
+	(importancia_platos 20)
+	(nombre "Comida familiar")
+	(platos_evento [comida_Class46]))
 
 ([comida_Class40005] of  Region
 
@@ -286,7 +332,8 @@
 
 ([comida_Class40006] of  Region
 
-	(nombre "Japón"))
+	(nombre "Japón")
+	(platos_tipicos [comida_Class20000]))
 
 ([comida_Class40007] of  Region
 
@@ -300,7 +347,12 @@
 ([comida_Class40009] of  Ingrediente
 
 	(nombre "Marisco")
-	(platos [comida_Class40010]))
+	(platos
+		[comida_Class40010]
+		[comida_Class60016])
+	(problematico_para
+		[comida_Class40011]
+		[comida_Class20001]))
 
 ([comida_Class40010] of  Generico
 
@@ -315,7 +367,9 @@
 
 ([comida_Class40011] of  TipoComensal
 
-	(conflictos [comida_Class40009])
+	(conflictos
+		[comida_Class40009]
+		[comida_Class60017])
 	(nombre "Alérgico al marisco"))
 
 ([comida_Class40013] of  Generico
@@ -332,7 +386,7 @@
 
 ([comida_Class44] of  Tradicional
 
-	(dificultad 50)
+	(dificultad 20)
 	(es_exclusivo FALSE)
 	(ingredientes
 		[comida_Class20007]
@@ -356,13 +410,15 @@
 
 ([comida_Class46] of  Tradicional
 
-	(dificultad 40)
+	(dificultad 10)
 	(es_exclusivo FALSE)
+	(eventos [comida_Class40004])
 	(ingredientes [comida_Class20013])
 	(nombre "Sopa de galets")
 	(pesadez PESADO)
 	(precio 2.0)
 	(temperatura CALIENTE)
+	(tipico_de [comida_Class60019])
 	(tipo PRIMERO))
 
 ([comida_Class47] of  Generico
@@ -372,7 +428,7 @@
 	(ingredientes [comida_Class20011])
 	(nombre "Atún a la plancha")
 	(pesadez LIGERO)
-	(precio 4.0)
+	(precio 3.0)
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
 
@@ -380,10 +436,12 @@
 
 	(dificultad 70)
 	(es_exclusivo TRUE)
-	(ingredientes [comida_Class20011])
+	(ingredientes
+		[comida_Class20011]
+		[comida_Class60022])
 	(nombre "Bacalao al pil-pil")
 	(pesadez LIGERO)
-	(precio 20.0)
+	(precio 15.0)
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
 
@@ -398,14 +456,219 @@
 	(temperatura FRIO)
 	(tipo PRIMERO))
 
+([comida_Class50002] of  Ingrediente
+
+	(nombre "Pimiento rojo")
+	(platos [comida_Class20000]))
+
+([comida_Class50003] of  Ingrediente
+
+	(nombre "Setas shiitake")
+	(platos [comida_Class20000])
+	(solo-disponible-en [comida_Class30004]))
+
+([comida_Class50004] of  TipoComensal
+
+	(conflictos [comida_Class60005])
+	(nombre "Hipertenso"))
+
 ([comida_Class50005] of  Evento
 
+	(importancia_platos 25)
 	(nombre "Comida de empresa"))
 
 ([comida_Class59] of  Bebida
 
 	(nombre "Agua mineral")
 	(precio 0.5))
+
+([comida_Class60005] of  Ingrediente
+
+	(nombre "Sal")
+	(platos
+		[comida_Class60016]
+		[comida_Class60023])
+	(problematico_para [comida_Class50004]))
+
+([comida_Class60006] of  TipoComensal
+
+	(conflictos [comida_Class20019])
+	(nombre "Alérgico al huevo"))
+
+([comida_Class60007] of  TipoComensal
+
+	(conflictos
+		[comida_Class20018]
+		[comida_Class60028])
+	(nombre "Alérgico a la leche"))
+
+([comida_Class60008] of  Ingrediente
+
+	(nombre "Harina de trigo")
+	(platos
+		[comida_Class20000]
+		[comida_Class60010])
+	(problematico_para [comida_Class20014]))
+
+([comida_Class60009] of  Ingrediente
+
+	(nombre "Maíz"))
+
+([comida_Class60010] of  Moderno
+
+	(dificultad 27)
+	(es_exclusivo TRUE)
+	(ingredientes
+		[comida_Class60011]
+		[comida_Class20019]
+		[comida_Class20018]
+		[comida_Class60008]
+		[comida_Class60012]
+		[comida_Class60014])
+	(nombre "Muffins salados de jamón, queso brie y tomate")
+	(pesadez PESADO)
+	(precio 13.0)
+	(temperatura CALIENTE)
+	(tipo PRIMERO))
+
+([comida_Class60011] of  Ingrediente
+
+	(nombre "Tomate")
+	(platos [comida_Class60010]))
+
+([comida_Class60012] of  Ingrediente
+
+	(nombre "Jamón serrano")
+	(platos [comida_Class60010]))
+
+([comida_Class60014] of  Ingrediente
+
+	(nombre "Queso brie")
+	(platos [comida_Class60010]))
+
+([comida_Class60015] of  Ingrediente
+
+	(nombre "Piña")
+	(platos [comida_Class60016]))
+
+([comida_Class60016] of  Moderno
+
+	(dificultad 18)
+	(es_exclusivo FALSE)
+	(ingredientes
+		[comida_Class40009]
+		[comida_Class60017]
+		[comida_Class60015]
+		[comida_Class60005]
+		[comida_Class60018])
+	(nombre "Cóctel de gambas y piña")
+	(pesadez LIGERO)
+	(precio 10.0)
+	(temperatura FRIO)
+	(tipo PRIMERO))
+
+([comida_Class60017] of  Ingrediente
+
+	(nombre "Gambas")
+	(platos [comida_Class60016])
+	(problematico_para
+		[comida_Class40011]
+		[comida_Class20001]))
+
+([comida_Class60018] of  Ingrediente
+
+	(nombre "Cebolla")
+	(platos [comida_Class60016]))
+
+([comida_Class60019] of  Region
+
+	(nombre "Cataluña")
+	(platos_tipicos [comida_Class46]))
+
+([comida_Class60020] of  Tradicional
+
+	(dificultad 20)
+	(es_exclusivo FALSE)
+	(ingredientes
+		[comida_Class20011]
+		[comida_Class60022])
+	(nombre "Bacalao a la vizcaína")
+	(pesadez PESADO)
+	(precio 6.0)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60021])
+	(tipo SEGUNDO PRIMERO))
+
+([comida_Class60021] of  Region
+
+	(nombre "Euskadi")
+	(platos_tipicos [comida_Class60020]))
+
+([comida_Class60022] of  Ingrediente
+
+	(nombre "Bacalao")
+	(platos
+		[comida_Class60020]
+		[comida_Class48])
+	(problematico_para [comida_Class20001]))
+
+([comida_Class60023] of  Generico
+
+	(dificultad 30)
+	(es_exclusivo FALSE)
+	(ingredientes
+		[comida_Class60024]
+		[comida_Class60025]
+		[comida_Class60026]
+		[comida_Class60028]
+		[comida_Class20018]
+		[comida_Class60005]
+		[comida_Class60030])
+	(nombre "Tagliatelle al pesto")
+	(pesadez PESADO)
+	(precio 8.0)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo SEGUNDO PRIMERO))
+
+([comida_Class60024] of  Ingrediente
+
+	(nombre "Albahaca")
+	(platos [comida_Class60023]))
+
+([comida_Class60025] of  Ingrediente
+
+	(nombre "Patata")
+	(platos [comida_Class60023]))
+
+([comida_Class60026] of  Ingrediente
+
+	(nombre "Piñones")
+	(platos [comida_Class60023])
+	(problematico_para [comida_Class60027]))
+
+([comida_Class60027] of  TipoComensal
+
+	(conflictos [comida_Class60026])
+	(nombre "Alérgico a los frutos secos"))
+
+([comida_Class60028] of  Ingrediente
+
+	(nombre "Queso parmesano")
+	(platos [comida_Class60023])
+	(problematico_para
+		[comida_Class60007]
+		[comida_Class20001]))
+
+([comida_Class60029] of  Region
+
+	(nombre "Italia")
+	(platos_tipicos [comida_Class60023]))
+
+([comida_Class60030] of  Ingrediente
+
+	(nombre "Ajo")
+	(platos [comida_Class60023]))
 
 ([comida_Class61] of  Alcoholica
 

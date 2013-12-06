@@ -1,4 +1,4 @@
-; Fri Dec 06 00:18:55 CET 2013
+; Fri Dec 06 16:01:04 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -17,16 +17,16 @@
 ;+		(allowed-classes Plato)
 ;+		(inverse-slot eventos)
 		(create-accessor read-write))
+	(multislot platos_tipicos
+		(type INSTANCE)
+;+		(allowed-classes Plato)
+;+		(inverse-slot tipico_de)
+		(create-accessor read-write))
 	(single-slot es_exclusivo
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 		(default FALSE)
 ;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(multislot platos_tipicos
-		(type INSTANCE)
-;+		(allowed-classes Plato)
-;+		(inverse-slot tipico_de)
 		(create-accessor read-write))
 	(single-slot pesadez
 		(type SYMBOL)
@@ -62,6 +62,11 @@
 		(cardinality 1 ?VARIABLE)
 ;+		(inverse-slot platos)
 		(create-accessor read-write))
+	(multislot problematico_para
+		(type INSTANCE)
+;+		(allowed-classes TipoComensal)
+;+		(inverse-slot conflictos)
+		(create-accessor read-write))
 	(multislot forma_parte_de
 		(type INSTANCE)
 ;+		(allowed-classes Elaborado)
@@ -81,6 +86,7 @@
 		(type INSTANCE)
 ;+		(allowed-classes Ingrediente)
 		(cardinality 1 ?VARIABLE)
+;+		(inverse-slot problematico_para)
 		(create-accessor read-write))
 	(multislot grupo-u-origen
 		(type SYMBOL)
@@ -148,25 +154,25 @@
 		(allowed-values PRIMERO SEGUNDO POSTRE)
 		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
+	(single-slot dificultad
+		(type INTEGER)
+		(range 0 100)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot es_exclusivo
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 		(default FALSE)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot dificultad
-		(type INTEGER)
-		(range 0 100)
-;+		(cardinality 0 1)
+	(multislot tipico_de
+		(type INSTANCE)
+;+		(allowed-classes Region)
 		(create-accessor read-write))
 	(single-slot temperatura
 		(type SYMBOL)
 		(allowed-values CALIENTE FRIO)
 ;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(multislot tipico_de
-		(type INSTANCE)
-;+		(allowed-classes Region)
 		(create-accessor read-write)))
 
 (defclass Moderno
@@ -220,6 +226,10 @@
 	(multislot solo-disponible-en
 		(type INSTANCE)
 ;+		(allowed-classes Epoca)
+		(create-accessor read-write))
+	(multislot problematico_para
+		(type INSTANCE)
+;+		(allowed-classes TipoComensal)
 		(create-accessor read-write)))
 
 (defclass Epoca
