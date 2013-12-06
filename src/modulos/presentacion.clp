@@ -39,25 +39,43 @@
 (defrule imprimir-menus "Imprime los menús"
     (declare (salience -10000))
     ?imprimir <- (presentar-menus)
-    (SeleccionMenus (barato $?barato) (medio $?medio) (caro $?caro))
+    (SeleccionMenus (baratos $?baratos) (medios $?medios) (caros $?caros))
     =>
     (printout t "------------------------------" crlf)
     (printout t "Primera propuesta (más cara):" crlf)
-    (if (neq 0 (length $?caro))
-        then (imprimir-menu (nth 1 $?caro))
-        else (printout t "No disponible, lo sentimos" crlf))
+    (imprimir-menus $?caros)
 
     (printout t "------------------------------" crlf)
     (printout t "Segunda propuesta (coste medio):" crlf)
-    (if (neq 0 (length $?medio))
-        then (imprimir-menu (nth 1 $?medio))
-        else (printout t "No disponible, lo sentimos" crlf))
+    (imprimir-menus $?medios)
 
     (printout t "------------------------------" crlf)
     (printout t "Tercera propuesta (más barata):" crlf)
-    (if (neq 0 (length $?barato))
-        then (imprimir-menu (nth 1 $?barato))
-        else (printout t "No disponible, lo sentimos" crlf))
+    (imprimir-menus $?baratos)
+
+    (printout t "------------------------------" crlf)
+
+    (if (pregunta-si-no "¿Desea ver las justificaciones de la recomendación?")
+        then (assert (imprimir-justificaciones)))
+
+    (retract ?imprimir)
+)
+
+(defrule imprimir-justificaciones "Imprime las justificaciones de cada menú recomendado"
+    ?imprimir <- (imprimir-justificaciones)
+    (SeleccionMenus (baratos $?baratos) (medios $?medios) (caros $?caros))
+    =>
+    (printout t "------------------------------" crlf)
+    (printout t "Primera propuesta (más cara):" crlf)
+    (imprimir-menus-detallados $?caros)
+
+    (printout t "------------------------------" crlf)
+    (printout t "Segunda propuesta (coste medio):" crlf)
+    (imprimir-menus-detallados $?medios)
+
+    (printout t "------------------------------" crlf)
+    (printout t "Tercera propuesta (más barata):" crlf)
+    (imprimir-menus-detallados $?baratos)
 
     (printout t "------------------------------" crlf)
 
