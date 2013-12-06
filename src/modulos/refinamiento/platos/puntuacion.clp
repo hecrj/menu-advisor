@@ -19,6 +19,7 @@
 
 (defrule puntuar-tipos "Puntúa una recomendación en función del tipo de plato"
 	(Preferencias (tipos-menu $?tipos_menu))
+    (test (> (length $?tipos_menu) 0))
 	(Pesos (tipo-preferido ?peso))
 	?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $?just))
 	(not (tipo-puntuado ?rec))
