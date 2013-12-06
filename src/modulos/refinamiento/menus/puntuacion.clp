@@ -21,7 +21,7 @@
         then (bind ?signo "-")
         else (bind ?signo "+"))
     (send ?menu put-justificaciones
-        (add$ (str-cat "Ĺos platos del menú suman una puntuación total -> " ?signo ?menu-punt) $?just))
+        (add$ (str-cat "Los platos del menú suman una puntuación total -> " ?signo ?menu-punt) $?just))
     (assert (platos-puntuados ?menu))
 )
 
