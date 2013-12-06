@@ -1,4 +1,4 @@
-; Fri Dec 06 20:24:37 CET 2013
+; Fri Dec 06 20:26:36 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -39,6 +39,11 @@
 		(allowed-values LIGERO PESADO)
 		(default LIGERO)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot color
+		(type INSTANCE)
+;+		(allowed-classes ColorVino)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot tipo
 		(type SYMBOL)
@@ -222,7 +227,12 @@
 
 (defclass Vino
 	(is-a Elaborado)
-	(role concrete))
+	(role concrete)
+	(single-slot color
+		(type INSTANCE)
+;+		(allowed-classes ColorVino)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
 
 (defclass TipoComensal
 	(is-a USER)
