@@ -39,12 +39,20 @@
                                     (postre ?postre) (precio ?precio) (vinos (create$))))
                             (case 1 then
                                 (progn$ (?vino $?todos-vinos)
+                                    (bind ?precio (+ ?precio (/ (send ?vino get-precio) 4)))
                                     (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
                                         (postre ?postre) (precio ?precio) (vinos (create$ ?vino)))))
                             (case 2 then
                                 (progn$ (?vino1 $?todos-vinos)
                                     (progn$ (?vino2 $?todos-vinos)
                                         (if (neq ?vino1 ?vino2) then
+                                            (bind ?precio (+
+                                                ?precio
+                                                (+
+                                                    (/ (send ?vino1 get-precio) 4)
+                                                    (/ (send ?vino2 get-precio) 4)
+                                                )
+                                            ))
                                             (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
                                                 (postre ?postre) (precio ?precio) (vinos (create$ ?vino1 ?vino2)))))))
                         )
