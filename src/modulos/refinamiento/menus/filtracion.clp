@@ -7,13 +7,13 @@
     (declare (salience 10000))
     (Preferencias (colores-vino $?colores-vino))
     ?vino <- (object (is-a Vino) (color ?color))
-    (test (not (member$ ?color $?colores-vino)))
+    (test (not (member$ (send (instance-address * ?color) get-nombre) $?colores-vino)))
     =>
     (send ?vino delete)
 )
 
 (defrule generar-menus "Genera todos los menús posibles en función de las recomendaciones disponibles"
-    (declare (salience 10000))
+    (declare (salience 9900))
     (Recomendaciones (primeros $?primeros) (segundos $?segundos) (postres $?postres))
     (Preferencias (vino ?cantidad-vino))
     =>
@@ -58,5 +58,6 @@
 (defrule ir-a-puntuar "Empieza a puntuar menús"
     (declare (salience -10000))
     =>
+    (printout t "A puntuar" crlf)
     (focus menus-puntuacion)
 )

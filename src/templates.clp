@@ -32,8 +32,7 @@
         (type INTEGER)
         (default -1))
     (multislot colores-vino
-        (type SYMBOL)
-        (default desconocido))
+        (type STRING))
     (slot exclusivo 
         (type SYMBOL)
         (default desconocido))

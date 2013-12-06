@@ -62,13 +62,13 @@
              (send ?menu put-justificaciones
                  (add$ (str-cat "El primer plato es de un género que encaja bien con el color del vino -> +50") $?just))
     )
-    (assert (vino-primero-puntuado))
+    (assert (vino-primero-puntuado ?menu))
 )
 
 (defrule puntuar-vino-segundo "Puntúa los menús en función de si el vino encaja con el segundo plato"
     ?menu <- (object (is-a Menu) (segundo ?seg) (puntuacion ?punt) (justificaciones $?just) (vinos $?vinos))
     (test (> (length $?vinos) 0)) ; tiene que ser un menú con vino
-    (not (vino-segundo-puntuado))
+    (not (vino-segundo-puntuado ?menu))
     =>
     (bind ?vino (nth (length $?vinos) $?vinos))
     (bind ?genSeg (send (plato ?seg) get-genero))

@@ -162,8 +162,9 @@
     (not (vino preguntado))
     ?prefs <- (Preferencias)
     =>
-    (bind ?respuesta (seleccionar-instancias ColorVino nombre "¿Qué tipo de vino prefiere?"))
-    (modify ?prefs (colores-vino ?respuesta))
+    (bind $?colores (find-all-instances ((?inst ColorVino)) TRUE))
+    (bind $?respuesta (pregunta-multi "¿Qué tipo de vino prefiere?" (find-attr nombre $?colores)))
+    (modify ?prefs (colores-vino $?respuesta))
     (assert (vino preguntado))
 )
  
