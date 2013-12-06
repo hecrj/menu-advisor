@@ -1,4 +1,4 @@
-; Fri Dec 06 20:44:33 CET 2013
+; Fri Dec 06 21:11:18 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -462,10 +462,6 @@
 		[comida_Class70011]
 		[comida_Class70018])
 	(nombre "Rosado"))
-
-([comida_Class60003] of  ColorVino
-
-	(nombre "Negro"))
 
 ([comida_Class60005] of  Ingrediente
 
