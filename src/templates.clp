@@ -31,14 +31,9 @@
     (slot vino
         (type INTEGER)
         (default -1))
-    (slot tipo-vino (type STRING)
-        (default "Sin preferencia")
-        (allowed-strings
-            "Tinto"
-            "Blanco"
-            "Rosado"
-            "Sin preferencia"
-            ))
+    (multislot colores-vino
+        (type SYMBOL)
+        (default desconocido))
     (slot exclusivo 
         (type SYMBOL)
         (default desconocido))

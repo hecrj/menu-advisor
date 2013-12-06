@@ -156,17 +156,16 @@
     (assert (bebida preguntado))
 )
 
-(defrule preferencia-vino "Preguntar que prefiere para la bebida"
+(defrule preferencia-vino "Preguntar el tipo de vino preferido"
     (declare (salience 9100))
     (preguntar vino)
     (not (vino preguntado))
-    ?prefs <- (Preferencias (tipo-vino "Sin preferencia"))
+    ?prefs <- (Preferencias)
     =>
-    (bind ?respuesta (pregunta-indice "¿Qué prefiere para la bebida?" (deftemplate-slot-allowed-values MAIN::Preferencias tipo-vino)))
-    (modify ?prefs (tipo-vino ?respuesta))
+    (bind ?respuesta (seleccionar-instancias ColorVino nombre "¿Qué tipo de vino prefiere?"))
+    (modify ?prefs (colores-vino ?respuesta))
     (assert (vino preguntado))
 )
-
  
 (defrule ir-a-filtrar "Empieza a filtrar platos"
     (declare (salience -10000))
