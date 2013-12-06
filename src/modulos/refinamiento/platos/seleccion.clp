@@ -1,6 +1,6 @@
 (defmodule platos-seleccion
-	(import MAIN ?ALL)
-	(export ?ALL)
+    (import MAIN ?ALL)
+    (export ?ALL)
 )
 
 (defrule ordenar-recomendaciones "Ordena las recomendaciones en función de su puntuación"

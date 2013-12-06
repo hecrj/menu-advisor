@@ -1,44 +1,44 @@
 (deffunction mejor-recomendacion ($?lista)
-	(bind ?maximo nil)
-	(bind ?elemento nil)
-	(progn$ (?curr-rec $?lista)
-		(bind ?curr-punt (send ?curr-rec get-puntuacion))
-		(if (or (eq ?maximo nil) (> ?curr-punt ?maximo))
-			then 
-			(bind ?maximo ?curr-punt)
-			(bind ?elemento ?curr-rec)
-		)
-	)
-	?elemento
+    (bind ?maximo nil)
+    (bind ?elemento nil)
+    (progn$ (?curr-rec $?lista)
+        (bind ?curr-punt (send ?curr-rec get-puntuacion))
+        (if (or (eq ?maximo nil) (> ?curr-punt ?maximo))
+            then 
+            (bind ?maximo ?curr-punt)
+            (bind ?elemento ?curr-rec)
+        )
+    )
+    ?elemento
 )
 
 ;;; Funcion para hacer una pregunta con respuesta cualquiera
 (deffunction pregunta-general (?pregunta)
     (format t "%s " ?pregunta)
-	(bind ?respuesta (read))
-	(while (not (lexemep ?respuesta)) do
-		(format t "%s " ?pregunta)
-		(bind ?respuesta (read))
+    (bind ?respuesta (read))
+    (while (not (lexemep ?respuesta)) do
+        (format t "%s " ?pregunta)
+        (bind ?respuesta (read))
     )
-	?respuesta
+    ?respuesta
 )
 
 ;;; Funcion para hacer una pregunta general con una serie de respuestas admitidas
 (deffunction MAIN::pregunta-opciones (?question $?allowed-values)
    (format t "%s "?question)
    (progn$ (?curr-value $?allowed-values)
-		(format t "[%s]" ?curr-value)
-	)
+        (format t "[%s]" ?curr-value)
+    )
    (printout t ": ")
    (bind ?answer (read))
    (if (lexemep ?answer) 
        then (bind ?answer (lowcase ?answer)))
    (while (not (member ?answer ?allowed-values)) do
       (format t "%s "?question)
-	  (progn$ (?curr-value $?allowed-values)
-		(format t "[%s]" ?curr-value)
-	  )
-	  (printout t ": ")
+      (progn$ (?curr-value $?allowed-values)
+        (format t "[%s]" ?curr-value)
+      )
+      (printout t ": ")
       (bind ?answer (read))
       (if (lexemep ?answer) 
           then (bind ?answer (lowcase ?answer))))
@@ -55,13 +55,13 @@
 
 ;;; Funcion para hacer una pregunta con respuesta numerica unica
 (deffunction MAIN::pregunta-numerica (?pregunta ?rangini ?rangfi)
-	(format t "%s [%d, %d]: " ?pregunta ?rangini ?rangfi)
-	(bind ?respuesta (read))
-	(while (not(and(>= ?respuesta ?rangini)(<= ?respuesta ?rangfi))) do
-		(format t "%s [%d, %d] " ?pregunta ?rangini ?rangfi)
-		(bind ?respuesta (read))
-	)
-	?respuesta
+    (format t "%s [%d, %d]: " ?pregunta ?rangini ?rangfi)
+    (bind ?respuesta (read))
+    (while (not(and(>= ?respuesta ?rangini)(<= ?respuesta ?rangfi))) do
+        (format t "%s [%d, %d] " ?pregunta ?rangini ?rangfi)
+        (bind ?respuesta (read))
+    )
+    ?respuesta
 )
 
 (deffunction MAIN::pregunta-numerica-positiva (?pregunta)

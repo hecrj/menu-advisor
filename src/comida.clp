@@ -46,15 +46,15 @@
 
 ; Regla principal
 (defrule MAIN::initialRule "Regla principial"
-	=>
-	(printout t "====================================================================" crlf)
-  	(printout t "=            Sistema de recomendacion de menús Rico Rico           =" crlf)
-	(printout t "====================================================================" crlf)
-  	(printout t crlf)  	
-	(printout t "¿Quiere un menú de ensueño para su próxima celebración?" crlf)
-	(printout t "¡Responda las siguientes preguntas y Rico Rico le recomendará el mejor menú!" crlf)
-	(printout t crlf)
-	(focus abstraccion) ; Empezar abstrayendo datos
+    =>
+    (printout t "====================================================================" crlf)
+    (printout t "=            Sistema de recomendacion de menús Rico Rico           =" crlf)
+    (printout t "====================================================================" crlf)
+    (printout t crlf)      
+    (printout t "¿Quiere un menú de ensueño para su próxima celebración?" crlf)
+    (printout t "¡Responda las siguientes preguntas y Rico Rico le recomendará el mejor menú!" crlf)
+    (printout t crlf)
+    (focus abstraccion) ; Empezar abstrayendo datos
 )
 
 ; Ejecutar
