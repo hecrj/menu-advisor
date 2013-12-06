@@ -135,7 +135,7 @@
 )
 
 (defrule puntuar-sibarita "Cuando el cliente es sibarita y el plato es exclusivo, se sube la puntuación"
-    ?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $just))
+    ?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $?just))
     (Pesos (plato-exclusivo ?peso))
     (test (send ?plato get-es_exclusivo))
     (not (exclusividad-puntuada ?rec))
