@@ -1,0 +1,13 @@
+# (Xe/Lua)LaTeX auxiliary files
+*.aux
+*.bcf
+*.toc
+*.synctex*
+*.lof
+*.log
+*.lol
+*.lot
+*.out
+*.run.xml
+*.pdf
+*.bib
