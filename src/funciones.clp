@@ -148,14 +148,17 @@
   )
 )
 
+(deffunction plato (?rec)
+  (send ?rec get-plato)
+)
+
 (deffunction imprimir-recomendaciones ($?recs)
   (progn$ (?rec $?recs)
-    (bind ?punt (send ?rec get-puntuacion))
-    (bind ?plato (send ?rec get-plato))
     (bind $?just (send ?rec get-justificaciones))
 
-    (printout t (send ?plato get-nombre) crlf)
-    (printout t "   Puntuación: " ?punt crlf)
+    (printout t (send (plato ?rec) get-nombre) crlf)
+    (printout t "   Puntuación: " (send ?rec get-puntuacion) crlf)
+    (printout t "   Precio: " (send (plato ?rec) get-precio) crlf)
     (printout t "   Justificaciones:" crlf)
     (progn$ (?j $?just)
       (printout t "        " ?j crlf)
@@ -173,8 +176,4 @@
   (printout t "Segundo plato: " (send ?segundo get-nombre) crlf)
   (printout t "Postre:        " (send ?postre get-nombre) crlf)
   (printout t "       precio: " (send ?menu get-precio) crlf)
-)
-
-(deffunction plato (?rec)
-  (send ?rec get-plato)
 )
