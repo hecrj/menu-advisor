@@ -15,15 +15,6 @@
             (if (neq ?primero ?segundo) then
                 (progn$ (?postre $?postres)
                     (if (and (neq ?primero ?postre) (neq ?segundo ?postre)) then
-
-                        ;                                            (bind ?precio-nuevo (+
-                        ;                        ?precio
-                        ;                        (+
-                        ;                            (/ (send ?vino1 get-precio) 4)
-                        ;                            (/ (send ?vino2 get-precio) 4)
-                        ;                        )
-                        ;                    ))
-                        ;(printout t ?primero crlf)
                         (switch ?cantidad-vino
                             (case 0 then
                                 (make-instance (gensym) of MenuAbstracto (primero ?primero) (segundo ?segundo)

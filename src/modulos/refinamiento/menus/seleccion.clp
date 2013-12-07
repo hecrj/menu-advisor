@@ -86,20 +86,20 @@
             (progn$ (?vino $?vinos)
               (if (member$ (color-vino ?vino) $?color-vinos-menu)
                 then
-                  (bind ?precio (+ ?precio (/ (send ?vino get-precio) 4)))
+                  (bind ?precio1 (+ ?precio (/ (send ?vino get-precio) 4.0)))
                   (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
-                    (postre ?postre) (vinos (create$ ?vino)) (precio ?precio) (puntuacion ?puntuacion) (justificaciones $?just)))))
+                    (postre ?postre) (vinos (create$ ?vino)) (precio ?precio1) (puntuacion ?puntuacion) (justificaciones $?just)))))
           (case 2 then
             (progn$ (?vino1 $?vinos)
-              (if (member$ (color-vino ?vino1) $?color-vinos-menu)
+              (if (eq (color-vino ?vino1) (nth 1 $?color-vinos-menu))
                 then
-                  (bind ?precio (+ ?precio (/ (send ?vino1 get-precio) 4)))
+                  (bind ?precio1 (+ ?precio (/ (send ?vino1 get-precio) 4.0)))
                   (progn$ (?vino2 $?vinos)
-                    (if (member$ (color-vino ?vino2) $?color-vinos-menu)
+                    (if (and (eq (color-vino ?vino2) (nth 2 $?color-vinos-menu)) (neq ?vino1 ?vino2))
                       then
-                        (bind ?precio (+ ?precio (/ (send ?vino2 get-precio) 4)))
+                        (bind ?precio2 (+ ?precio1 (/ (send ?vino2 get-precio) 4.0)))
                         (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
-                          (postre ?postre) (vinos (create$ ?vino1 ?vino2)) (precio ?precio) (puntuacion ?puntuacion) (justificaciones $?just))))))
+                          (postre ?postre) (vinos (create$ ?vino1 ?vino2)) (precio ?precio2) (puntuacion ?puntuacion) (justificaciones $?just))))))
         )
       )
     )
