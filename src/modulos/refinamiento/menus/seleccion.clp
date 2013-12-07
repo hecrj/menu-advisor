@@ -19,7 +19,6 @@
   (assert (menus-creados))
 )
 
-
 (defrule ir-a-filtrar-vinos "Ir a filtrar vinos"
   (declare (salience -10000))
   =>
