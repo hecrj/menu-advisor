@@ -2,6 +2,9 @@
 % !TEX root = ../report.tex
 % 
 
+\section{Introducción}
+\subsection{Descripción del problema}
+
 \begin{wrapfigure}{O}{0.3\textwidth}
   \vspace{-20pt}
   \begin{center}
@@ -10,8 +13,6 @@
   \vspace{-20pt}
 \end{wrapfigure}
 
-\section{Introducción}
-\subsection{Descripción del problema}
 La empresa de catering \emph{Rico Rico} quiere mejorar su eficiencia a la hora
 de proponer menús para las celebraciones de sus clientes. Con ese fin, ha
 encargado la implementación de un sistema experto basado en el conocimiento que
@@ -19,4 +20,13 @@ tienen tras su larga experiencia en el sector. Gracias al sistema, solamente es
 necesario que el cliente indique sus preferencias y restricciones concretas
 para obtener las recomendaciones más acordes con sus necesidades.
 
+El sistema se encarga de hacer preguntas al cliente para recomendar hasta tres
+menús con distintos precios, siempre dentro de los límites exigidos por el
+cliente. Entre otras cosas, se precisa saber el tipo de evento, el número de
+comensales, los posibles trastornos o preferencias alimenticias (alergias,
+razones culturales, etc.), preferencias de origen cultural de los platos...
 
+También debe ser capaz de recomendar vinos si el cliente así lo desea, y hacer
+un menú lo suficientemente acorde con los éstos. Inicialmente se tenía previsto
+que las bebidas también dependieran de los platos y el cliente, pero fuera del
+terreno del vino los comensales prefieren escoger individualmente la bebida.
