@@ -1,4 +1,4 @@
-; Sat Dec 07 00:26:31 CET 2013
+; Sat Dec 07 10:04:19 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -8,7 +8,25 @@
 	(nombre "Pasta de trigo")
 	(platos
 		[comida_Class60023]
-		[comida_Class44])
+		[comida_Class80050]
+		[comida_Class80053]
+		[comida_Class80071]
+		[comida_Class44]
+		[comida_Class80072]
+		[comida_Class80073]
+		[comida_Class80044]
+		[comida_Class80075]
+		[comida_Class80080]
+		[comida_Class80046]
+		[comida_Class80091]
+		[comida_Class46]
+		[comida_Class80100]
+		[comida_Class80107]
+		[comida_Class80106]
+		[comida_Class80108]
+		[comida_Class80109]
+		[comida_Class80110]
+		[comida_Class80105])
 	(problematico_para [comida_Class20014]))
 
 ([comida_Class10000] of  Ingrediente
@@ -16,18 +34,6 @@
 	(nombre "Melón")
 	(platos [comida_Class36])
 	(solo-disponible-en [comida_Class30002]))
-
-([comida_Class2] of  Moderno
-
-	(dificultad 30)
-	(es_exclusivo FALSE)
-	(genero [comida_Class70014])
-	(ingredientes [comida_Class20008])
-	(nombre "Ejemplo plato moderno")
-	(pesadez PESADO)
-	(precio 200.0)
-	(temperatura CALIENTE)
-	(tipo PRIMERO SEGUNDO))
 
 ([comida_Class20000] of  Moderno
 
@@ -56,7 +62,21 @@
 		[comida_Class40009]
 		[comida_Class60017]
 		[comida_Class60022]
-		[comida_Class60028])
+		[comida_Class60028]
+		[comida_Class80005]
+		[comida_Class80007]
+		[comida_Class80009]
+		[comida_Class80010]
+		[comida_Class80018]
+		[comida_Class80021]
+		[comida_Class80024]
+		[comida_Class80026]
+		[comida_Class80031]
+		[comida_Class80045]
+		[comida_Class80055]
+		[comida_Class80066]
+		[comida_Class80076]
+		[comida_Class80086])
 	(nombre "Vegetariano (vegano)"))
 
 ([comida_Class20007] of  Ingrediente
@@ -64,31 +84,61 @@
 	(nombre "Carne")
 	(platos
 		[comida_Class45]
+		[comida_Class40013]
+		[comida_Class80035]
 		[comida_Class44]
-		[comida_Class40013])
+		[comida_Class80077]
+		[comida_Class80081]
+		[comida_Class80095]
+		[comida_Class80100]
+		[comida_Class80101]
+		[comida_Class80103])
 	(problematico_para [comida_Class20001]))
 
 ([comida_Class20008] of  Ingrediente
 
-	(nombre "Ninguno")
-	(platos
-		[comida_Class2]
-		[comida_Class49]))
+	(nombre "Ninguno"))
 
 ([comida_Class20009] of  Ingrediente
 
 	(nombre "Azúcar")
 	(platos
-		[comida_Class35]
 		[comida_Class37]
 		[comida_Class39]
 		[comida_Class38]
-		[comida_Class30001])
+		[comida_Class30001]
+		[comida_Class80112]
+		[comida_Class35]
+		[comida_Class80115]
+		[comida_Class80116]
+		[comida_Class80118]
+		[comida_Class80119]
+		[comida_Class80120]
+		[comida_Class80121]
+		[comida_Class80123]
+		[comida_Class80125]
+		[comida_Class80126]
+		[comida_Class80127]
+		[comida_Class80129]
+		[comida_Class80132]
+		[comida_Class80136]
+		[comida_Class80137]
+		[comida_Class80138]
+		[comida_Class80140]
+		[comida_Class80143]
+		[comida_Class80144]
+		[comida_Class80145]
+		[comida_Class80146]
+		[comida_Class80147])
 	(problematico_para [comida_Class20010]))
 
 ([comida_Class20010] of  TipoComensal
 
-	(conflictos [comida_Class20009])
+	(conflictos
+		[comida_Class20009]
+		[comida_Class80113]
+		[comida_Class80114]
+		[comida_Class80124])
 	(nombre "Diabético"))
 
 ([comida_Class20011] of  Ingrediente
@@ -97,7 +147,10 @@
 	(platos
 		[comida_Class47]
 		[comida_Class60020]
-		[comida_Class48])
+		[comida_Class48]
+		[comida_Class80053]
+		[comida_Class80068]
+		[comida_Class80094])
 	(problematico_para [comida_Class20001]))
 
 ([comida_Class20012] of  Ingrediente
@@ -108,9 +161,7 @@
 ([comida_Class20013] of  Ingrediente
 
 	(nombre "Trigo")
-	(platos
-		[comida_Class46]
-		[comida_Class44])
+	(platos [comida_Class44])
 	(problematico_para [comida_Class20014]))
 
 ([comida_Class20014] of  TipoComensal
@@ -118,20 +169,44 @@
 	(conflictos
 		[comida_Class20013]
 		[comida_Class60008]
-		[comida_Class0])
+		[comida_Class0]
+		[comida_Class80012]
+		[comida_Class80023]
+		[comida_Class80040]
+		[comida_Class80069])
 	(nombre "Celíaco"))
 
 ([comida_Class20018] of  Ingrediente
 
-	(nombre "Lácteo")
+	(nombre "Lácteos")
 	(platos
-		[comida_Class35]
 		[comida_Class37]
 		[comida_Class38]
 		[comida_Class39]
 		[comida_Class30001]
 		[comida_Class60010]
-		[comida_Class60023])
+		[comida_Class60023]
+		[comida_Class80112]
+		[comida_Class35]
+		[comida_Class80115]
+		[comida_Class80116]
+		[comida_Class80118]
+		[comida_Class80119]
+		[comida_Class80120]
+		[comida_Class80121]
+		[comida_Class80123]
+		[comida_Class80125]
+		[comida_Class80126]
+		[comida_Class80127]
+		[comida_Class80129]
+		[comida_Class80132]
+		[comida_Class80136]
+		[comida_Class80137]
+		[comida_Class80138]
+		[comida_Class80143]
+		[comida_Class80144]
+		[comida_Class80145]
+		[comida_Class80146])
 	(problematico_para
 		[comida_Class60007]
 		[comida_Class20001]))
@@ -143,7 +218,12 @@
 		[comida_Class20020]
 		[comida_Class30001]
 		[comida_Class20000]
-		[comida_Class60010])
+		[comida_Class60010]
+		[comida_Class80015]
+		[comida_Class80057]
+		[comida_Class80125]
+		[comida_Class80146]
+		[comida_Class80147])
 	(problematico_para
 		[comida_Class60006]
 		[comida_Class20001]))
@@ -159,6 +239,20 @@
 	(precio 3.0)
 	(temperatura CALIENTE)
 	(tipo SEGUNDO))
+
+([comida_Class30000] of  Tradicional
+
+	(dificultad 20)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70006])
+	(ingredientes
+		[comida_Class60001]
+		[comida_Class60018])
+	(nombre "Caldo de verduras")
+	(pesadez LIGERO)
+	(precio 5.0)
+	(temperatura CALIENTE)
+	(tipo PRIMERO))
 
 ([comida_Class30001] of  Generico
 
@@ -201,10 +295,11 @@
 	(genero [comida_Class70012])
 	(ingredientes
 		[comida_Class20009]
-		[comida_Class20018])
+		[comida_Class20018]
+		[comida_Class80114])
 	(nombre "Helado de chocolate")
 	(pesadez PESADO)
-	(precio 3.0)
+	(precio 3.99)
 	(temperatura FRIO)
 	(tipo POSTRE))
 
@@ -265,7 +360,8 @@
 
 ([comida_Class40001] of  Ingrediente
 
-	(nombre "Calabacín"))
+	(nombre "Calabacín")
+	(platos [comida_Class80015]))
 
 ([comida_Class40002] of  Evento
 
@@ -282,7 +378,9 @@
 
 	(importancia_platos 20)
 	(nombre "Comida familiar")
-	(platos_evento [comida_Class46]))
+	(platos_evento
+		[comida_Class46]
+		[comida_Class80093]))
 
 ([comida_Class40005] of  Region
 
@@ -300,14 +398,17 @@
 ([comida_Class40008] of  Region
 
 	(nombre "Valencia")
-	(platos_tipicos [comida_Class40013]))
+	(platos_tipicos
+		[comida_Class40013]
+		[comida_Class80068]
+		[comida_Class80140]))
 
 ([comida_Class40009] of  Ingrediente
 
 	(nombre "Marisco")
 	(platos
-		[comida_Class40010]
-		[comida_Class60016])
+		[comida_Class60016]
+		[comida_Class40010])
 	(problematico_para
 		[comida_Class40011]
 		[comida_Class20001]))
@@ -317,7 +418,9 @@
 	(dificultad 60)
 	(es_exclusivo FALSE)
 	(genero [comida_Class70008])
-	(ingredientes [comida_Class40009])
+	(ingredientes
+		[comida_Class40009]
+		[comida_Class80023])
 	(nombre "Paella de marisco")
 	(pesadez PESADO)
 	(precio 5.0)
@@ -328,7 +431,10 @@
 
 	(conflictos
 		[comida_Class40009]
-		[comida_Class60017])
+		[comida_Class60017]
+		[comida_Class80007]
+		[comida_Class80024]
+		[comida_Class80055])
 	(nombre "Alérgico al marisco"))
 
 ([comida_Class40013] of  Generico
@@ -336,7 +442,9 @@
 	(dificultad 60)
 	(es_exclusivo FALSE)
 	(genero [comida_Class70014])
-	(ingredientes [comida_Class20007])
+	(ingredientes
+		[comida_Class20007]
+		[comida_Class80023])
 	(nombre "Paella valenciana")
 	(pesadez PESADO)
 	(precio 5.0)
@@ -352,7 +460,8 @@
 	(ingredientes
 		[comida_Class20007]
 		[comida_Class20013]
-		[comida_Class0])
+		[comida_Class0]
+		[comida_Class20007])
 	(nombre "Macarrones a la boloñesa")
 	(pesadez PESADO)
 	(precio 4.0)
@@ -377,7 +486,9 @@
 	(es_exclusivo FALSE)
 	(eventos [comida_Class40004])
 	(genero [comida_Class70006])
-	(ingredientes [comida_Class20013])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class60001])
 	(nombre "Sopa de galets")
 	(pesadez PESADO)
 	(precio 2.0)
@@ -419,7 +530,7 @@
 	(dificultad 5)
 	(es_exclusivo FALSE)
 	(genero [comida_Class70013])
-	(ingredientes [comida_Class20008])
+	(ingredientes [comida_Class80030])
 	(nombre "Ensalada verde")
 	(pesadez LIGERO)
 	(precio 2.0)
@@ -447,13 +558,24 @@
 
 ([comida_Class50004] of  TipoComensal
 
-	(conflictos [comida_Class60005])
+	(conflictos
+		[comida_Class60005]
+		[comida_Class80010]
+		[comida_Class80034])
 	(nombre "Hipertenso"))
 
 ([comida_Class50005] of  Evento
 
 	(importancia_platos 25)
 	(nombre "Comida de empresa"))
+
+([comida_Class60001] of  Ingrediente
+
+	(nombre "Caldo de verduras")
+	(platos
+		[comida_Class30000]
+		[comida_Class80093]
+		[comida_Class46]))
 
 ([comida_Class60002] of  ColorVino
 
@@ -468,7 +590,8 @@
 	(nombre "Sal")
 	(platos
 		[comida_Class60016]
-		[comida_Class60023])
+		[comida_Class60023]
+		[comida_Class80097])
 	(problematico_para [comida_Class50004]))
 
 ([comida_Class60006] of  TipoComensal
@@ -480,7 +603,11 @@
 
 	(conflictos
 		[comida_Class20018]
-		[comida_Class60028])
+		[comida_Class60028]
+		[comida_Class80009]
+		[comida_Class80018]
+		[comida_Class80021]
+		[comida_Class80037])
 	(nombre "Alérgico a la leche"))
 
 ([comida_Class60008] of  Ingrediente
@@ -488,7 +615,12 @@
 	(nombre "Harina de trigo")
 	(platos
 		[comida_Class20000]
-		[comida_Class60010])
+		[comida_Class60010]
+		[comida_Class80017]
+		[comida_Class80020]
+		[comida_Class80008]
+		[comida_Class80145]
+		[comida_Class80147])
 	(problematico_para [comida_Class20014]))
 
 ([comida_Class60009] of  Ingrediente
@@ -516,17 +648,32 @@
 ([comida_Class60011] of  Ingrediente
 
 	(nombre "Tomate")
-	(platos [comida_Class60010]))
+	(platos
+		[comida_Class60010]
+		[comida_Class80017]
+		[comida_Class80081]
+		[comida_Class80107]
+		[comida_Class80106]
+		[comida_Class80108]
+		[comida_Class80109]
+		[comida_Class80110]
+		[comida_Class80105]))
 
 ([comida_Class60012] of  Ingrediente
 
 	(nombre "Jamón serrano")
-	(platos [comida_Class60010]))
+	(platos
+		[comida_Class60010]
+		[comida_Class80020]
+		[comida_Class80027]
+		[comida_Class80108]))
 
 ([comida_Class60014] of  Ingrediente
 
 	(nombre "Queso brie")
-	(platos [comida_Class60010]))
+	(platos
+		[comida_Class60010]
+		[comida_Class80109]))
 
 ([comida_Class60015] of  Ingrediente
 
@@ -553,7 +700,11 @@
 ([comida_Class60017] of  Ingrediente
 
 	(nombre "Gambas")
-	(platos [comida_Class60016])
+	(platos
+		[comida_Class60016]
+		[comida_Class80022]
+		[comida_Class80057]
+		[comida_Class80068])
 	(problematico_para
 		[comida_Class40011]
 		[comida_Class20001]))
@@ -561,12 +712,24 @@
 ([comida_Class60018] of  Ingrediente
 
 	(nombre "Cebolla")
-	(platos [comida_Class60016]))
+	(platos
+		[comida_Class60016]
+		[comida_Class30000]
+		[comida_Class80033]
+		[comida_Class80053]
+		[comida_Class80058]
+		[comida_Class80097]
+		[comida_Class80100]
+		[comida_Class80101]))
 
 ([comida_Class60019] of  Region
 
 	(nombre "Cataluña")
-	(platos_tipicos [comida_Class46]))
+	(platos_tipicos
+		[comida_Class46]
+		[comida_Class80087]
+		[comida_Class80093]
+		[comida_Class80140]))
 
 ([comida_Class60020] of  Tradicional
 
@@ -595,7 +758,9 @@
 	(nombre "Bacalao")
 	(platos
 		[comida_Class60020]
-		[comida_Class48])
+		[comida_Class48]
+		[comida_Class70002]
+		[comida_Class80091])
 	(problematico_para [comida_Class20001]))
 
 ([comida_Class60023] of  Generico
@@ -627,7 +792,10 @@
 ([comida_Class60025] of  Ingrediente
 
 	(nombre "Patata")
-	(platos [comida_Class60023]))
+	(platos
+		[comida_Class60023]
+		[comida_Class80015]
+		[comida_Class80035]))
 
 ([comida_Class60026] of  Ingrediente
 
@@ -637,13 +805,19 @@
 
 ([comida_Class60027] of  TipoComensal
 
-	(conflictos [comida_Class60026])
+	(conflictos
+		[comida_Class60026]
+		[comida_Class80088]
+		[comida_Class80090]
+		[comida_Class80141])
 	(nombre "Alérgico a los frutos secos"))
 
 ([comida_Class60028] of  Ingrediente
 
 	(nombre "Queso parmesano")
-	(platos [comida_Class60023])
+	(platos
+		[comida_Class60023]
+		[comida_Class80109])
 	(problematico_para
 		[comida_Class60007]
 		[comida_Class20001]))
@@ -651,17 +825,36 @@
 ([comida_Class60029] of  Region
 
 	(nombre "Italia")
-	(platos_tipicos [comida_Class60023]))
+	(platos_tipicos
+		[comida_Class60023]
+		[comida_Class80033]
+		[comida_Class80044]
+		[comida_Class80046]
+		[comida_Class80050]
+		[comida_Class80072]
+		[comida_Class80073]
+		[comida_Class80080]
+		[comida_Class80105]
+		[comida_Class80106]
+		[comida_Class80107]
+		[comida_Class80108]
+		[comida_Class80109]
+		[comida_Class80110]))
 
 ([comida_Class60030] of  Ingrediente
 
 	(nombre "Ajo")
-	(platos [comida_Class60023]))
+	(platos
+		[comida_Class60023]
+		[comida_Class80006]
+		[comida_Class80097]))
 
 ([comida_Class60031] of  Ingrediente
 
 	(nombre "Aceite de oliva")
-	(platos [comida_Class48]))
+	(platos
+		[comida_Class48]
+		[comida_Class80004]))
 
 ([comida_Class60032] of  Ingrediente
 
@@ -679,6 +872,25 @@
 	(color [comida_Class60002])
 	(nombre "Abadía San Campio")
 	(precio 11.75))
+
+([comida_Class70002] of  Moderno
+
+	(dificultad 20)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70018])
+	(ingredientes
+		[comida_Class60022]
+		[comida_Class70003])
+	(nombre "Carpaccio de bacalao")
+	(pesadez LIGERO)
+	(precio 3.99)
+	(temperatura FRIO)
+	(tipo PRIMERO))
+
+([comida_Class70003] of  Ingrediente
+
+	(nombre "Aceituna Negra")
+	(platos [comida_Class70002]))
 
 ([comida_Class70004] of  ColorVino
 
@@ -758,3 +970,1611 @@
 
 	(nombre "Aperitivo")
 	(predilecto [comida_Class60002]))
+
+([comida_Class80004] of  Moderno
+
+	(dificultad 15)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70018])
+	(ingredientes
+		[comida_Class60031]
+		[comida_Class80005])
+	(nombre "Carpaccio de pulpo")
+	(pesadez LIGERO)
+	(precio 3.99)
+	(temperatura FRIO)
+	(tipo PRIMERO))
+
+([comida_Class80005] of  Ingrediente
+
+	(nombre "Pulpo")
+	(platos [comida_Class80004])
+	(problematico_para [comida_Class20001]))
+
+([comida_Class80006] of  Generico
+
+	(dificultad 30)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70018])
+	(ingredientes
+		[comida_Class60030]
+		[comida_Class80007])
+	(nombre "Langostinos al ajillo")
+	(pesadez LIGERO)
+	(precio 2.99)
+	(temperatura FRIO)
+	(tipo PRIMERO))
+
+([comida_Class80007] of  Ingrediente
+
+	(nombre "Langostinos")
+	(platos [comida_Class80006])
+	(problematico_para
+		[comida_Class40011]
+		[comida_Class20001]))
+
+([comida_Class80008] of  Generico
+
+	(dificultad 20)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70010])
+	(ingredientes
+		[comida_Class60008]
+		[comida_Class80009]
+		[comida_Class80010])
+	(nombre "Tartaleta de bacón y queso")
+	(pesadez LIGERO)
+	(precio 1.49)
+	(temperatura CALIENTE)
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80009] of  Ingrediente
+
+	(nombre "Queso")
+	(platos
+		[comida_Class80011]
+		[comida_Class80008]
+		[comida_Class80035]
+		[comida_Class80072]
+		[comida_Class80073]
+		[comida_Class80077]
+		[comida_Class80107]
+		[comida_Class80106]
+		[comida_Class80108]
+		[comida_Class80110]
+		[comida_Class80105]
+		[comida_Class80143])
+	(problematico_para
+		[comida_Class60007]
+		[comida_Class20001]))
+
+([comida_Class80010] of  Ingrediente
+
+	(nombre "Bacón")
+	(platos
+		[comida_Class80008]
+		[comida_Class80087])
+	(problematico_para
+		[comida_Class20001]
+		[comida_Class50004]))
+
+([comida_Class80011] of  Tradicional
+
+	(dificultad 60)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70011])
+	(ingredientes
+		[comida_Class80009]
+		[comida_Class80012])
+	(nombre "Fondue de queso")
+	(pesadez PESADO)
+	(precio 5.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80013])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80012] of  Ingrediente
+
+	(nombre "Pan")
+	(platos
+		[comida_Class80011]
+		[comida_Class80095]
+		[comida_Class80097]
+		[comida_Class80101])
+	(problematico_para [comida_Class20014]))
+
+([comida_Class80013] of  Region
+
+	(nombre "Suiza")
+	(platos_tipicos [comida_Class80011]))
+
+([comida_Class80015] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70017])
+	(ingredientes
+		[comida_Class20019]
+		[comida_Class60025]
+		[comida_Class40001])
+	(nombre "Tortilla de patata y calabacín")
+	(pesadez PESADO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80016])
+	(tipo SEGUNDO))
+
+([comida_Class80016] of  Region
+
+	(nombre "España")
+	(platos_tipicos
+		[comida_Class80015]
+		[comida_Class80022]
+		[comida_Class80027]
+		[comida_Class80065]
+		[comida_Class80146]))
+
+([comida_Class80017] of  Generico
+
+	(dificultad 45)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70010])
+	(ingredientes
+		[comida_Class60011]
+		[comida_Class80018]
+		[comida_Class60008])
+	(nombre "Crêpes de queso de cabra y tomate")
+	(pesadez LIGERO)
+	(precio 7.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80019])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80018] of  Ingrediente
+
+	(nombre "Queso de cabra")
+	(platos
+		[comida_Class80017]
+		[comida_Class80091]
+		[comida_Class80109])
+	(problematico_para
+		[comida_Class20001]
+		[comida_Class60007]))
+
+([comida_Class80019] of  Region
+
+	(nombre "Francia")
+	(platos_tipicos
+		[comida_Class80017]
+		[comida_Class80020]
+		[comida_Class80145]))
+
+([comida_Class80020] of  Generico
+
+	(dificultad 45)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70010])
+	(ingredientes
+		[comida_Class60008]
+		[comida_Class80021]
+		[comida_Class60012])
+	(nombre "Crêpes de jamón y queso emmental")
+	(pesadez LIGERO)
+	(precio 6.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80019])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80021] of  Ingrediente
+
+	(nombre "Queso emmental")
+	(platos
+		[comida_Class80020]
+		[comida_Class80109])
+	(problematico_para
+		[comida_Class60007]
+		[comida_Class20001]))
+
+([comida_Class80022] of  Generico
+
+	(dificultad 80)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70014])
+	(ingredientes
+		[comida_Class80023]
+		[comida_Class80024]
+		[comida_Class60017]
+		[comida_Class80025]
+		[comida_Class80026])
+	(nombre "Paella marinera")
+	(pesadez PESADO)
+	(precio 7.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80016])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80023] of  Ingrediente
+
+	(nombre "Arroz")
+	(platos
+		[comida_Class40010]
+		[comida_Class40013]
+		[comida_Class80022]
+		[comida_Class80029]
+		[comida_Class80033]
+		[comida_Class80041]
+		[comida_Class80049]
+		[comida_Class80063]
+		[comida_Class80065]
+		[comida_Class80067])
+	(problematico_para [comida_Class20014]))
+
+([comida_Class80024] of  Ingrediente
+
+	(nombre "Mejillón")
+	(platos [comida_Class80022])
+	(problematico_para
+		[comida_Class20001]
+		[comida_Class40011]))
+
+([comida_Class80025] of  Ingrediente
+
+	(nombre "Judías verdes")
+	(platos [comida_Class80022]))
+
+([comida_Class80026] of  Ingrediente
+
+	(nombre "Calamar")
+	(platos
+		[comida_Class80022]
+		[comida_Class80065]
+		[comida_Class80068])
+	(problematico_para [comida_Class20001]))
+
+([comida_Class80027] of  Generico
+
+	(dificultad 35)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70016])
+	(ingredientes
+		[comida_Class60012]
+		[comida_Class80028])
+	(nombre "Guisantes con jamón")
+	(pesadez PESADO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80016])
+	(tipo PRIMERO))
+
+([comida_Class80028] of  Ingrediente
+
+	(nombre "Guisantes")
+	(platos
+		[comida_Class80027]
+		[comida_Class80048]))
+
+([comida_Class80029] of  Generico
+
+	(dificultad 75)
+	(es_exclusivo TRUE)
+	(genero [comida_Class70014])
+	(ingredientes
+		[comida_Class80023]
+		[comida_Class80030]
+		[comida_Class80031])
+	(nombre "Arroz con verduras orientales y pollo")
+	(pesadez LIGERO)
+	(precio 7.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80032])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80030] of  Ingrediente
+
+	(nombre "Hortalizas")
+	(platos
+		[comida_Class80029]
+		[comida_Class49]
+		[comida_Class80048]
+		[comida_Class80049]
+		[comida_Class80052]
+		[comida_Class80056]
+		[comida_Class80063]
+		[comida_Class80071]
+		[comida_Class80080]
+		[comida_Class80091]
+		[comida_Class80100]
+		[comida_Class80105]))
+
+([comida_Class80031] of  Ingrediente
+
+	(nombre "Pollo")
+	(platos
+		[comida_Class80029]
+		[comida_Class80038]
+		[comida_Class80041]
+		[comida_Class80056]
+		[comida_Class80063]
+		[comida_Class80067]
+		[comida_Class80110])
+	(problematico_para [comida_Class20001]))
+
+([comida_Class80032] of  Region
+
+	(nombre "Oriente")
+	(platos_tipicos
+		[comida_Class80029]
+		[comida_Class80094]))
+
+([comida_Class80033] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70014])
+	(ingredientes
+		[comida_Class80023]
+		[comida_Class60018]
+		[comida_Class80034])
+	(nombre "Risotto")
+	(pesadez PESADO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO))
+
+([comida_Class80034] of  Ingrediente
+
+	(nombre "Mantequilla")
+	(platos [comida_Class80033])
+	(problematico_para [comida_Class50004]))
+
+([comida_Class80035] of  Generico
+
+	(dificultad 60)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
+	(ingredientes
+		[comida_Class20007]
+		[comida_Class80009]
+		[comida_Class80037]
+		[comida_Class60025])
+	(nombre "Gratén de patata y carne")
+	(pesadez PESADO)
+	(precio 5.99)
+	(temperatura CALIENTE)
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80037] of  Ingrediente
+
+	(nombre "Bechamel")
+	(platos
+		[comida_Class80035]
+		[comida_Class80044]
+		[comida_Class80075]
+		[comida_Class80080]
+		[comida_Class80046])
+	(problematico_para [comida_Class60007]))
+
+([comida_Class80038] of  Generico
+
+	(dificultad 40)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
+	(ingredientes
+		[comida_Class80031]
+		[comida_Class80039]
+		[comida_Class80040])
+	(nombre "Macarrones con pollo y setas")
+	(pesadez PESADO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipo PRIMERO))
+
+([comida_Class80039] of  Ingrediente
+
+	(nombre "Setas")
+	(platos
+		[comida_Class80038]
+		[comida_Class80049]
+		[comida_Class80057]
+		[comida_Class80073]))
+
+([comida_Class80040] of  Ingrediente
+
+	(nombre "Macarrones")
+	(platos [comida_Class80038])
+	(problematico_para [comida_Class20014]))
+
+([comida_Class80041] of  Generico
+
+	(dificultad 60)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class80031]
+		[comida_Class80023])
+	(nombre "Pollo al curry")
+	(pesadez PESADO)
+	(precio 3.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80043])
+	(tipo SEGUNDO PRIMERO))
+
+([comida_Class80043] of  Region
+
+	(nombre "India")
+	(platos_tipicos
+		[comida_Class80041]
+		[comida_Class80067]
+		[comida_Class80071]
+		[comida_Class80095]))
+
+([comida_Class80044] of  Tradicional
+
+	(dificultad 60)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80045]
+		[comida_Class80037])
+	(nombre "Canelones de pavo")
+	(pesadez LIGERO)
+	(precio 5.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO))
+
+([comida_Class80045] of  Ingrediente
+
+	(nombre "Pavo")
+	(platos [comida_Class80044])
+	(problematico_para [comida_Class20001]))
+
+([comida_Class80046] of  Tradicional
+
+	(dificultad 75)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80047]
+		[comida_Class80037])
+	(nombre "Lasaña de espinacas")
+	(pesadez PESADO)
+	(precio 6.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO))
+
+([comida_Class80047] of  Ingrediente
+
+	(nombre "Espinacas")
+	(platos
+		[comida_Class80080]
+		[comida_Class80046]
+		[comida_Class80087]))
+
+([comida_Class80048] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70013])
+	(ingredientes
+		[comida_Class80030]
+		[comida_Class80028])
+	(nombre "Verduras al vapor")
+	(pesadez LIGERO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipo PRIMERO))
+
+([comida_Class80049] of  Moderno
+
+	(dificultad 70)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70014])
+	(ingredientes
+		[comida_Class80030]
+		[comida_Class80039]
+		[comida_Class80023])
+	(nombre "Arroz integral con hortalizas asadas y setas")
+	(pesadez LIGERO)
+	(precio 6.99)
+	(temperatura CALIENTE)
+	(tipo PRIMERO))
+
+([comida_Class80050] of  Generico
+
+	(dificultad 60)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80051])
+	(nombre "Tagliatelle con tofu")
+	(pesadez PESADO)
+	(precio 7.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO))
+
+([comida_Class80051] of  Ingrediente
+
+	(nombre "Tofu")
+	(platos [comida_Class80050]))
+
+([comida_Class80052] of  Tradicional
+
+	(dificultad 40)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70013])
+	(ingredientes [comida_Class80030])
+	(nombre "Crema de verduras")
+	(pesadez LIGERO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipo PRIMERO))
+
+([comida_Class80053] of  Tradicional
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70006])
+	(ingredientes
+		[comida_Class20011]
+		[comida_Class0]
+		[comida_Class60018])
+	(nombre "Sopa de pescado")
+	(pesadez LIGERO)
+	(precio 3.99)
+	(temperatura CALIENTE)
+	(tipo PRIMERO))
+
+([comida_Class80054] of  Moderno
+
+	(dificultad 70)
+	(es_exclusivo TRUE)
+	(genero [comida_Class70008])
+	(ingredientes [comida_Class80055])
+	(nombre "Crema de bogavante")
+	(pesadez LIGERO)
+	(precio 12.99)
+	(temperatura CALIENTE)
+	(tipo PRIMERO))
+
+([comida_Class80055] of  Ingrediente
+
+	(nombre "Bogavante")
+	(platos [comida_Class80054])
+	(problematico_para
+		[comida_Class20001]
+		[comida_Class40011]))
+
+([comida_Class80056] of  Generico
+
+	(dificultad 60)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class80031]
+		[comida_Class80030])
+	(nombre "Braseado de verduras con pollo")
+	(pesadez LIGERO)
+	(precio 3.99)
+	(temperatura CALIENTE)
+	(tipo PRIMERO))
+
+([comida_Class80057] of  Generico
+
+	(dificultad 60)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70017])
+	(ingredientes
+		[comida_Class80039]
+		[comida_Class60017]
+		[comida_Class20019])
+	(nombre "Revuelto de setas y gambas")
+	(pesadez LIGERO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80058] of  Generico
+
+	(dificultad 70)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class60018]
+		[comida_Class80060])
+	(nombre "Salteado tailandés")
+	(pesadez LIGERO)
+	(precio 3.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80061])
+	(tipo PRIMERO))
+
+([comida_Class80060] of  Ingrediente
+
+	(nombre "Brócoli")
+	(platos
+		[comida_Class80058]
+		[comida_Class80071]))
+
+([comida_Class80061] of  Region
+
+	(nombre "Tailandia")
+	(platos_tipicos
+		[comida_Class80058]
+		[comida_Class80091]))
+
+([comida_Class80063] of  Generico
+
+	(dificultad 45)
+	(es_exclusivo TRUE)
+	(genero [comida_Class70014])
+	(ingredientes
+		[comida_Class80023]
+		[comida_Class80031]
+		[comida_Class80030])
+	(nombre "Arroz tres delicias")
+	(pesadez LIGERO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80065] of  Tradicional
+
+	(dificultad 65)
+	(es_exclusivo TRUE)
+	(genero [comida_Class70014])
+	(ingredientes
+		[comida_Class80023]
+		[comida_Class80026]
+		[comida_Class80066])
+	(nombre "Arroz negro")
+	(pesadez LIGERO)
+	(precio 5.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80016])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80066] of  Ingrediente
+
+	(nombre "Tinta de calamar")
+	(platos [comida_Class80065])
+	(problematico_para [comida_Class20001]))
+
+([comida_Class80067] of  Generico
+
+	(dificultad 60)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70014])
+	(ingredientes
+		[comida_Class80031]
+		[comida_Class80023])
+	(nombre "Arroz al curry")
+	(pesadez PESADO)
+	(precio 3.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80043])
+	(tipo SEGUNDO PRIMERO))
+
+([comida_Class80068] of  Generico
+
+	(dificultad 70)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
+	(ingredientes
+		[comida_Class80069]
+		[comida_Class20011]
+		[comida_Class80026]
+		[comida_Class60017]
+		[comida_Class80070])
+	(nombre "Fideuá")
+	(pesadez PESADO)
+	(precio 5.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class40008])
+	(tipo PRIMERO))
+
+([comida_Class80069] of  Ingrediente
+
+	(nombre "Fideos")
+	(platos
+		[comida_Class80068]
+		[comida_Class80093])
+	(problematico_para [comida_Class20014]))
+
+([comida_Class80070] of  Ingrediente
+
+	(nombre "Limón")
+	(platos
+		[comida_Class80068]
+		[comida_Class80097]
+		[comida_Class80127]
+		[comida_Class80137]))
+
+([comida_Class80071] of  Generico
+
+	(dificultad 60)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80030]
+		[comida_Class80060])
+	(nombre "Couscous con verduras")
+	(pesadez PESADO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80043])
+	(tipo PRIMERO))
+
+([comida_Class80072] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80009])
+	(nombre "Spaghetti al pesto")
+	(pesadez PESADO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO))
+
+([comida_Class80073] of  Generico
+
+	(dificultad 60)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80039]
+		[comida_Class80009])
+	(nombre "Ravioli con setas")
+	(pesadez LIGERO)
+	(precio 5.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO))
+
+([comida_Class80075] of  Tradicional
+
+	(dificultad 60)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80037]
+		[comida_Class80076])
+	(nombre "Canelones de atún con bechamel")
+	(pesadez LIGERO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipo PRIMERO))
+
+([comida_Class80076] of  Ingrediente
+
+	(nombre "Atún")
+	(platos [comida_Class80075])
+	(problematico_para [comida_Class20001]))
+
+([comida_Class80077] of  Tradicional
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class20007]
+		[comida_Class80009]
+		[comida_Class80078])
+	(nombre "Berenjena rellena de carne")
+	(pesadez LIGERO)
+	(precio 5.99)
+	(temperatura CALIENTE)
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80078] of  Ingrediente
+
+	(nombre "Berenjena")
+	(platos [comida_Class80077]))
+
+([comida_Class80080] of  Generico
+
+	(dificultad 75)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70005])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80047]
+		[comida_Class80030]
+		[comida_Class80037])
+	(nombre "Lasaña vegetal")
+	(pesadez PESADO)
+	(precio 6.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO))
+
+([comida_Class80081] of  Tradicional
+
+	(dificultad 40)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class20007]
+		[comida_Class60011])
+	(nombre "Albóndigas con tomate")
+	(pesadez LIGERO)
+	(precio 2.99)
+	(temperatura CALIENTE)
+	(tipo SEGUNDO))
+
+([comida_Class80082] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70016])
+	(ingredientes [comida_Class80083])
+	(nombre "Fabada asturiana")
+	(pesadez LIGERO)
+	(precio 3.49)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80084])
+	(tipo PRIMERO))
+
+([comida_Class80083] of  Ingrediente
+
+	(nombre "Fabas")
+	(platos [comida_Class80082]))
+
+([comida_Class80084] of  Region
+
+	(nombre "Asturias")
+	(platos_tipicos [comida_Class80082]))
+
+([comida_Class80085] of  Tradicional
+
+	(dificultad 30)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70009])
+	(ingredientes [comida_Class80086])
+	(nombre "Filete de merluza")
+	(pesadez LIGERO)
+	(precio 3.99)
+	(temperatura CALIENTE)
+	(tipo SEGUNDO))
+
+([comida_Class80086] of  Ingrediente
+
+	(nombre "Merluza")
+	(platos [comida_Class80085])
+	(problematico_para [comida_Class20001]))
+
+([comida_Class80087] of  Tradicional
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70013])
+	(ingredientes
+		[comida_Class80047]
+		[comida_Class80010]
+		[comida_Class80088]
+		[comida_Class80090])
+	(nombre "Espinacas a la catalana")
+	(pesadez LIGERO)
+	(precio 3.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60019])
+	(tipo PRIMERO))
+
+([comida_Class80088] of  Ingrediente
+
+	(nombre "Pasas")
+	(platos [comida_Class80087])
+	(problematico_para [comida_Class60027]))
+
+([comida_Class80090] of  Ingrediente
+
+	(nombre "Piñones")
+	(platos [comida_Class80087])
+	(problematico_para [comida_Class60027]))
+
+([comida_Class80091] of  Moderno
+
+	(dificultad 80)
+	(es_exclusivo TRUE)
+	(genero [comida_Class70018])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80030]
+		[comida_Class80018]
+		[comida_Class60022]
+		[comida_Class80092])
+	(nombre "Delicias Thai")
+	(pesadez LIGERO)
+	(precio 7.99)
+	(temperatura FRIO)
+	(tipico_de [comida_Class80061])
+	(tipo PRIMERO))
+
+([comida_Class80092] of  Ingrediente
+
+	(nombre "Espárragos")
+	(platos [comida_Class80091]))
+
+([comida_Class80093] of  Tradicional
+
+	(dificultad 20)
+	(es_exclusivo FALSE)
+	(eventos [comida_Class40004])
+	(genero [comida_Class70006])
+	(ingredientes
+		[comida_Class80069]
+		[comida_Class60001])
+	(nombre "Sopa de fideos")
+	(pesadez PESADO)
+	(precio 2.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60019])
+	(tipo PRIMERO))
+
+([comida_Class80094] of  Moderno
+
+	(dificultad 80)
+	(es_exclusivo TRUE)
+	(genero [comida_Class70009])
+	(ingredientes [comida_Class20011])
+	(nombre "Sushi")
+	(pesadez LIGERO)
+	(precio 11.99)
+	(temperatura FRIO)
+	(tipico_de [comida_Class80032])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80095] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class80096]
+		[comida_Class20007]
+		[comida_Class80012])
+	(nombre "Falafel")
+	(pesadez LIGERO)
+	(precio 3.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80043])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80096] of  Ingrediente
+
+	(nombre "Garbanzos")
+	(platos [comida_Class80095]))
+
+([comida_Class80097] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70010])
+	(ingredientes
+		[comida_Class80099]
+		[comida_Class80070]
+		[comida_Class60030]
+		[comida_Class60018]
+		[comida_Class80012]
+		[comida_Class60005])
+	(nombre "Guacamole")
+	(pesadez LIGERO)
+	(precio 4.99)
+	(temperatura FRIO)
+	(tipico_de [comida_Class80098])
+	(tipo PRIMERO))
+
+([comida_Class80098] of  Region
+
+	(nombre "México")
+	(platos_tipicos
+		[comida_Class80097]
+		[comida_Class80100]))
+
+([comida_Class80099] of  Ingrediente
+
+	(nombre "Aguacate")
+	(platos [comida_Class80097]))
+
+([comida_Class80100] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class20007]
+		[comida_Class60018]
+		[comida_Class80030])
+	(nombre "Burrito mexicano de carne")
+	(pesadez PESADO)
+	(precio 4.49)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80098])
+	(tipo PRIMERO))
+
+([comida_Class80101] of  Generico
+
+	(dificultad 30)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class20007]
+		[comida_Class60018]
+		[comida_Class80012])
+	(nombre "Burger")
+	(pesadez PESADO)
+	(precio 3.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80102])
+	(tipo SEGUNDO))
+
+([comida_Class80102] of  Region
+
+	(nombre "Estados Unidos")
+	(platos_tipicos [comida_Class80101]))
+
+([comida_Class80103] of  Tradicional
+
+	(dificultad 60)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class20007]
+		[comida_Class80104])
+	(nombre "Costillas a la barbacoa")
+	(pesadez LIGERO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipo SEGUNDO))
+
+([comida_Class80104] of  Ingrediente
+
+	(nombre "Maíz")
+	(platos [comida_Class80103]))
+
+([comida_Class80105] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70010])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80009]
+		[comida_Class60011]
+		[comida_Class80030])
+	(nombre "Pizza vegetal")
+	(pesadez PESADO)
+	(precio 7.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80106] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70010])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80009]
+		[comida_Class60011]
+		[comida_Class80111])
+	(nombre "Pizza champiñones")
+	(pesadez PESADO)
+	(precio 7.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80107] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70010])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80009]
+		[comida_Class60011])
+	(nombre "Pizza boloñesa")
+	(pesadez PESADO)
+	(precio 6.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80108] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70010])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80009]
+		[comida_Class60011]
+		[comida_Class60012]
+		[comida_Class80111])
+	(nombre "Pizza jamón y queso")
+	(pesadez PESADO)
+	(precio 7.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80109] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70010])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class60011]
+		[comida_Class60014]
+		[comida_Class80018]
+		[comida_Class80021]
+		[comida_Class60028])
+	(nombre "Pizza cuatro quesos")
+	(pesadez PESADO)
+	(precio 8.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80110] of  Generico
+
+	(dificultad 50)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70010])
+	(ingredientes
+		[comida_Class0]
+		[comida_Class80009]
+		[comida_Class60011]
+		[comida_Class80031])
+	(nombre "Pizza barbacoa")
+	(pesadez PESADO)
+	(precio 8.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class60029])
+	(tipo PRIMERO SEGUNDO))
+
+([comida_Class80111] of  Ingrediente
+
+	(nombre "Champiñones")
+	(platos
+		[comida_Class80106]
+		[comida_Class80108]))
+
+([comida_Class80112] of  Generico
+
+	(dificultad 1)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80113])
+	(nombre "Helado de vainilla")
+	(pesadez PESADO)
+	(precio 3.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80113] of  Ingrediente
+
+	(nombre "Vainilla")
+	(platos
+		[comida_Class80112]
+		[comida_Class80118])
+	(problematico_para [comida_Class20010]))
+
+([comida_Class80114] of  Ingrediente
+
+	(nombre "Chocolate")
+	(platos
+		[comida_Class35]
+		[comida_Class80115]
+		[comida_Class80116]
+		[comida_Class80118]
+		[comida_Class80119]
+		[comida_Class80120]
+		[comida_Class80144]
+		[comida_Class80145]
+		[comida_Class80147])
+	(problematico_para [comida_Class20010]))
+
+([comida_Class80115] of  Generico
+
+	(dificultad 1)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80114])
+	(nombre "Helado de chocolate blanco")
+	(pesadez PESADO)
+	(precio 3.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80116] of  Moderno
+
+	(dificultad 1)
+	(es_exclusivo TRUE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80114])
+	(nombre "Trufetto")
+	(pesadez LIGERO)
+	(precio 6.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80118] of  Generico
+
+	(dificultad 1)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80113]
+		[comida_Class80114])
+	(nombre "Cono de vainilla")
+	(pesadez PESADO)
+	(precio 4.49)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80119] of  Generico
+
+	(dificultad 1)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80114])
+	(nombre "Cono de chocolate")
+	(pesadez PESADO)
+	(precio 4.49)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80120] of  Generico
+
+	(dificultad 1)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80114])
+	(nombre "Helado de chocolate light")
+	(pesadez LIGERO)
+	(precio 5.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80121] of  Generico
+
+	(dificultad 1)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80122])
+	(nombre "Helado de fresa")
+	(pesadez PESADO)
+	(precio 3.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80122] of  Ingrediente
+
+	(nombre "Fresa")
+	(platos [comida_Class80121]))
+
+([comida_Class80123] of  Moderno
+
+	(es_exclusivo FALSE)
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80124])
+	(nombre "Copa helada de nata")
+	(pesadez LIGERO)
+	(precio 0.0)
+	(tipo POSTRE))
+
+([comida_Class80124] of  Ingrediente
+
+	(nombre "Nata")
+	(platos
+		[comida_Class80123]
+		[comida_Class80136])
+	(problematico_para [comida_Class20010]))
+
+([comida_Class80125] of  Tradicional
+
+	(dificultad 10)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20019]
+		[comida_Class20018])
+	(nombre "Flan")
+	(pesadez LIGERO)
+	(precio 2.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80126] of  Generico
+
+	(dificultad 1)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018])
+	(nombre "Tarrina de turrón")
+	(pesadez LIGERO)
+	(precio 3.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80127] of  Generico
+
+	(dificultad 1)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80070])
+	(nombre "Sorbete de limón")
+	(pesadez LIGERO)
+	(precio 4.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80129] of  Generico
+
+	(dificultad 1)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018])
+	(nombre "Dulce de leche")
+	(pesadez LIGERO)
+	(precio 3.99)
+	(temperatura FRIO)
+	(tipico_de [comida_Class80131])
+	(tipo POSTRE))
+
+([comida_Class80131] of  Region
+
+	(nombre "Argentina")
+	(platos_tipicos [comida_Class80129]))
+
+([comida_Class80132] of  Generico
+
+	(dificultad 10)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80133])
+	(nombre "Tarta al whisky")
+	(pesadez LIGERO)
+	(precio 5.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80133] of  Ingrediente
+
+	(nombre "Whisky")
+	(platos [comida_Class80132])
+	(problematico_para
+		[comida_Class80134]
+		[comida_Class80135]))
+
+([comida_Class80134] of  TipoComensal
+
+	(conflictos [comida_Class80133])
+	(nombre "Menor de edad"))
+
+([comida_Class80135] of  TipoComensal
+
+	(conflictos [comida_Class80133])
+	(nombre "Musulmán"))
+
+([comida_Class80136] of  Generico
+
+	(dificultad 10)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80124])
+	(nombre "Tarta helada de nata")
+	(pesadez LIGERO)
+	(precio 4.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80137] of  Generico
+
+	(dificultad 1)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80070])
+	(nombre "Helado de limón")
+	(pesadez PESADO)
+	(precio 3.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80138] of  Generico
+
+	(dificultad 1)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80139])
+	(nombre "Helado de naranja")
+	(pesadez PESADO)
+	(precio 3.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80139] of  Ingrediente
+
+	(nombre "Naranja")
+	(platos [comida_Class80138]))
+
+([comida_Class80140] of  Tradicional
+
+	(dificultad 5)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class80141]
+		[comida_Class20009]
+		[comida_Class80142])
+	(nombre "Horchata")
+	(pesadez LIGERO)
+	(precio 3.99)
+	(temperatura FRIO)
+	(tipico_de
+		[comida_Class60019]
+		[comida_Class40008])
+	(tipo POSTRE))
+
+([comida_Class80141] of  Ingrediente
+
+	(nombre "Avellanas")
+	(platos [comida_Class80140])
+	(problematico_para [comida_Class60027]))
+
+([comida_Class80142] of  Ingrediente
+
+	(nombre "Chufa")
+	(platos [comida_Class80140]))
+
+([comida_Class80143] of  Generico
+
+	(dificultad 10)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20018]
+		[comida_Class80009])
+	(nombre "Tarta de queso")
+	(pesadez PESADO)
+	(precio 4.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80144] of  Generico
+
+	(dificultad 10)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class80114]
+		[comida_Class20018])
+	(nombre "Trufas de chocolate")
+	(pesadez PESADO)
+	(precio 3.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80145] of  Generico
+
+	(dificultad 45)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class80114]
+		[comida_Class60008]
+		[comida_Class20018])
+	(nombre "Crêpes de chocolate")
+	(pesadez LIGERO)
+	(precio 6.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80019])
+	(tipo POSTRE))
+
+([comida_Class80146] of  Tradicional
+
+	(dificultad 5)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20019]
+		[comida_Class20018])
+	(nombre "Churros")
+	(pesadez LIGERO)
+	(precio 2.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80016])
+	(tipo POSTRE))
+
+([comida_Class80147] of  Generico
+
+	(dificultad 4)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class80114]
+		[comida_Class60008]
+		[comida_Class20019])
+	(nombre "Gofre de chocolate")
+	(pesadez PESADO)
+	(precio 4.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80148])
+	(tipo POSTRE))
+
+([comida_Class80148] of  Region
+
+	(nombre "Bélgica")
+	(platos_tipicos [comida_Class80147]))
+
+([comida_Class80149] of  Moderno
+
+	(es_exclusivo TRUE)
+	(nombre "Solomillo con champiñones y coñac")
+	(pesadez LIGERO)
+	(precio 0.0))
