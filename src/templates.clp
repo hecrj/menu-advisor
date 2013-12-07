@@ -67,3 +67,15 @@
         (type INSTANCE)
         (allowed-classes Recomendacion))
 )
+
+(deftemplate SeleccionMenus
+    (multislot baratos
+        (type INSTANCE)
+        (allowed-classes Menu))
+    (multislot medios
+        (type INSTANCE)
+        (allowed-classes Menu))
+    (multislot caros
+        (type INSTANCE)
+        (allowed-classes Menu))
+)

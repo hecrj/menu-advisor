@@ -51,21 +51,3 @@
         (type STRING)
         (create-accessor read-write))
 )
-
-
-(defclass SeleccionMenus
-    (is-a USER)
-    (role concrete)
-    (multislot baratos
-        (type INSTANCE)
-        (allowed-classes Menu)
-        (create-accessor read-write))
-    (multislot medios
-        (type INSTANCE)
-        (allowed-classes Menu)
-        (create-accessor read-write))
-    (multislot caros
-        (type INSTANCE)
-        (allowed-classes Menu)
-        (create-accessor read-write))
-)
