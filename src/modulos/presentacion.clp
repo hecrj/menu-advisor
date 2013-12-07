@@ -11,7 +11,7 @@
         (printout t "    " ?tipo crlf)
     )
     (printout t "Recomendaciones candidatas" crlf)
-    (assert (presentar-recomendaciones))
+    ;(assert (presentar-recomendaciones))
     (assert (presentar-menus))
 )
 
