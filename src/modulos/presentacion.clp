@@ -6,6 +6,7 @@
 (defrule summary "Imprime un pequeño resumen"
     (Preferencias (tipos-menu $?tipos))
     =>
+    (estado "Mostrando resultados...")
     ;(assert (presentar-recomendaciones))
     (assert (presentar-menus))
 )

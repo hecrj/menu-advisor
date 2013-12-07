@@ -14,7 +14,9 @@
 
 (defrule inicializa-Pesos "Define la ponderación de factores"
     (declare (salience 10000))
+    (not (Pesos))
     =>
+    (estado "Analizando recomendaciones...")
     (assert (Pesos))
 )
 
@@ -166,6 +168,5 @@
     (declare (salience -10000))
     (Preferencias)
     =>
-    (estado "Seleccionando recomendaciones...")
     (focus platos-seleccion)
 )

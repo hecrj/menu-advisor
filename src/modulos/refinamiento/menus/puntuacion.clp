@@ -12,10 +12,11 @@
 
 (defrule inicializa-Pesos "Define la ponderación de factores"
     (declare (salience 10000))
+    (not (Pesos))
     =>
+    (estado "Ponderando menús...")
     (assert (Pesos))
 )
-
 
 (defrule puntuar-menu-platos "Puntúa un menú en función de la puntuación de sus platos"
     (not (platos-puntuados))
@@ -128,6 +129,5 @@
 (defrule ir-a-seleccionar "Empieza a seleccionar menús"
   (declare (salience -10000))
   =>
-  (estado "Seleccionando menús...")
   (focus menus-seleccion)
 )

@@ -175,6 +175,5 @@
     (declare (salience -10000))
     (Preferencias)
     =>
-    (estado "Generando recomendaciones...")
     (focus platos-filtracion)
 )

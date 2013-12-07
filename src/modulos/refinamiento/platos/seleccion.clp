@@ -21,6 +21,7 @@
     (Limites (primeros ?limite-primeros) (segundos ?limite-segundos) (postres ?limite-postres))
     (not (Recomendaciones))
     =>
+    (estado "Seleccionando recomendaciones...")
     (bind $?recs (find-all-instances ((?inst Recomendacion)) TRUE))
     (bind $?primeros (create$))
     (bind $?segundos (create$))
@@ -50,6 +51,5 @@
 (defrule ir-a-filtrar-menus "Empezar a filtrar posibles menus"
   (declare (salience -10000))
   =>
-  (estado "Generando menús...")
   (focus menus-filtracion)
 )

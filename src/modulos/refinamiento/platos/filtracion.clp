@@ -5,11 +5,14 @@
 
 (defrule crear-recomendaciones-iniciales "Crea las recomendaciones iniciales"
     (declare (salience 10000))
+    (not (recomendaciones-creadas))
     =>
+    (estado "Generando recomendaciones...")
     (bind $?platos (find-all-instances ((?inst Plato)) TRUE))
     (progn$ (?plato $?platos)
         (make-instance (gensym) of Recomendacion (plato ?plato))
     )
+    (assert (recomendaciones-creadas))
 )
 
 (defrule ingredientes-prohibidos "Elimina las recomendaciones de platos con ingredientes prohibidos"
@@ -58,6 +61,5 @@
 (defrule ir-a-puntuar "Empieza a puntuar platos"
   (declare (salience -10000))
   =>
-  (estado "Analizando recomendaciones...")
   (focus platos-puntuacion)
 )

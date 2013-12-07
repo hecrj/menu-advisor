@@ -10,6 +10,7 @@
     ;(FranjasPrecio (caro ?caro))
     (not (menus-generados))
     =>
+    (estado "Generando menús...")
     (progn$ (?primero $?primeros)
         (progn$ (?segundo $?segundos)
             (if (neq ?primero ?segundo) then
@@ -40,6 +41,5 @@
 (defrule ir-a-puntuar "Empieza a puntuar menús"
     (declare (salience -10000))
     =>
-    (estado "Ponderando menús...")
     (focus menus-puntuacion)
 )

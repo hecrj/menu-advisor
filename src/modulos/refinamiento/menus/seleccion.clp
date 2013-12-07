@@ -123,6 +123,7 @@
     ?sel <- (SeleccionMenus (barato ?b) (medio ?m) (caro ?c))
     (not (menus-seleccionados TRUE))
     =>
+    (estado "Seleccionando menús...")
     (progn$ (?menu (find-all-instances ((?m Menu)) TRUE))
         (bind ?precio (send ?menu get-precio))
         (bind ?puntuacion (send ?menu get-puntuacion))
@@ -160,6 +161,5 @@
 (defrule ir-a-presentar "Presentar los resultados"
   (declare (salience -10000))
   =>
-  (estado "Mostrando resultados...")
   (focus presentacion)
 )
