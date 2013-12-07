@@ -107,6 +107,19 @@
     (assert (estacion preguntada))
 )
 
+(defrule pregunta-ingredientes-prohibidos "Preguntar si se quieren prohibir ingredientes"
+    (declare (salience 9550))
+    (not (ingredientes prohibidos preguntado))
+    ?prefs <- (Preferencias (ingredientes-prohibidos $?prohibidos))
+    =>
+    (if (pregunta-si-no "¿Quiere evitar algún ingrediente en la elaboración de los platos? (la lista de ingredientes disponibles puede ser extensa)") then
+        (bind $?nombres-ingredientes (find-attr nombre (find-all-instances ((?i Ingrediente)) (not (member$ ?i:nombre $?prohibidos)))))
+        (progn$ (?prohibido (pregunta-multi "¿Qué ingredientes quiere evitar en la elaboración?" $?nombres-ingredientes))
+            (add$ ?prohibido $?nombres-ingredientes))
+        (modify ?prefs (ingredientes-prohibidos $?prohibidos)))
+    (assert (ingredientes prohibidos preguntado))
+)
+
 (defrule pregunta-precio "Preguntar si el cliente tiene preferencias de precio"
     (declare (salience 9500))
     (not (precio preguntado))
