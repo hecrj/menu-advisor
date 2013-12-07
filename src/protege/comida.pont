@@ -1,4 +1,4 @@
-; Sat Dec 07 19:11:30 CET 2013
+; Sat Dec 07 21:32:57 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -55,16 +55,16 @@
 ;+		(allowed-classes Region)
 ;+		(inverse-slot platos_tipicos)
 		(create-accessor read-write))
-	(multislot vinos
-		(type INSTANCE)
-;+		(allowed-classes Vino)
-;+		(inverse-slot color)
-		(create-accessor read-write))
 	(single-slot precio
 		(type FLOAT)
 		(range 0.0 10000.0)
 		(default 0.0)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot vinos
+		(type INSTANCE)
+;+		(allowed-classes Vino)
+;+		(inverse-slot color)
 		(create-accessor read-write))
 	(multislot es_predilecto_de
 		(type INSTANCE)

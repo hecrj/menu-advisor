@@ -1,4 +1,4 @@
-; Sat Dec 07 19:11:30 CET 2013
+; Sat Dec 07 21:32:57 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -34,6 +34,222 @@
 	(nombre "Melón")
 	(platos [comida_Class36])
 	(solo-disponible-en [comida_Class30002]))
+
+([comida_Class100003] of  Generico
+
+	(dificultad 80)
+	(genero [comida_Class70012])
+	(ingredientes [comida_Class100005])
+	(nombre "Pastel de arroz")
+	(para_sibaritas FALSE)
+	(pesadez LIGERO)
+	(precio 5.0)
+	(recomendable_para [comida_Class40003])
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class100004] of  Generico
+
+	(dificultad 100)
+	(exclusivo_de [comida_Class40002])
+	(genero [comida_Class70012])
+	(ingredientes [comida_Class100005])
+	(nombre "Pastel de boda especial para alergias")
+	(para_sibaritas FALSE)
+	(pesadez PESADO)
+	(precio 4.0)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class100005] of  Ingrediente
+
+	(nombre "Harina de arroz")
+	(platos
+		[comida_Class100004]
+		[comida_Class100003]))
+
+([comida_Class100006] of  Tradicional
+
+	(dificultad 30)
+	(genero [comida_Class70010])
+	(ingredientes [comida_Class60008])
+	(nombre "Migas de harina")
+	(para_sibaritas FALSE)
+	(pesadez PESADO)
+	(precio 5.0)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class100007])
+	(tipo SEGUNDO))
+
+([comida_Class100007] of  Region
+
+	(nombre "Murcia")
+	(platos_tipicos [comida_Class100006]))
+
+([comida_Class100009] of  Generico
+
+	(dificultad 40)
+	(genero [comida_Class70014])
+	(ingredientes
+		[comida_Class80023]
+		[comida_Class50002]
+		[comida_Class100010]
+		[comida_Class100011]
+		[comida_Class100012]
+		[comida_Class80083]
+		[comida_Class100013]
+		[comida_Class100014])
+	(nombre "Paella de verduras")
+	(para_sibaritas FALSE)
+	(pesadez PESADO)
+	(precio 10.0)
+	(temperatura CALIENTE)
+	(tipo SEGUNDO))
+
+([comida_Class100010] of  Ingrediente
+
+	(nombre "Lechuga")
+	(platos
+		[comida_Class100009]
+		[comida_Class49]))
+
+([comida_Class100011] of  Ingrediente
+
+	(nombre "Espinaca")
+	(platos [comida_Class100009]))
+
+([comida_Class100012] of  Ingrediente
+
+	(nombre "Pera")
+	(platos [comida_Class100009]))
+
+([comida_Class100013] of  Ingrediente
+
+	(nombre "Zanahoria")
+	(platos
+		[comida_Class100009]
+		[comida_Class100017]))
+
+([comida_Class100014] of  Ingrediente
+
+	(nombre "Azafrán")
+	(platos [comida_Class100009]))
+
+([comida_Class100015] of  Moderno
+
+	(dificultad 50)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class100016]
+		[comida_Class60018]
+		[comida_Class60030]
+		[comida_Class60031])
+	(nombre "Hamburguesa de lentejas")
+	(para_sibaritas FALSE)
+	(pesadez PESADO)
+	(precio 7.0)
+	(temperatura CALIENTE)
+	(tipo SEGUNDO))
+
+([comida_Class100016] of  Ingrediente
+
+	(nombre "Lentejas")
+	(platos [comida_Class100015]))
+
+([comida_Class100017] of  Moderno
+
+	(dificultad 80)
+	(genero [comida_Class70018])
+	(ingredientes
+		[comida_Class100018]
+		[comida_Class60008]
+		[comida_Class100019]
+		[comida_Class60018]
+		[comida_Class100013])
+	(nombre "Empanadilla de algas")
+	(para_sibaritas FALSE)
+	(pesadez LIGERO)
+	(precio 8.0)
+	(temperatura CALIENTE)
+	(tipo PRIMERO))
+
+([comida_Class100018] of  Ingrediente
+
+	(nombre "Algas")
+	(platos [comida_Class100017]))
+
+([comida_Class100019] of  Ingrediente
+
+	(nombre "Harina de maíz")
+	(platos [comida_Class100017]))
+
+([comida_Class100020] of  Generico
+
+	(dificultad 2)
+	(genero [comida_Class70012])
+	(ingredientes [comida_Class100021])
+	(nombre "Plátano de canarias")
+	(para_sibaritas FALSE)
+	(pesadez LIGERO)
+	(precio 2.0)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class100021] of  Ingrediente
+
+	(nombre "Plátano")
+	(platos
+		[comida_Class100020]
+		[comida_Class100022]))
+
+([comida_Class100022] of  Generico
+
+	(dificultad 1)
+	(genero [comida_Class70012])
+	(ingredientes [comida_Class100021])
+	(nombre "Banana")
+	(para_sibaritas FALSE)
+	(pesadez LIGERO)
+	(precio 1.5)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class100023] of  Generico
+
+	(dificultad 3)
+	(ingredientes [comida_Class100024])
+	(nombre "Tajada de sandía")
+	(para_sibaritas FALSE)
+	(pesadez LIGERO)
+	(precio 2.0)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class100024] of  Ingrediente
+
+	(nombre "Sandía")
+	(platos [comida_Class100023])
+	(solo-disponible-en [comida_Class30002]))
+
+([comida_Class100026] of  Tradicional
+
+	(dificultad 5)
+	(genero [comida_Class70012])
+	(ingredientes [comida_Class100027])
+	(nombre "Boniato caliente")
+	(para_sibaritas FALSE)
+	(pesadez PESADO)
+	(precio 3.0)
+	(temperatura CALIENTE)
+	(tipo POSTRE))
+
+([comida_Class100027] of  Ingrediente
+
+	(nombre "Boniato")
+	(platos
+		[comida_Class100026]
+		[comida_Class60000])
+	(solo-disponible-en [comida_Class30005]))
 
 ([comida_Class20000] of  Moderno
 
@@ -273,7 +489,7 @@
 
 ([comida_Class30001] of  Generico
 
-	(dificultad 80)
+	(dificultad 50)
 	(exclusivo_de [comida_Class40002])
 	(genero [comida_Class70012])
 	(ingredientes
@@ -289,7 +505,10 @@
 
 ([comida_Class30002] of  Epoca
 
-	(dispone-de [comida_Class10000])
+	(dispone-de
+		[comida_Class10000]
+		[comida_Class80001]
+		[comida_Class100024])
 	(nombre "Verano"))
 
 ([comida_Class30003] of  Epoca
@@ -311,7 +530,8 @@
 	(dispone-de
 		[comida_Class80198]
 		[comida_Class80139]
-		[comida_Class90009])
+		[comida_Class90009]
+		[comida_Class100027])
 	(nombre "Otoño"))
 
 ([comida_Class35] of  Generico
@@ -398,13 +618,16 @@
 
 	(importancia_platos 500)
 	(nombre "Boda")
-	(platos_exclusivos [comida_Class30001]))
+	(platos_exclusivos
+		[comida_Class30001]
+		[comida_Class100004]))
 
 ([comida_Class40003] of  Evento
 
 	(importancia_platos 300)
 	(nombre "Comunión")
-	(platos_exclusivos [comida_Class90010]))
+	(platos_exclusivos [comida_Class90010])
+	(platos_recomendables [comida_Class100003]))
 
 ([comida_Class40004] of  Evento
 
@@ -413,7 +636,8 @@
 	(platos_recomendables
 		[comida_Class46]
 		[comida_Class80093]
-		[comida_Class44]))
+		[comida_Class44]
+		[comida_Class50000]))
 
 ([comida_Class40005] of  Region
 
@@ -561,8 +785,8 @@
 	(ingredientes
 		[comida_Class20011]
 		[comida_Class60022]
-		[comida_Class60031]
-		[comida_Class60032])
+		[comida_Class60032]
+		[comida_Class60031])
 	(nombre "Bacalao al pil-pil")
 	(para_sibaritas FALSE)
 	(pesadez LIGERO)
@@ -575,12 +799,33 @@
 
 	(dificultad 5)
 	(genero [comida_Class70013])
-	(ingredientes [comida_Class80030])
+	(ingredientes
+		[comida_Class80030]
+		[comida_Class100010])
 	(nombre "Ensalada verde")
 	(para_sibaritas FALSE)
 	(pesadez LIGERO)
 	(precio 2.0)
 	(temperatura FRIO)
+	(tipo PRIMERO))
+
+([comida_Class50000] of  Tradicional
+
+	(dificultad 15)
+	(genero [comida_Class70018])
+	(ingredientes
+		[comida_Class80001]
+		[comida_Class90003]
+		[comida_Class60031])
+	(nombre "Gazpacho")
+	(para_sibaritas FALSE)
+	(pesadez LIGERO)
+	(precio 4.0)
+	(recomendable_para
+		[comida_Class50005]
+		[comida_Class40004])
+	(temperatura FRIO)
+	(tipico_de [comida_Class90007])
 	(tipo PRIMERO))
 
 ([comida_Class50001] of  ColorVino
@@ -589,14 +834,28 @@
 		[comida_Class70016]
 		[comida_Class70006]
 		[comida_Class70007])
-	(nombre "Tinto"))
+	(nombre "Tinto")
+	(vinos
+		[comida_Class80161]
+		[comida_Class80162]
+		[comida_Class80163]
+		[comida_Class80164]
+		[comida_Class80165]
+		[comida_Class80166]
+		[comida_Class80167]
+		[comida_Class80168]
+		[comida_Class80169]
+		[comida_Class80170]
+		[comida_Class80171]
+		[comida_Class80172]))
 
 ([comida_Class50002] of  Ingrediente
 
 	(nombre "Pimiento rojo")
 	(platos
 		[comida_Class20000]
-		[comida_Class90008]))
+		[comida_Class90008]
+		[comida_Class100009]))
 
 ([comida_Class50003] of  Ingrediente
 
@@ -615,7 +874,24 @@
 ([comida_Class50005] of  Evento
 
 	(importancia_platos 25)
-	(nombre "Comida de empresa"))
+	(nombre "Comida de empresa")
+	(platos_recomendables [comida_Class50000]))
+
+([comida_Class60000] of  Moderno
+
+	(dificultad 70)
+	(genero [comida_Class70013])
+	(ingredientes
+		[comida_Class90001]
+		[comida_Class100027]
+		[comida_Class90003]
+		[comida_Class90002])
+	(nombre "Ensalada de castaña, boniato, zumo de pepino y manzana infusionada")
+	(para_sibaritas FALSE)
+	(pesadez LIGERO)
+	(precio 8.0)
+	(temperatura FRIO)
+	(tipo PRIMERO))
 
 ([comida_Class60001] of  Ingrediente
 
@@ -631,7 +907,19 @@
 		[comida_Class70015]
 		[comida_Class70011]
 		[comida_Class70018])
-	(nombre "Rosado"))
+	(nombre "Rosado")
+	(vinos
+		[comida_Class80184]
+		[comida_Class80185]
+		[comida_Class80186]
+		[comida_Class80187]
+		[comida_Class80188]
+		[comida_Class80189]
+		[comida_Class80190]
+		[comida_Class80191]
+		[comida_Class80192]
+		[comida_Class80193]
+		[comida_Class80194]))
 
 ([comida_Class60005] of  Ingrediente
 
@@ -670,7 +958,9 @@
 		[comida_Class80008]
 		[comida_Class80145]
 		[comida_Class80147]
-		[comida_Class90010])
+		[comida_Class90010]
+		[comida_Class100006]
+		[comida_Class100017])
 	(problematico_para [comida_Class20014]))
 
 ([comida_Class60009] of  Ingrediente
@@ -778,7 +1068,9 @@
 		[comida_Class80101]
 		[comida_Class80149]
 		[comida_Class80153]
-		[comida_Class80033]))
+		[comida_Class80033]
+		[comida_Class100015]
+		[comida_Class100017]))
 
 ([comida_Class60019] of  Region
 
@@ -908,7 +1200,8 @@
 	(platos
 		[comida_Class60023]
 		[comida_Class80006]
-		[comida_Class80097]))
+		[comida_Class80097]
+		[comida_Class100015]))
 
 ([comida_Class60031] of  Ingrediente
 
@@ -917,7 +1210,9 @@
 		[comida_Class48]
 		[comida_Class80004]
 		[comida_Class80153]
-		[comida_Class80094]))
+		[comida_Class80094]
+		[comida_Class50000]
+		[comida_Class100015]))
 
 ([comida_Class60032] of  Ingrediente
 
@@ -958,7 +1253,19 @@
 		[comida_Class70005]
 		[comida_Class70014]
 		[comida_Class70012])
-	(nombre "Blanco"))
+	(nombre "Blanco")
+	(vinos
+		[comida_Class80173]
+		[comida_Class80174]
+		[comida_Class80175]
+		[comida_Class80176]
+		[comida_Class80177]
+		[comida_Class80178]
+		[comida_Class80179]
+		[comida_Class80180]
+		[comida_Class80181]
+		[comida_Class80182]
+		[comida_Class80183]))
 
 ([comida_Class70005] of  GeneroPlato
 
@@ -1028,6 +1335,12 @@
 	(nombre "Aperitivo")
 	(predilecto [comida_Class60002]))
 
+([comida_Class80001] of  Ingrediente
+
+	(nombre "Tomate de pera")
+	(platos [comida_Class50000])
+	(solo-disponible-en [comida_Class30002]))
+
 ([comida_Class80002] of  Moderno
 
 	(dificultad 30)
@@ -1049,8 +1362,8 @@
 	(dificultad 15)
 	(genero [comida_Class70018])
 	(ingredientes
-		[comida_Class60031]
-		[comida_Class80005])
+		[comida_Class80005]
+		[comida_Class60031])
 	(nombre "Carpaccio de pulpo")
 	(para_sibaritas FALSE)
 	(pesadez LIGERO)
@@ -1287,7 +1600,8 @@
 		[comida_Class80155]
 		[comida_Class40013]
 		[comida_Class40010]
-		[comida_Class80033]))
+		[comida_Class80033]
+		[comida_Class100009]))
 
 ([comida_Class80024] of  Ingrediente
 
@@ -1358,7 +1672,6 @@
 	(nombre "Hortalizas")
 	(platos
 		[comida_Class80029]
-		[comida_Class49]
 		[comida_Class80048]
 		[comida_Class80049]
 		[comida_Class80052]
@@ -1371,7 +1684,8 @@
 		[comida_Class80105]
 		[comida_Class80158]
 		[comida_Class80149]
-		[comida_Class80153]))
+		[comida_Class80153]
+		[comida_Class49]))
 
 ([comida_Class80031] of  Ingrediente
 
@@ -1923,8 +2237,10 @@
 
 ([comida_Class80083] of  Ingrediente
 
-	(nombre "Fabas")
-	(platos [comida_Class80082]))
+	(nombre "Habas")
+	(platos
+		[comida_Class80082]
+		[comida_Class100009]))
 
 ([comida_Class80084] of  Region
 
@@ -2735,9 +3051,9 @@
 	(ingredientes
 		[comida_Class60018]
 		[comida_Class80030]
-		[comida_Class60031]
 		[comida_Class80154]
-		[comida_Class80159])
+		[comida_Class80159]
+		[comida_Class60031])
 	(nombre "Tartare de lomo y cebaba perlada soplada")
 	(para_sibaritas TRUE)
 	(pesadez LIGERO)
@@ -3078,6 +3394,23 @@
 	(tipico_de [comida_Class80019])
 	(tipo PRIMERO SEGUNDO))
 
+([comida_Class90001] of  Ingrediente
+
+	(nombre "Castañas")
+	(platos [comida_Class60000]))
+
+([comida_Class90002] of  Ingrediente
+
+	(nombre "Manzana")
+	(platos [comida_Class60000]))
+
+([comida_Class90003] of  Ingrediente
+
+	(nombre "Pepino")
+	(platos
+		[comida_Class50000]
+		[comida_Class60000]))
+
 ([comida_Class90004] of  TipoComensal
 
 	(conflictos
@@ -3107,7 +3440,9 @@
 ([comida_Class90007] of  Region
 
 	(nombre "Andalucía")
-	(platos_tipicos [comida_Class90006]))
+	(platos_tipicos
+		[comida_Class90006]
+		[comida_Class50000]))
 
 ([comida_Class90008] of  Moderno
 
@@ -3138,7 +3473,7 @@
 
 ([comida_Class90010] of  Generico
 
-	(dificultad 80)
+	(dificultad 60)
 	(exclusivo_de [comida_Class40003])
 	(genero [comida_Class70012])
 	(ingredientes
