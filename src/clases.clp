@@ -34,7 +34,11 @@
         (default 0)
         (create-accessor read-write))
     (multislot color-vinos
-        (type STRING))
+        (type STRING)
+        (create-accessor read-write))
+    (multislot justificaciones
+        (type STRING)
+        (create-accessor read-write))
 )
 
 ; Menu representa la solucion final al problema

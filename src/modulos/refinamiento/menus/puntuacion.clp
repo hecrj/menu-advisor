@@ -93,7 +93,7 @@
             (bind ?genPrim (send (plato ?prim) get-genero))
             (bind ?predPrim (send (instance-address * ?genPrim) get-predilecto))
             (bind ?color (nth 1 $?color-vinos))
-            (if (eq ?color (send (instance-address * ?predPrim) get-nombre)) then
+            (if (and (neq ?predPrim [nil]) (eq ?color (send (instance-address * ?predPrim) get-nombre))) then
                 (bind ?punt (send ?menu get-puntuacion))
                 (bind $?just (send ?menu get-justificaciones))
                 (send ?menu put-puntuacion (+ ?punt ?peso-vino-primero))
@@ -115,7 +115,7 @@
             (bind ?genSeg (send (plato ?seg) get-genero))
             (bind ?predSeg (send (instance-address * ?genSeg) get-predilecto))
             (bind ?color (nth (length $?color-vinos) $?color-vinos))
-            (if (eq ?color (send (instance-address * ?predSeg) get-nombre)) then
+            (if (and (neq ?predSeg [nil]) (eq ?color (send (instance-address * ?predSeg) get-nombre))) then
                 (bind ?punt (send ?menu get-puntuacion))
                 (bind $?just (send ?menu get-justificaciones))
                 (send ?menu put-puntuacion (+ ?punt ?peso-vino-segundo))
