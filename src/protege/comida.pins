@@ -1,4 +1,4 @@
-; Sat Dec 07 23:34:29 CET 2013
+; Sun Dec 08 00:20:01 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -31,14 +31,14 @@
 
 ([comida_Class100003] of  Generico
 
-	(dificultad 80)
+	(dificultad 100)
+	(exclusivo_de [comida_Class40003])
 	(genero [comida_Class70012])
 	(ingredientes [comida_Class100005])
-	(nombre "Pastel de arroz")
+	(nombre "Pastel de comunión especial para alergias")
 	(para_sibaritas FALSE)
 	(pesadez LIGERO)
 	(precio 5.0)
-	(recomendable_para [comida_Class40003])
 	(temperatura FRIO)
 	(tipo POSTRE))
 
@@ -60,7 +60,8 @@
 	(nombre "Harina de arroz")
 	(platos
 		[comida_Class100004]
-		[comida_Class100003]))
+		[comida_Class100003]
+		[comida_Class70000]))
 
 ([comida_Class100006] of  Tradicional
 
@@ -317,7 +318,6 @@
 		[comida_Class37]
 		[comida_Class39]
 		[comida_Class38]
-		[comida_Class30001]
 		[comida_Class80112]
 		[comida_Class35]
 		[comida_Class80115]
@@ -343,7 +343,8 @@
 		[comida_Class80147]
 		[comida_Class80151]
 		[comida_Class90010]
-		[comida_Class90015])
+		[comida_Class90015]
+		[comida_Class30001])
 	(problematico_para [comida_Class20010]))
 
 ([comida_Class20010] of  TipoComensal
@@ -398,7 +399,6 @@
 		[comida_Class37]
 		[comida_Class38]
 		[comida_Class39]
-		[comida_Class30001]
 		[comida_Class60010]
 		[comida_Class60023]
 		[comida_Class80112]
@@ -424,7 +424,8 @@
 		[comida_Class80146]
 		[comida_Class80151]
 		[comida_Class80160]
-		[comida_Class90010])
+		[comida_Class90010]
+		[comida_Class30001])
 	(problematico_para
 		[comida_Class60007]
 		[comida_Class20001]))
@@ -434,7 +435,6 @@
 	(nombre "Huevo")
 	(platos
 		[comida_Class20020]
-		[comida_Class30001]
 		[comida_Class20000]
 		[comida_Class60010]
 		[comida_Class80015]
@@ -445,7 +445,8 @@
 		[comida_Class80151]
 		[comida_Class80002]
 		[comida_Class90010]
-		[comida_Class90015])
+		[comida_Class90015]
+		[comida_Class30001])
 	(problematico_para
 		[comida_Class60006]
 		[comida_Class20001]))
@@ -484,7 +485,8 @@
 	(ingredientes
 		[comida_Class20009]
 		[comida_Class20018]
-		[comida_Class20019])
+		[comida_Class20019]
+		[comida_Class60008])
 	(nombre "Pastel de boda clásico")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -615,8 +617,9 @@
 
 	(importancia_platos 450)
 	(nombre "Comunión")
-	(platos_exclusivos [comida_Class90010])
-	(platos_recomendables [comida_Class100003]))
+	(platos_exclusivos
+		[comida_Class90010]
+		[comida_Class100003]))
 
 ([comida_Class40004] of  Evento
 
@@ -955,7 +958,8 @@
 		[comida_Class80109]
 		[comida_Class80108]
 		[comida_Class80106]
-		[comida_Class80107])
+		[comida_Class80107]
+		[comida_Class30001])
 	(problematico_para [comida_Class20014]))
 
 ([comida_Class60009] of  Ingrediente
@@ -1215,6 +1219,18 @@
 	(platos
 		[comida_Class48]
 		[comida_Class90006]))
+
+([comida_Class70000] of  Generico
+
+	(dificultad 70)
+	(genero [comida_Class70012])
+	(ingredientes [comida_Class100005])
+	(nombre "Pastel de arroz")
+	(para_sibaritas FALSE)
+	(pesadez LIGERO)
+	(precio 6.0)
+	(temperatura FRIO)
+	(tipo POSTRE))
 
 ([comida_Class70001] of  GeneroPlato
 

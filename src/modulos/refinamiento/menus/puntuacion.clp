@@ -8,6 +8,7 @@
     (slot ligereza (type INTEGER) (default 50))
     (slot vino-primero (type INTEGER) (default 50))
     (slot vino-segundo (type INTEGER) (default 50))
+    (slot diferencia-precios (type INTEGER) (default 5)) ; penalización por diferencia de precios
 )
 
 (defrule inicializa-Pesos "Define la ponderación de factores"
@@ -106,7 +107,7 @@
 
 (defrule puntuar-vino-segundo "Puntúa los menús en función de si el vino encaja con el segundo plato"
     (Pesos (vino-segundo ?peso-vino-segundo))
-    (not (vino-segundo-puntuado TRUE))
+    (not (vino-segundo-puntuado))
     =>
     (bind $?menus (find-all-instances ((?inst MenuAbstracto)) TRUE))
     (progn$ (?menu $?menus)
@@ -123,7 +124,24 @@
                 (send ?menu put-justificaciones
                     (add$ (str-cat "El segundo plato es de un género que encaja bien con el color del vino -> +" ?peso-vino-segundo) $?just)))
             ))
-    (assert (vino-segundo-puntuado TRUE))
+    (assert (vino-segundo-puntuado))
+)
+
+(defrule penalizar-diferencia-precios "Penaliza los menús con unos precios muy dispares"
+    (Pesos (diferencia-precios ?peso))
+    (not (diferencia precios))
+    =>
+    (progn$ (?menu (find-all-instances ((?inst MenuAbstracto)) TRUE))
+        (bind ?precio-primero (send (plato (send ?menu get-primero)) get-precio))
+        (bind ?precio-segundo (send (plato (send ?menu get-segundo)) get-precio))
+        (bind ?penalizacion (* ?peso (integer (abs (- ?precio-primero ?precio-segundo)))))
+        (if (> ?penalizacion ?peso)
+            then (bind $?just (send ?menu get-justificaciones))
+                 (bind ?punt (send ?menu get-puntuacion))
+                 (send ?menu put-puntuacion (- ?punt ?penalizacion))
+                 (send ?menu put-justificaciones
+                     (add$ (str-cat "La diferencia de precios entre los platos no es mínima ->-" ?penalizacion) $?just))))
+    (assert (diferencia precios))
 )
 
 (defrule ir-a-seleccionar "Empieza a seleccionar menús"
