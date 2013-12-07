@@ -295,3 +295,7 @@
 (deffunction estado (?mensaje)
     (printout t "> " ?mensaje crlf)
 )
+
+(deffunction puntuacion-descendente (?a ?b)
+    (< (send ?a get-puntuacion) (send ?b get-puntuacion))
+)

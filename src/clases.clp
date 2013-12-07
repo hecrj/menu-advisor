@@ -15,6 +15,28 @@
         (create-accessor read-write))
 )
 
+; MenuAbstracto representa un menú con unos colores de vinos en concreto.
+; Esto es útil para evitar computar toda combinación de platos - vinos.
+(defclass MenuAbstracto
+    (is-a USER)
+    (role concrete)
+    (slot primero
+        (type INSTANCE)
+        (create-accessor read-write))
+    (slot segundo
+        (type INSTANCE)
+        (create-accessor read-write))
+    (slot postre
+        (type INSTANCE)
+        (create-accessor read-write))
+    (slot puntuacion
+        (type INTEGER)
+        (default 0)
+        (create-accessor read-write))
+    (multislot color-vinos
+        (type STRING))
+)
+
 ; Menu representa la solucion final al problema
 ; Menu es una clase, porque el problema requiere generar tres menús
 (defclass Menu

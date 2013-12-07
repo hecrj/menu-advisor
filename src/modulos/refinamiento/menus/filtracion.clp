@@ -3,23 +3,13 @@
     (export ?ALL)
 )
 
-(defrule filtrar-vinos "Filtra los vinos que no son del tipo preferido por el cliente"
-    (declare (salience 10000))
-    (Preferencias (colores-vino $?colores-vino))
-    ?vino <- (object (is-a Vino) (color ?color))
-    (test (not (member$ (send (instance-address * ?color) get-nombre) $?colores-vino)))
-    =>
-    (send ?vino delete)
-)
-
 (defrule generar-menus "Genera todos los menús posibles en función de las recomendaciones disponibles"
     (declare (salience 9900))
     (Recomendaciones (primeros $?primeros) (segundos $?segundos) (postres $?postres))
-    (Preferencias (vino ?cantidad-vino))
+    (Preferencias (colores-vino $?colores-vino) (vino ?cantidad-vino))
     ;(FranjasPrecio (caro ?caro))
     (not (menus-generados))
     =>
-    (bind $?todos-vinos (find-all-instances ((?inst Vino)) TRUE))
     (progn$ (?primero $?primeros)
         (progn$ (?segundo $?segundos)
             (if (neq ?primero ?segundo) then
@@ -34,31 +24,27 @@
                                 (send (plato ?postre) get-precio)
                             )
                         )
+                        ;                                            (bind ?precio-nuevo (+
+                        ;                        ?precio
+                        ;                        (+
+                        ;                            (/ (send ?vino1 get-precio) 4)
+                        ;                            (/ (send ?vino2 get-precio) 4)
+                        ;                        )
+                        ;                    ))
                         ;(printout t ?primero crlf)
                         (switch ?cantidad-vino
                             (case 0 then
-                                (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
-                                    (postre ?postre) (precio ?precio) (vinos (create$))))
+                                (make-instance (gensym) of MenuAbstracto (primero ?primero) (segundo ?segundo)
+                                    (postre ?postre) (color-vinos (create$))))
                             (case 1 then
-                                (progn$ (?vino $?todos-vinos)
-                                    (bind ?precio-nuevo (+ ?precio (/ (send ?vino get-precio) 4)))
-                                    (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
-                                        (postre ?postre) (precio ?precio-nuevo) (vinos (create$ ?vino)))))
+                                (progn$ (?color-vino $?colores-vino)
+                                    (make-instance (gensym) of MenuAbstracto (primero ?primero) (segundo ?segundo)
+                                        (postre ?postre) (color-vinos (create$ ?color-vino)))))
                             (case 2 then
-                                (progn$ (?vino1 $?todos-vinos)
-                                    (progn$ (?vino2 $?todos-vinos)
-                                        (if (neq ?vino1 ?vino2) then
-                                            (bind ?precio-nuevo (+
-                                                ?precio
-                                                (+
-                                                    (/ (send ?vino1 get-precio) 4)
-                                                    (/ (send ?vino2 get-precio) 4)
-                                                )
-                                            ))
-                                            (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
-                                                (postre ?postre) (precio ?precio-nuevo) (vinos (create$ ?vino1 ?vino2))))
-                                            ;(printout t ?precio-nuevo crlf)
-                                            )))
+                                (progn$ (?color-vino1 $?colores-vino)
+                                    (progn$ (?color-vino2 $?colores-vino)
+                                        (make-instance (gensym) of MenuAbstracto (primero ?primero) (segundo ?segundo)
+                                            (postre ?postre) (color-vinos (create$ ?color-vino1 ?color-vino2))))))
                         )
                     )
                 )
