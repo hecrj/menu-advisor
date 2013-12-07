@@ -1,3 +1,7 @@
+(deffunction str-gt (?a ?b)
+    (> (str-compare ?a ?b) 0)
+)
+
 (deffunction mejor-recomendacion ($?lista)
     (bind ?maximo nil)
     (bind ?elemento nil)
@@ -78,6 +82,7 @@
 (deffunction MAIN::pregunta-indice (?pregunta $?valores-posibles)
     (bind ?linea (format nil "%s" ?pregunta))
     (printout t ?linea crlf)
+    (bind $?valores-posibles (sort str-gt $?valores-posibles))
     (progn$ (?var ?valores-posibles) 
             (bind ?linea (format nil "  %d. %s" ?var-index ?var))
             (printout t ?linea crlf)
@@ -90,6 +95,7 @@
 (deffunction pregunta-multi (?pregunta $?valores-posibles)
     (bind ?linea (format nil "%s" ?pregunta))
     (printout t ?linea crlf)
+    (bind $?valores-posibles (sort str-gt $?valores-posibles))
     (progn$ (?var ?valores-posibles) 
             (bind ?linea (format nil "  %d. %s" ?var-index ?var))
             (printout t ?linea crlf)
