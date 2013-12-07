@@ -242,58 +242,46 @@
 )
 
 (deffunction imprimir-menu (?menu)
-    (bind ?primero (plato (send ?menu get-primero)))
-    (bind ?segundo (plato (send ?menu get-segundo)))
-    (bind ?postre (plato (send ?menu get-postre)))
-    (bind $?vinos (send ?menu get-vinos))
-    (bind ?nvinos )
+    (if (neq [nil] ?menu)
+        then (bind ?primero (plato (send ?menu get-primero)))
+             (bind ?segundo (plato (send ?menu get-segundo)))
+             (bind ?postre (plato (send ?menu get-postre)))
+             (bind $?vinos (send ?menu get-vinos))
+             (bind ?nvinos )
     
-    (imprimir-plato 1 ?primero $?vinos)
-    (imprimir-plato 2 ?segundo $?vinos)
-    (imprimir-plato 3 ?postre)
+             (imprimir-plato 1 ?primero $?vinos)
+             (imprimir-plato 2 ?segundo $?vinos)
+             (imprimir-plato 3 ?postre)
 
-    (imprimir-resumen-menu ?menu)
-)
-
-(deffunction imprimir-menus ($?menus)
-    (if (neq 0 (length $?menus))
-        then
-            (progn$ (?menu $?menus)
-                (imprimir-menu ?menu)
-            )
+             (imprimir-resumen-menu ?menu)
+    
         else (printout t "No disponible, lo sentimos." crlf))
 )
 
 (deffunction imprimir-menu-detallado (?menu)
-    (bind ?primero (send ?menu get-primero))
-    (bind ?segundo (send ?menu get-segundo))
-    (bind ?postre (send ?menu get-postre))
-    (bind $?vinos (send ?menu get-vinos))
-
-    (printout t "  Platos:" crlf)
-    (imprimir-recomendacion ?primero)
-    (imprimir-recomendacion ?segundo)
-    (imprimir-recomendacion ?postre)
-
-    (imprimir-vino-plato "  Vino para el primero:     " 1 $?vinos)
-    (imprimir-vino-plato "  Vino para el segundo:     " 2 $?vinos)
-
-    (imprimir-resumen-menu ?menu)
-    
-    (printout t "  Justificaciones:" crlf)
-    (bind $?just (send ?menu get-justificaciones))
-    (progn$ (?j $?just)
-        (printout t "    " ?j crlf)
-    )
-    (printout t crlf)
-)
-
-(deffunction imprimir-menus-detallados ($?menus)
-    (if (neq 0 (length $?menus))
-        then
-            (progn$ (?menu $?menus)
-                (imprimir-menu-detallado ?menu)
-            )
+    (if (neq [nil] ?menu)
+        then (bind ?primero (send ?menu get-primero))
+             (bind ?segundo (send ?menu get-segundo))
+             (bind ?postre (send ?menu get-postre))
+             (bind $?vinos (send ?menu get-vinos))
+        
+             (printout t "  Platos:" crlf)
+             (imprimir-recomendacion ?primero)
+             (imprimir-recomendacion ?segundo)
+             (imprimir-recomendacion ?postre)
+             
+             (imprimir-vino-plato "  Vino para el primero:     " 1 $?vinos)
+             (imprimir-vino-plato "  Vino para el segundo:     " 2 $?vinos)
+        
+             (imprimir-resumen-menu ?menu)
+        
+             (printout t "  Justificaciones:" crlf)
+             (bind $?just (send ?menu get-justificaciones))
+             (progn$ (?j $?just)
+                 (printout t "    " ?j crlf)
+             )
+             (printout t crlf)
+        
         else (printout t "No disponible, lo sentimos." crlf))
 )
 

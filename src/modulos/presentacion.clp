@@ -34,19 +34,19 @@
 (defrule imprimir-menus "Imprime los menús"
     (declare (salience -10000))
     ?imprimir <- (presentar-menus)
-    (SeleccionMenus (baratos $?baratos) (medios $?medios) (caros $?caros))
+    (SeleccionMenus (barato ?barato) (medio ?medio) (caro ?caro))
     =>
     (separador)
     (printout t "Primera propuesta (más cara):" crlf)
-    (imprimir-menus $?caros)
+    (imprimir-menu ?caro)
 
     (separador)
     (printout t "Segunda propuesta (coste medio):" crlf)
-    (imprimir-menus $?medios)
+    (imprimir-menu ?medio)
 
     (separador)
     (printout t "Tercera propuesta (más barata):" crlf)
-    (imprimir-menus $?baratos)
+    (imprimir-menu ?barato)
 
     (separador)
 
@@ -58,19 +58,19 @@
 
 (defrule imprimir-justificaciones "Imprime las justificaciones de cada menú recomendado"
     ?imprimir <- (imprimir-justificaciones)
-    (SeleccionMenus (baratos $?baratos) (medios $?medios) (caros $?caros))
+    (SeleccionMenus (barato ?barato) (medio ?medio) (caro ?caro))
     =>
     (separador)
     (printout t "Primera propuesta (más cara):" crlf)
-    (imprimir-menus-detallados $?caros)
+    (imprimir-menu-detallado ?caro)
 
     (separador)
     (printout t "Segunda propuesta (coste medio):" crlf)
-    (imprimir-menus-detallados $?medios)
+    (imprimir-menu-detallado ?medio)
 
     (separador)
     (printout t "Tercera propuesta (más barata):" crlf)
-    (imprimir-menus-detallados $?baratos)
+    (imprimir-menu-detallado ?barato)
 
     (separador)
 

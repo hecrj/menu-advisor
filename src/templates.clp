@@ -69,13 +69,13 @@
 )
 
 (deftemplate SeleccionMenus
-    (multislot baratos
+    (slot barato
         (type INSTANCE)
         (allowed-classes Menu))
-    (multislot medios
+    (slot medio
         (type INSTANCE)
         (allowed-classes Menu))
-    (multislot caros
+    (slot caro
         (type INSTANCE)
         (allowed-classes Menu))
 )
