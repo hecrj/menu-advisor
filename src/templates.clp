@@ -45,18 +45,6 @@
     (slot caro (type FLOAT) (default 45.0))
 )
 
-(deftemplate SeleccionMenus
-    (multislot baratos
-        (type INSTANCE)
-        (allowed-classes Menu))
-    (multislot medios
-        (type INSTANCE)
-        (allowed-classes Menu))
-    (multislot caros
-        (type INSTANCE)
-        (allowed-classes Menu))
-)
-
 (deftemplate Contexto
     (slot estacion
         (type STRING)

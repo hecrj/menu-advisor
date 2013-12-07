@@ -16,6 +16,7 @@
     (declare (salience 9900))
     (Recomendaciones (primeros $?primeros) (segundos $?segundos) (postres $?postres))
     (Preferencias (vino ?cantidad-vino))
+    ;(FranjasPrecio (caro ?caro))
     (not (menus-generados))
     =>
     (bind $?todos-vinos (find-all-instances ((?inst Vino)) TRUE))
@@ -47,21 +48,21 @@
                                 (send (plato ?postre) get-precio)
                             )
                         )
-                        (printout t ?primero crlf)
+                        ;(printout t ?primero crlf)
                         (switch ?cantidad-vino
                             (case 0 then
                                 (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
                                     (postre ?postre) (puntuacion ?menu-punt) (precio ?precio) (vinos (create$)) (justificaciones $?just)))
                             (case 1 then
                                 (progn$ (?vino $?todos-vinos)
-                                    (bind ?precio (+ ?precio (/ (send ?vino get-precio) 4)))
+                                    (bind ?precio-nuevo (+ ?precio (/ (send ?vino get-precio) 4)))
                                     (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
-                                        (postre ?postre) (puntuacion ?menu-punt) (precio ?precio) (vinos (create$ ?vino)) (justificaciones $?just))))
+                                        (postre ?postre) (puntuacion ?menu-punt) (precio ?precio-nuevo) (vinos (create$ ?vino)) (justificaciones $?just))))
                             (case 2 then
                                 (progn$ (?vino1 $?todos-vinos)
                                     (progn$ (?vino2 $?todos-vinos)
                                         (if (neq ?vino1 ?vino2) then
-                                            (bind ?precio (+
+                                            (bind ?precio-nuevo (+
                                                 ?precio
                                                 (+
                                                     (/ (send ?vino1 get-precio) 4)
@@ -69,9 +70,10 @@
                                                 )
                                             ))
                                             (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
-                                                (postre ?postre) (puntuacion ?menu-punt) (precio ?precio) (vinos (create$ ?vino1 ?vino2))
-                                                (justificaciones $?just))
-                                            (printout t ?precio crlf)))))
+                                                (postre ?postre) (puntuacion ?menu-punt) (precio ?precio-nuevo) (vinos (create$ ?vino1 ?vino2))
+                                                (justificaciones $?just)))
+                                            ;(printout t ?precio-nuevo crlf)
+                                            )))
                         )
                     )
                 )

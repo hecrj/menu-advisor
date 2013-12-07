@@ -39,7 +39,7 @@
 (defrule imprimir-menus "Imprime los menús"
     (declare (salience -10000))
     ?imprimir <- (presentar-menus)
-    (SeleccionMenus (baratos $?baratos) (medios $?medios) (caros $?caros))
+    (object (is-a SeleccionMenus) (baratos $?baratos) (medios $?medios) (caros $?caros))
     =>
     (separador)
     (printout t "Primera propuesta (más cara):" crlf)
@@ -63,7 +63,7 @@
 
 (defrule imprimir-justificaciones "Imprime las justificaciones de cada menú recomendado"
     ?imprimir <- (imprimir-justificaciones)
-    (SeleccionMenus (baratos $?baratos) (medios $?medios) (caros $?caros))
+    (object (is-a SeleccionMenus) (baratos $?baratos) (medios $?medios) (caros $?caros))
     =>
     (separador)
     (printout t "Primera propuesta (más cara):" crlf)

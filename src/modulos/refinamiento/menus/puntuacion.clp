@@ -19,65 +19,81 @@
 
 (defrule puntuar-pesadez "Puntúa un menú demasiado pesado negativamente"
     (Pesos (pesadez ?peso-pesadez))
-    ?menu <- (object (is-a Menu) (primero ?prim) (segundo ?seg) (puntuacion ?punt) (justificaciones $?just))
-    (not (pesadez-puntuada ?menu))
-    (test (eq (send (plato ?prim) get-pesadez) PESADO))
-    (test (eq (send (plato ?seg) get-pesadez) PESADO))
+    (not (pesadez-puntuada TRUE))
     =>
-    (send ?menu put-puntuacion (- ?punt ?peso-pesadez))
-    (send ?menu put-justificaciones
-        (add$ (str-cat "El primero y el segundo son platos pesados, los comensales lo pueden encontrar excesivo -> -" ?peso-pesadez) $?just))
-    (printout t "Pesadez: " ?menu crlf)
-    (assert (pesadez-puntuada ?menu))
+    (progn$ (?menu (find-all-instances ((?menu Menu)) TRUE))
+        (bind ?prim (plato (send ?menu get-primero)))
+        (bind ?seg (plato (send ?menu get-segundo)))
+        (if (and (eq PESADO (send ?prim get-pesadez)) (eq PESADO (send ?seg get-pesadez)))
+            then (bind ?punt (send ?menu get-puntuacion))
+                 (bind $?just (send ?menu get-justificaciones))
+                 (send ?menu put-puntuacion (- ?punt ?peso-pesadez))
+                 (send ?menu put-justificaciones
+                     (add$ (str-cat "El primero y el segundo son platos pesados, los comensales lo pueden encontrar excesivo -> -" ?peso-pesadez) $?just))
+                 ;(printout t "Pesadez: " ?menu crlf))
+        )
+    (assert (pesadez-puntuada TRUE))
 )
 
 (defrule puntuar-ligereza "Puntúa un menú demasiado ligero negativamente"
     (Pesos (ligereza ?peso-ligereza))
-    ?menu <- (object (is-a Menu) (primero ?prim) (segundo ?seg) (puntuacion ?punt) (justificaciones $?just))
-    (not (ligereza-puntuada ?menu))
-    (test (eq (send (plato ?prim) get-pesadez) LIGERO))
-    (test (eq (send (plato ?seg) get-pesadez) LIGERO))
+    (not (ligereza-puntuada TRUE))
     =>
-    (send ?menu put-puntuacion (- ?punt ?peso-ligereza))
-    (send ?menu put-justificaciones
-        (add$ (str-cat "El primero y el segundo son platos ligeros, los comensales pueden no saciarse -> -" ?peso-ligereza) $?just))
-        (printout t "Ligereza: " ?menu crlf)
-    (assert (ligereza-puntuada ?menu))
+    (progn$ (?menu (find-all-instances ((?menu Menu)) TRUE))
+        (bind ?prim (plato (send ?menu get-primero)))
+        (bind ?seg (plato (send ?menu get-segundo)))
+        (if (and (eq LIGERO (send ?prim get-pesadez)) (eq LIGERO (send ?seg get-pesadez)))
+            then (bind ?punt (send ?menu get-puntuacion))
+                 (bind $?just (send ?menu get-justificaciones))
+                 (send ?menu put-puntuacion (- ?punt ?peso-ligereza))
+                 (send ?menu put-justificaciones
+                     (add$ (str-cat "El primero y el segundo son platos ligeros, los comensales pueden no saciarse -> -" ?peso-ligereza) $?just))
+                 ;(printout t "Ligereza: " ?menu crlf))
+        )
+    (assert (ligereza-puntuada TRUE))
 )
 
 (defrule puntuar-vino-primero "Puntúa los menús en función de si el vino encaja con el primer plato"
     (Pesos (vino-primero ?peso-vino-primero))
-    ?menu <- (object (is-a Menu) (primero ?prim) (puntuacion ?punt) (justificaciones $?just) (vinos $?vinos))
-    (test (> (length $?vinos) 0)) ; tiene que ser un menú con vino
-    (not (vino-primero-puntuado ?menu))
+    (not (vino-primero-puntuado TRUE))
     =>
-    (bind ?genPrim (send (plato ?prim) get-genero))
-    (bind ?predPrim (send (instance-address * ?genPrim) get-predilecto))
-    (bind ?color (send (nth 1 $?vinos) get-color))
-    (if (eq ?color ?predPrim)
-        then (send ?menu put-puntuacion (+ ?punt ?peso-vino-primero))
-             (send ?menu put-justificaciones
-                 (add$ (str-cat "El primer plato es de un género que encaja bien con el color del vino -> +" ?peso-vino-primero) $?just))
-    )
-    (assert (vino-primero-puntuado ?menu))
+    (progn$ (?menu (find-all-instances ((?menu Menu)) TRUE))
+        (bind $?vinos (send ?menu get-vinos))
+        (if (> (length $?vinos) 0) then
+            (bind ?prim (send ?menu get-primero))
+            (bind ?genPrim (send (plato ?prim) get-genero))
+            (bind ?predPrim (send (instance-address * ?genPrim) get-predilecto))
+            (bind ?color (send (nth 1 $?vinos) get-color))
+            (if (eq ?color ?predPrim) then
+                (bind ?punt (send ?menu get-puntuacion))
+                (bind $?just (send ?menu get-justificaciones))
+                (send ?menu put-puntuacion (+ ?punt ?peso-vino-primero))
+                (send ?menu put-justificaciones
+                    (add$ (str-cat "El primer plato es de un género que encaja bien con el color del vino -> +" ?peso-vino-primero) $?just)))
+            ))
+    (assert (vino-primero-puntuado TRUE))
 )
 
 (defrule puntuar-vino-segundo "Puntúa los menús en función de si el vino encaja con el segundo plato"
     (Pesos (vino-segundo ?peso-vino-segundo))
-    ?menu <- (object (is-a Menu) (segundo ?seg) (puntuacion ?punt) (justificaciones $?just) (vinos $?vinos))
-    (test (> (length $?vinos) 0)) ; tiene que ser un menú con vino
-    (not (vino-segundo-puntuado ?menu))
+    (not (vino-segundo-puntuado TRUE))
     =>
-    (bind ?vino (nth (length $?vinos) $?vinos))
-    (bind ?genSeg (send (plato ?seg) get-genero))
-    (bind ?predSeg (send (instance-address * ?genSeg) get-predilecto))
-    (bind ?color (send ?vino get-color))
-    (if (eq ?color ?predSeg)
-        then (send ?menu put-puntuacion (+ ?punt ?peso-vino-segundo))
-             (send ?menu put-justificaciones
-                 (add$ (str-cat "El segundo plato es de un género que encaja bien con el color del vino -> +" ?peso-vino-segundo) $?just))
-    )
-    (assert (vino-segundo-puntuado ?menu))
+    (progn$ (?menu (find-all-instances ((?menu Menu)) TRUE))
+        (bind $?vinos (send ?menu get-vinos))
+        (if (> (length $?vinos) 0) then ; tiene que ser un menú con vino
+            (bind ?vino (nth (length $?vinos) $?vinos))
+            (bind ?seg (send ?menu get-segundo))
+            (bind ?genSeg (send (plato ?seg) get-genero))
+            (bind ?predSeg (send (instance-address * ?genSeg) get-predilecto))
+            (bind ?color (send ?vino get-color))
+            (if (eq ?color ?predSeg) then
+                (bind ?punt (send ?menu get-puntuacion))
+                (bind $?just (send ?menu get-justificaciones))
+                (send ?menu put-puntuacion (+ ?punt ?peso-vino-segundo))
+                (send ?menu put-justificaciones
+                    (add$ (str-cat "El segundo plato es de un género que encaja bien con el color del vino -> +" ?peso-vino-segundo) $?just)))
+            ))
+    (assert (vino-segundo-puntuado TRUE))
 )
 
 (defrule ir-a-seleccionar "Empieza a seleccionar menús"
