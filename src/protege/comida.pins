@@ -1,4 +1,4 @@
-; Sat Dec 07 10:04:19 CET 2013
+; Sat Dec 07 10:46:54 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -76,7 +76,8 @@
 		[comida_Class80055]
 		[comida_Class80066]
 		[comida_Class80076]
-		[comida_Class80086])
+		[comida_Class80086]
+		[comida_Class80159])
 	(nombre "Vegetariano (vegano)"))
 
 ([comida_Class20007] of  Ingrediente
@@ -92,7 +93,9 @@
 		[comida_Class80095]
 		[comida_Class80100]
 		[comida_Class80101]
-		[comida_Class80103])
+		[comida_Class80103]
+		[comida_Class80149]
+		[comida_Class80153])
 	(problematico_para [comida_Class20001]))
 
 ([comida_Class20008] of  Ingrediente
@@ -129,7 +132,8 @@
 		[comida_Class80144]
 		[comida_Class80145]
 		[comida_Class80146]
-		[comida_Class80147])
+		[comida_Class80147]
+		[comida_Class80151])
 	(problematico_para [comida_Class20010]))
 
 ([comida_Class20010] of  TipoComensal
@@ -206,7 +210,9 @@
 		[comida_Class80143]
 		[comida_Class80144]
 		[comida_Class80145]
-		[comida_Class80146])
+		[comida_Class80146]
+		[comida_Class80151]
+		[comida_Class80160])
 	(problematico_para
 		[comida_Class60007]
 		[comida_Class20001]))
@@ -223,7 +229,8 @@
 		[comida_Class80057]
 		[comida_Class80125]
 		[comida_Class80146]
-		[comida_Class80147])
+		[comida_Class80147]
+		[comida_Class80151])
 	(problematico_para
 		[comida_Class60006]
 		[comida_Class20001]))
@@ -408,7 +415,8 @@
 	(nombre "Marisco")
 	(platos
 		[comida_Class60016]
-		[comida_Class40010])
+		[comida_Class40010]
+		[comida_Class80160])
 	(problematico_para
 		[comida_Class40011]
 		[comida_Class20001]))
@@ -720,7 +728,9 @@
 		[comida_Class80058]
 		[comida_Class80097]
 		[comida_Class80100]
-		[comida_Class80101]))
+		[comida_Class80101]
+		[comida_Class80149]
+		[comida_Class80153]))
 
 ([comida_Class60019] of  Region
 
@@ -854,24 +864,13 @@
 	(nombre "Aceite de oliva")
 	(platos
 		[comida_Class48]
-		[comida_Class80004]))
+		[comida_Class80004]
+		[comida_Class80153]))
 
 ([comida_Class60032] of  Ingrediente
 
 	(nombre "Guindillas")
 	(platos [comida_Class48]))
-
-([comida_Class67] of  Vino
-
-	(color [comida_Class50001])
-	(nombre "laRioja")
-	(precio 19.0))
-
-([comida_Class70] of  Vino
-
-	(color [comida_Class60002])
-	(nombre "Abadía San Campio")
-	(precio 11.75))
 
 ([comida_Class70002] of  Moderno
 
@@ -1008,7 +1007,9 @@
 ([comida_Class80007] of  Ingrediente
 
 	(nombre "Langostinos")
-	(platos [comida_Class80006])
+	(platos
+		[comida_Class80006]
+		[comida_Class80155])
 	(problematico_para
 		[comida_Class40011]
 		[comida_Class20001]))
@@ -1206,7 +1207,8 @@
 		[comida_Class80049]
 		[comida_Class80063]
 		[comida_Class80065]
-		[comida_Class80067])
+		[comida_Class80067]
+		[comida_Class80155])
 	(problematico_para [comida_Class20014]))
 
 ([comida_Class80024] of  Ingrediente
@@ -1284,7 +1286,10 @@
 		[comida_Class80080]
 		[comida_Class80091]
 		[comida_Class80100]
-		[comida_Class80105]))
+		[comida_Class80105]
+		[comida_Class80149]
+		[comida_Class80153]
+		[comida_Class80158]))
 
 ([comida_Class80031] of  Ingrediente
 
@@ -2155,7 +2160,8 @@
 	(nombre "Champiñones")
 	(platos
 		[comida_Class80106]
-		[comida_Class80108]))
+		[comida_Class80108]
+		[comida_Class80149]))
 
 ([comida_Class80112] of  Generico
 
@@ -2400,12 +2406,17 @@
 
 ([comida_Class80134] of  TipoComensal
 
-	(conflictos [comida_Class80133])
+	(conflictos
+		[comida_Class80133]
+		[comida_Class80150])
 	(nombre "Menor de edad"))
 
 ([comida_Class80135] of  TipoComensal
 
-	(conflictos [comida_Class80133])
+	(conflictos
+		[comida_Class80133]
+		[comida_Class80150]
+		[comida_Class80159])
 	(nombre "Musulmán"))
 
 ([comida_Class80136] of  Generico
@@ -2574,7 +2585,334 @@
 
 ([comida_Class80149] of  Moderno
 
+	(dificultad 40)
 	(es_exclusivo TRUE)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class20007]
+		[comida_Class60018]
+		[comida_Class80111]
+		[comida_Class80030]
+		[comida_Class80150])
 	(nombre "Solomillo con champiñones y coñac")
+	(pesadez PESADO)
+	(precio 13.99)
+	(temperatura CALIENTE)
+	(tipo SEGUNDO))
+
+([comida_Class80150] of  Ingrediente
+
+	(nombre "Coñac")
+	(platos [comida_Class80149])
+	(problematico_para
+		[comida_Class80135]
+		[comida_Class80134]))
+
+([comida_Class80151] of  Moderno
+
+	(dificultad 32)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70012])
+	(ingredientes
+		[comida_Class20009]
+		[comida_Class20019]
+		[comida_Class20018]
+		[comida_Class80152])
+	(nombre "Flan de calabaza")
 	(pesadez LIGERO)
-	(precio 0.0))
+	(precio 6.99)
+	(temperatura FRIO)
+	(tipo POSTRE))
+
+([comida_Class80152] of  Ingrediente
+
+	(nombre "Calabaza")
+	(platos [comida_Class80151]))
+
+([comida_Class80153] of  Moderno
+
+	(dificultad 50)
+	(es_exclusivo TRUE)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class20007]
+		[comida_Class60018]
+		[comida_Class80030]
+		[comida_Class60031]
+		[comida_Class80154])
+	(nombre "Tartare de lomo y cebaba perlada soplada")
+	(pesadez LIGERO)
+	(precio 11.99)
+	(temperatura CALIENTE)
+	(tipo SEGUNDO))
+
+([comida_Class80154] of  Ingrediente
+
+	(nombre "Uvas")
+	(platos [comida_Class80153]))
+
+([comida_Class80155] of  Moderno
+
+	(dificultad 50)
+	(es_exclusivo TRUE)
+	(genero [comida_Class70008])
+	(ingredientes
+		[comida_Class80023]
+		[comida_Class80007]
+		[comida_Class80156]
+		[comida_Class80157])
+	(nombre "Langostinos con salsa de coco y azafrán")
+	(pesadez LIGERO)
+	(precio 12.99)
+	(temperatura CALIENTE)
+	(tipo SEGUNDO PRIMERO))
+
+([comida_Class80156] of  Ingrediente
+
+	(nombre "Mango")
+	(platos [comida_Class80155]))
+
+([comida_Class80157] of  Ingrediente
+
+	(nombre "Coco")
+	(platos [comida_Class80155]))
+
+([comida_Class80158] of  Moderno
+
+	(dificultad 50)
+	(es_exclusivo TRUE)
+	(genero [comida_Class70007])
+	(ingredientes
+		[comida_Class80159]
+		[comida_Class80030])
+	(nombre "Crocante de cochinillo confitado en jugo mibakami")
+	(pesadez LIGERO)
+	(precio 11.99)
+	(temperatura CALIENTE)
+	(tipo SEGUNDO))
+
+([comida_Class80159] of  Ingrediente
+
+	(nombre "Cerdo")
+	(platos [comida_Class80158])
+	(problematico_para
+		[comida_Class20001]
+		[comida_Class80135]))
+
+([comida_Class80160] of  Moderno
+
+	(dificultad 50)
+	(es_exclusivo TRUE)
+	(genero [comida_Class70008])
+	(ingredientes
+		[comida_Class40009]
+		[comida_Class20018])
+	(nombre "Camarones al ajillo con salsa de yogur de búfala")
+	(pesadez LIGERO)
+	(precio 14.99)
+	(temperatura CALIENTE)
+	(tipo SEGUNDO PRIMERO))
+
+([comida_Class80161] of  Vino
+
+	(color [comida_Class50001])
+	(nombre "Abadal Cabernet Franc Tempranillo 2011")
+	(precio 7.15))
+
+([comida_Class80162] of  Vino
+
+	(color [comida_Class50001])
+	(nombre "Abadia Retuerta Selección Especial Magnum 2008")
+	(precio 36.66))
+
+([comida_Class80163] of  Vino
+
+	(color [comida_Class50001])
+	(nombre "Acústic 2010")
+	(precio 10.79))
+
+([comida_Class80164] of  Vino
+
+	(color [comida_Class50001])
+	(nombre "Alion Magnum 2005")
+	(precio 101.0))
+
+([comida_Class80165] of  Vino
+
+	(color [comida_Class50001])
+	(nombre "Allende 2006")
+	(precio 15.25))
+
+([comida_Class80166] of  Vino
+
+	(color [comida_Class50001])
+	(nombre "Alto Moncayo 2007")
+	(precio 27.43))
+
+([comida_Class80167] of  Vino
+
+	(color [comida_Class50001])
+	(nombre "Amant Roble 2011")
+	(precio 4.81))
+
+([comida_Class80168] of  Vino
+
+	(color [comida_Class50001])
+	(nombre "Amaren Reserva 2005")
+	(precio 27.9))
+
+([comida_Class80169] of  Vino
+
+	(color [comida_Class50001])
+	(nombre "Angeles de Amaren 2007")
+	(precio 14.79))
+
+([comida_Class80170] of  Vino
+
+	(color [comida_Class50001])
+	(nombre "Ànima Negra Àn 2010")
+	(precio 30.59))
+
+([comida_Class80171] of  Vino
+
+	(color [comida_Class50001])
+	(nombre "Argeles 2009")
+	(precio 9.85))
+
+([comida_Class80172] of  Vino
+
+	(color [comida_Class50001])
+	(nombre "Contador 2005")
+	(precio 675.0))
+
+([comida_Class80173] of  Vino
+
+	(color [comida_Class70004])
+	(nombre "Casal Mendes")
+	(precio 4.3))
+
+([comida_Class80174] of  Vino
+
+	(color [comida_Class70004])
+	(nombre "Chablis Pascal Bouchard 2010")
+	(precio 13.95))
+
+([comida_Class80175] of  Vino
+
+	(color [comida_Class70004])
+	(nombre "Dr Loosen Bros Riesling 2012")
+	(precio 7.89))
+
+([comida_Class80176] of  Vino
+
+	(color [comida_Class70004])
+	(nombre "Grand Regnard Chablis 2008")
+	(precio 31.89))
+
+([comida_Class80177] of  Vino
+
+	(color [comida_Class70004])
+	(nombre "Louis Latour Ardèche Chardonnay 2012")
+	(precio 8.45))
+
+([comida_Class80178] of  Vino
+
+	(color [comida_Class70004])
+	(nombre "Petit Chablis Régnard 2012")
+	(precio 14.63))
+
+([comida_Class80179] of  Vino
+
+	(color [comida_Class70004])
+	(nombre "Abadal Picapoll 2012")
+	(precio 8.95))
+
+([comida_Class80180] of  Vino
+
+	(color [comida_Class70004])
+	(nombre "Agustí Torelló Aptià 2011")
+	(precio 9.49))
+
+([comida_Class80181] of  Vino
+
+	(color [comida_Class70004])
+	(nombre "Bach Extremísimo Semi Dulce 2011")
+	(precio 2.98))
+
+([comida_Class80182] of  Vino
+
+	(color [comida_Class70004])
+	(nombre "Gran Caus Blanco")
+	(precio 11.5))
+
+([comida_Class80183] of  Vino
+
+	(color [comida_Class70004])
+	(nombre "Guitian Godello Sobre Lías 2011")
+	(precio 12.09))
+
+([comida_Class80184] of  Vino
+
+	(color [comida_Class60002])
+	(nombre "Torres Santa Digna Rosé 2013")
+	(precio 6.75))
+
+([comida_Class80185] of  Vino
+
+	(color [comida_Class60002])
+	(nombre "Las campanas 2011")
+	(precio 2.86))
+
+([comida_Class80186] of  Vino
+
+	(color [comida_Class60002])
+	(nombre "Bach Viña Extrísima Rosado 2012")
+	(precio 2.98))
+
+([comida_Class80187] of  Vino
+
+	(color [comida_Class60002])
+	(nombre "Malon de Echaide Rosado 2012")
+	(precio 2.92))
+
+([comida_Class80188] of  Vino
+
+	(color [comida_Class60002])
+	(nombre "Bru de Gramona 2010")
+	(precio 19.6))
+
+([comida_Class80189] of  Vino
+
+	(color [comida_Class60002])
+	(nombre "Marqués de Cáceres Rosado 2011")
+	(precio 4.89))
+
+([comida_Class80190] of  Vino
+
+	(color [comida_Class60002])
+	(nombre "Ètim Rosado 2011")
+	(precio 5.49))
+
+([comida_Class80191] of  Vino
+
+	(color [comida_Class60002])
+	(nombre "Perafita Rosado 2011")
+	(precio 9.85))
+
+([comida_Class80192] of  Vino
+
+	(color [comida_Class60002])
+	(nombre "Faustino VII Rosado 2011")
+	(precio 3.69))
+
+([comida_Class80193] of  Vino
+
+	(color [comida_Class60002])
+	(nombre "Vinos Heus 2012")
+	(precio 15.6))
+
+([comida_Class80194] of  Vino
+
+	(color [comida_Class60002])
+	(nombre "Gran Caus Rosado 2012")
+	(precio 12.91))
