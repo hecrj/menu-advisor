@@ -1,4 +1,4 @@
-; Sat Dec 07 10:46:54 CET 2013
+; Sat Dec 07 11:36:03 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -77,7 +77,9 @@
 		[comida_Class80066]
 		[comida_Class80076]
 		[comida_Class80086]
-		[comida_Class80159])
+		[comida_Class80159]
+		[comida_Class80196]
+		[comida_Class80198])
 	(nombre "Vegetariano (vegano)"))
 
 ([comida_Class20007] of  Ingrediente
@@ -93,9 +95,7 @@
 		[comida_Class80095]
 		[comida_Class80100]
 		[comida_Class80101]
-		[comida_Class80103]
-		[comida_Class80149]
-		[comida_Class80153])
+		[comida_Class80103])
 	(problematico_para [comida_Class20001]))
 
 ([comida_Class20008] of  Ingrediente
@@ -1148,7 +1148,8 @@
 	(platos_tipicos
 		[comida_Class80017]
 		[comida_Class80020]
-		[comida_Class80145]))
+		[comida_Class80145]
+		[comida_Class80199]))
 
 ([comida_Class80020] of  Generico
 
@@ -1287,9 +1288,9 @@
 		[comida_Class80091]
 		[comida_Class80100]
 		[comida_Class80105]
+		[comida_Class80158]
 		[comida_Class80149]
-		[comida_Class80153]
-		[comida_Class80158]))
+		[comida_Class80153]))
 
 ([comida_Class80031] of  Ingrediente
 
@@ -2589,11 +2590,11 @@
 	(es_exclusivo TRUE)
 	(genero [comida_Class70007])
 	(ingredientes
-		[comida_Class20007]
 		[comida_Class60018]
 		[comida_Class80111]
 		[comida_Class80030]
-		[comida_Class80150])
+		[comida_Class80150]
+		[comida_Class80159])
 	(nombre "Solomillo con champiñones y coñac")
 	(pesadez PESADO)
 	(precio 13.99)
@@ -2635,11 +2636,11 @@
 	(es_exclusivo TRUE)
 	(genero [comida_Class70007])
 	(ingredientes
-		[comida_Class20007]
 		[comida_Class60018]
 		[comida_Class80030]
 		[comida_Class60031]
-		[comida_Class80154])
+		[comida_Class80154]
+		[comida_Class80159])
 	(nombre "Tartare de lomo y cebaba perlada soplada")
 	(pesadez LIGERO)
 	(precio 11.99)
@@ -2694,7 +2695,10 @@
 ([comida_Class80159] of  Ingrediente
 
 	(nombre "Cerdo")
-	(platos [comida_Class80158])
+	(platos
+		[comida_Class80158]
+		[comida_Class80149]
+		[comida_Class80153])
 	(problematico_para
 		[comida_Class20001]
 		[comida_Class80135]))
@@ -2916,3 +2920,48 @@
 	(color [comida_Class60002])
 	(nombre "Gran Caus Rosado 2012")
 	(precio 12.91))
+
+([comida_Class80195] of  Moderno
+
+	(es_exclusivo FALSE)
+	(ingredientes [comida_Class80196])
+	(nombre "Plato de hormigas culonas")
+	(pesadez LIGERO)
+	(precio 0.0)
+	(tipo PRIMERO))
+
+([comida_Class80196] of  Ingrediente
+
+	(nombre "Hormigas culonas")
+	(platos [comida_Class80195])
+	(problematico_para
+		[comida_Class20001]
+		[comida_Class80197]))
+
+([comida_Class80197] of  TipoComensal
+
+	(conflictos
+		[comida_Class80196]
+		[comida_Class80198])
+	(nombre "No come insectos"))
+
+([comida_Class80198] of  Ingrediente
+
+	(nombre "Caracoles")
+	(platos [comida_Class80199])
+	(problematico_para
+		[comida_Class80197]
+		[comida_Class20001]))
+
+([comida_Class80199] of  Generico
+
+	(dificultad 20)
+	(es_exclusivo FALSE)
+	(genero [comida_Class70010])
+	(ingredientes [comida_Class80198])
+	(nombre "Escargot (plato de caracoles)")
+	(pesadez LIGERO)
+	(precio 8.49)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class80019])
+	(tipo PRIMERO SEGUNDO))
