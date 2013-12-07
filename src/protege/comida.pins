@@ -1,4 +1,4 @@
-; Sat Dec 07 14:20:12 CET 2013
+; Sat Dec 07 17:30:15 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -2946,7 +2946,7 @@
 ([comida_Class80182] of  Vino
 
 	(color [comida_Class70004])
-	(nombre "Gran Caus Blanco")
+	(nombre "Gran Caus")
 	(precio 11.5))
 
 ([comida_Class80183] of  Vino
@@ -2970,13 +2970,13 @@
 ([comida_Class80186] of  Vino
 
 	(color [comida_Class60002])
-	(nombre "Bach Viña Extrísima Rosado 2012")
+	(nombre "Bach Viña Extrísima 2012")
 	(precio 2.98))
 
 ([comida_Class80187] of  Vino
 
 	(color [comida_Class60002])
-	(nombre "Malon de Echaide Rosado 2012")
+	(nombre "Malon de Echaide 2012")
 	(precio 2.92))
 
 ([comida_Class80188] of  Vino
@@ -2988,25 +2988,25 @@
 ([comida_Class80189] of  Vino
 
 	(color [comida_Class60002])
-	(nombre "Marqués de Cáceres Rosado 2011")
+	(nombre "Marqués de Cáceres 2011")
 	(precio 4.89))
 
 ([comida_Class80190] of  Vino
 
 	(color [comida_Class60002])
-	(nombre "Ètim Rosado 2011")
+	(nombre "Ètim 2011")
 	(precio 5.49))
 
 ([comida_Class80191] of  Vino
 
 	(color [comida_Class60002])
-	(nombre "Perafita Rosado 2011")
+	(nombre "Perafita 2011")
 	(precio 9.85))
 
 ([comida_Class80192] of  Vino
 
 	(color [comida_Class60002])
-	(nombre "Faustino VII Rosado 2011")
+	(nombre "Faustino VII 2011")
 	(precio 3.69))
 
 ([comida_Class80193] of  Vino
@@ -3018,7 +3018,7 @@
 ([comida_Class80194] of  Vino
 
 	(color [comida_Class60002])
-	(nombre "Gran Caus Rosado 2012")
+	(nombre "Gran Caus 2012")
 	(precio 12.91))
 
 ([comida_Class80195] of  Generico
