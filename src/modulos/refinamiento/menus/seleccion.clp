@@ -47,6 +47,68 @@
     (assert (franjas-medias-actualizadas))
 )
 
+(defrule crear-menus
+  (declare (salience 2000))
+  (not (menus-creados))
+  =>
+  (estado "Refinando menús...")
+  (bind $?abstractos (find-all-instances ((?inst MenuAbstracto)) TRUE))
+  (bind $?abstractos (sort puntuacion-descendente $?abstractos))
+  (bind $?vinos (find-all-instances ((?inst Vino)) TRUE))
+  (bind ?i 0)
+  (progn$ (?abstracto $?abstractos)
+    (if (< ?i 100) ; Seleccionar los 100 mejores menús abstractos
+      then
+        (bind ?primero (send ?abstracto get-primero))
+        (bind ?segundo (send ?abstracto get-segundo))
+        (bind ?postre (send ?abstracto get-postre))
+        (bind ?puntuacion (send ?abstracto get-puntuacion))
+        (bind $?just (send ?abstracto get-justificaciones))
+
+        (bind $?color-vinos-menu (send ?abstracto get-color-vinos))
+        (bind ?cantidad-vinos (length $?color-vinos-menu))
+
+        (bind ?precio
+            (+
+                (+
+                    (send (plato ?primero) get-precio)
+                    (send (plato ?segundo) get-precio)
+                )
+                (send (plato ?postre) get-precio)
+            )
+        )
+
+        (switch ?cantidad-vinos
+          (case 0 then
+            (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
+              (postre ?postre) (vinos (create$)) (precio ?precio) (puntuacion ?puntuacion) (justificaciones $?just)))
+          (case 1 then
+            (progn$ (?vino $?vinos)
+              (if (member$ (color-vino ?vino) $?color-vinos-menu)
+                then
+                  (bind ?precio (+ ?precio (/ (send ?vino get-precio) 4)))
+                  (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
+                    (postre ?postre) (vinos (create$ ?vino)) (precio ?precio) (puntuacion ?puntuacion) (justificaciones $?just)))))
+          (case 2 then
+            (progn$ (?vino1 $?vinos)
+              (if (member$ (color-vino ?vino1) $?color-vinos-menu)
+                then
+                  (bind ?precio (+ ?precio (/ (send ?vino1 get-precio) 4)))
+                  (progn$ (?vino2 $?vinos)
+                    (if (member$ (color-vino ?vino2) $?color-vinos-menu)
+                      then
+                        (bind ?precio (+ ?precio (/ (send ?vino2 get-precio) 4)))
+                        (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
+                          (postre ?postre) (vinos (create$ ?vino1 ?vino2)) (precio ?precio) (puntuacion ?puntuacion) (justificaciones $?just))))))
+        )
+      )
+    )
+    (send ?abstracto delete)
+    (bind ?i (+ ?i 1))
+  )
+  (assert (menus-creados))
+)
+
 (defrule inicializar-seleccion-menus
     (declare (salience 1000))
     (not (menus-seleccionados ?))

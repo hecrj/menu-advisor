@@ -168,6 +168,10 @@
 )
 
 
+(deffunction color-vino (?vino)
+    (send (send ?vino get-color) get-nombre)
+)
+
 (deffunction print-round-two (?float)
     (format t "%.2f" ?float)
 )

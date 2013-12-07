@@ -15,15 +15,7 @@
             (if (neq ?primero ?segundo) then
                 (progn$ (?postre $?postres)
                     (if (and (neq ?primero ?postre) (neq ?segundo ?postre)) then
-                        (bind ?precio
-                            (+
-                                (+
-                                    (send (plato ?primero) get-precio)
-                                    (send (plato ?segundo) get-precio)
-                                )
-                                (send (plato ?postre) get-precio)
-                            )
-                        )
+
                         ;                                            (bind ?precio-nuevo (+
                         ;                        ?precio
                         ;                        (+
