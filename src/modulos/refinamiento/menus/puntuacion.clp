@@ -125,6 +125,6 @@
 (defrule ir-a-seleccionar "Empieza a seleccionar menús"
   (declare (salience -10000))
   =>
-  (printout t "A seleccionar" crlf)
+  (estado "Seleccionando menús...")
   (focus menus-seleccion)
 )

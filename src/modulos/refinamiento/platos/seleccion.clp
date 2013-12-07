@@ -44,12 +44,12 @@
             then (bind $?postres (add$ ?max-rec $?postres)))
         (bind $?recs (delete-member$ $?recs ?max-rec))
     )
-    (printout t "Seleccionados:" (length $?primeros) " " (length $?segundos) " " (length $?postres) crlf)
     (assert (Recomendaciones (primeros $?primeros) (segundos $?segundos) (postres $?postres)))
 )
 
 (defrule ir-a-filtrar-menus "Empezar a filtrar posibles menus"
   (declare (salience -10000))
   =>
+  (estado "Generando menús...")
   (focus menus-filtracion)
 )

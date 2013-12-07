@@ -291,3 +291,7 @@
     (bind ?res (+ 1 (mod (random) (length $?lista))))
     (nth ?res $?lista)
 )
+
+(deffunction estado (?mensaje)
+    (printout t "> " ?mensaje crlf)
+)

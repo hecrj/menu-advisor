@@ -71,6 +71,6 @@
 (defrule ir-a-puntuar "Empieza a puntuar menús"
     (declare (salience -10000))
     =>
-    (printout t "Menús generados" crlf)
+    (estado "Ponderando menús...")
     (focus menus-puntuacion)
 )

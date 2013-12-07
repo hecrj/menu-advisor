@@ -100,5 +100,6 @@
 (defrule ir-a-presentar "Presentar los resultados"
   (declare (salience -10000))
   =>
+  (estado "Mostrando resultados...")
   (focus presentacion)
 )

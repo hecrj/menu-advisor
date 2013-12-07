@@ -166,5 +166,6 @@
     (declare (salience -10000))
     (Preferencias)
     =>
+    (estado "Seleccionando recomendaciones...")
     (focus platos-seleccion)
 )

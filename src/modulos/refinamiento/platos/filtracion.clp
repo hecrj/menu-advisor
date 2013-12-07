@@ -58,5 +58,6 @@
 (defrule ir-a-puntuar "Empieza a puntuar platos"
   (declare (salience -10000))
   =>
+  (estado "Analizando recomendaciones...")
   (focus platos-puntuacion)
 )
