@@ -25,20 +25,6 @@
             (if (neq ?primero ?segundo) then
                 (progn$ (?postre $?postres)
                     (if (and (neq ?primero ?postre) (neq ?segundo ?postre)) then
-                        (bind ?menu-punt
-                            (+
-                                (+
-                                    (send ?primero get-puntuacion)
-                                    (send ?segundo get-puntuacion)
-                                )
-                                (send ?postre get-puntuacion)
-                            )
-                        )
-                        (if (< ?menu-punt 0)
-                            then (bind ?signo "-")
-                            else (bind ?signo "+"))
-                        (bind $?just
-                            (add$ (str-cat "Los platos del menú suman una puntuación total -> " ?signo ?menu-punt) (create$)))
                         (bind ?precio
                             (+
                                 (+
@@ -52,12 +38,12 @@
                         (switch ?cantidad-vino
                             (case 0 then
                                 (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
-                                    (postre ?postre) (puntuacion ?menu-punt) (precio ?precio) (vinos (create$)) (justificaciones $?just)))
+                                    (postre ?postre) (precio ?precio) (vinos (create$))))
                             (case 1 then
                                 (progn$ (?vino $?todos-vinos)
                                     (bind ?precio-nuevo (+ ?precio (/ (send ?vino get-precio) 4)))
                                     (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
-                                        (postre ?postre) (puntuacion ?menu-punt) (precio ?precio-nuevo) (vinos (create$ ?vino)) (justificaciones $?just))))
+                                        (postre ?postre) (precio ?precio-nuevo) (vinos (create$ ?vino)))))
                             (case 2 then
                                 (progn$ (?vino1 $?todos-vinos)
                                     (progn$ (?vino2 $?todos-vinos)
@@ -70,8 +56,7 @@
                                                 )
                                             ))
                                             (make-instance (gensym) of Menu (primero ?primero) (segundo ?segundo)
-                                                (postre ?postre) (puntuacion ?menu-punt) (precio ?precio-nuevo) (vinos (create$ ?vino1 ?vino2))
-                                                (justificaciones $?just)))
+                                                (postre ?postre) (precio ?precio-nuevo) (vinos (create$ ?vino1 ?vino2))))
                                             ;(printout t ?precio-nuevo crlf)
                                             )))
                         )
@@ -86,5 +71,6 @@
 (defrule ir-a-puntuar "Empieza a puntuar menús"
     (declare (salience -10000))
     =>
+    (printout t "Menús generados" crlf)
     (focus menus-puntuacion)
 )

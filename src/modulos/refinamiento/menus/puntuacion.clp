@@ -17,6 +17,30 @@
 )
 
 
+(defrule puntuar-menu-platos "Puntúa un menú en función de la puntuación de sus platos"
+    (not (platos-puntuados))
+    =>
+    (bind $?menus (find-all-instances ((?inst Menu)) TRUE))
+    (progn$ (?menu $?menus)
+        (bind ?menu-punt
+            (+
+                (+
+                    (send (send ?menu get-primero) get-puntuacion)
+                    (send (send ?menu get-segundo) get-puntuacion)
+                )
+                (send (send ?menu get-postre) get-puntuacion)
+            )
+        )
+        (send ?menu put-puntuacion (+ (send ?menu get-puntuacion) ?menu-punt))
+        (if (< ?menu-punt 0)
+            then (bind ?signo "-")
+            else (bind ?signo "+"))
+        (send ?menu put-justificaciones
+            (add$ (str-cat "Los platos del menú suman una puntuación total -> " ?signo ?menu-punt) (send ?menu get-justificaciones)))
+    )
+    (assert (platos-puntuados))
+)
+
 (defrule puntuar-pesadez "Puntúa un menú demasiado pesado negativamente"
     (Pesos (pesadez ?peso-pesadez))
     (not (pesadez-puntuada TRUE))
@@ -32,6 +56,7 @@
                      (add$ (str-cat "El primero y el segundo son platos pesados, los comensales lo pueden encontrar excesivo -> -" ?peso-pesadez) $?just))
                  ;(printout t "Pesadez: " ?menu crlf))
         )
+    )
     (assert (pesadez-puntuada TRUE))
 )
 
@@ -50,6 +75,7 @@
                      (add$ (str-cat "El primero y el segundo son platos ligeros, los comensales pueden no saciarse -> -" ?peso-ligereza) $?just))
                  ;(printout t "Ligereza: " ?menu crlf))
         )
+    )
     (assert (ligereza-puntuada TRUE))
 )
 
