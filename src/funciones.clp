@@ -184,28 +184,33 @@
     )
 )
 
+(deffunction imprimir-vino (?conector ?vino)
+    (printout t ?conector)
+    (printout t (lowcase (send (instance-address * (send ?vino get-color)) get-nombre)) " " (send ?vino get-nombre) " (")
+    (print-round-two (send ?vino get-precio))
+    (printout t " €)" crlf)
+)
+
 (deffunction imprimir-vino-plato (?conector ?plato $?vinos)
     (if (= 2 (length $?vinos))
-        then (bind ?vino (nth ?plato $?vinos))
-            (printout t ?conector (send ?vino get-nombre) " (")
-            (print-round-two (send ?vino get-precio))
-            (printout t " €)" crlf))
+        then
+            (bind ?vino (nth ?plato $?vinos))
+            (imprimir-vino ?conector ?vino))
 )
 
 (deffunction imprimir-plato (?num ?plato $?vinos)
     (printout t "    " (send ?plato get-nombre) " (")
     (print-round-two (send ?plato get-precio))
     (printout t " €)")
-    (if (not (imprimir-vino-plato " con " ?num $?vinos))
+    (if (not (imprimir-vino-plato " con vino " ?num $?vinos))
         then (printout t crlf))
 )
 
 (deffunction imprimir-vino-menu (?conector $?vinos)
     (if (= 1 (length $?vinos))
-        then (bind ?vino (nth 1 $?vinos))
-             (printout t ?conector (send ?vino get-nombre) " (")
-             (print-round-two (send ?vino get-precio))
-             (printout t " €)" crlf))
+        then
+            (bind ?vino (nth 1 $?vinos))
+            (imprimir-vino ?conector ?vino))
 )
 
 (deffunction imprimir-resumen-menu (?menu)
