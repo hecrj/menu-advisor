@@ -41,6 +41,15 @@
 ; Módulo de selección de menús
 (load "modulos/refinamiento/menus/seleccion.clp")
 
+; Módulo de filtración de vinos
+(load "modulos/refinamiento/vinos/filtracion.clp")
+
+; Modulo de puntuación de vinos
+(load "modulos/refinamiento/vinos/puntuacion.clp")
+
+; Módulo de selección de vinos
+(load "modulos/refinamiento/vinos/seleccion.clp")
+
 ; Modulo de presentacion de resultados
 (load "modulos/presentacion.clp")
 

@@ -166,7 +166,6 @@
 
 (defrule ir-a-seleccionar "Empieza a seleccionar platos"
     (declare (salience -10000))
-    (Preferencias)
     =>
     (focus platos-seleccion)
 )
