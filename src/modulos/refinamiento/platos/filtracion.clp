@@ -26,6 +26,17 @@
     )
 )
 
+(defrule platos-exclusivos-evento "Elimina los platos exclusivos de otros eventos"
+    (declare (salience 9850))
+    (Preferencias (evento ?evento))
+    ?rec <- (object (is-a Recomendacion) (plato ?plato))
+    (test (> (length (send ?plato get-exclusivo_de)) 0))
+    =>
+    (bind $?eventos (find-attr-ont nombre (send ?plato get-exclusivo_de)))
+    (if (not (member$ ?evento $?eventos))
+        then (send ?rec delete))
+)
+
 (defrule platos-demasiado-caros "Elimina las recomendaciones de platos que exceden el precio"
     (declare (salience 9800))
     (Preferencias (precio-maximo ?max))

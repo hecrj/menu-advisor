@@ -124,6 +124,15 @@
     $?list
 )
 
+(deffunction find-attr-ont (?attr $?instances)
+    (bind $?list (create$))
+    (bind ?getter (sym-cat get- ?attr))
+    (progn$ (?instance $?instances)
+        (bind $?list (add$ (send (instance-address * ?instance) ?getter) $?list)))
+
+    $?list
+)
+
 (deffunction seleccionar-instancias (?class ?attr ?msg)
     (bind $?instances (find-all-instances ((?inst ?class)) TRUE))
     (bind $?respuestas (pregunta-multi ?msg (find-attr ?attr $?instances)))

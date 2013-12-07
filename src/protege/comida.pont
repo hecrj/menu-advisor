@@ -1,4 +1,4 @@
-; Sat Dec 07 12:18:25 CET 2013
+; Sat Dec 07 13:52:23 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -18,10 +18,15 @@
 ;+		(allowed-classes Plato)
 ;+		(inverse-slot ingredientes)
 		(create-accessor read-write))
-	(multislot platos_evento
+	(multislot platos_exclusivos
 		(type INSTANCE)
 ;+		(allowed-classes Plato)
-;+		(inverse-slot eventos)
+;+		(inverse-slot exclusivo_de)
+		(create-accessor read-write))
+	(multislot recomendable_para
+		(type INSTANCE)
+;+		(allowed-classes Evento)
+;+		(inverse-slot platos_recomendables)
 		(create-accessor read-write))
 	(multislot platos_tipicos
 		(type INSTANCE)
@@ -86,6 +91,11 @@
 		(type INSTANCE)
 ;+		(allowed-classes GeneroPlato)
 		(create-accessor read-write))
+	(multislot exclusivo_de
+		(type INSTANCE)
+;+		(allowed-classes Evento)
+;+		(inverse-slot platos_exclusivos)
+		(create-accessor read-write))
 	(multislot solo-disponible-en
 		(type INSTANCE)
 ;+		(allowed-classes Epoca)
@@ -111,11 +121,6 @@
 		(type SYMBOL)
 		(allowed-values CARNE PESCADO CEREALES VEGETALES LACTEOS LEGUMBRES CITRICOS FRUTAS CACAO ANIMAL HUEVO)
 		(create-accessor read-write))
-	(multislot eventos
-		(type INSTANCE)
-;+		(allowed-classes Evento)
-;+		(inverse-slot platos_evento)
-		(create-accessor read-write))
 	(single-slot nombre
 		(type STRING)
 ;+		(cardinality 1 1)
@@ -130,6 +135,11 @@
 		(type SYMBOL)
 		(allowed-values CALIENTE FRIO)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot platos_recomendables
+		(type INSTANCE)
+;+		(allowed-classes Plato)
+;+		(inverse-slot recomendable_para)
 		(create-accessor read-write))
 	(multislot dispone-de
 		(type INSTANCE)
@@ -165,14 +175,14 @@
 		(default LIGERO)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
+	(multislot exclusivo_de
+		(type INSTANCE)
+;+		(allowed-classes Evento)
+		(create-accessor read-write))
 	(multislot ingredientes
 		(type INSTANCE)
 ;+		(allowed-classes Ingrediente)
 		(cardinality 1 ?VARIABLE)
-		(create-accessor read-write))
-	(multislot eventos
-		(type INSTANCE)
-;+		(allowed-classes Evento)
 		(create-accessor read-write))
 	(single-slot para_sibaritas
 		(type SYMBOL)
@@ -184,6 +194,10 @@
 		(type SYMBOL)
 		(allowed-values PRIMERO SEGUNDO POSTRE)
 		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(multislot recomendable_para
+		(type INSTANCE)
+;+		(allowed-classes Evento)
 		(create-accessor read-write))
 	(single-slot dificultad
 		(type INTEGER)
@@ -286,13 +300,17 @@
 (defclass Evento
 	(is-a USER)
 	(role concrete)
+	(multislot platos_exclusivos
+		(type INSTANCE)
+;+		(allowed-classes Plato)
+		(create-accessor read-write))
+	(multislot platos_recomendables
+		(type INSTANCE)
+;+		(allowed-classes Plato)
+		(create-accessor read-write))
 	(single-slot nombre
 		(type STRING)
 ;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(multislot platos_evento
-		(type INSTANCE)
-;+		(allowed-classes Plato)
 		(create-accessor read-write))
 	(single-slot importancia_platos
 		(type INTEGER)
