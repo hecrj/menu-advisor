@@ -6,11 +6,6 @@
 (defrule summary "Imprime un pequeño resumen"
     (Preferencias (tipos-menu $?tipos))
     =>
-    (printout t "Tipos escogidos:" crlf)
-    (progn$ (?tipo $?tipos)
-        (printout t "    " ?tipo crlf)
-    )
-    (printout t "Recomendaciones candidatas" crlf)
     ;(assert (presentar-recomendaciones))
     (assert (presentar-menus))
 )
