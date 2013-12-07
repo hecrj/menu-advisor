@@ -35,10 +35,10 @@
 
 (defrule pregunta-sibarita "Pregunta al cliente si es un sibarita"
     (declare (salience 9875))
-    ?prefs <- (Preferencias (exclusivo desconocido))
+    ?prefs <- (Preferencias (sibarita desconocido))
     =>
-    (bind ?respuesta (pregunta-si-no "¿Quiere que intentemos proponerle platos exclusivos para los paladares más exigentes?"))
-    (modify ?prefs (exclusivo ?respuesta))
+    (bind ?respuesta (pregunta-si-no "¿Es sibarita y prefiere platos para los paladares más exigentes?"))
+    (modify ?prefs (sibarita ?respuesta))
 )
 
 (defrule pregunta-regional "Preguntar si el cliente prefiere platos regionales"
@@ -165,7 +165,7 @@
     (bind $?colores (find-all-instances ((?inst ColorVino)) TRUE))
     (bind $?nombres-colores (find-attr nombre $?colores))
     (bind $?respuesta (pregunta-multi "¿Qué tipo de vino prefiere?" $?nombres-colores))
-    (if (> 0 (length $?respuesta))
+    (if (> (length $?respuesta) 0)
         then (modify ?prefs (colores-vino $?respuesta))
         else (modify ?prefs (colores-vino $?nombres-colores)))
     (assert (vino preguntado))

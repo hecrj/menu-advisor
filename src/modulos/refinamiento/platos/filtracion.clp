@@ -37,9 +37,9 @@
 )
 
 (defrule platos-sibaritas "Elimina las recomendaciones de platos exclusivos si no se quieren"
-    (Preferencias (exclusivo FALSE))
+    (Preferencias (sibarita FALSE))
     ?rec <- (object (is-a Recomendacion) (plato ?plato))
-    (test (send ?plato get-es_exclusivo))
+    (test (send ?plato get-para_sibaritas))
     =>
     (send ?rec delete)
 )

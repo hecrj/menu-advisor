@@ -9,7 +9,7 @@
     (slot caliente-en-verano (type INTEGER) (default -25))
     (slot caliente-en-invierno (type INTEGER) (default 40))
     (slot region-preferida (type INTEGER) (default 50))
-    (slot plato-exclusivo (type INTEGER) (default 60))
+    (slot plato-sibarita (type INTEGER) (default 60))
 )
 
 (defrule inicializa-Pesos "Define la ponderación de factores"
@@ -136,15 +136,15 @@
 
 (defrule puntuar-sibarita "Cuando el cliente es sibarita y el plato es exclusivo, se sube la puntuación"
     ?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $?just))
-    (Pesos (plato-exclusivo ?peso))
-    (test (send ?plato get-es_exclusivo))
-    (not (exclusividad-puntuada ?rec))
+    (Pesos (plato-sibarita ?peso))
+    (test (send ?plato get-para_sibaritas))
+    (not (sibarita-puntuado ?rec))
     =>
     (send ?rec put-puntuacion (+ ?punt ?peso))
     (send ?rec put-justificaciones
         (add$ (str-cat "El plato es exclusivo, preferido por los clientes más sibaritas -> +" ?peso) $?just))
         
-    (assert (exclusividad-puntuada ?rec))
+    (assert (sibarita-puntuado ?rec))
 )
 
 (defrule ir-a-seleccionar "Empieza a seleccionar platos"

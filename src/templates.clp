@@ -33,7 +33,7 @@
         (default -1))
     (multislot colores-vino
         (type STRING))
-    (slot exclusivo 
+    (slot sibarita
         (type SYMBOL)
         (default desconocido))
 )

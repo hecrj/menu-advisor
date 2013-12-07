@@ -1,4 +1,4 @@
-; Sat Dec 07 11:36:03 CET 2013
+; Sat Dec 07 12:18:25 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,20 +20,20 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[comida_ProjectKB_Class10396]
-		[comida_ProjectKB_Class10397]
-		[comida_ProjectKB_Class10398]
-		[comida_ProjectKB_Class10399]
-		[comida_ProjectKB_Class10400]
-		[comida_ProjectKB_Class10401]
-		[comida_ProjectKB_Class10402]
-		[comida_ProjectKB_Class10403]
-		[comida_ProjectKB_Class10404]
-		[comida_ProjectKB_Class10405]
-		[comida_ProjectKB_Class10406]
-		[comida_ProjectKB_Class10407]
-		[comida_ProjectKB_Class10408]
-		[comida_ProjectKB_Class10409]))
+		[comida_ProjectKB_Class10173]
+		[comida_ProjectKB_Class10174]
+		[comida_ProjectKB_Class10175]
+		[comida_ProjectKB_Class10176]
+		[comida_ProjectKB_Class10177]
+		[comida_ProjectKB_Class10178]
+		[comida_ProjectKB_Class10179]
+		[comida_ProjectKB_Class10180]
+		[comida_ProjectKB_Class10181]
+		[comida_ProjectKB_Class10182]
+		[comida_ProjectKB_Class10183]
+		[comida_ProjectKB_Class10184]
+		[comida_ProjectKB_Class10185]
+		[comida_ProjectKB_Class10186]))
 
 ([CLSES_TAB] of  Widget
 
@@ -53,91 +53,91 @@
 
 	(name "SearchTab_Query"))
 
-([comida_ProjectKB_Class10396] of  String
+([comida_ProjectKB_Class10173] of  String
 
 	(name "Tradicional")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10397] of  String
+([comida_ProjectKB_Class10174] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([comida_ProjectKB_Class10398] of  String
+([comida_ProjectKB_Class10175] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([comida_ProjectKB_Class10399] of  String
+([comida_ProjectKB_Class10176] of  String
 
 	(name "Evento")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10400] of  String
+([comida_ProjectKB_Class10177] of  String
 
 	(name "TipoComensal")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10401] of  String
+([comida_ProjectKB_Class10178] of  String
 
 	(name "Moderno")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10402] of  String
+([comida_ProjectKB_Class10179] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([comida_ProjectKB_Class10403] of  String
+([comida_ProjectKB_Class10180] of  String
 
 	(name "ColorVino")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10404] of  String
+([comida_ProjectKB_Class10181] of  String
 
 	(name "Epoca")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10405] of  String
+([comida_ProjectKB_Class10182] of  String
 
 	(name "Generico")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10406] of  String
+([comida_ProjectKB_Class10183] of  String
 
 	(name "GeneroPlato")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10407] of  String
+([comida_ProjectKB_Class10184] of  String
 
 	(name "Region")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10408] of  String
+([comida_ProjectKB_Class10185] of  String
 
 	(name "Vino")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10409] of  String
+([comida_ProjectKB_Class10186] of  String
 
 	(name "Ingrediente")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class10410] of  Map_Entry
+([comida_ProjectKB_Class10187] of  Map_Entry
 
 	(key "add_name_on_instance_form")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([comida_ProjectKB_Class10411] of  Map_Entry
+([comida_ProjectKB_Class10188] of  Map_Entry
 
 	(key "change_tracking_active")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([comida_ProjectKB_Class10412] of  Map_Entry
+([comida_ProjectKB_Class10189] of  Map_Entry
 
 	(key "suppress_instance_counting")
 	(key_class "java.lang.String")
@@ -505,6 +505,9 @@
 	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
+([KB_248094_Class3] of  Map
+)
+
 ([KB_577580_Class0] of  String
 
 	(name "factory_class_name")
@@ -513,9 +516,9 @@
 ([KB_577580_Class1] of  Map
 
 	(entries
-		[comida_ProjectKB_Class10410]
-		[comida_ProjectKB_Class10411]
-		[comida_ProjectKB_Class10412]))
+		[comida_ProjectKB_Class10187]
+		[comida_ProjectKB_Class10188]
+		[comida_ProjectKB_Class10189]))
 
 ([KB_577580_Class100] of  String
 
@@ -609,9 +612,6 @@
 	(name "classes_file_name")
 	(string_value "comida.pont"))
 
-([KB_744194_Class3] of  Map
-)
-
 ([LAYOUT_PROPERTIES] of  Property_List
 
 	(name "layout properties")
@@ -695,11 +695,11 @@
 
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
+		[INSTANCE_ANNOTATION_FORM_WIDGET]
+		[STANDARD_SLOT_FORM_WIDGET]
 		[STANDARD_FACET_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
-		[STANDARD_CLASS_FORM_WIDGET]
-		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[STANDARD_SLOT_FORM_WIDGET])
+		[STANDARD_CLASS_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
