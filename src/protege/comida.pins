@@ -1,4 +1,4 @@
-; Sat Dec 07 21:32:57 CET 2013
+; Sat Dec 07 22:46:37 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,13 +20,7 @@
 		[comida_Class80046]
 		[comida_Class80091]
 		[comida_Class46]
-		[comida_Class80100]
-		[comida_Class80107]
-		[comida_Class80106]
-		[comida_Class80108]
-		[comida_Class80109]
-		[comida_Class80110]
-		[comida_Class80105])
+		[comida_Class80100])
 	(problematico_para [comida_Class20014]))
 
 ([comida_Class10000] of  Ingrediente
@@ -94,11 +88,11 @@
 		[comida_Class80023]
 		[comida_Class50002]
 		[comida_Class100010]
-		[comida_Class100011]
 		[comida_Class100012]
 		[comida_Class80083]
 		[comida_Class100013]
-		[comida_Class100014])
+		[comida_Class100014]
+		[comida_Class80047])
 	(nombre "Paella de verduras")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -112,11 +106,6 @@
 	(platos
 		[comida_Class100009]
 		[comida_Class49]))
-
-([comida_Class100011] of  Ingrediente
-
-	(nombre "Espinaca")
-	(platos [comida_Class100009]))
 
 ([comida_Class100012] of  Ingrediente
 
@@ -728,8 +717,8 @@
 	(ingredientes
 		[comida_Class20007]
 		[comida_Class20013]
-		[comida_Class0]
-		[comida_Class20007])
+		[comida_Class20007]
+		[comida_Class0])
 	(nombre "Macarrones a la boloñesa")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -755,8 +744,8 @@
 	(dificultad 10)
 	(genero [comida_Class70006])
 	(ingredientes
-		[comida_Class0]
-		[comida_Class60001])
+		[comida_Class60001]
+		[comida_Class0])
 	(nombre "Sopa de galets")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -960,7 +949,13 @@
 		[comida_Class80147]
 		[comida_Class90010]
 		[comida_Class100006]
-		[comida_Class100017])
+		[comida_Class100017]
+		[comida_Class80105]
+		[comida_Class80110]
+		[comida_Class80109]
+		[comida_Class80108]
+		[comida_Class80106]
+		[comida_Class80107])
 	(problematico_para [comida_Class20014]))
 
 ([comida_Class60009] of  Ingrediente
@@ -992,12 +987,12 @@
 		[comida_Class60010]
 		[comida_Class80017]
 		[comida_Class80081]
-		[comida_Class80107]
-		[comida_Class80106]
-		[comida_Class80108]
-		[comida_Class80109]
+		[comida_Class80105]
 		[comida_Class80110]
-		[comida_Class80105]))
+		[comida_Class80109]
+		[comida_Class80108]
+		[comida_Class80106]
+		[comida_Class80107]))
 
 ([comida_Class60012] of  Ingrediente
 
@@ -1426,13 +1421,13 @@
 		[comida_Class80072]
 		[comida_Class80073]
 		[comida_Class80077]
-		[comida_Class80107]
-		[comida_Class80106]
-		[comida_Class80108]
-		[comida_Class80110]
-		[comida_Class80105]
 		[comida_Class80143]
-		[comida_Class80033])
+		[comida_Class80033]
+		[comida_Class80105]
+		[comida_Class80110]
+		[comida_Class80108]
+		[comida_Class80106]
+		[comida_Class80107])
 	(problematico_para
 		[comida_Class60007]
 		[comida_Class20001]))
@@ -1681,11 +1676,11 @@
 		[comida_Class80080]
 		[comida_Class80091]
 		[comida_Class80100]
-		[comida_Class80105]
 		[comida_Class80158]
 		[comida_Class80149]
 		[comida_Class80153]
-		[comida_Class49]))
+		[comida_Class49]
+		[comida_Class80105]))
 
 ([comida_Class80031] of  Ingrediente
 
@@ -1821,9 +1816,9 @@
 	(dificultad 60)
 	(genero [comida_Class70005])
 	(ingredientes
-		[comida_Class0]
 		[comida_Class80045]
-		[comida_Class80037])
+		[comida_Class80037]
+		[comida_Class0])
 	(nombre "Canelones de pavo")
 	(para_sibaritas FALSE)
 	(pesadez LIGERO)
@@ -1843,9 +1838,9 @@
 	(dificultad 75)
 	(genero [comida_Class70005])
 	(ingredientes
-		[comida_Class0]
+		[comida_Class80037]
 		[comida_Class80047]
-		[comida_Class80037])
+		[comida_Class0])
 	(nombre "Lasaña de espinacas")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -1860,7 +1855,8 @@
 	(platos
 		[comida_Class80080]
 		[comida_Class80046]
-		[comida_Class80087]))
+		[comida_Class80087]
+		[comida_Class100009]))
 
 ([comida_Class80048] of  Generico
 
@@ -1896,8 +1892,8 @@
 	(dificultad 60)
 	(genero [comida_Class70005])
 	(ingredientes
-		[comida_Class0]
-		[comida_Class80051])
+		[comida_Class80051]
+		[comida_Class0])
 	(nombre "Tagliatelle con tofu")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -1929,8 +1925,8 @@
 	(genero [comida_Class70006])
 	(ingredientes
 		[comida_Class20011]
-		[comida_Class0]
-		[comida_Class60018])
+		[comida_Class60018]
+		[comida_Class0])
 	(nombre "Sopa de pescado")
 	(para_sibaritas FALSE)
 	(pesadez LIGERO)
@@ -2108,9 +2104,9 @@
 	(dificultad 60)
 	(genero [comida_Class70005])
 	(ingredientes
-		[comida_Class0]
 		[comida_Class80030]
-		[comida_Class80060])
+		[comida_Class80060]
+		[comida_Class0])
 	(nombre "Couscous con verduras")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -2124,8 +2120,8 @@
 	(dificultad 50)
 	(genero [comida_Class70005])
 	(ingredientes
-		[comida_Class0]
-		[comida_Class80009])
+		[comida_Class80009]
+		[comida_Class0])
 	(nombre "Spaghetti al pesto")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -2139,9 +2135,9 @@
 	(dificultad 60)
 	(genero [comida_Class70005])
 	(ingredientes
-		[comida_Class0]
 		[comida_Class80039]
-		[comida_Class80009])
+		[comida_Class80009]
+		[comida_Class0])
 	(nombre "Ravioli con setas")
 	(para_sibaritas FALSE)
 	(pesadez LIGERO)
@@ -2155,9 +2151,9 @@
 	(dificultad 60)
 	(genero [comida_Class70005])
 	(ingredientes
-		[comida_Class0]
 		[comida_Class80037]
-		[comida_Class80076])
+		[comida_Class80076]
+		[comida_Class0])
 	(nombre "Canelones de atún con bechamel")
 	(para_sibaritas FALSE)
 	(pesadez LIGERO)
@@ -2196,10 +2192,10 @@
 	(dificultad 75)
 	(genero [comida_Class70005])
 	(ingredientes
-		[comida_Class0]
-		[comida_Class80047]
 		[comida_Class80030]
-		[comida_Class80037])
+		[comida_Class80037]
+		[comida_Class80047]
+		[comida_Class0])
 	(nombre "Lasaña vegetal")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -2270,10 +2266,10 @@
 	(dificultad 50)
 	(genero [comida_Class70013])
 	(ingredientes
-		[comida_Class80047]
 		[comida_Class80010]
 		[comida_Class80088]
-		[comida_Class80090])
+		[comida_Class80090]
+		[comida_Class80047])
 	(nombre "Espinacas a la catalana")
 	(para_sibaritas FALSE)
 	(pesadez LIGERO)
@@ -2299,11 +2295,11 @@
 	(dificultad 80)
 	(genero [comida_Class70018])
 	(ingredientes
-		[comida_Class0]
 		[comida_Class80030]
 		[comida_Class80018]
 		[comida_Class60022]
-		[comida_Class80092])
+		[comida_Class80092]
+		[comida_Class0])
 	(nombre "Delicias Thai")
 	(para_sibaritas TRUE)
 	(pesadez LIGERO)
@@ -2407,10 +2403,10 @@
 	(dificultad 50)
 	(genero [comida_Class70007])
 	(ingredientes
-		[comida_Class0]
 		[comida_Class20007]
 		[comida_Class60018]
-		[comida_Class80030])
+		[comida_Class80030]
+		[comida_Class0])
 	(nombre "Burrito mexicano de carne")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -2464,10 +2460,10 @@
 	(dificultad 50)
 	(genero [comida_Class70010])
 	(ingredientes
-		[comida_Class0]
 		[comida_Class80009]
 		[comida_Class60011]
-		[comida_Class80030])
+		[comida_Class80030]
+		[comida_Class60008])
 	(nombre "Pizza vegetal")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -2481,10 +2477,10 @@
 	(dificultad 50)
 	(genero [comida_Class70010])
 	(ingredientes
-		[comida_Class0]
 		[comida_Class80009]
 		[comida_Class60011]
-		[comida_Class80111])
+		[comida_Class80111]
+		[comida_Class60008])
 	(nombre "Pizza champiñones")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -2498,9 +2494,9 @@
 	(dificultad 50)
 	(genero [comida_Class70010])
 	(ingredientes
-		[comida_Class0]
 		[comida_Class80009]
-		[comida_Class60011])
+		[comida_Class60011]
+		[comida_Class60008])
 	(nombre "Pizza boloñesa")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -2514,11 +2510,11 @@
 	(dificultad 50)
 	(genero [comida_Class70010])
 	(ingredientes
-		[comida_Class0]
 		[comida_Class80009]
 		[comida_Class60011]
 		[comida_Class60012]
-		[comida_Class80111])
+		[comida_Class80111]
+		[comida_Class60008])
 	(nombre "Pizza jamón y queso")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -2532,12 +2528,12 @@
 	(dificultad 50)
 	(genero [comida_Class70010])
 	(ingredientes
-		[comida_Class0]
 		[comida_Class60011]
 		[comida_Class60014]
 		[comida_Class80018]
 		[comida_Class80021]
-		[comida_Class60028])
+		[comida_Class60028]
+		[comida_Class60008])
 	(nombre "Pizza cuatro quesos")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -2551,10 +2547,10 @@
 	(dificultad 50)
 	(genero [comida_Class70010])
 	(ingredientes
-		[comida_Class0]
 		[comida_Class80009]
 		[comida_Class60011]
-		[comida_Class80031])
+		[comida_Class80031]
+		[comida_Class60008])
 	(nombre "Pizza barbacoa")
 	(para_sibaritas FALSE)
 	(pesadez PESADO)
@@ -2567,9 +2563,9 @@
 
 	(nombre "Champiñones")
 	(platos
-		[comida_Class80106]
+		[comida_Class80149]
 		[comida_Class80108]
-		[comida_Class80149]))
+		[comida_Class80106]))
 
 ([comida_Class80112] of  Generico
 
@@ -3365,7 +3361,7 @@
 	(conflictos
 		[comida_Class80196]
 		[comida_Class80198])
-	(nombre "No come insectos"))
+	(nombre "No come insectos ni caracoles"))
 
 ([comida_Class80198] of  Ingrediente
 
