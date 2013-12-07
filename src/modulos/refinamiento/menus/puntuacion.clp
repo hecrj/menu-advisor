@@ -16,27 +16,6 @@
     (assert (Pesos))
 )
 
-(defrule puntuar-menu-platos "Puntúa un menú en función de la puntuación de sus platos"
-    ?menu <- (object (is-a Menu) (primero ?prim) (segundo ?seg) (postre ?pos) (puntuacion ?punt) (justificaciones $?just))
-    (not (platos-puntuados ?menu))
-    =>
-    (bind ?menu-punt
-        (+
-            (+
-                (send ?prim get-puntuacion)
-                (send ?seg get-puntuacion)
-            )
-            (send ?pos get-puntuacion)
-        )
-    )
-    (send ?menu put-puntuacion (+ ?punt ?menu-punt))
-    (if (< ?menu-punt 0)
-        then (bind ?signo "-")
-        else (bind ?signo "+"))
-    (send ?menu put-justificaciones
-        (add$ (str-cat "Los platos del menú suman una puntuación total -> " ?signo ?menu-punt) $?just))
-    (assert (platos-puntuados ?menu))
-)
 
 (defrule puntuar-pesadez "Puntúa un menú demasiado pesado negativamente"
     (Pesos (pesadez ?peso-pesadez))
@@ -48,6 +27,7 @@
     (send ?menu put-puntuacion (- ?punt ?peso-pesadez))
     (send ?menu put-justificaciones
         (add$ (str-cat "El primero y el segundo son platos pesados, los comensales lo pueden encontrar excesivo -> -" ?peso-pesadez) $?just))
+    (printout t "Pesadez: " ?menu crlf)
     (assert (pesadez-puntuada ?menu))
 )
 
@@ -61,6 +41,7 @@
     (send ?menu put-puntuacion (- ?punt ?peso-ligereza))
     (send ?menu put-justificaciones
         (add$ (str-cat "El primero y el segundo son platos ligeros, los comensales pueden no saciarse -> -" ?peso-ligereza) $?just))
+        (printout t "Ligereza: " ?menu crlf)
     (assert (ligereza-puntuada ?menu))
 )
 
@@ -102,5 +83,6 @@
 (defrule ir-a-seleccionar "Empieza a seleccionar menús"
   (declare (salience -10000))
   =>
+  (printout t "A seleccionar" crlf)
   (focus menus-seleccion)
 )
