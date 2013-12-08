@@ -1,5 +1,6 @@
 # (Xe/Lua)LaTeX auxiliary files
 *.aux
+*.bib
 *.bcf
 *.toc
 *.synctex*
