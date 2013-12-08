@@ -12,7 +12,7 @@
   (bind $?abstractos (sort puntuacion-descendente $?abstractos))
   (bind ?i 0)
   (progn$ (?abstracto $?abstractos)
-    (if (> ?i 100) ; Seleccionar los 100 mejores menús abstractos
+    (if (> ?i 200) ; Seleccionar los 200 mejores menús abstractos
       then (send ?abstracto delete))
     (bind ?i (+ ?i 1))
   )
