@@ -46,8 +46,8 @@ su funcionamiento.
 \subsection{Detalle de las clases de la ontología del problema}
 \subsubsection{Clase \texttt{Elaborado}}
 Esta clase está construida para agrupar las características propias de los
-productos que se venden con el menú: el \strong{nombre} y el
-\strong{precio}. La idea es que cualquier cosa que esté en el menú debe ser un
+productos que se venden con el menú: el \slot{nombre} y el
+\slot{precio}. La idea es que cualquier cosa que esté en el menú debe ser un
 producto elaborado.
 
 En determinado momento tuvimos que hacer esta clase concreta para poder hacer
@@ -66,7 +66,7 @@ platos que se consumen habitualmente (de ahí el término genérico).
 
 Además del nombre y el precio derivados de \verb+Elaborado+, la clase
 \verb+Plato+ proporciona nuevos campos:
-\begin{description}
+\begin{slotlist}
 \item[ingredientes] Es un campo múltiple de instancias de la clase
   \verb+Ingrediente+. Es necesario que haya como mínimo un ingrediente.
 \item[genero] Es un campo simple que apunta a una instancia de
@@ -77,4 +77,47 @@ Además del nombre y el precio derivados de \verb+Elaborado+, la clase
   queremos que se recomienden a alguien que no lo es, pues es habitual que no
   lo quieran. Por otro lado, se les da prioridad si el cliente sí lo es.
 \item[temperatura] Indica si el plato es frío o caliente.
-\end{description}
+\item[pesadez] Indica si un plato es ligero o pesado. En general, no es bueno
+  que un cliente coma dos platos ligeros o dos platos pesados.
+\item[tipico\_de] Es un campo múltiple que contiene las instancias de
+  \verb+Region+ de donde es típico el plato, si es el caso.
+\item[recomendable\_para] Un campo múltiple que contiene, si es el caso, en qué
+  eventos pueden preferir el plato, para que se priorice.
+\item[exclusivo\_de] A diferencia del anterior, si está definido indica en qué
+  eventos puede ofrecerse el plato de forma exclusiva (por ejemplo, un pastel
+  de boda solamente puede ofrecerse en una boda). También lo prioriza.
+\item[dificultad] Indica, mediante un valor de 0 a 100, la dificultad de
+  elaboración del plato (un valor mayor indica una dificultad mayor). Cuantos
+  más comensales hay en la celebración, más importante es que el plato sea más
+  sencillo de elaborar.
+\end{slotlist}
+
+Las subclases de \verb+Plato+ no contienen ningún slot propio. Simplemente es
+para poder separar correctamente y poder hacer uso del \emph{pattern matching}
+en CLIPS.
+
+\subsubsection{Clase \texttt{GeneroPlato}}
+Mediante esta clase se modelan los distintos géneros de plato en función de
+cómo son. Es decir, sopas, platos de pescado, estofados, etc. Se utiliza para
+poder agrupar platos similares que precisan vinos de colores similares. Por
+tanto, además del \slot{nombre} del género, el único campo que tienen es
+\slot{predilecto}, que apunta al color de vino más acorde con los platos de ese
+género.
+
+No tienen el campo inverso hacia \verb+Plato+ con los platos del género porque
+no lo usamos durante el problema.
+
+\subsubsection{Clase \texttt{Vino}}
+Esta clase representa a los vinos. Además de los campos de \verb+Elaborado+,
+contiene un campo \slot{color} que apunta a la instancia de \verb+ColorVino+
+con el color del vino.
+
+\subsubsection{Clase \texttt{ColorVino}}
+Como ya hemos comentado con anterioridad, esta clase representa los colores que
+puede tomar un vino. Los campos que tiene, además del \slot{nombre} del color, son dos:
+\begin{slotlist}
+\item[es\_predilecto\_de] Es el campo múltiple que contiene la lista de géneros
+  de plato que prefieren ese color de vino. Por tanto, es el inverso del campo
+  \verb+ColorVino+:\slot{predilecto}.
+\item[vinos] Este campo múltiple guarda la lista de vinos del color. Es el campo inverso a \verb+Vino+:\slot{color}.
+\end{slotlist}

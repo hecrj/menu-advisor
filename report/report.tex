@@ -35,6 +35,14 @@ Universitat Politècnica de Catalunya}
 \newcommand{\bigO}[1]{\ensuremath{\operatorname{O}\left(#1\right)}}% big-O notation/symbol
 \newcommand{\bigOmega}[1]{\ensuremath{\operatorname{\Omega}\left(#1\right)}}% big-O notation/symbol
 \newcommand{\bigTheta}[1]{\ensuremath{\operatorname{\Theta}\left(#1\right)}}% big-O notation/symbol
+\newcommand{\slot}[1]{\texttt{\emph{#1}}}
+
+\newenvironment{slotlist}{%
+   \renewcommand\descriptionlabel[1]{\hspace{\labelsep}\slot{##1}}
+   \begin{description}%
+}{%
+   \end{description}%
+}
 
 \bibliography{references}
 \begin{document}
