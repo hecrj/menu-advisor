@@ -1,4 +1,4 @@
-; Sun Dec 08 12:56:04 CET 2013
+; Sun Dec 08 16:52:39 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -103,6 +103,7 @@
 ;+		(inverse-slot platos_exclusivos)
 		(create-accessor read-write))
 	(multislot solo-disponible-en
+;+		(comment "Si el campo está vacío, la disponibilidad es de todo el año.")
 		(type INSTANCE)
 ;+		(allowed-classes Epoca)
 ;+		(inverse-slot dispone-de)
@@ -158,7 +159,7 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Elaborado
+(defclass Elaborado "Representa un producto consumible elaborado.\nConcreto porque plato lo es y CLIPS así lo precisa.\nContiene el nombre y el precio."
 	(is-a USER)
 	(role concrete)
 	(single-slot precio
@@ -172,7 +173,7 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Plato
+(defclass Plato "Representa un plato. Concreto porque CLIPS lo precisa para poder usar las instancias de las subclases como instancias de Plato."
 	(is-a Elaborado)
 	(role concrete)
 	(single-slot pesadez
@@ -225,19 +226,19 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Moderno
+(defclass Moderno "Representa un plato de cocina moderna."
 	(is-a Plato)
 	(role concrete))
 
-(defclass Tradicional
+(defclass Tradicional "Representa un plato de cocina tradicional."
 	(is-a Plato)
 	(role concrete))
 
-(defclass Generico
+(defclass Generico "Representa un plato que no es ni de cocina moderna ni de cocina tradicional; un plato habitual."
 	(is-a Plato)
 	(role concrete))
 
-(defclass Vino
+(defclass Vino "Representa un vino."
 	(is-a Elaborado)
 	(role concrete)
 	(single-slot color
@@ -246,7 +247,7 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass TipoComensal
+(defclass TipoComensal "Representa un tipo de comensal y sus conflictos con determinados ingredientes."
 	(is-a USER)
 	(role concrete)
 	(multislot conflictos
@@ -259,7 +260,7 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Ingrediente
+(defclass Ingrediente "Representa los ingredientes generales de los platos y su disponibilidad durante el año."
 	(is-a USER)
 	(role concrete)
 	(multislot platos
@@ -271,6 +272,7 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(multislot solo-disponible-en
+;+		(comment "Si el campo está vacío, la disponibilidad es de todo el año.")
 		(type INSTANCE)
 ;+		(allowed-classes Epoca)
 		(create-accessor read-write))
@@ -279,7 +281,7 @@
 ;+		(allowed-classes TipoComensal)
 		(create-accessor read-write)))
 
-(defclass Epoca
+(defclass Epoca "Representa una de las cuatro estaciones del año."
 	(is-a USER)
 	(role concrete)
 	(single-slot nombre
@@ -291,7 +293,7 @@
 ;+		(allowed-classes Ingrediente)
 		(create-accessor read-write)))
 
-(defclass Region
+(defclass Region "Representa una región geográfica de la Tierra, con sus platos típicos."
 	(is-a USER)
 	(role concrete)
 	(single-slot nombre
@@ -303,7 +305,7 @@
 ;+		(allowed-classes Plato)
 		(create-accessor read-write)))
 
-(defclass Evento
+(defclass Evento "Representa un evento que puede precisar un menú para sus invitados."
 	(is-a USER)
 	(role concrete)
 	(single-slot nombre
@@ -324,7 +326,7 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass GeneroPlato
+(defclass GeneroPlato "Representa los distintos géneros de platos."
 	(is-a USER)
 	(role concrete)
 	(single-slot predilecto
@@ -337,7 +339,7 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass ColorVino
+(defclass ColorVino "Representa el color de un vino"
 	(is-a USER)
 	(role concrete)
 	(multislot vinos

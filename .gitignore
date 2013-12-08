@@ -9,5 +9,5 @@
 *.lot
 *.out
 *.run.xml
-*.pdf
-*.bib
+report.pdf
+# *.bib # necessary if we want to add a bibliography.
