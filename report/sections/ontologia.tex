@@ -44,7 +44,7 @@ solamente contienen las clases menú y menú abstracto. Más adelante detallarem
 su funcionamiento.
 
 \subsection{Detalle de las clases de la ontología del problema}
-\subsubsection{Clase \texttt{Elaborado}}
+\subsubsection{Clase \clase{Elaborado}}
 Esta clase está construida para agrupar las características propias de los
 productos que se venden con el menú: el \slot{nombre} y el
 \slot{precio}. La idea es que cualquier cosa que esté en el menú debe ser un
@@ -53,24 +53,24 @@ producto elaborado.
 En determinado momento tuvimos que hacer esta clase concreta para poder hacer
 \emph{pattern matching} con CLIPS. Por suerte, los cambios que fuimos haciendo
 en la implementación del problema provocaron que esta clase pudiera volver a
-ser abstracta. Mientras la clase fue concreta, la clase \verb+Plato+ también
+ser abstracta. Mientras la clase fue concreta, la clase \clase{Plato} también
 tuvo que serlo porque CLIPS no permite subclases abstractas de clases
 concretas.
 
-\subsubsection{Clase \texttt{Plato} y sus subclases}
-La clase es abstracta y está dividida en las subclases \verb+Generico+,
-\verb+Moderno+ y \verb+Tradicional+. Hemos decidido hacer esta clasificación
+\subsubsection{Clase \clase{Plato} y sus subclases}
+La clase es abstracta y está dividida en las subclases \clase{Generico},
+\clase{Moderno} y \clase{Tradicional}. Hemos decidido hacer esta clasificación
 porque no es habitual que un plato sea moderno y tradicional a la vez, y
 también existen platos que no se considerarían tradicionales pero que son
 platos que se consumen habitualmente (de ahí el término genérico).
 
-Además del nombre y el precio derivados de \verb+Elaborado+, la clase
-\verb+Plato+ proporciona nuevos campos:
+Además del nombre y el precio derivados de \clase{Elaborado}, la clase
+\clase{Plato} proporciona nuevos campos:
 \begin{slotlist}
 \item[ingredientes] Es un campo múltiple de instancias de la clase
-  \verb+Ingrediente+. Es necesario que haya como mínimo un ingrediente.
+  \clase{Ingrediente}. Es necesario que haya como mínimo un ingrediente.
 \item[genero] Es un campo simple que apunta a una instancia de
-  \verb+GeneroPlato+. Sirve para clasificar los platos en sus géneros.
+  \clase{GeneroPlato}. Sirve para clasificar los platos en sus géneros.
 \item[tipo] Un campo múltiple que indica si el plato es \emph{primero},
   \emph{segundo} o \emph{postre}. Es necesario que sea algún tipo de plato.
 \item[para\_sibaritas] Un campo cierto/falso. Los platos para sibaritas no
@@ -80,7 +80,7 @@ Además del nombre y el precio derivados de \verb+Elaborado+, la clase
 \item[pesadez] Indica si un plato es ligero o pesado. En general, no es bueno
   que un cliente coma dos platos ligeros o dos platos pesados.
 \item[tipico\_de] Es un campo múltiple que contiene las instancias de
-  \verb+Region+ de donde es típico el plato, si es el caso.
+  \clase{Region} de donde es típico el plato, si es el caso.
 \item[recomendable\_para] Un campo múltiple que contiene, si es el caso, en qué
   eventos pueden preferir el plato, para que se priorice.
 \item[exclusivo\_de] A diferencia del anterior, si está definido indica en qué
@@ -92,11 +92,11 @@ Además del nombre y el precio derivados de \verb+Elaborado+, la clase
   sencillo de elaborar.
 \end{slotlist}
 
-Las subclases de \verb+Plato+ no contienen ningún slot propio. Simplemente es
+Las subclases de \clase{Plato} no contienen ningún slot propio. Simplemente es
 para poder separar correctamente y poder hacer uso del \emph{pattern matching}
 en CLIPS.
 
-\subsubsection{Clase \texttt{GeneroPlato}}
+\subsubsection{Clase \clase{GeneroPlato}}
 Mediante esta clase se modelan los distintos géneros de plato en función de
 cómo son. Es decir, sopas, platos de pescado, estofados, etc. Se utiliza para
 poder agrupar platos similares que precisan vinos de colores similares. Por
@@ -104,20 +104,48 @@ tanto, además del \slot{nombre} del género, el único campo que tienen es
 \slot{predilecto}, que apunta al color de vino más acorde con los platos de ese
 género.
 
-No tienen el campo inverso hacia \verb+Plato+ con los platos del género porque
+No tienen el campo inverso hacia \clase{Plato} con los platos del género porque
 no lo usamos durante el problema.
 
-\subsubsection{Clase \texttt{Vino}}
-Esta clase representa a los vinos. Además de los campos de \verb+Elaborado+,
-contiene un campo \slot{color} que apunta a la instancia de \verb+ColorVino+
+\subsubsection{Clase \clase{Vino}}
+Esta clase representa a los vinos. Además de los campos de \clase{Elaborado},
+contiene un campo \slot{color} que apunta a la instancia de \clase{ColorVino}
 con el color del vino.
 
-\subsubsection{Clase \texttt{ColorVino}}
+\subsubsection{Clase \clase{ColorVino}}
 Como ya hemos comentado con anterioridad, esta clase representa los colores que
-puede tomar un vino. Los campos que tiene, además del \slot{nombre} del color, son dos:
+puede tomar un vino. Los campos que tiene, además del \slot{nombre} del color,
+son dos:
 \begin{slotlist}
 \item[es\_predilecto\_de] Es el campo múltiple que contiene la lista de géneros
   de plato que prefieren ese color de vino. Por tanto, es el inverso del campo
-  \verb+Vino+:\slot{predilecto}.
-\item[vinos] Este campo múltiple guarda la lista de vinos del color. Es el campo inverso a \verb+Vino+:\slot{color}.
+  \clase{Vino}:\slot{predilecto}.
+\item[vinos] Este campo múltiple guarda la lista de vinos del color. Es el
+  campo inverso de \clase{Vino}+:\slot{color}.
 \end{slotlist}
+
+\subsubsection{Clase \clase{Ingrediente}}
+Como todas las clases que hay en la ontología, esta clase tiene el campo
+\slot{nombre} para identificar a sus instancias. En este caso, además, están
+los campos siguientes:
+\begin{slotlist}
+\item[platos] Este campo múltiple contiene los platos que utilizan el
+  ingrediente en su elaboración. Es el campo inverso de
+  \clase{Plato}:\slot{ingredientes}.
+\item[problematico\_para] Es un campo múltiple con las instancias de
+  \clase{Tipo} Comensal+ que no pueden consumir el ingrediente. Muy importante
+  para modelar las alergias y restricciones culturales de la comida.
+\item[solo-disponible-en] Cuando está definido, este campo múltiple contiene
+  las instancias de \clase{Epoca} en las que el ingrediente está disponible para
+  elaborar platos. Si no tiene ninguna indicación es que el ingrediente se
+  puede usar todo el año.
+\end{slotlist}
+
+\subsubsection{Clase \clase{Region}}
+En este caso, la clase la utilizamos para tener constancia de las zonas
+geográficas. Con ello, podemos saber el origen de un plato. Además del
+\slot{nombre}, el campo que contiene es \slot{platos\_tipicos}, con todos los
+platos típicos de la región y que es el inverso de
+\clase{Plato}:\slot{tipico\_de}.
+
+
