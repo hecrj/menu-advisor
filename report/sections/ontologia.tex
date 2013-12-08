@@ -44,14 +44,37 @@ solamente contienen las clases menú y menú abstracto. Más adelante detallarem
 su funcionamiento.
 
 \subsection{Detalle de las clases de la ontología del problema}
-\subsubsection{Clase elaborado}
+\subsubsection{Clase \texttt{Elaborado}}
 Esta clase está construida para agrupar las características propias de los
-productos que se venden con el menú: el nombre y el precio. La idea es que
-cualquier cosa que esté en el menú debe ser un producto elaborado.
+productos que se venden con el menú: el \strong{nombre} y el
+\strong{precio}. La idea es que cualquier cosa que esté en el menú debe ser un
+producto elaborado.
 
-Es importante notar que la clase es concreta. Esto es así porque el lenguaje
-CLIPS así lo precisa para poder hacer \emph{pattern matching}.
+En determinado momento tuvimos que hacer esta clase concreta para poder hacer
+\emph{pattern matching} con CLIPS. Por suerte, los cambios que fuimos haciendo
+en la implementación del problema provocaron que esta clase pudiera volver a
+ser abstracta. Mientras la clase fue concreta, la clase \verb+Plato+ también
+tuvo que serlo porque CLIPS no permite subclases abstractas de clases
+concretas.
 
-\subsubsection{Clase plato y sus subclases}
-Esta clase, que originalmente era abstracta, es concreta porque elaborado lo
-es.
+\subsubsection{Clase \texttt{Plato} y sus subclases}
+La clase es abstracta y está dividida en las subclases \verb+Generico+,
+\verb+Moderno+ y \verb+Tradicional+. Hemos decidido hacer esta clasificación
+porque no es habitual que un plato sea moderno y tradicional a la vez, y
+también existen platos que no se considerarían tradicionales pero que son
+platos que se consumen habitualmente (de ahí el término genérico).
+
+Además del nombre y el precio derivados de \verb+Elaborado+, la clase
+\verb+Plato+ proporciona nuevos campos:
+\begin{description}
+\item[ingredientes] Es un campo múltiple de instancias de la clase
+  \verb+Ingrediente+. Es necesario que haya como mínimo un ingrediente.
+\item[genero] Es un campo simple que apunta a una instancia de
+  \verb+GeneroPlato+. Sirve para clasificar los platos en sus géneros.
+\item[tipo] Un campo múltiple que indica si el plato es \emph{primero},
+  \emph{segundo} o \emph{postre}. Es necesario que sea algún tipo de plato.
+\item[para\_sibaritas] Un campo cierto/falso. Los platos para sibaritas no
+  queremos que se recomienden a alguien que no lo es, pues es habitual que no
+  lo quieran. Por otro lado, se les da prioridad si el cliente sí lo es.
+\item[temperatura] Indica si el plato es frío o caliente.
+\end{description}
