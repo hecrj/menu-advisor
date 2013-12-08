@@ -3,8 +3,7 @@
 % 
 
 \section{Conceptualización del problema}
-\subsection{Conceptos principales del dominio}
-
+\subsubsection{Conceptos principales del dominio}
 Después de haber hecho un trabajo iterativo, los conceptos que se modelan en el
 dominio de conocimiento son
 \begin{enumerate}
@@ -42,3 +41,38 @@ Por otro lado, en el dominio de solución disponemos de
   \item Los menús finales con los platos y vinos concretos, además de las
     razones y valoración de su recomendación.
 \end{enumerate}
+
+\subsubsection{Problemas y subproblemas}
+Como se ha comentado, el problema principal que queremos resolver es el de
+proponer y presentar hasta tres menús a un cliente que quiere celebrar un
+evento en base a sus restricciones. Para ello hemos dividido el problema en los
+subproblemas más pequeños que se detallan a continuación, y que se resuelven en
+orden.
+
+\begin{description}
+  \item[Abstracción] Se trata de conseguir las preferencias y características
+    del evento al usuario.
+  \item[Subproblema de selección de platos] Este subproblema se puede dividir
+    en tres partes:
+    \begin{enumerate}
+      \item Filtrar y eliminar los platos que no coinciden con lo solicitado
+        por el cliente        
+      \item Valorar y puntuar la calidad de los platos en base a las
+        preferencias del cliente
+      \item Hacer una selección de los primeros, segundos y postres que son
+        candidatos a combinarse para crear menús.
+    \end{enumerate}
+  \item[Subproblema de selección de menús (abstractos)] Aquí se trata de, a
+    partir de las posibles combinaciones de platos, encontrar los mejores menús
+    junto con el tipo de vino, si es el caso, que queda mejor. Los pasos son
+    similares a los usados para el subproblema de selección de platos, con la
+    diferencia de que en el paso de puntuación se valoran las combinaciones de
+    platos y, dado el caso, tipos de vinos.
+  \item[Subproblema de selección de vinos] Una vez se tienen los mejores menús,
+    con el tipo de vino, es importante seleccionar un buen vino acorde con los
+    tipos y con los platos. Los tres pasos principales son los mismos otra
+    vez. Se filtran y eliminan los vinos no acordes con los menús, se puntúa lo
+    bien que funciona el vino con el menú (en particular, que el precio sea
+    correcto). Finalmente se seleccionan los hasta tres mejores menús que
+    entren dentro del rango de precios precisado.
+\end{description}
