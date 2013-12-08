@@ -1,4 +1,4 @@
-; Sun Dec 08 00:20:01 CET 2013
+; Sun Dec 08 12:56:04 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -285,9 +285,9 @@
 		[comida_Class80086]
 		[comida_Class80159]
 		[comida_Class80196]
-		[comida_Class80198]
 		[comida_Class60012]
-		[comida_Class90014])
+		[comida_Class90014]
+		[comida_Class80198])
 	(nombre "Vegetariano (vegano)"))
 
 ([comida_Class20007] of  Ingrediente
@@ -1035,7 +1035,7 @@
 	(nombre "Cóctel de gambas y piña")
 	(para_sibaritas FALSE)
 	(pesadez LIGERO)
-	(precio 10.0)
+	(precio 12.25)
 	(temperatura FRIO)
 	(tipo PRIMERO))
 
@@ -1364,7 +1364,7 @@
 	(nombre "Crêpes de brandada de bacalao y espárragos trigueros")
 	(para_sibaritas TRUE)
 	(pesadez LIGERO)
-	(precio 10.0)
+	(precio 13.11)
 	(temperatura CALIENTE)
 	(tipo PRIMERO))
 
@@ -1916,7 +1916,7 @@
 	(precio 7.99)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class60029])
-	(tipo PRIMERO))
+	(tipo PRIMERO SEGUNDO))
 
 ([comida_Class80051] of  Ingrediente
 
@@ -2429,7 +2429,7 @@
 	(precio 4.49)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class80098])
-	(tipo PRIMERO))
+	(tipo PRIMERO SEGUNDO))
 
 ([comida_Class80101] of  Generico
 
@@ -2719,6 +2719,7 @@
 
 ([comida_Class80123] of  Moderno
 
+	(dificultad 5)
 	(ingredientes
 		[comida_Class20009]
 		[comida_Class20018]
@@ -2726,7 +2727,7 @@
 	(nombre "Copa helada de nata")
 	(para_sibaritas FALSE)
 	(pesadez LIGERO)
-	(precio 0.0)
+	(precio 3.99)
 	(temperatura FRIO)
 	(tipo POSTRE))
 
@@ -3374,10 +3375,8 @@
 
 ([comida_Class80197] of  TipoComensal
 
-	(conflictos
-		[comida_Class80196]
-		[comida_Class80198])
-	(nombre "No come insectos ni caracoles"))
+	(conflictos [comida_Class80196])
+	(nombre "No come insectos"))
 
 ([comida_Class80198] of  Ingrediente
 
@@ -3385,9 +3384,7 @@
 	(platos
 		[comida_Class80199]
 		[comida_Class90006])
-	(problematico_para
-		[comida_Class80197]
-		[comida_Class20001])
+	(problematico_para [comida_Class20001])
 	(solo-disponible-en
 		[comida_Class30004]
 		[comida_Class30005]
@@ -3469,7 +3466,7 @@
 	(nombre "Vieiras gratinadas")
 	(para_sibaritas TRUE)
 	(pesadez PESADO)
-	(precio 10.0)
+	(precio 15.37)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class40007])
 	(tipo SEGUNDO))
