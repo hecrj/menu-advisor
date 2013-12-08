@@ -1,0 +1,44 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX root = ../report.tex
+% 
+
+\section{Conceptualización del problema}
+\subsection{Conceptos principales del dominio}
+
+Después de haber hecho un trabajo iterativo, los conceptos que se modelan en el
+dominio de conocimiento son
+\begin{enumerate}
+  \item Cosas elaboradas, como platos y vino (tienen su nombre y precio).
+  \item Dentro de los platos, si son pesados o ligeros y su dificultad de
+    preparación.
+  \item Los ingredientes que forman parte de los platos y su disponibilidad
+    durante las cuatro estaciones del año.
+  \item Grandes grupos de comensales, que modelan el tipo de ingredientes que
+    no pueden comer.
+  \item Los tipos de platos, que contienen información sobre los vinos que
+    pueden ir mejor con ellos.
+  \item Los eventos a celebrar, que tienen los platos que son propios (o
+    recomendables) y la importancia de éstos últimos a la hora de elaborar el
+    los menús para el cliente.
+  \item Las regiones de procedencia de los platos.
+  \item El estilo de los platos. Están los genéricos, que no llegarían a ser
+    tradicionales porque son simples platos, los tradicionales (podrían
+    considerarse, en parte, folclóricos), y platos modernos. Además, también se
+    hace distinción de los platos para sibaritas, que son para los paladares
+    más finos, pero que pueden pertenecer a cualquiera de las categorías
+    anteriores.
+\end{enumerate}
+
+Como hemos indicado anteriormente, los comensales que no beben vino acostumbran
+a preferir una bebida concreta de forma individualizada. Por esta razón, hemos
+pensado que no es algo a modelar en nuestro dominio de conocimiento.
+
+Por otro lado, en el dominio de solución disponemos de
+\begin{enumerate}
+  \item Recomendaciones concretas de platos, con los motivos para su
+    recomendación y una valoración.
+  \item Posibles menús abstractos, que contienen el orden de platos y los
+    colores de los vinos más aptos para éstos.
+  \item Los menús finales con los platos y vinos concretos, además de las
+    razones y valoración de su recomendación.
+\end{enumerate}

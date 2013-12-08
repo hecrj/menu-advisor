@@ -24,9 +24,35 @@ El sistema se encarga de hacer preguntas al cliente para recomendar hasta tres
 menús con distintos precios, siempre dentro de los límites exigidos por el
 cliente. Entre otras cosas, se precisa saber el tipo de evento, el número de
 comensales, los posibles trastornos o preferencias alimenticias (alergias,
-razones culturales, etc.), preferencias de origen cultural de los platos...
+razones culturales, ingredientes que no se quieren, etc.), preferencias de
+origen geográfico de los platos...
 
 También debe ser capaz de recomendar vinos si el cliente así lo desea, y hacer
-un menú lo suficientemente acorde con los éstos. Inicialmente se tenía previsto
-que las bebidas también dependieran de los platos y el cliente, pero fuera del
+un menú lo suficientemente acorde con éstos. Inicialmente se tenía previsto que
+las bebidas también dependieran de los platos y el cliente, pero fuera del
 terreno del vino los comensales prefieren escoger individualmente la bebida.
+
+La base del conocimiento incluye todos los platos que \emph{Rico Rico} sabe
+cocinar, con sus principales ingredientes y disponibilidad por temporadas, su
+precio, tipo de plato, dificultad de preparación, información sobre alergias y
+problemas alimentarios de razón cultural...
+
+Las distintas botellas de vino también están en el sistema, con su precio,
+aunque en el menú a cada comensal se le cobra solamente una parte proporcional
+del coste.
+
+La intención es dar hasta tres menús, con tres costes distintos, que entren
+dentro de los límites establecidos por el cliente.
+
+\subsection{Análisis del problema}
+Este es un problema que si se quiere modelar correctamente precisa de un
+conocimiento muy detallado de la cocina. En este caso nos ha faltado el experto
+humano que nos asesorara a la hora de valorar qué es mejor y peor.
+
+Aplicar un sistema basado en el conocimiento para resolver el problema parece
+una de las mejores maneras. Usualmente, si en una empresa de catering quieren
+tener en cuenta todas las restricciones que impone el cliente sin que se
+calidad en la propuesta de menús es necesario que quien asesora al cliente
+tenga mucha memoria y pueda recordar bien buenas combinaciones de platos. Con
+un sistema como este se puede intentar concretar las reglas que dicen cuándo un
+menú es bueno para podérselo proponer al cliente. O incluso cuándo es el mejor.
