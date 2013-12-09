@@ -2,4 +2,46 @@
 % !TEX root = ../../report.tex
 % 
 
+\subsection{Módulo de menús}
+Una vez se han seleccionado los hasta 30 primeros platos, 30 segundos y 15
+postres, llega el momento de empezar a combinarlos para crear los menús.
+
+El módulo de menús está dividido en tres fases (tres módulos de \texttt{CLIPS})
+y se encarga de generar, puntuar y seleccionar los menús abstractos que pasarán
+al módulo de vinos. A continuación podremos ver los detalles de su
+funcionamiento.
+
+\subsubsection{Fase de filtración}
+Antes que nada, una vez se tienen las instancias de \clase{Recomendacion} para
+primeros, segundos y postres, se realizan todas las combinaciones posibles
+junto con instancias de \clase{ColorVino}, si el cliente así lo ha
+solicitado. Todas estas combinaciones se guardan como instancias de
+\clase{MenuAbstracto}.
+
+Hay una serie de menús que querríamos evitar, porque no interesa que estén en
+el sistema. Si entre los platos de \strong{primero}, \strong{segundo} o
+\strong{postre} que hay en la combinación que se está estudiando hay alguno
+repetido, se desecha la combinación. Así que en la única regla importante la
+fase, \regla{generar-menus}, se tiene en cuenta y ya directamente no se crean
+dichas instancias de \clase{MenuAbstracto}.
+
+Por otro lado, hay que tener en cuenta si el cliente ha pedido recomendaciones
+de vino y, además, cuántas (una para el menú o una por plato). Por cada vino
+solicitado, y por cada combinación de colores preferidos por el cliente, se
+crea un menú abstracto.
+
+Con esto, llegamos a la conclusión de que, en función de la cantidad de vinos
+solicitados y los colores favoritos, podemos generar la siguiente cantidad de
+menús abstractos (considerando $c$ la cantidad de colores de vino que acepta el cliente, siendo el mínimo 1 y el máximo 3):
+\begin{itemize}
+\item Si no se ha pedido vino, un total de como máximo $30 \times 30 \times 15
+  = 13500$ menús abstractos;
+\item si se ha pedido un vino, $13500 \times c$ menús abstractos;
+\item y si se ha solicitado un vino por plato, $13500 \times c^2$.
+\end{itemize}
+
+Por tanto, como máximo habrá $13500 \times 9 = 121500$ menús abstractos al
+acabar la fase. En la práctica habrá menos, ya que muchos platos pueden ser
+primeros y segundos a la vez.
+
 
