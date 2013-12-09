@@ -2,4 +2,86 @@
 % !TEX root = ../../report.tex
 % 
 
+\subsection{Módulo de menús}
+Una vez se han seleccionado los hasta 30 primeros platos, 30 segundos y 15
+postres, llega el momento de empezar a combinarlos para crear los menús.
 
+El módulo de menús está dividido en tres fases (tres módulos de \texttt{CLIPS})
+y se encarga de generar, puntuar y seleccionar los menús abstractos que pasarán
+al módulo de vinos. A continuación podremos ver los detalles de su
+funcionamiento.
+
+Originalmente hacíamos las combinaciones con los vinos directamente, sin usar
+la clase \clase{MenuAbstracto} con \clase{ColorVino}. El problema es que se
+producía una explosión combinatoria muy grande sin necesidad, ya que
+originalmente el sistema no usaba nada más que el color del vino para valorar
+la combinación del vino con los platos.
+
+\subsubsection{Fase de filtración}
+Antes que nada, una vez se tienen las instancias de \clase{Recomendacion} para
+primeros, segundos y postres, se realizan todas las combinaciones posibles
+junto con instancias de \clase{ColorVino}, si el cliente así lo ha
+solicitado. Todas estas combinaciones se guardan como instancias de
+\clase{MenuAbstracto}.
+
+Hay una serie de menús que querríamos evitar, porque no interesa que estén en
+el sistema. Si entre los platos de \strong{primero}, \strong{segundo} o
+\strong{postre} que hay en la combinación que se está estudiando hay alguno
+repetido, se desecha la combinación. Así que en la única regla importante la
+fase, \regla{generar-menus}, se tiene en cuenta y ya directamente no se crean
+dichas instancias de \clase{MenuAbstracto}.
+
+Por otro lado, hay que tener en cuenta si el cliente ha pedido recomendaciones
+de vino y, además, cuántas (una para el menú o una por plato). Por cada vino
+solicitado, y por cada combinación de colores preferidos por el cliente, se
+crea un menú abstracto.
+
+Con esto, llegamos a la conclusión de que, en función de la cantidad de vinos
+solicitados y los colores favoritos, podemos generar la siguiente cantidad de
+menús abstractos (considerando $c$ la cantidad de colores de vino que acepta el cliente, siendo el mínimo 1 y el máximo 3):
+\begin{itemize}
+\item Si no se ha pedido vino, un total de como máximo $30 \times 30 \times 15
+  = 13500$ menús abstractos;
+\item si se ha pedido un vino, $13500 \times c$ menús abstractos;
+\item y si se ha solicitado un vino por plato, $13500 \times c^2$.
+\end{itemize}
+
+Por tanto, como máximo habrá $13500 \times 9 = 121500$ menús abstractos al
+acabar la fase. En la práctica habrá menos, ya que muchos platos de la
+ontología pueden ser tanto primeros como segundos.
+
+\subsubsection{Fase de puntuación}
+Cuando ya se han generado todos los menús posibles, llega el momento de
+puntuarlos para decidir cuáles son mejores. Para ello, creamos un
+\emph{deftemplate} (hecho no ordenado) \clase{Pesos} con la importancia del
+resultado de cada regla.
+
+Lo esencial es crear la puntuación básica del menú, y eso lo hace la regla
+\regla{puntuar-menu-platos} sumando los puntos de las recomendaciones que están
+como primero, segundo y postre de la instancia de \clase{MenuAbstracto} que se
+está tratando.
+
+Luego, cuando ya hay una primera cualificación del menú, \strong{se valora
+  negativamente} que el primer y el segundo plato sean \strong{ambos ligeros} o
+\strong{pesados}. En el primer caso, los comensales pueden no saciarse, y en el
+segundo caso es por razones de salud y ahorro. 
+
+También es necesario \strong{valorar la combinación del vino con los
+  platos}. Si solamente hay una posibilidad de vino, se valora positivamente
+que ambos platos encajen bien con su color. Si el cliente ha solicitado dos, se
+valora que cada color de la combinación que hay en el \clase{MenuAbstracto} en
+cuestión sea correcto para su plato respectivo. Es decir, el primer color con
+el primer plato y el segundo color con el segundo plato.
+
+Durante las pruebas del sistema nos dimos cuenta de que \strong{en ocasiones se
+  ofrecían platos con precios muy dispares}. Si se propone un menú con un plato
+que es considerablemente más caro que el otro (sin tener en cuenta el postre),
+el cliente puede pensar que el menú no se ha elaborado con el suficiente
+cuidado y no verlo correcto. Por ese motivo, cuando la diferencia de precio en
+valor absoluto y con redondeo al entero más próximo por defecto es mayor a 1,
+se resta una cantidad (5 en nuestro caso) por unidad de diferencia.
+
+No pasa nada porque todas las combinaciones reciban alguna puntuación
+negativa. En el caso de la diferencia de precios, solamente se utiliza para
+afinar las recomendaciones de menús. Si una es mucho mejor que el resto, no se
+verá afectada en exceso.
