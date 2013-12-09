@@ -188,7 +188,7 @@
     (printout t "    " (send ?plato get-nombre) crlf)
     (printout t "      Precio: ")
     (print-round-two (send ?plato get-precio))
-    (printout t crlf)
+    (printout t " €" crlf)
     (printout t "      Puntuación: " ?punt crlf)
     (printout t "      Justificaciones:" crlf)
     (progn$ (?j $?just)
