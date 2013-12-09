@@ -1,0 +1,138 @@
+====================================================================
+=            Sistema de recomendacion de menús Rico Rico           =
+====================================================================
+
+¿Quiere un menú de ensueño para su próxima celebración?
+¡Responda las siguientes preguntas y Rico Rico le recomendará el mejor menú!
+
+¿Qué tipo de evento va a realizar?
+  1. Boda
+  2. Comida de empresa
+  3. Comida familiar
+  4. Comunión
+Escoja una opción [1, 4]: 3
+¿Cuántos comensales van a ser? 10
+¿Qué tipo(s) de menú prefiere?
+  1. Generico
+  2. Moderno
+  3. Tradicional
+Indique los números separados por un espacio: 
+¿Es sibarita y prefiere platos para los paladares más exigentes? [si][no]: no
+¿Prefiere comida de alguna zona geográfica concreta? [si][no]: no
+¿Qué tipo(s) de comensales tendrá el menú?
+  1. Alérgico a la leche
+  2. Alérgico a los frutos secos
+  3. Alérgico al huevo
+  4. Alérgico al marisco
+  5. Celíaco
+  6. Diabético
+  7. Hipercolesterolémico
+  8. Hipertenso
+  9. Menor de edad
+  10. Musulmán
+  11. No come insectos
+  12. Vegetariano (vegano)
+Indique los números separados por un espacio: 
+¿Tiene alguna preferencia para la temperatura de la comida? [si][no]: no
+¿En qué época desea consumir el menú?
+  1. Invierno
+  2. Otoño
+  3. Primavera
+  4. Verano
+Escoja una opción [1, 4]: 1
+¿Quiere evitar algún ingrediente en la elaboración de los platos? (la lista de ingredientes disponibles puede ser extensa) [si][no]: no
+¿Quiere indicar limitaciones de precio? [si][no]: no
+¿Qué prefiere para la bebida?
+  1. Otra cosa
+  2. Vino (sólo uno)
+  3. Vino (uno distinto para cada plato)
+Escoja una opción [1, 3]: 1
+> Generando recomendaciones...
+> Analizando recomendaciones...
+> Seleccionando recomendaciones...
+> Generando menús...
+> Ponderando menús...
+> Seleccionando menús...
+> Refinando menús...
+> Catando vinos...
+> Seleccionando vinos...
+> Mostrando resultados...
+------------------------------------------------------------
+Primera propuesta (más cara):
+No disponible, lo sentimos.
+------------------------------------------------------------
+Segunda propuesta (coste medio):
+    Macarrones a la boloñesa (4.00 €)
+    Costillas a la barbacoa (4.99 €)
+    Crêpes de chocolate (6.99 €)
+  Precio total por persona: 15.98 €
+  Puntuación:               110
+------------------------------------------------------------
+Tercera propuesta (más barata):
+    Sopa de fideos (2.99 €)
+    Falafel (3.99 €)
+    Crêpes de chocolate (6.99 €)
+  Precio total por persona: 13.97 €
+  Puntuación:               110
+------------------------------------------------------------
+* La bebida la escogerá cada comensal durante la celebración del evento.
+------------------------------------------------------------
+¿Desea ver las justificaciones de la recomendación? [si][no]: si
+------------------------------------------------------------
+Primera propuesta (más cara):
+No disponible, lo sentimos.
+------------------------------------------------------------
+Segunda propuesta (coste medio):
+  Platos:
+    Macarrones a la boloñesa
+      Precio: 4.00 €
+      Puntuación: 50
+      Justificaciones:
+        Los platos calientes suelen apetecer en invierno -> +30
+        El plato es recomendable para el evento Comida familiar -> +20
+
+    Costillas a la barbacoa
+      Precio: 4.99 €
+      Puntuación: 30
+      Justificaciones:
+        Los platos calientes suelen apetecer en invierno -> +30
+
+    Crêpes de chocolate
+      Precio: 6.99 €
+      Puntuación: 30
+      Justificaciones:
+        Los platos calientes suelen apetecer en invierno -> +30
+
+  Precio total por persona: 15.98 €
+  Puntuación:               110
+  Justificaciones:
+    Los platos del menú suman una puntuación total -> +110
+
+------------------------------------------------------------
+Tercera propuesta (más barata):
+  Platos:
+    Sopa de fideos
+      Precio: 2.99 €
+      Puntuación: 50
+      Justificaciones:
+        Los platos calientes suelen apetecer en invierno -> +30
+        El plato es recomendable para el evento Comida familiar -> +20
+
+    Falafel
+      Precio: 3.99 €
+      Puntuación: 30
+      Justificaciones:
+        Los platos calientes suelen apetecer en invierno -> +30
+
+    Crêpes de chocolate
+      Precio: 6.99 €
+      Puntuación: 30
+      Justificaciones:
+        Los platos calientes suelen apetecer en invierno -> +30
+
+  Precio total por persona: 13.97 €
+  Puntuación:               110
+  Justificaciones:
+    Los platos del menú suman una puntuación total -> +110
+
+------------------------------------------------------------
