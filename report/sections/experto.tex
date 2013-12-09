@@ -4,6 +4,18 @@
 
 \section{Formalización e implementación del sistema experto mediante \texttt{CLIPS}}
 
+En esta sección detallamos el proceso de formalización e implementación del sistema experto utilizando \texttt{CLIPS}.
+
+\texttt{CLIPS} es una herramienta utilizada para el desarrollo y la ejecución de sistemas expertos basados en \strong{reglas}.
+Estas \strong{reglas} se aplican cuando ciertos \strong{hechos} ocurren, generando nuevos \strong{hechos} o modificando algunos ya existentes, que a su vez podrían disparar otras \strong{reglas}. Esto resulta muy útil para desarrollar sistemas expertos,
+pues nos permite expresar con gran facilidad las \strong{reglas de inferencia} desde un \strong{conocimiento} hasta otro.
+Además, \texttt{CLIPS} permite estructurar las distintas reglas en \strong{módulos} y así poder \strong{enfocar} o \strong{activar} un
+conjunto de reglas determinado.
+
+\subsection{La regla \regla{inicial}}
+La regla \regla{inicial} no tiene precondición (se ejecuta siempre al inicio), muestra un mensaje de bienvenida al cliente y activa el
+\strong{módulo de abstracción de datos}.
+
 \input{sections/experto/abstraccion}
 \input{sections/experto/platos}
 \input{sections/experto/menus}
