@@ -28,7 +28,7 @@
     (separador)
     (printout t "Postres:" crlf)
     (imprimir-recomendaciones $?postres)
-    
+
     (retract ?presenta)
 )
 
@@ -36,6 +36,7 @@
     (declare (salience -10000))
     ?imprimir <- (presentar-menus)
     (SeleccionMenus (barato ?barato) (medio ?medio) (caro ?caro))
+    (Preferencias (vino ?vino))
     =>
     (separador)
     (printout t "Primera propuesta (más cara):" crlf)
@@ -48,6 +49,13 @@
     (separador)
     (printout t "Tercera propuesta (más barata):" crlf)
     (imprimir-menu ?barato)
+
+    (separador)
+
+    (if (eq ?vino 0)
+        then (printout t "* La bebida la escogerá cada comensal durante la celebración del evento." crlf)
+        else (printout t "* El precio del vino mostrado es el precio de la botella." crlf)
+    )
 
     (separador)
 

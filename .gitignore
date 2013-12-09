@@ -17,3 +17,5 @@ report.pdf
 # Biber (bibliography) auxiliary files
 *.bbl
 *.blg
+*.bib
+
