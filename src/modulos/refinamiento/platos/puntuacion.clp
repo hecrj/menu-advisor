@@ -10,6 +10,7 @@
     (slot caliente-en-invierno (type INTEGER) (default 30))
     (slot region-preferida (type INTEGER) (default 60))
     (slot plato-sibarita (type INTEGER) (default 60))
+    (slot plato-exclusivo-evento (type INTEGER) (default 500))
 )
 
 (defrule inicializa-Pesos "Define la ponderación de factores"
@@ -109,31 +110,28 @@
 
 (defrule puntuar-eventos-exclusivo "Mejora la puntuación los platos exclusivos del evento"
     (Preferencias (evento ?evento))
+    (Pesos (plato-exclusivo-evento ?importancia))
     ?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $?just))
-    ?ev <- (object (is-a Evento) (nombre ?evento) (importancia_platos ?importancia))
+    ;?ev <- (object (is-a Evento) (nombre ?evento) (importancia_platos_exclusivos ?importancia))
+    (test (member$ ?evento (find-attr-ont nombre (send ?plato get-exclusivo_de))))
     (not (evento-puntuado ?rec))
     =>
-    (bind $?eventos-plato (send ?plato get-exclusivo_de))
-    (progn$ (?evento-plato $?eventos-plato)
-        (if (eq (send (instance-address * ?evento-plato) get-nombre) ?evento)
-            then (send ?rec put-puntuacion (+ ?punt ?importancia))
-            (send ?rec put-justificaciones
-                (add$ (str-cat "El plato es propio del evento " ?evento " -> +" ?importancia) $?just))))
+    (send ?rec put-puntuacion (+ ?punt ?importancia))
+    (send ?rec put-justificaciones
+          (add$ (str-cat "El plato es propio del evento " ?evento " -> +" ?importancia) $?just))
     (assert (evento-puntuado ?rec))
 )
 
 (defrule puntuar-eventos-recomendado "Mejora la puntuación los platos recomendados del evento"
     (Preferencias (evento ?evento))
     ?rec <- (object (is-a Recomendacion) (plato ?plato) (puntuacion ?punt) (justificaciones $?just))
-    ?ev <- (object (is-a Evento) (nombre ?evento) (importancia_platos ?importancia))
+    ?ev <- (object (is-a Evento) (nombre ?evento) (importancia_platos_recomendables ?importancia))
+    (test (member$ ?evento (find-attr-ont nombre (send ?plato get-recomendable_para))))
     (not (evento-puntuado ?rec))
     =>
-    (bind $?eventos-plato (send ?plato get-recomendable_para))
-    (progn$ (?evento-plato $?eventos-plato)
-        (if (eq (send (instance-address * ?evento-plato) get-nombre) ?evento)
-            then (send ?rec put-puntuacion (+ ?punt ?importancia))
-            (send ?rec put-justificaciones
-                (add$ (str-cat "El plato es recomendable para el evento " ?evento " -> +" ?importancia) $?just))))
+    (send ?rec put-puntuacion (+ ?punt ?importancia))
+    (send ?rec put-justificaciones
+          (add$ (str-cat "El plato es recomendable para el evento " ?evento " -> +" ?importancia) $?just))
     (assert (evento-puntuado ?rec))
 )
 

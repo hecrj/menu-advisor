@@ -1,4 +1,4 @@
-; Mon Dec 09 01:05:32 CET 2013
+; Mon Dec 09 14:45:09 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -627,7 +627,7 @@
 
 ([comida_Class40002] of  Evento
 
-	(importancia_platos 500)
+	(importancia_platos_recomendables 15)
 	(nombre "Boda")
 	(platos_exclusivos
 		[comida_Class30001]
@@ -635,7 +635,7 @@
 
 ([comida_Class40003] of  Evento
 
-	(importancia_platos 450)
+	(importancia_platos_recomendables 15)
 	(nombre "Comunión")
 	(platos_exclusivos
 		[comida_Class90010]
@@ -643,7 +643,7 @@
 
 ([comida_Class40004] of  Evento
 
-	(importancia_platos 20)
+	(importancia_platos_recomendables 20)
 	(nombre "Comida familiar")
 	(platos_recomendables
 		[comida_Class46]
@@ -887,7 +887,7 @@
 
 ([comida_Class50005] of  Evento
 
-	(importancia_platos 25)
+	(importancia_platos_recomendables 25)
 	(nombre "Comida de empresa")
 	(platos_recomendables [comida_Class50000]))
 
