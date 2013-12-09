@@ -1,3 +1,50 @@
 % !TEX encoding = UTF-8 Unicode
 % !TEX root = ../../report.tex
 % 
+
+\subsection{Módulo de platos}
+Una vez se han obtenido las preferencias del cliente y el contexto del evento que se quiere realizar, se activa el
+\strong{módulo de platos}.
+El objetivo del \strong{módulo de platos} es seleccionar los mejores platos disponibles para celebrar el evento que el cliente ha 
+descrito en el módulo de abstracción teniendo en cuenta todas sus preferencias. Este módulo está dividido en tres fases o submódulos: \strong{filtración}, \strong{puntuación} y \strong{selección}.
+
+\subsubsection{Fase de filtración}
+En esta primera fase se crea una \texttt{Recomendacion} por cada plato presente en la ontología. Una \texttt{Recomendacion} no es más
+que un contenedor del plato en sí, más una puntuación y sus justificaciones.
+A continuación, se descartan todas aquellas recomendaciones cuyos platos son incompatibles con los datos obtenidos del cliente. Más
+exactamente, se eliminan las recomendaciones cuyos platos:
+
+\begin{enumerate}
+\item Contienen ingredientes prohibidos (ver apartado \ref{abstraccion-datos}).
+\item Son exclusivos de un tipo de evento diferente al que se va a celebrar.
+\item Son demasiado caros para las limitaciones de precio establecidas.
+\item Son para los paladares más exigentes y el cliente no es sibarita.
+\end{enumerate}
+
+\subsubsection{Fase de puntuación}
+Esta fase consiste en puntuar todas las recomendaciones en función de las preferencias del cliente. Cuando una recomendación
+es puntuada, al mismo tiempo se le añade una justificación. De esta manera es posible ofrecer al cliente una explicación detallada
+de las recomendaciones que ha recibido.
+
+Sea $p$ un plato de una recomendación, se puntúa (por orden de prioridad):
+
+\begin{description}
+\item[Exclusivo del evento] Positivamente si $p$ es exclusivo del tipo de evento a celebrar.
+\item[Recomendado para el evento] Positivamente si $p$ es recomendado para el tipo de evento a celebrar.
+\item[Tipo de cocina] Positivamente si $p$ es de un tipo de cocina preferido por el cliente y negativamente si no lo es.
+\item[Zonas geográficas] Positivamente si $p$ es típico de alguna de las zonas geográficas preferidas por el cliente.
+\item[Sibarita] Positivamente si $p$ es para paladares exigentes y el cliente es sibarita.
+\item[Temperatura] Si el cliente tiene preferencia de temperatura, positivamente si $p$ se sirve a la temperatura preferida por el cliente
+y negativamente en caso contrario.
+\item[Dificultad] Negativamente si $p$ supera la dificultad máxima establecida para el número de comensales del evento.
+\item[Plato caliente en verano] Negativamente si $p$ se sirve caliente y el evento se celebrará en la estación de verano.
+\item[Plato caliente en invierno] Positivamente si $p$ se sirve caliente y el evento se celebrará en la estación de invierno.
+\end{description}
+
+Cada aspecto del plato puntuado tiene un peso asignado que permite modificar la prioridad de unas características frente 
+otras\footnote{De hecho, los pesos se encuentran centralizados en un \texttt{template} \texttt{Pesos} dentro del propio módulo de
+puntuación.}. Hemos decidido darle prioridad a los platos \strong{exclusivos del evento} para asegurarnos que platos como, por ejemplo,
+un pastel de boda siempre estén presentes en los menús recomendados para dichos eventos. Luego, hemos considerado más importante
+que un plato sea del tipo de cocina preferido por el cliente antes que de una zona geográfica preferida o que se sirva a la
+temperatura preferida\footnote{Una posible mejora del sistema sería preguntarle al cliente la prioridad que quiere dar a cada una de
+sus preferencias y así obtener menús todavía más personalizados.}...
