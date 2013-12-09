@@ -44,8 +44,15 @@ y negativamente en caso contrario.
 
 Cada aspecto del plato puntuado tiene un peso asignado que permite modificar la prioridad de unas características frente 
 otras\footnote{De hecho, los pesos se encuentran centralizados en un \texttt{template} \texttt{Pesos} dentro del propio módulo de
-puntuación.}. Hemos decidido darle prioridad a los platos \strong{exclusivos del evento} para asegurarnos que platos como, por ejemplo,
-un pastel de boda siempre estén presentes en los menús recomendados para dichos eventos. Luego, hemos considerado más importante
-que un plato sea del tipo de cocina preferido por el cliente antes que de una zona geográfica preferida o que se sirva a la
+puntuación.}. Hemos decidido darle prioridad a los platos \strong{exclusivos del evento} para asegurarnos de que platos como, por 
+ejemplo, un pastel de boda siempre estén presentes en los menús recomendados para dichos eventos. Luego, hemos considerado más
+importante que un plato sea del tipo de cocina preferido por el cliente antes que de una zona geográfica preferida o que se sirva a la
 temperatura preferida\footnote{Una posible mejora del sistema sería preguntarle al cliente la prioridad que quiere dar a cada una de
-sus preferencias y así obtener menús todavía más personalizados.}...
+sus preferencias y así obtener menús todavía más personalizados.}.
+
+\subsection{Fase de selección}
+Una vez los platos ya han sido puntuados se pasa a la \strong{fase de selección}. En esta fase se seleccionan los
+\strong{30 mejores primeros}, los \strong{30 mejores segundos} y los \strong{15 mejores postres}. Si no hiciéramos esto el
+sistema no sería escalable, ya que el número de menús tiene crecimiento cúbico respecto al número de primeros, segundos y postres.
+La cantidad de platos de cada tipo seleccionados\footnote{Se seleccionan menos postres porque es más normal que haya repetición de platos entre los primeros y los segundos.} permite para poder generar menús con la suficiente diversidad sin que se dispare
+el número de combinaciones aunque se añadan más platos a la ontología.
