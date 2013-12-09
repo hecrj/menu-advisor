@@ -7,7 +7,7 @@
 \begin{figure}[h!]
   \makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{%
       figures/ontologia}}
-  \caption{La ontología final}
+  \caption{La ontología final del problema}
 \end{figure}
 
 La construcción de la ontología (y de todo el sistema en general) se ha
@@ -158,7 +158,8 @@ de \clase{Ingrediente}:\slot{solo-disponible-en}
 
 \subsubsection{Clase \clase{Evento}}
 La clase \clase{Evento} contiene las instancias que representan los posibles
-eventos para los que el catering puede ofrecer menús especiales. Además del \slot{nombre} que identifica el evento, la clase contiene otros campos:
+eventos para los que el catering puede ofrecer menús especiales. Además del
+\slot{nombre} que identifica el evento, la clase contiene otros campos:
 \begin{slotlist}
 \item[platos\_exclusivos] Este campo múltiple, inverso de
   \clase{Plato}:\slot{exclusivo\_de} contiene los platos que son exclusivos
@@ -180,3 +181,51 @@ tengan determinados ingredientes. Para estos casos está la clase
 \slot{conflictos} con toda la lista de ingredientes que no son compatibles con
 el tipo de comensal. Este campo es el inverso de
 \clase{Ingrediente}:\slot{problematico\_para}.
+
+\subsection{Detalle de las clases de la ontología de la solución}
+\begin{figure}[h]
+  \makebox[\textwidth][c]{\includegraphics[width=0.7\textwidth]{%
+      figures/ontologia-solucion}}
+  \caption{La ontología de la solución}\label{ont:solucion}
+\end{figure}
+
+Estas clases no las hemos construido con Protégé, sino que las hemos definido a
+mano en el sistema mediante la construcción \verb+defclass+ porque todas sus
+instancias las genera el sistema. Igualmente, en la figura \ref{ont:solucion}
+puede verse el esquema que sigue la ontología.
+
+\subsubsection{Clase \clase{Recomendacion}}
+Esta clase representa la recomendación de un plato, elaborada con los datos de
+entrada del usuario y el conocimiento propio del sistema. Los campos que
+contiene son:
+\begin{slotlist}
+\item[plato] La instancia de \clase{Plato} (de la ontología del problema) sobre
+  la que trata la recomendación.
+\item[justificaciones] Contiene la lista de justificaciones (con sus
+  puntuciones individuales) para la puntuación que recibe el plato.
+\item[puntuacion] Es el valor numérico (entero) con la valoración de la
+  recomendación.
+\end{slotlist}
+
+\subsubsection{Clases \clase{MenuAbstracto} y \clase{Menu}}
+Son dos clases muy similares que se corresponden con las soluciones al
+problema. Los campos que tienen en común son:
+\begin{slotlist}
+\item[primero] La instancia de \clase{Recomendacion} que representa al primer
+  plato.
+\item[segundo] La instancia de \clase{Recomendacion} que representa al segundo
+  plato.
+\item[postre] La instancia de \clase{Recomendacion} que representa al postre.
+\item[justificaciones] Las justificaciones para la puntuación del menú. Una de
+  ellas indica, simplemente, los puntos que suman sus platos.
+\item[puntuacion] El valor numérico con la valoración del menú.
+\end{slotlist}
+
+Además, \clase{MenuAbstracto} contiene un campo múltiple de cadenas
+(\emph{strings}) llamado \slot{colores-vino} con los colores de vino que se
+admiten. Si tiene más de un valor (como máximo dos), el primero es para el
+primer plato y el segundo para el segundo.
+
+En el caso de \clase{Menu}, contiene el campo múltiple \slot{vinos} con las
+instancias de \clase{Vino} que se sirven con el menú. Si hay dos valores, el
+primero es para el primer plato y el segundo para el segundo.
