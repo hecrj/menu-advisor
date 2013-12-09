@@ -192,12 +192,8 @@ SlantedFont=lmmonoslant10-regular.otf]{lmmono10-regular.otf}
 \definecolor{orange}{rgb}{1,0.5,0}
 
 \lstset{ %
-language=Java,                % choose the language of the code
 basicstyle=\ttfamily\small,
 numbers=none,                   % where to put the line-numbers
-numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
-stepnumber=1,                   % the step between two line-numbers. If it's 1 each line will be numbered
-numbersep=5pt,                  % how far the line-numbers are from the code
 backgroundcolor=\color{FonsCodi},  % choose the background color. You must add \usepackage{color}
 rulesepcolor=\color{FonsCodi},
 lineskip=-2.5pt,
@@ -206,15 +202,12 @@ showstringspaces=false,         % underline spaces within strings
 showtabs=false,                 % show tabs within strings adding particular underscores
 frame=single,                    % adds a frame around the code
 tabsize=8,	                % sets default tabsize to 2 spaces
-commentstyle=\itshape\color{Comentaris},
 captionpos=t,                   % sets the caption-position to top
 breaklines=true,                % sets automatic line breaking
-breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+breakatwhitespace=true,        % sets if automatic breaks should only happen at whitespace
 escapeinside={\%*}{*)},          % if you want to add a comment within your code
-keywordstyle=\bfseries\color{blue},
-commentstyle=\itshape\color{darkgreen},
-stringstyle=\color{orange},
+columns=flexible
 }
 
-\renewcommand{\lstlistlistingname}{Índice de códigos fuente}
-\renewcommand{\lstlistingname}{Código fuente}
+\renewcommand{\lstlistlistingname}{Lista de ejecuciones}
+\renewcommand{\lstlistingname}{Ejecución}

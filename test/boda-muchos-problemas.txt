@@ -1,0 +1,192 @@
+====================================================================
+=            Sistema de recomendacion de menús Rico Rico           =
+====================================================================
+
+¿Quiere un menú de ensueño para su próxima celebración?
+¡Responda las siguientes preguntas y Rico Rico le recomendará el mejor menú!
+
+¿Qué tipo de evento va a realizar?
+  1. Boda
+  2. Comida de empresa
+  3. Comida familiar
+  4. Comunión
+Escoja una opción [1, 4]: 1
+¿Cuántos comensales van a ser? 60
+¿Qué tipo(s) de menú prefiere?
+  1. Generico
+  2. Moderno
+  3. Tradicional
+Indique los números separados por un espacio: 2
+¿Es sibarita y prefiere platos para los paladares más exigentes? [si][no]: si
+¿Prefiere comida de alguna zona geográfica concreta? [si][no]: si
+¿De qué zonas geográficas prefiere que sea la comida?
+  1. Andalucía
+  2. Argentina
+  3. Asturias
+  4. Bélgica
+  5. Cataluña
+  6. China
+  7. Colombia
+  8. España
+  9. Estados Unidos
+  10. Euskadi
+  11. Francia
+  12. Galicia
+  13. India
+  14. Italia
+  15. Japón
+  16. Murcia
+  17. México
+  18. Oriente
+  19. Suiza
+  20. Tailandia
+  21. Valencia
+Indique los números separados por un espacio: 6 15 18 20
+¿Qué tipo(s) de comensales tendrá el menú?
+  1. Alérgico a la leche
+  2. Alérgico a los frutos secos
+  3. Alérgico al huevo
+  4. Alérgico al marisco
+  5. Celíaco
+  6. Diabético
+  7. Hipercolesterolémico
+  8. Hipertenso
+  9. Menor de edad
+  10. Musulmán
+  11. No come insectos
+  12. Vegetariano (vegano)
+Indique los números separados por un espacio: 5 3
+¿Tiene alguna preferencia para la temperatura de la comida? [si][no]: si
+¿Prefiere comida caliente o fría?
+  1. CALIENTE
+  2. FRIO
+Escoja una opción [1, 2]: 1
+¿En qué época desea consumir el menú?
+  1. Invierno
+  2. Otoño
+  3. Primavera
+  4. Verano
+Escoja una opción [1, 4]: 2
+¿Quiere evitar algún ingrediente en la elaboración de los platos? (la lista de ingredientes disponibles puede ser extensa) [si][no]: no
+¿Quiere indicar limitaciones de precio? [si][no]: si
+¿Cuál es el precio máximo? 90
+¿Cuál es el precio mínimo? 30
+¿Qué prefiere para la bebida?
+  1. Otra cosa
+  2. Vino (sólo uno)
+  3. Vino (uno distinto para cada plato)
+Escoja una opción [1, 3]: 3
+¿Qué tipo de vino prefiere?
+  1. Blanco
+  2. Rosado
+  3. Tinto
+Indique los números separados por un espacio: 
+> Generando recomendaciones...
+> Analizando recomendaciones...
+> Seleccionando recomendaciones...
+> Generando menús...
+> Ponderando menús...
+> Seleccionando menús...
+> Refinando menús...
+> Catando vinos...
+> Seleccionando vinos...
+> Mostrando resultados...
+------------------------------------------------------------
+Primera propuesta (más cara):
+No disponible, lo sentimos.
+------------------------------------------------------------
+Segunda propuesta (coste medio):
+    Camarones al ajillo con salsa de yogur de búfala (14.99 €) con vino blanco Grand Regnard Chablis 2008 (31.89 €)
+    Solomillo con champiñones y coñac (13.99 €) con vino tinto Abadia Retuerta Selección Especial Magnum 2008 (36.66 €)
+    Pastel de boda especial para alergias (4.00 €)
+  Precio total por persona: 50.12 €
+  Puntuación:               825
+------------------------------------------------------------
+Tercera propuesta (más barata):
+    Camarones al ajillo con salsa de yogur de búfala (14.99 €) con vino blanco Guitian Godello Sobre Lías 2011 (12.09 €)
+    Solomillo con champiñones y coñac (13.99 €) con vino tinto Angeles de Amaren 2007 (14.79 €)
+    Pastel de boda especial para alergias (4.00 €)
+  Precio total por persona: 39.70 €
+  Puntuación:               825
+------------------------------------------------------------
+* El precio del vino mostrado es el precio de la botella.
+------------------------------------------------------------
+¿Desea ver las justificaciones de la recomendación? [si][no]: si
+------------------------------------------------------------
+Primera propuesta (más cara):
+No disponible, lo sentimos.
+------------------------------------------------------------
+Segunda propuesta (coste medio):
+  Platos:
+    Camarones al ajillo con salsa de yogur de búfala
+      Precio: 14.99 €
+      Puntuación: 155
+      Justificaciones:
+        El plato es de tipo moderno, preferido por el cliente -> +70
+        El plato se sirve caliente, preferido por el cliente -> +35
+        El plato supera en 10 la dificultad máxima de 40 para un evento de 60 comensales -> -10
+        El plato es exclusivo, preferido por los clientes más sibaritas -> +60
+
+    Solomillo con champiñones y coñac
+      Precio: 13.99 €
+      Puntuación: 165
+      Justificaciones:
+        El plato es de tipo moderno, preferido por el cliente -> +70
+        El plato se sirve caliente, preferido por el cliente -> +35
+        El plato es exclusivo, preferido por los clientes más sibaritas -> +60
+
+    Pastel de boda especial para alergias
+      Precio: 4.00 €
+      Puntuación: 405
+      Justificaciones:
+        El plato se sirve frio, no preferido por el cliente -> -35
+        El plato es propio del evento Boda -> +500
+        El plato supera en 60 la dificultad máxima de 40 para un evento de 60 comensales -> -60
+
+  Vino para el primero:     blanco Grand Regnard Chablis 2008 (31.89 €)
+  Vino para el segundo:     tinto Abadia Retuerta Selección Especial Magnum 2008 (36.66 €)
+  Precio total por persona: 50.12 €
+  Puntuación:               825
+  Justificaciones:
+    El primer plato es de un género que encaja bien con el color del vino -> +50
+    El segundo plato es de un género que encaja bien con el color del vino -> +50
+    Los platos del menú suman una puntuación total -> +725
+
+------------------------------------------------------------
+Tercera propuesta (más barata):
+  Platos:
+    Camarones al ajillo con salsa de yogur de búfala
+      Precio: 14.99 €
+      Puntuación: 155
+      Justificaciones:
+        El plato es de tipo moderno, preferido por el cliente -> +70
+        El plato se sirve caliente, preferido por el cliente -> +35
+        El plato supera en 10 la dificultad máxima de 40 para un evento de 60 comensales -> -10
+        El plato es exclusivo, preferido por los clientes más sibaritas -> +60
+
+    Solomillo con champiñones y coñac
+      Precio: 13.99 €
+      Puntuación: 165
+      Justificaciones:
+        El plato es de tipo moderno, preferido por el cliente -> +70
+        El plato se sirve caliente, preferido por el cliente -> +35
+        El plato es exclusivo, preferido por los clientes más sibaritas -> +60
+
+    Pastel de boda especial para alergias
+      Precio: 4.00 €
+      Puntuación: 405
+      Justificaciones:
+        El plato se sirve frio, no preferido por el cliente -> -35
+        El plato es propio del evento Boda -> +500
+        El plato supera en 60 la dificultad máxima de 40 para un evento de 60 comensales -> -60
+
+  Vino para el primero:     blanco Guitian Godello Sobre Lías 2011 (12.09 €)
+  Vino para el segundo:     tinto Angeles de Amaren 2007 (14.79 €)
+  Precio total por persona: 39.70 €
+  Puntuación:               825
+  Justificaciones:
+    El primer plato es de un género que encaja bien con el color del vino -> +50
+    El segundo plato es de un género que encaja bien con el color del vino -> +50
+    Los platos del menú suman una puntuación total -> +725
+
+------------------------------------------------------------
