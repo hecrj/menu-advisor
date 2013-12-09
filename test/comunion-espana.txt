@@ -55,7 +55,7 @@ Indique los números separados por un espacio: 8
   10. Musulmán
   11. No come insectos
   12. Vegetariano (vegano)
-Indique los números separados por un espacio: 11 
+Indique los números separados por un espacio:
 ¿Tiene alguna preferencia para la temperatura de la comida? [si][no]: no
 ¿En qué época desea consumir el menú?
   1. Invierno

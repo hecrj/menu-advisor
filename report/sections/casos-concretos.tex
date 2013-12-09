@@ -1,5 +1,5 @@
 % !TEX encoding = UTF-8 Unicode
-% !TEX root = ../../report.tex
+% !TEX root = ../report.tex
 % 
 
 \section{Bodas}
@@ -16,3 +16,28 @@ pero elevado: entre 30 y 90 euros.
 
 El resultado de la ejecución es
 \lstinputlisting{../test/boda-muchos-problemas.txt}
+
+\section{Comidas familiares}
+\subsection{Caso general}
+En este caso se representa una comida familiar con 10 comensales realizada en invierno y sin vinos. No se especifica ninguna otra
+preferencia por parte del cliente.
+
+El resultado es el siguiente:
+\lstinputlisting{../test/comida-familiar-general.txt}
+
+La propuesta más cara no está disponible, ya que el cliente ha decidido que no se le recomienden platos exclusivos, que son los más
+caros. En las otras propuestas se observa una valoración positiva a los platos calientes, ya que el evento se produce en invierno,
+y a los platos recomendados para comidas familiares.
+
+\section{Comuniones}
+\subsection{Comunión tradicional española}
+En este caso se representa una comunión de 40 comensales, a la que se le quieren dar prioridad los platos tradicionales y genéricos
+típicos de España. La comunión se realizará en invierno y los menús recomendados deben tener un precio entre 10 y 40 euros.
+
+El resultado es el siguiente:
+\lstinputlisting{../test/comunion-espana.txt}
+
+En este caso se ofrecen tres menús, dentro de las limitaciones de precio. Se observa que el pastel de comunión está presente en
+todos los menús propuestos debido a que es un \strong{plato exclusivo para comuniones}. Además, también se observa la presencia de
+\strong{platos españoles genéricos y tradicionales} en \strong{todos} los menús. Por último, y como en anteriores casos, los platos
+recomendados suelen ser \strong{calientes} ya que apetecen más en invierno.
