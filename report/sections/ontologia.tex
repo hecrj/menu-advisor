@@ -148,4 +148,35 @@ geográficas. Con ello, podemos saber el origen de un plato. Además del
 platos típicos de la región y que es el inverso de
 \clase{Plato}:\slot{tipico\_de}.
 
+\subsubsection{Clase \clase{Epoca}}
+Los ingredientes, como ya hemos visto, no están disponibles durante todo el año
+necesariamente. Esta clase tiene como instancias las cuatro estaciones del año,
+cada una con su \slot{nombre} y el campo múltiple \slot{dispone-de} con la
+lista de ingredientes disponibles durante la época (en el caso de los
+ingredientes anuales, no aparecen). Este segundo campo es, entonces, el inverso
+de \clase{Ingrediente}:\slot{solo-disponible-en}
 
+\subsubsection{Clase \clase{Evento}}
+La clase \clase{Evento} contiene las instancias que representan los posibles
+eventos para los que el catering puede ofrecer menús especiales. Además del \slot{nombre} que identifica el evento, la clase contiene otros campos:
+\begin{slotlist}
+\item[platos\_exclusivos] Este campo múltiple, inverso de
+  \clase{Plato}:\slot{exclusivo\_de} contiene los platos que son exclusivos
+  para las celebraciones del evento en cuestión.
+\item[platos\_recomendables] De forma similar al anterior, es el inverso de
+  \clase{Plato}:\slot{recomendable\_para} y contiene los platos que son
+  recomendables para las celebraciones del evento.
+\item[importancia\_platos\_recomendables] Este es un campo numérico que indica
+  cuán importante es que se incluya un plato recomendable dentro de las
+  propuestas de menú. En el caso de los exclusivos no se usa esta ponderación
+  porque se supone que en esos casos es casi necesario que estén.
+\end{slotlist}
+
+\subsubsection{Clase \clase{TipoComensal}}
+Hay una serie de comensales, especialmente los alérgicos (celíacos, alergias a
+huevo, leche), vegetarianos, y demás que precisan unos platos especiales que no
+tengan determinados ingredientes. Para estos casos está la clase
+\clase{TipoComensal}, que además del \slot{nombre} del tipo contiene el campo
+\slot{conflictos} con toda la lista de ingredientes que no son compatibles con
+el tipo de comensal. Este campo es el inverso de
+\clase{Ingrediente}:\slot{problematico\_para}.
