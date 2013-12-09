@@ -16,3 +16,28 @@ pero elevado: entre 30 y 90 euros.
 
 El resultado de la ejecución es
 \lstinputlisting{../test/boda-muchos-problemas.txt}
+
+Puede observarse que no nos ha dado una solución con precio más elevado. La
+razón más probable es que en la ontología faltan platos caros. Por otro lado,
+no ha propuesto ningún plato de las regiones que hemos solicitado, pero sí que
+son modernos y calientes.
+
+La razón más probable para la falta de platos regionales es que en muchas
+ocasiones, los platos orientales contienen algún tipo de harina de trigo que no
+es apta para celíacos. También está la restricción de la alergia al huevo, que
+no es pequeña.
+
+\subsection{Una boda de gente sencilla y vegetariana}
+En esta boda, habrá pocos comensales (unos 20, familiares y amigos). Se celebra
+en verano, y se prefieren platos vegetarianos, pero sin tofu. Además, no se
+quiere nada de vino y que el coste no suba demasiado (como máximo 30 euros por
+persona). Los platos pueden ser de cualquier tipo, ya que a menudo les cuesta
+encontrar comida vegetariana ``estándar'', pero nada de platos para sibaritas.
+
+Se puede ver el resultado a continuación:
+\lstinputlisting{../test/boda-pocos-vegetarianos-sin-tofu.txt}
+
+En realidad se han indicado pocas preferencias, por eso el resultado es tan
+``malo'' (con pocas justificaciones). Por otro lado, el hecho de pedir comida
+vegetariana sin tofu puede haber provocado un gran descenso en la cantidad de
+platos disponibles.
