@@ -1,4 +1,4 @@
-; Mon Dec 09 14:45:09 CET 2013
+; Mon Dec 09 15:08:23 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,20 +20,20 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[comida_ProjectKB_Class20038]
-		[comida_ProjectKB_Class20039]
-		[comida_ProjectKB_Class20040]
-		[comida_ProjectKB_Class20041]
-		[comida_ProjectKB_Class20042]
-		[comida_ProjectKB_Class20043]
-		[comida_ProjectKB_Class20044]
-		[comida_ProjectKB_Class20045]
-		[comida_ProjectKB_Class20046]
-		[comida_ProjectKB_Class20047]
-		[comida_ProjectKB_Class20048]
-		[comida_ProjectKB_Class20049]
-		[comida_ProjectKB_Class20050]
-		[comida_ProjectKB_Class20051]))
+		[comida_ProjectKB_Class20072]
+		[comida_ProjectKB_Class20073]
+		[comida_ProjectKB_Class20074]
+		[comida_ProjectKB_Class20075]
+		[comida_ProjectKB_Class20076]
+		[comida_ProjectKB_Class20077]
+		[comida_ProjectKB_Class20078]
+		[comida_ProjectKB_Class20079]
+		[comida_ProjectKB_Class20080]
+		[comida_ProjectKB_Class20081]
+		[comida_ProjectKB_Class20082]
+		[comida_ProjectKB_Class20083]
+		[comida_ProjectKB_Class20084]
+		[comida_ProjectKB_Class20085]))
 
 ([CLSES_TAB] of  Widget
 
@@ -131,91 +131,91 @@
 ([comida_ProjectKB_Class20010] of  Property_List
 )
 
-([comida_ProjectKB_Class20038] of  String
+([comida_ProjectKB_Class20072] of  String
 
 	(name "Tradicional")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class20039] of  String
+([comida_ProjectKB_Class20073] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([comida_ProjectKB_Class20040] of  String
+([comida_ProjectKB_Class20074] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([comida_ProjectKB_Class20041] of  String
+([comida_ProjectKB_Class20075] of  String
 
 	(name "Evento")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class20042] of  String
+([comida_ProjectKB_Class20076] of  String
 
 	(name "TipoComensal")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class20043] of  String
+([comida_ProjectKB_Class20077] of  String
 
 	(name "Moderno")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class20044] of  String
+([comida_ProjectKB_Class20078] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([comida_ProjectKB_Class20045] of  String
+([comida_ProjectKB_Class20079] of  String
 
 	(name "ColorVino")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class20046] of  String
+([comida_ProjectKB_Class20080] of  String
 
 	(name "Epoca")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class20047] of  String
+([comida_ProjectKB_Class20081] of  String
 
 	(name "Generico")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class20048] of  String
+([comida_ProjectKB_Class20082] of  String
 
 	(name "GeneroPlato")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class20049] of  String
+([comida_ProjectKB_Class20083] of  String
 
 	(name "Vino")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class20050] of  String
+([comida_ProjectKB_Class20084] of  String
 
 	(name "Region")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class20051] of  String
+([comida_ProjectKB_Class20085] of  String
 
 	(name "Ingrediente")
 	(string_value "nombre"))
 
-([comida_ProjectKB_Class20052] of  Map_Entry
+([comida_ProjectKB_Class20086] of  Map_Entry
 
 	(key "add_name_on_instance_form")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([comida_ProjectKB_Class20053] of  Map_Entry
+([comida_ProjectKB_Class20087] of  Map_Entry
 
 	(key "change_tracking_active")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([comida_ProjectKB_Class20054] of  Map_Entry
+([comida_ProjectKB_Class20088] of  Map_Entry
 
 	(key "suppress_instance_counting")
 	(key_class "java.lang.String")
@@ -543,9 +543,9 @@
 ([KB_577580_Class1] of  Map
 
 	(entries
-		[comida_ProjectKB_Class20052]
-		[comida_ProjectKB_Class20053]
-		[comida_ProjectKB_Class20054]))
+		[comida_ProjectKB_Class20086]
+		[comida_ProjectKB_Class20087]
+		[comida_ProjectKB_Class20088]))
 
 ([KB_577580_Class100] of  String
 

@@ -1,4 +1,4 @@
-; Mon Dec 09 14:45:09 CET 2013
+; Mon Dec 09 15:08:23 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -70,11 +70,6 @@
 		(type INSTANCE)
 ;+		(allowed-classes GeneroPlato)
 ;+		(inverse-slot predilecto)
-		(create-accessor read-write))
-	(single-slot importancia_platos_exclusivos
-		(type INTEGER)
-		(range 0 1000)
-;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot compuesto_por
 		(type INSTANCE)
