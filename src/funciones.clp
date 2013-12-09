@@ -71,7 +71,7 @@
 (deffunction MAIN::pregunta-numerica-positiva (?pregunta)
     (format t "%s " ?pregunta)
     (bind ?respuesta (read))
-    (while (< ?respuesta 1) do
+    (while (< ?respuesta 0) do
         (format t "%s " ?pregunta)
         (bind ?respuesta (read))
     )
