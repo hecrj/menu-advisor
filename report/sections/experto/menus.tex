@@ -52,8 +52,8 @@ ontología pueden ser tanto primeros como segundos.
 
 \subsubsection{Fase de puntuación}
 Cuando ya se han generado todos los menús posibles, llega el momento de
-puntuarlos para decidir cuáles son mejores. Para ello, creamos un
-\emph{deftemplate} (hecho no ordenado) \clase{Pesos} con la importancia del
+puntuarlos para decidir cuáles son mejores. Para ello, definimos un
+\verb+template+ (hecho no ordenado) \clase{Pesos} con la importancia del
 resultado de cada regla.
 
 Lo esencial es crear la puntuación básica del menú, y eso lo hace la regla
@@ -85,3 +85,15 @@ No pasa nada porque todas las combinaciones reciban alguna puntuación
 negativa. En el caso de la diferencia de precios, solamente se utiliza para
 afinar las recomendaciones de menús. Si una es mucho mejor que el resto, no se
 verá afectada en exceso.
+
+\subsubsection{Fase de selección}
+Cuando los menús abstractos están ya todos puntuados, hay que seleccionar las
+combinaciones que pasarán al módulo de vinos. No es útil utilizarlas todas
+porque, para empezar, la cantidad puede ser excesiva al combinarlas con las
+instancias de \clase{Vino} de la ontología y, por otro lado, muchas de las
+combinaciones en los menús abstractos pueden ser realmente malas en comparación
+con las que tienen mayor puntuación.
+
+El sistema escoge los 200 mejores menús abstractos. Es un valor que se puede
+cambiar, pero es un valor que ha dado unos buenos resultados de tiempo de
+generación.
