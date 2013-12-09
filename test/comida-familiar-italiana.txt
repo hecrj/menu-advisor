@@ -1,0 +1,221 @@
+====================================================================
+=            Sistema de recomendacion de menús Rico Rico           =
+====================================================================
+
+¿Quiere un menú de ensueño para su próxima celebración?
+¡Responda las siguientes preguntas y Rico Rico le recomendará el mejor menú!
+
+¿Qué tipo de evento va a realizar?
+  1. Boda
+  2. Comida de empresa
+  3. Comida familiar
+  4. Comunión
+Escoja una opción [1, 4]: 3
+¿Cuántos comensales van a ser? 20
+¿Qué tipo(s) de menú prefiere?
+  1. Generico
+  2. Moderno
+  3. Tradicional
+Indique los números separados por un espacio: 3
+¿Es sibarita y prefiere platos para los paladares más exigentes? [si][no]: no
+¿Prefiere comida de alguna zona geográfica concreta? [si][no]: si
+¿De qué zonas geográficas prefiere que sea la comida?
+  1. Andalucía
+  2. Argentina
+  3. Asturias
+  4. Bélgica
+  5. Cataluña
+  6. China
+  7. Colombia
+  8. España
+  9. Estados Unidos
+  10. Euskadi
+  11. Francia
+  12. Galicia
+  13. India
+  14. Italia
+  15. Japón
+  16. Murcia
+  17. México
+  18. Oriente
+  19. Suiza
+  20. Tailandia
+  21. Valencia
+Indique los números separados por un espacio: 14
+¿Qué tipo(s) de comensales tendrá el menú?
+  1. Alérgico a la leche
+  2. Alérgico a los frutos secos
+  3. Alérgico al huevo
+  4. Alérgico al marisco
+  5. Celíaco
+  6. Diabético
+  7. Hipercolesterolémico
+  8. Hipertenso
+  9. Menor de edad
+  10. Musulmán
+  11. No come insectos
+  12. Vegetariano (vegano)
+Indique los números separados por un espacio: 2
+¿Tiene alguna preferencia para la temperatura de la comida? [si][no]: si
+¿Prefiere comida caliente o fría?
+  1. CALIENTE
+  2. FRIO
+Escoja una opción [1, 2]: 2
+¿En qué época desea consumir el menú?
+  1. Invierno
+  2. Otoño
+  3. Primavera
+  4. Verano
+Escoja una opción [1, 4]: 3
+¿Quiere evitar algún ingrediente en la elaboración de los platos? (la lista de ingredientes disponibles puede ser extensa) [si][no]: no
+¿Quiere indicar limitaciones de precio? [si][no]: no
+¿Qué prefiere para la bebida?
+  1. Otra cosa
+  2. Vino (sólo uno)
+  3. Vino (uno distinto para cada plato)
+Escoja una opción [1, 3]: 2
+¿Qué tipo de vino prefiere?
+  1. Blanco
+  2. Rosado
+  3. Tinto
+Indique los números separados por un espacio: 1 2 3
+> Generando recomendaciones...
+> Analizando recomendaciones...
+> Seleccionando recomendaciones...
+> Generando menús...
+> Ponderando menús...
+> Seleccionando menús...
+> Refinando menús...
+> Catando vinos...
+> Seleccionando vinos...
+> Mostrando resultados...
+------------------------------------------------------------
+Primera propuesta (más cara):
+    Canelones de pavo (5.99 €)
+    Tabla de embutidos ibéricos (18.00 €)
+    Flan (2.99 €)
+  Vino para el menú:        rosado Bru de Gramona 2010 (19.60 €)
+  Precio total por persona: 31.88 €
+  Puntuación:               295
+------------------------------------------------------------
+Segunda propuesta (coste medio):
+    Canelones de pavo (5.99 €)
+    Bacalao a la vizcaína (6.00 €)
+    Flan (2.99 €)
+  Vino para el menú:        blanco Guitian Godello Sobre Lías 2011 (12.09 €)
+  Precio total por persona: 18.00 €
+  Puntuación:               335
+------------------------------------------------------------
+Tercera propuesta (más barata):
+    Lasaña de espinacas (6.99 €)
+    Filete de merluza (3.99 €)
+    Flan (2.99 €)
+  Vino para el menú:        blanco Bach Extremísimo Semi Dulce 2011 (2.98 €)
+  Precio total por persona: 14.71 €
+  Puntuación:               320
+------------------------------------------------------------
+* El precio del vino mostrado es el precio de la botella.
+------------------------------------------------------------
+¿Desea ver las justificaciones de la recomendación? [si][no]: si
+------------------------------------------------------------
+Primera propuesta (más cara):
+  Platos:
+    Canelones de pavo
+      Precio: 5.99 €
+      Puntuación: 95
+      Justificaciones:
+        El plato es de tipo tradicional, preferido por el cliente -> +70
+        El plato se sirve caliente, no preferido por el cliente -> -35
+        El plato es de Italia, preferido por el cliente -> +60
+
+    Tabla de embutidos ibéricos
+      Precio: 18.00 €
+      Puntuación: 105
+      Justificaciones:
+        El plato es de tipo tradicional, preferido por el cliente -> +70
+        El plato se sirve frio, preferido por el cliente -> +35
+
+    Flan
+      Precio: 2.99 €
+      Puntuación: 105
+      Justificaciones:
+        El plato es de tipo tradicional, preferido por el cliente -> +70
+        El plato se sirve frio, preferido por el cliente -> +35
+
+  Vino para el menú:        rosado Bru de Gramona 2010 (19.60 €)
+  Precio total por persona: 31.88 €
+  Puntuación:               295
+  Justificaciones:
+    El segundo plato es de un género que encaja bien con el color del vino -> +50
+    La diferencia de precios entre los platos no es mínima -> -60
+    Los platos del menú suman una puntuación total -> +305
+
+------------------------------------------------------------
+Segunda propuesta (coste medio):
+  Platos:
+    Canelones de pavo
+      Precio: 5.99 €
+      Puntuación: 95
+      Justificaciones:
+        El plato es de tipo tradicional, preferido por el cliente -> +70
+        El plato se sirve caliente, no preferido por el cliente -> -35
+        El plato es de Italia, preferido por el cliente -> +60
+
+    Bacalao a la vizcaína
+      Precio: 6.00 €
+      Puntuación: 35
+      Justificaciones:
+        El plato es de tipo tradicional, preferido por el cliente -> +70
+        El plato se sirve caliente, no preferido por el cliente -> -35
+
+    Flan
+      Precio: 2.99 €
+      Puntuación: 105
+      Justificaciones:
+        El plato es de tipo tradicional, preferido por el cliente -> +70
+        El plato se sirve frio, preferido por el cliente -> +35
+
+  Vino para el menú:        blanco Guitian Godello Sobre Lías 2011 (12.09 €)
+  Precio total por persona: 18.00 €
+  Puntuación:               335
+  Justificaciones:
+    El primer plato es de un género que encaja bien con el color del vino -> +50
+    El segundo plato es de un género que encaja bien con el color del vino -> +50
+    Los platos del menú suman una puntuación total -> +235
+
+------------------------------------------------------------
+Tercera propuesta (más barata):
+  Platos:
+    Lasaña de espinacas
+      Precio: 6.99 €
+      Puntuación: 95
+      Justificaciones:
+        El plato es de tipo tradicional, preferido por el cliente -> +70
+        El plato se sirve caliente, no preferido por el cliente -> -35
+        El plato es de Italia, preferido por el cliente -> +60
+
+    Filete de merluza
+      Precio: 3.99 €
+      Puntuación: 35
+      Justificaciones:
+        El plato es de tipo tradicional, preferido por el cliente -> +70
+        El plato se sirve caliente, no preferido por el cliente -> -35
+
+    Flan
+      Precio: 2.99 €
+      Puntuación: 105
+      Justificaciones:
+        El plato es de tipo tradicional, preferido por el cliente -> +70
+        El plato se sirve frio, preferido por el cliente -> +35
+
+  Vino para el menú:        blanco Bach Extremísimo Semi Dulce 2011 (2.98 €)
+  Precio total por persona: 14.71 €
+  Puntuación:               320
+  Justificaciones:
+    El primer plato es de un género que encaja bien con el color del vino -> +50
+    El segundo plato es de un género que encaja bien con el color del vino -> +50
+    La diferencia de precios entre los platos no es mínima -> -15
+    Los platos del menú suman una puntuación total -> +235
+
+------------------------------------------------------------
+
