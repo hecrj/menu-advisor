@@ -3,4 +3,41 @@
 % 
 
 \subsection{Módulo de abstracción de datos}
-El primer módulo
+El módulo de abstracción de datos se encarga de obtener las \strong{preferencias del cliente} y abstraerlas para que el sistema experto
+pueda utilizarlas. Este módulo es el primero en ejecutarse, ya que es necesario conocer primero las preferencias del cliente
+antes de recomendarle nada.
+
+\subsubsection{Los datos}
+Veamos con detalle las interacciones necesarias por parte del cliente para introducir los datos que le pide el módulo de abstracción
+y que el experto desarrollado tendrá en cuenta para la recomendación:
+
+\begin{description}
+\item[Evento] Indicar de entre los tipos de evento disponibles, aquel que desee realizar.
+\item[Número de comensales] Introducir el número de comensales del evento.
+\item[Tipos de cocina preferidos] Escoger de entre los tipos de cocina disponibles, aquellos que prefiere sobre los demás.
+\item[Sibarita] Indicar si es sibarita y prefiere platos para los paladares más exigentes.
+\item[Regiones preferidas] Indicar si desea dar prioridad a los platos de una zona geográfica concreta y, en caso afirmativo, seleccionar
+las zonas preferidas de entre las disponibles.
+\item[Tipos de comensal] Seleccionar los tipos de comensales que asistirán al evento (vegetarianos, alérgicos, etc.).
+\item[Temperatura preferida] Indicar si prefiere platos en una temperatura concreta y, en caso afirmativo, indicar la temperatura preferida de entre las disponibles.
+\item[Estación del año] Seleccionar la estación del año en la que se celebrará el evento.
+\item[Ingredientes prohibidos] Indicar si desea prohibir algunos ingredientes en concreto y, en caso afirmativo, seleccionar los
+ingredientes prohibidos de entre los disponibles.
+\item[Limitaciones de precio] Indicar si desea establecer límites de precio y, en caso afirmativo, introducir el precio máximo y
+mínimo para los menús recomendados.
+\item[Bebida] Escoger la bebida que desea: un vino para el menú, un vino para cada plato o otra bebida.
+\item[Colores de vino preferidos] En caso de que se haya preferido vino para la bebida, seleccionar los colores de vino preferidos de
+entre los disponibles.
+\end{description}
+
+\subsection{Abstracción}
+Para abstraer los datos y representarlos en \texttt{CLIPS} hemos utilizado dos \texttt{template}s:
+
+\begin{description}
+\item[Preferencias] Cada uno de sus \texttt{slots} representa una preferencia del cliente. Lo más destacable es que se ha utilizado un
+ \texttt{multislot} \texttt{ingredientes-prohibidos} que se llena durante la abstracción con aquellos ingredientes que no van a
+poder utilizarse en los platos de la recomendación, ya sea porque los comensales tendrían problemas o bien no estén disponibles en la
+época del año en la que se celebrará el evento. Por supuesto, esta lista también incluye aquellos ingredientes que el cliente haya
+prohibido directamente. Esto resulta muy útil para filtrar los platos en su módulo correspondiente.
+\item[Contexto] Contiene información sobre el entorno del evento. Sólo incluye la estación del año en la que se realizará el evento.
+\end{description}
