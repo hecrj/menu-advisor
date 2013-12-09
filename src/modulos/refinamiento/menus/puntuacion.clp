@@ -140,7 +140,7 @@
                  (bind ?punt (send ?menu get-puntuacion))
                  (send ?menu put-puntuacion (- ?punt ?penalizacion))
                  (send ?menu put-justificaciones
-                     (add$ (str-cat "La diferencia de precios entre los platos no es mínima ->-" ?penalizacion) $?just))))
+                     (add$ (str-cat "La diferencia de precios entre los platos no es mínima -> -" ?penalizacion) $?just))))
     (assert (diferencia precios))
 )
 

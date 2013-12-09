@@ -4,11 +4,11 @@
 )
 
 (deftemplate Pesos
-    (slot tipo-preferido (type INTEGER) (default 100))
-    (slot temperatura-preferida (type INTEGER) (default 75))
+    (slot tipo-preferido (type INTEGER) (default 70))
+    (slot temperatura-preferida (type INTEGER) (default 60))
     (slot caliente-en-verano (type INTEGER) (default -25))
-    (slot caliente-en-invierno (type INTEGER) (default 40))
-    (slot region-preferida (type INTEGER) (default 50))
+    (slot caliente-en-invierno (type INTEGER) (default 30))
+    (slot region-preferida (type INTEGER) (default 60))
     (slot plato-sibarita (type INTEGER) (default 60))
 )
 

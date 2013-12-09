@@ -1,4 +1,4 @@
-; Mon Dec 09 00:19:07 CET 2013
+; Mon Dec 09 01:05:32 CET 2013
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -28,6 +28,26 @@
 	(nombre "Melón")
 	(platos [comida_Class36])
 	(solo-disponible-en [comida_Class30002]))
+
+([comida_Class100001] of  Tradicional
+
+	(dificultad 65)
+	(genero [comida_Class70014])
+	(ingredientes
+		[comida_Class80023]
+		[comida_Class60031]
+		[comida_Class60030]
+		[comida_Class60018]
+		[comida_Class40009]
+		[comida_Class60005]
+		[comida_Class60011])
+	(nombre "Arroz a banda")
+	(para_sibaritas TRUE)
+	(pesadez LIGERO)
+	(precio 15.99)
+	(temperatura CALIENTE)
+	(tipico_de [comida_Class40008])
+	(tipo PRIMERO))
 
 ([comida_Class100003] of  Generico
 
@@ -99,7 +119,7 @@
 	(pesadez PESADO)
 	(precio 10.0)
 	(temperatura CALIENTE)
-	(tipo SEGUNDO))
+	(tipo PRIMERO))
 
 ([comida_Class100010] of  Ingrediente
 
@@ -653,7 +673,8 @@
 	(platos_tipicos
 		[comida_Class40013]
 		[comida_Class80068]
-		[comida_Class80140]))
+		[comida_Class80140]
+		[comida_Class100001]))
 
 ([comida_Class40009] of  Ingrediente
 
@@ -661,7 +682,8 @@
 	(platos
 		[comida_Class60016]
 		[comida_Class80160]
-		[comida_Class40010])
+		[comida_Class40010]
+		[comida_Class100001])
 	(problematico_para
 		[comida_Class40011]
 		[comida_Class20001]))
@@ -684,7 +706,7 @@
 	(precio 8.5)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class80016])
-	(tipo PRIMERO SEGUNDO))
+	(tipo PRIMERO))
 
 ([comida_Class40011] of  TipoComensal
 
@@ -711,7 +733,7 @@
 	(precio 7.99)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class40008])
-	(tipo PRIMERO SEGUNDO))
+	(tipo PRIMERO))
 
 ([comida_Class44] of  Tradicional
 
@@ -920,7 +942,8 @@
 		[comida_Class60016]
 		[comida_Class60023]
 		[comida_Class80097]
-		[comida_Class80195])
+		[comida_Class80195]
+		[comida_Class100001])
 	(problematico_para [comida_Class50004]))
 
 ([comida_Class60006] of  TipoComensal
@@ -996,7 +1019,8 @@
 		[comida_Class80109]
 		[comida_Class80108]
 		[comida_Class80106]
-		[comida_Class80107]))
+		[comida_Class80107]
+		[comida_Class100001]))
 
 ([comida_Class60012] of  Ingrediente
 
@@ -1069,7 +1093,8 @@
 		[comida_Class80153]
 		[comida_Class80033]
 		[comida_Class100015]
-		[comida_Class100017]))
+		[comida_Class100017]
+		[comida_Class100001]))
 
 ([comida_Class60019] of  Region
 
@@ -1093,7 +1118,7 @@
 	(precio 6.0)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class60021])
-	(tipo SEGUNDO PRIMERO))
+	(tipo SEGUNDO))
 
 ([comida_Class60021] of  Region
 
@@ -1132,7 +1157,7 @@
 	(precio 8.0)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class60029])
-	(tipo SEGUNDO PRIMERO))
+	(tipo PRIMERO))
 
 ([comida_Class60024] of  Ingrediente
 
@@ -1200,7 +1225,8 @@
 		[comida_Class60023]
 		[comida_Class80006]
 		[comida_Class80097]
-		[comida_Class100015]))
+		[comida_Class100015]
+		[comida_Class100001]))
 
 ([comida_Class60031] of  Ingrediente
 
@@ -1211,7 +1237,8 @@
 		[comida_Class80153]
 		[comida_Class80094]
 		[comida_Class50000]
-		[comida_Class100015]))
+		[comida_Class100015]
+		[comida_Class100001]))
 
 ([comida_Class60032] of  Ingrediente
 
@@ -1595,7 +1622,7 @@
 	(precio 7.99)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class80016])
-	(tipo PRIMERO SEGUNDO))
+	(tipo PRIMERO))
 
 ([comida_Class80023] of  Ingrediente
 
@@ -1612,7 +1639,8 @@
 		[comida_Class40013]
 		[comida_Class40010]
 		[comida_Class80033]
-		[comida_Class100009]))
+		[comida_Class100009]
+		[comida_Class100001]))
 
 ([comida_Class80024] of  Ingrediente
 
@@ -1676,7 +1704,7 @@
 	(precio 7.99)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class80032])
-	(tipo PRIMERO SEGUNDO))
+	(tipo PRIMERO))
 
 ([comida_Class80030] of  Ingrediente
 
@@ -1816,7 +1844,7 @@
 	(precio 3.99)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class80043])
-	(tipo SEGUNDO PRIMERO))
+	(tipo SEGUNDO))
 
 ([comida_Class80043] of  Region
 
@@ -1916,7 +1944,7 @@
 	(precio 7.99)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class60029])
-	(tipo PRIMERO SEGUNDO))
+	(tipo PRIMERO))
 
 ([comida_Class80051] of  Ingrediente
 
@@ -1997,7 +2025,7 @@
 	(pesadez LIGERO)
 	(precio 4.99)
 	(temperatura CALIENTE)
-	(tipo PRIMERO SEGUNDO))
+	(tipo PRIMERO))
 
 ([comida_Class80058] of  Generico
 
@@ -2037,11 +2065,11 @@
 		[comida_Class80031]
 		[comida_Class80030])
 	(nombre "Arroz tres delicias")
-	(para_sibaritas TRUE)
+	(para_sibaritas FALSE)
 	(pesadez LIGERO)
 	(precio 4.99)
 	(temperatura CALIENTE)
-	(tipo PRIMERO SEGUNDO))
+	(tipo PRIMERO))
 
 ([comida_Class80065] of  Tradicional
 
@@ -2054,10 +2082,10 @@
 	(nombre "Arroz negro")
 	(para_sibaritas TRUE)
 	(pesadez LIGERO)
-	(precio 5.99)
+	(precio 15.99)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class80016])
-	(tipo PRIMERO SEGUNDO))
+	(tipo PRIMERO))
 
 ([comida_Class80066] of  Ingrediente
 
@@ -2078,7 +2106,7 @@
 	(precio 3.99)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class80043])
-	(tipo SEGUNDO PRIMERO))
+	(tipo PRIMERO))
 
 ([comida_Class80068] of  Generico
 
@@ -2429,7 +2457,7 @@
 	(precio 4.49)
 	(temperatura CALIENTE)
 	(tipico_de [comida_Class80098])
-	(tipo PRIMERO SEGUNDO))
+	(tipo SEGUNDO))
 
 ([comida_Class80101] of  Generico
 

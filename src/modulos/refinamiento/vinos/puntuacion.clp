@@ -6,10 +6,10 @@
 (deftemplate Pesos
     (slot vino-muy-caro
         (type INTEGER)
-        (default 50))
+        (default 100))
     (slot vino-muy-barato
         (type INTEGER)
-        (default 30))
+        (default 50))
     (slot caro-si
         (type FLOAT)
         (default 4.0)) ; 4 platos cuestan menos que el vino => vino caro

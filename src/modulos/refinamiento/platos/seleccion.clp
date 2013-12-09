@@ -4,8 +4,8 @@
 )
 
 (deftemplate Limites
-    (slot primeros (type INTEGER) (default 25))
-    (slot segundos (type INTEGER) (default 25))
+    (slot primeros (type INTEGER) (default 30))
+    (slot segundos (type INTEGER) (default 30))
     (slot postres (type INTEGER) (default 15))
 )
 
