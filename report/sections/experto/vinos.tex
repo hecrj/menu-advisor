@@ -1,3 +1,81 @@
 % !TEX encoding = UTF-8 Unicode
 % !TEX root = ../../report.tex
 % 
+
+\subsection{Módulo de vinos}
+Las instancias de \clase{MenuAbstracto} ya podrían servir para presentar las
+propuestas de menú al usuario. Sin embargo, falta incluir los vinos concretos
+si es el caso. Este módulo se encarga de eso, justamente, además de escoger los
+hasta tres menús (uno barato, uno con coste medio, y uno más caro) que se
+presentarán al usuario como mejores.
+
+Para ello, se utilizan la clase \clase{Menu} y el \verb+deftemplate+
+\clase{SeleccionMenus} como veremos a continuación.
+
+\subsubsection{Fase de filtración}
+Esta fase se encarga de recoger los menús abstractos que han pasado la fase de
+selección del módulo de menús y combinarlos con los vinos según los colores que
+haya establecidos. Además de eso, calcula el precio que tendría el menú con los
+dos platos, el postre y, si es el caso, los vinos. Para el caso del vino, el
+precio individual se calcula dividiendo entre 4 el precio de la botella.
+
+La cantidad de menús que se generarán en esta fase puede ser:
+\begin{itemize}
+\item Si no se ha solicitado ningún vino, hasta $200$ (los mismos que menús
+  abstractos);
+\item si se ha solicitado un vino para el menú, como máximo $200 \times v$, con
+  $v$ la cantidad de vinos que hay del color aceptado por cada menú abstracto;
+\item si se ha solicitado un vino por plato, como máximo $200 \times v_1 \times
+  v_2$, con los $v_i$ la cantidad de vinos de los colores por cada menú
+  abstracto para el primer y segundo plato, respectivamente.
+\end{itemize}
+
+Del color que más hay es el tinto, con $12$ de las $34$ instancias. En el peor
+caso, el cliente habrá solicitado un vino por plato y los 200 menús tendrán el
+color tinto para ambos vinos. Como el segundo vino y el primero no pueden ser
+iguales, porque el cliente ha solicitado dos vinos distintos, nos encontramos
+con una cota superior de $200 \times 12 \times 11 = 26400$ menús al salir de la
+fase.
+
+\subsubsection{Fase de puntuación}
+En esta fase se puntúa la combinación de los vinos con los platos. Hay que
+matizar que solamente es en precio, ya que la puntuación de la corrección del
+color se había hecho durante la fase de puntuación del módulo de menús.
+
+La consideración que hemos tomado es que \strong{el vino no puede ser ni
+  demasiado caro ni demasiado barato} en comparación con los platos. De forma
+similar a cuando los platos tienen precios muy dispares, si el cliente obtiene
+una recomendación de un plato de bajo precio con un vino muy caro, o al revés,
+puede pensar que algo raro pasa con el sistema.
+
+Consideramos que un vino es caro cuando el precio de un vaso es más caro que el
+precio del plato con el que se tomará. Dicho de otro modo, si cuatro platos
+cuestan menos que la botella. En ese caso, se da una puntuación negativa de 100
+por cada plato del menú con los que se tomará el vino (el primero, el segundo,
+o los dos según corresponda) y este último sea \emph{demasiado caro}.
+
+De forma similar, consideramos que un vino es barato cuando (casi) tres
+botellas cuestan menos que un plato con el que se tomará. En este caso, se
+restan 50 puntos por cada plato con los que se tomará el vino y el último sea
+\emph{demasiado barato}.
+
+\subsubsection{Fase de selección}
+Cuando ya están todos los posibles menús punutados, hay que seleccionar los
+hasta tres que se presentarán al usuario (uno más barato, uno de precio
+intermedio y uno más caro). Para ello, inicialmente se calculan los intervalos
+de precio para los que un menú se considera barato, medio o caro.
+
+Si el cliente no ha decidido indicar sus propios límites mínimo y máximo de
+precio, se toman $0\,€$ como el mínimo y $45\,€$ como el máximo. El cálculo se
+realiza dividiendo el intervalo en tres intervalos iguales. Estos cálculos se
+hacen en las reglas \regla{actualizar-franja-min},
+\regla{actualizar-franja-max} y \regla{actualizar-franjas-intermedias} y se
+almacena su resultado en el hecho no ordenado \clase{FranjasPrecio}.
+
+Ya en el momento de seleccionar el menú, lo que hacemos es escoger \strong{el
+  menú con mejor puntuación} para \strong{cada intervalo de precios}. Si dos
+menús tienen la misma puntuación y caen en el mismo rango de precios,
+simplemente se toma una decisión al azar.
+
+Cuando ha acabado esta fase, solamente hace falta presentar los resultados al
+usuario.
